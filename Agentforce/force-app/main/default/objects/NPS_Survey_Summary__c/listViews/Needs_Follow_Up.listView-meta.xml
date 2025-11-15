@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_Follow_Up</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>NPS_Survey__c</columns>
+    <columns>NPS_Score__c</columns>
+    <columns>Survey_Date__c</columns>
+    <columns>Sentiment_Analysis__c</columns>
+    <columns>Action_Recommendations__c</columns>
+    <columns>CREATEDDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Follow_Up_Required__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Needs Follow-Up</label>
+</ListView>
