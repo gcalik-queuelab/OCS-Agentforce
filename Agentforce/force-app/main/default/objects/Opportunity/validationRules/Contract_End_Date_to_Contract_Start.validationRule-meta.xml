@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_End_Date_to_Contract_Start</fullName>
+    <active>true</active>
+    <description>Contract End Date on or after Contract Start Date VR</description>
+    <errorConditionFormula>AND(
+!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+NOT(ISNEW()),
+Contract_End_Date__c &lt; Contract_Start_Date__c
+)</errorConditionFormula>
+    <errorDisplayField>Contract_End_Date__c</errorDisplayField>
+    <errorMessage>The Contract End Date must be on or after the Contract Start Date.</errorMessage>
+</ValidationRule>

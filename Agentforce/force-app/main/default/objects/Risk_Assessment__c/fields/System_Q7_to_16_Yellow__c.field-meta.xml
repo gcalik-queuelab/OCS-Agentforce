@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Q7_to_16_Yellow__c</fullName>
+    <description>Identifies if more than 4 Yellow warnings in Q7-16</description>
+    <formula>IF(
+(
+IF(ISPICKVAL(Q07_Services_Delivered__c, &quot;Catering&quot;),1,0) +
+IF(ISPICKVAL(Q07_Services_Delivered__c, &quot;Pest&quot;),1,0) +
+IF(ISPICKVAL(Q07_Services_Delivered__c, &quot;Specialist/ Window cleaning&quot;),1,0) +
+IF(ISPICKVAL(Q07_Services_Delivered__c, &quot;Security Systems&quot;),1,0) +
+IF(ISPICKVAL(Q08_TUPE_Employees__c, &quot;More than 25&quot;),1,0) +
+IF(ISPICKVAL(Q09_TUPE_Government_Pension_or_similar__c, &quot;No&quot;),1,0) +
+IF(ISPICKVAL(Q10_Liability_Capped_20m_level_required__c, &quot;No&quot;),1,0) +
+IF(ISPICKVAL(Q11_Payment_Terms_Under_30_Days__c, &quot;No&quot;),1,0) +
+IF(ISPICKVAL(Q12_CAPEX_200k__c, &quot;Yes&quot;),1,0) +
+IF(ISPICKVAL(Q13_Bond_Prebate_or_Liquidated_Damages__c, &quot;Yes&quot;),1,0) +
+IF(ISPICKVAL(Q14_Service_Credit_or_KPI_Risk_5_ACV__c, &quot;Yes&quot;),1,0) +
+IF(ISPICKVAL(Q15_Repair_Threshold_1k__c, &quot;Yes&quot;),1,0) +
+IF(ISPICKVAL(Q16_Contract_Standard_Template_Terms__c, &quot;Yes&quot;),1,0)
+) &gt;=4
+ 
+,true,false)</formula>
+    <label>Q7 - 16 Yellow</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

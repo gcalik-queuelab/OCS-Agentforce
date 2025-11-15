@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Contract_Status_f__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Count_of_Expired_Contracts__c &gt; 0, &quot;Expired&quot;,
+			IF(Count_of_At_Risk_Contracts__c &gt; 0, &quot;At Risk&quot;,
+						IF( Count_of_Active_Contracts__c &gt; 0, &quot;Live&quot;,
+									IF( Count_of_Contracts_Pending_Mobilisation__c &gt; 0,&quot;Mobilisation&quot;,
+									    NULL)
+						    )
+			    )
+			)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Contract Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

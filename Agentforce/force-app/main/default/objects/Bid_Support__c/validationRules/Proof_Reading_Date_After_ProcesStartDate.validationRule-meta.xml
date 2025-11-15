@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proof_Reading_Date_After_ProcesStartDate</fullName>
+    <active>true</active>
+    <description>Proof Reading Date must be after the Process Start Date.</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				 Proof_Reading_Date__c &lt;  Bid__r.Bid_Start_Date__c
+				)</errorConditionFormula>
+    <errorDisplayField>Proof_Reading_Date__c</errorDisplayField>
+    <errorMessage>Proof Reading Date must be after Process Start Date</errorMessage>
+</ValidationRule>

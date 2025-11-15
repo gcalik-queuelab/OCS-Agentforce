@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marked_for_Termination_by_Renewal__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ticked by Opportunity After Create and Update flow where the Line Item has been marked for termination because of a Renewal (Rebid/Extension). Used for reporting.</description>
+    <label>Marked for Termination by Renewal</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

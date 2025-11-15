@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Is_New</name>
+        <label>Set Is New</label>
+        <locationX>611</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>v_isNew</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_isNew</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_or_Update</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>If Attachments are found then delete these as the Attached PDF will be out of date and will need to be re-generated.</description>
+        <name>Attachments_Found</name>
+        <label>Attachments Found?</label>
+        <locationX>182</locationX>
+        <locationY>1595</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Attachments_Found_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_NPS_Attachments</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Attachments</targetReference>
+            </connector>
+            <label>Yes - Attachments Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If changes are made to the Answer, Suggested Improvements or Score fields then delete the attached PDF (if exists) as it will be out of date and prompt user to re-generate the PDF.</description>
+        <name>Changes_Made_to_Fields</name>
+        <label>Changes Made to Fields After Submission?</label>
+        <locationX>380</locationX>
+        <locationY>1379</locationY>
+        <defaultConnectorLabel>No - Continue</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Changes_Made_Outcome</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Suggestion_for_improvement__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Score__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Answer__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_NPS_Attachments</targetReference>
+            </connector>
+            <label>Yes - Changes Made</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Create_or_Update</name>
+        <label>Create or Update?</label>
+        <locationX>611</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>NPS_Recommend_Us_Score_Update_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update</defaultConnectorLabel>
+        <rules>
+            <name>Create</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>v_isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>NPS_Recommend_Us_Score_Update_Decision</targetReference>
+            </connector>
+            <label>Create</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If Score filled in, does the Response Record for Q10 - Would You Recommend Us align with the Recommend Us Score field on NPS Record?</description>
+        <name>NPS_Recommend_Us_Score_Update_Decision</name>
+        <label>NPS Recommend Us Score Update?</label>
+        <locationX>611</locationX>
+        <locationY>731</locationY>
+        <defaultConnector>
+            <targetReference>NPS_Status_Closed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update_NPS_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Q10 - Would you recommend us?</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.NPS__r.Recommend_Us_Score__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Score__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Score__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_NPS_Record</targetReference>
+            </connector>
+            <label>Yes - Update NPS</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Is the NPS Survey closed?
+If so then if certain changes are made the attached NPS PDF will need to be deleted since it will be out of date.</description>
+        <name>NPS_Status_Closed</name>
+        <label>NPS Status = Closed?</label>
+        <locationX>611</locationX>
+        <locationY>1271</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_NPS_Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.NPS__r.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Changes_Made_to_Fields</targetReference>
+            </connector>
+            <label>Yes - NPS Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Validate_Config_Switch</name>
+        <label>Validate Config Switch</label>
+        <locationX>858</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Automation_Enabled</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Flows_Disabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Migration_Flows_Enabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Is_New</targetReference>
+            </connector>
+            <label>Automation Enabled</label>
+        </rules>
+    </decisions>
+    <description>AD-180 - Create an Action Plan if score threshold not met</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>f_isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>f_SurveyCategory</name>
+        <dataType>String</dataType>
+        <expression>CASE(TEXT({!$Record.Score__c}),
+&quot;10&quot;, &quot;Promoter&quot;,
+&quot;9&quot;, &quot;Promoter&quot;,
+&quot;8&quot;, &quot;Passive&quot;, 
+&quot;7&quot;, &quot;Passive&quot;,  
+&quot;Detractor&quot;)</expression>
+    </formulas>
+    <interviewLabel>NPS Response: After Create and Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>NPS Response: After Create and Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Delete_Attachments</name>
+        <label>Delete Attachments</label>
+        <locationX>50</locationX>
+        <locationY>1703</locationY>
+        <inputReference>Get_NPS_Attachments</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_NPS_Attachments</name>
+        <label>Get NPS Attachments</label>
+        <locationX>182</locationX>
+        <locationY>1487</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Attachments_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.NPS__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Attachment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_NPS_Record</name>
+        <label>Update NPS Record</label>
+        <locationX>347</locationX>
+        <locationY>839</locationY>
+        <connector>
+            <targetReference>NPS_Status_Closed</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Log_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.NPS__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Recommend_Us_Score__c</field>
+            <value>
+                <elementReference>$Record.Score__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Survey_Category__c</field>
+            <value>
+                <elementReference>f_SurveyCategory</elementReference>
+            </value>
+        </inputAssignments>
+        <object>NPS__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>732</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Validate_Config_Switch</targetReference>
+        </connector>
+        <object>NPS_Response__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Log_Error</name>
+        <label>Log Error</label>
+        <locationX>611</locationX>
+        <locationY>947</locationY>
+        <flowName>Utility_Error_Log_Creation</flowName>
+        <inputAssignments>
+            <name>Level</name>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Messages</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>OriginName</name>
+            <value>
+                <stringValue>NPS Response: After Create and Update</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Type</name>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>fNew_NPS_Action_Plan_Name</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.NPS__r.Account__r.Name} - NPS Action Plan {!$Record.NPS__r.Name}</text>
+    </textTemplates>
+    <variables>
+        <name>Recommend_Us_Score</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>v_isNew</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

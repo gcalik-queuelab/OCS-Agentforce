@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bid_Phase__c</fullName>
+    <label>Bid Phase</label>
+    <referenceTo>Bid_Phase__c</referenceTo>
+    <relationshipLabel>Bid Phase Assignments</relationshipLabel>
+    <relationshipName>Planning_Phase_Assignments</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

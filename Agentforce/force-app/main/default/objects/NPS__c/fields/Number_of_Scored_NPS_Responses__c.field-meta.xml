@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Scored_NPS_Responses__c</fullName>
+    <inlineHelpText>The number of NPS Responses with a Score assigned.</inlineHelpText>
+    <label>Number of Scored NPS Responses</label>
+    <summaryFilterItems>
+        <field>NPS_Response__c.Score__c</field>
+        <operation>greaterThan</operation>
+        <value>0</value>
+    </summaryFilterItems>
+    <summaryForeignKey>NPS_Response__c.NPS__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

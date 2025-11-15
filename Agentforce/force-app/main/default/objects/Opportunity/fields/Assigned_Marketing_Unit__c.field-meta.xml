@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Marketing_Unit__c</fullName>
+    <description>AD - 628 - Used to define which leads, contacts and opportunities sync with each BU via Marketing Data Sharing rules</description>
+    <label>Assigned Marketing Unit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Assigned_Marketing_Unit</valueSetName>
+    </valueSet>
+</CustomField>

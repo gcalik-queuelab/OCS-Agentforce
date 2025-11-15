@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Key_Stakeholders_And_Decision_Makers__c</fullName>
+    <description>Detail of the customers key stakeholders and decision makers within the tender process?</description>
+    <inlineHelpText>Who were the key stakeholders and decision makers within the process?</inlineHelpText>
+    <label>Key Stakeholders And Decision Makers</label>
+    <length>5000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

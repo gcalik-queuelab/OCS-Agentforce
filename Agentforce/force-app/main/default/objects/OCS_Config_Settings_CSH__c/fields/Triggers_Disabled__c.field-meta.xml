@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Triggers_Disabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to control whether or not triggers will be executed</description>
+    <inlineHelpText>Check this box to disable triggers across the system</inlineHelpText>
+    <label>Triggers Disabled</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_PayrollNo_with_StartDate</fullName>
+    <active>true</active>
+    <description>Ensure that if a Payroll Number is provided then Start Date is also provided, and vice versa. Do this only where Email Address is not provided</description>
+    <errorConditionFormula>AND(
+ $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				ISBLANK(Email_Address__c),
+				OR(
+				AND(
+								NOT(ISBLANK(Payroll_Number__c)),
+								ISBLANK(Start_Date__c)
+				),
+								AND(
+								NOT(ISBLANK(Start_Date__c)),
+								ISBLANK(Payroll_Number__c)
+								)
+				)
+				)</errorConditionFormula>
+    <errorMessage>Please ensure that both a Payroll Number and a Start Date are provided.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Contact_same_as_Key_Contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Tick to set the Billing Contact with the value from Site Key Contact. This also hides the Billing Contact field.</inlineHelpText>
+    <label>Billing Contact same as Key Contact</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Eligible_for_CTPS_Checks__c</fullName>
+    <description>Defines if the phone number can be included within CTPS mass batch updates</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+    MailingCountry = &apos;United Kingdom&apos;,
+    Not_At_Company__c = FALSE,
+    DoNotCall = FALSE
+    ),
+1,0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Eligible for CTPS Checks</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

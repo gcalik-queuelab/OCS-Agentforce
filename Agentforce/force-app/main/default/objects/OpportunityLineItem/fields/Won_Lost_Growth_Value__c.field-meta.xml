@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Lost_Growth_Value__c</fullName>
+    <description>Display Individual Growth if Opportunity Stage is Closed Lost or Closed Won</description>
+    <formula>IF(
+    OR(
+        ISPICKVAL(Opportunity.StageName, &quot;6. Closed Lost&quot;),
+        ISPICKVAL(Opportunity.StageName, &quot;7. Closed Won&quot;)
+    ),
+    Individual_Growth__c,
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Won/Lost Growth Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

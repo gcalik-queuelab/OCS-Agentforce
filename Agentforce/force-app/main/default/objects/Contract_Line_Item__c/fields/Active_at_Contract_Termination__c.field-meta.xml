@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_at_Contract_Termination__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ticked if the Line Item was active at the point of Contract Termination. This includes it in DLRS rollup for Annual Revenue.</description>
+    <label>Active at Contract Termination</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

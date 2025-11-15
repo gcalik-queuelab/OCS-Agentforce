@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AvTech_Picklist__c</fullName>
+    <description>AVTech Software Required</description>
+    <label>AvTech</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AvTech Passenger Assistance - Console</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>AvTech Passenger Assistance - Console</label>
+            </value>
+            <value>
+                <fullName>AvTech Passenger Assistance - Mobile</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>AvTech Passenger Assistance - Mobile</label>
+            </value>
+            <value>
+                <fullName>AvTech Shuttle - Console</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>AvTech Shuttle - Console</label>
+            </value>
+            <value>
+                <fullName>AvTech Shuttle - Mobile</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>AvTech Shuttle - Mobile</label>
+            </value>
+            <value>
+                <fullName>AvTech Turnaround - Console</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>AvTech Turnaround - Console</label>
+            </value>
+            <value>
+                <fullName>AvTech Turnaround - Mobile</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>AvTech Turnaround - Mobile</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

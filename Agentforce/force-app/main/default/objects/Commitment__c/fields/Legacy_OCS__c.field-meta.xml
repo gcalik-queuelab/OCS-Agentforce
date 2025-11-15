@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legacy_OCS__c</fullName>
+    <description>AD-874 - text field to capture the Id of the legacy OCS Commitments record</description>
+    <externalId>false</externalId>
+    <label>Legacy OCS Commitments Id</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

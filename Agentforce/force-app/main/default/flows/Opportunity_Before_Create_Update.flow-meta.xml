@@ -1,0 +1,2368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_0_Custom_Prob_Forecast_Category</name>
+        <label>Assign 0% Custom Prob &amp; Forecast Category</label>
+        <locationX>72</locationX>
+        <locationY>6311</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Custom_Probability__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ForecastCategoryName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Omitted</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Forecast_Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Omitted</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Updated_to_Closed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_100_Custom_Prob_Forecast_Category</name>
+        <label>Assign 100% Custom Prob &amp; Forecast Category</label>
+        <locationX>468</locationX>
+        <locationY>6311</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Custom_Probability__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>100.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ForecastCategoryName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Forecast_Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Closed_Won_Probability_Update_Needed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Amount_to_Number_Field</name>
+        <label>Assign Amount to Number Field</label>
+        <locationX>743</locationX>
+        <locationY>4811</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Amount_Hidden__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Amount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Bid_Team_Set_Head_of_Bid_Required</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Award_Date</name>
+        <label>Assign Award Date</label>
+        <locationX>94</locationX>
+        <locationY>7427</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CloseDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Assign Closed Stage, Closed Sub-Stage and Closed Forecast Category at the point the Opportunity moves to Closed</description>
+        <name>Assign_Closure_Details</name>
+        <label>Assign Closure Details</label>
+        <locationX>226</locationX>
+        <locationY>7211</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Closed_Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.StageName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Closed_Sub_Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Sub_Stage__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Closed_Forecast_Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.ForecastCategoryName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Award_Date_Future</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set Assigned Marketing Unit to the correct value based on Creator Country</description>
+        <name>Assign_Marketing_Unit</name>
+        <label>Assign Marketing Unit</label>
+        <locationX>743</locationX>
+        <locationY>4511</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Assigned_Marketing_Unit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_marketingunit</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Amount_Hidden_Update_Needed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Probability</name>
+        <label>Assign Probability</label>
+        <locationX>1040</locationX>
+        <locationY>6719</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Probability</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SubStage_Probability</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Bid_No_Bid_Approved_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update Custom Forecast Category with the Updated Standard Forecast Category</description>
+        <name>Assign_Updated_Custom_Forecast_Category</name>
+        <label>Assign Updated Custom Forecast Category</label>
+        <locationX>1062</locationX>
+        <locationY>6011</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Forecast_Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ForecastCategoryName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opportunity_Pursued_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update Standard Forecast Category with the Updated Custom Forecast Category</description>
+        <name>Assign_Updated_Standard_Forecast_Category</name>
+        <label>Assign Updated Standard Forecast Category</label>
+        <locationX>1326</locationX>
+        <locationY>6011</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ForecastCategoryName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Forecast_Category__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opportunity_Pursued_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Clear_Contract_Values</name>
+        <label>Clear Contract Values</label>
+        <locationX>743</locationX>
+        <locationY>4211</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Current_Contract_Value__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Contract__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Marketing_Unit_Aligned_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set RFP Submitted Date to NULL</description>
+        <name>Clear_RFP_Submitted_Date_Field</name>
+        <label>Clear RFP Submitted Date Field</label>
+        <locationX>1084</locationX>
+        <locationY>1535</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.RFP_Submitted_Date__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Owner_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Closed_12_Months_FALSE</name>
+        <label>Closed 12 Months FALSE</label>
+        <locationX>424</locationX>
+        <locationY>6011</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Closed_Last_12_Months__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Custom_Probability_Forecasting_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Closed_12_Months_TRUE</name>
+        <label>Closed 12 Months TRUE</label>
+        <locationX>160</locationX>
+        <locationY>6011</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Closed_Last_12_Months__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Custom_Probability_Forecasting_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Confirm_Record_Type</name>
+        <label>Confirm Record Type</label>
+        <locationX>270</locationX>
+        <locationY>1235</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.System_Initial_Record_Type_Confirmed__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Sub_Stage_Blank_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Link_to_External_Telemarketing_Open_Doors_Future_Opps_Campaign</name>
+        <label>Link to External Telemarketing - Open Doors - Future Opps Campaign</label>
+        <locationX>589</locationX>
+        <locationY>3527</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CampaignId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_External_Telemarketing_Open_Doors_Future_Opps_Campaign.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opportunity_Name_Correct</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set Opp Stage = 3. Solution and Sub Stage = 3.1 RFI In Progress</description>
+        <name>Opp_Sub_Stage_3_1_RFI_in_Progress</name>
+        <label>Opp Sub Stage 3.1 RFI in Progress</label>
+        <locationX>1062</locationX>
+        <locationY>7103</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>3. Solution</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Sub_Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>3.1 RFI In Progress</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Set Opp Stage = 3. Solution and Sub Stage = 3.3 Develop Solution</description>
+        <name>Opp_Sub_Stage_3_3_Develop_Solution</name>
+        <label>Opp Sub Stage 3.3 Develop Solution</label>
+        <locationX>1326</locationX>
+        <locationY>7103</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>3. Solution</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Sub_Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>3.3 Develop Solution</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Opportunity_Name</name>
+        <label>Opportunity Name</label>
+        <locationX>743</locationX>
+        <locationY>3911</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_OpportunityName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Changed_from_Renewal_to_Non_Renewal_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Award_Date</name>
+        <label>Set Award Date</label>
+        <locationX>402</locationX>
+        <locationY>2135</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CloseDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_Day_Before_Contract_Start_Date</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Created_Forecast_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Contract_Type_Ad_Hoc</name>
+        <label>Set Contract Type = Ad-Hoc</label>
+        <locationX>1106</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Contract_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Ad-Hoc</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Lite_Opportunity_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Contract_Type_Combined</name>
+        <label>Set Contract Type = Combined</label>
+        <locationX>1634</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Contract_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Combined</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Lite_Opportunity_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Contract_Type_Contractual</name>
+        <label>Set Contract Type = Contractual</label>
+        <locationX>842</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Contract_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Contractual</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Lite_Opportunity_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Contract_Type_Project</name>
+        <label>Set Contract Type = Project</label>
+        <locationX>1370</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Contract_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Project</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Lite_Opportunity_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set Pipeline Forecast Category on creation</description>
+        <name>Set_Created_Forecast_Type</name>
+        <label>Set Created Forecast Type</label>
+        <locationX>380</locationX>
+        <locationY>2411</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Forecast_Category__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pipeline</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ForecastCategoryName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Pipeline</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legacy_Fields_Populated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Head_of_Bid</name>
+        <label>Set Head of Bid</label>
+        <locationX>545</locationX>
+        <locationY>5519</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Head_of_Bid__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>v_HeadOfBid_Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opportunity_Current_Stage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Is_New1</name>
+        <label>Set Is New</label>
+        <locationX>875</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>v_isNew</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_isNew</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Record_Type_Target</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Legacy_IDs</name>
+        <label>Set Legacy IDs</label>
+        <locationX>248</locationX>
+        <locationY>2627</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Legacy_Id__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Owner_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set Opportunity Pursued Tickbox to TRUE. This marks that an Opportunity was pursued allowing for reporting of Closed Withdrawn Opportunities where the Opp was Pursued vs Not Pursued.</description>
+        <name>Set_Opportunity_Pursued</name>
+        <label>Set Opportunity Pursued</label>
+        <locationX>1194</locationX>
+        <locationY>6311</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Opportunity_Pursued__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UK_based_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Opportunity_Sub_Stage</name>
+        <label>Set Opportunity Sub Stage</label>
+        <locationX>1084</locationX>
+        <locationY>1235</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Sub_Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_LiteOpp_SubStage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Clear_RFP_Submitted_Date_Field_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Owner_Creator_Fields</name>
+        <label>Set Owner/Creator Fields</label>
+        <locationX>743</locationX>
+        <locationY>3011</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Corporate_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Owner.Corporate_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Business_Unit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Owner.Business_Unit__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Creator_Country__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CreatedBy.Country</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Owner_Country__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Owner.Country</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Owner_Region__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Owner.Region__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Creator_Region__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.CreatedBy.Region__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Managers_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Owner.Manager.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UK_I_Owner_Changed_to_External_Telemarketing_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Primary_Contact</name>
+        <label>Set Primary Contact</label>
+        <locationX>182</locationX>
+        <locationY>1727</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Primary_Contact__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_Record_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set Standard Probability Field to 100% where the Opp has been Closed Won.</description>
+        <name>Set_Probability_100_Percent</name>
+        <label>Set Probability 100%</label>
+        <locationX>336</locationX>
+        <locationY>6527</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Probability</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <numberValue>100.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Won_Value_Population_Required</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Sub_Stage_2_2_Needs_Analysis</name>
+        <label>Set Sub Stage 2.2 Needs Analysis</label>
+        <locationX>50</locationX>
+        <locationY>1535</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Sub_Stage__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>2.2 Needs Analysis</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>2. Prospect</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Primary_Contact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set the Annual Revenue as the Won Value of the Opportunity</description>
+        <name>Set_Won_Value</name>
+        <label>Set Won Value</label>
+        <locationX>336</locationX>
+        <locationY>6827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Won_Value__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Amount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Updated_to_Closed</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Does the Amount (Hidden) field align with the standard Amount (renamed Annual Revenue) field?</description>
+        <name>Amount_Hidden_Update_Needed</name>
+        <label>Amount (Hidden) Update Needed?</label>
+        <locationX>875</locationX>
+        <locationY>4703</locationY>
+        <defaultConnector>
+            <targetReference>Bid_Team_Set_Head_of_Bid_Required</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Continue</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update_HiddenAmount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Amount_Hidden__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Amount</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Amount_to_Number_Field</targetReference>
+            </connector>
+            <label>Yes - Update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Assign_Custom_Probability_Forecasting_Decision</name>
+        <label>Assign Custom Probability/Forecasting</label>
+        <locationX>424</locationX>
+        <locationY>6203</locationY>
+        <defaultConnectorLabel>Open - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Closed_Lost_Withdrawn</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6. Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5. Closed Withdrawn</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_0_Custom_Prob_Forecast_Category</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Closed Lost Withdrawn</label>
+        </rules>
+        <rules>
+            <name>Closed_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7. Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_100_Custom_Prob_Forecast_Category</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Closed Won</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>On creation of an Opportunity if the Award Date is on/after the Contract Start Date then move the Award Date to be the day before the Contract Start Date. This avoids Validation errors when converting Lead.</description>
+        <name>Award_Date_after_Contract_Start_Date</name>
+        <label>Award Date after Contract Start Date?</label>
+        <locationX>534</locationX>
+        <locationY>2027</locationY>
+        <defaultConnector>
+            <targetReference>Set_Created_Forecast_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Change_Award_Date_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CloseDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Contract_Start_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contract_Start_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Award_Date</targetReference>
+            </connector>
+            <label>Yes - Change Award Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If Award Date is in the future and the Opp is being Closed then set the Award Date to today&apos;s date.
+If the Award Date is in the past then skip.</description>
+        <name>Award_Date_Future</name>
+        <label>Award Date Future?</label>
+        <locationX>226</locationX>
+        <locationY>7319</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Award_Date_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CloseDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Award_Date</targetReference>
+            </connector>
+            <label>Yes - Set Award Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If either RFI Bid/No Bid or RFP Bid/No Bid is approved then update Opp Stage and Sub Stage accordingly.</description>
+        <name>Bid_No_Bid_Approved_Decision</name>
+        <label>Bid/No Bid Approved?</label>
+        <locationX>1326</locationX>
+        <locationY>6995</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_RFI_Bid_No_Bid_Approved_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RFI_Bid_No_Bid_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Sub_Stage_3_1_RFI_in_Progress</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes - RFI Bid/No Bid Approved</label>
+        </rules>
+        <rules>
+            <name>Yes_RFP_Bid_No_Bid_Approved_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RFP_Bid_No_Bid_Approval_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Sub_Stage_3_3_Develop_Solution</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Yes - RFP Bid/No Bid Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If the Bid team is set and the Head of Bid is empty then attempt to set the Head of Bid automatically.</description>
+        <name>Bid_Team_Set_Head_of_Bid_Required</name>
+        <label>Bid Team Set - Head of Bid Required?</label>
+        <locationX>875</locationX>
+        <locationY>5003</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Current_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Attempt_to_Set_Head_of_Bid_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bid_Team__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Head_of_Bid__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Selected_Bid_Team_Decisino</targetReference>
+            </connector>
+            <label>Yes - Set Head of Bid</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If Type Prior Value is Rebid/Extension (Renewal) but is changed so that current type is neither Rebid/Extension (Non-Renewal) then Contract and Current Contract Value fields need to be cleared.</description>
+        <name>Changed_from_Renewal_to_Non_Renewal_Decision</name>
+        <label>Changed from Renewal to Non-Renewal?</label>
+        <locationX>875</locationX>
+        <locationY>4103</locationY>
+        <defaultConnector>
+            <targetReference>Marketing_Unit_Aligned_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Clear_Values</name>
+            <conditionLogic>(1 OR 2) AND (3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rebid</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Extension</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Rebid</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Extension</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_Contract_Values</targetReference>
+            </connector>
+            <label>Yes - Clear Values</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If RFP Submitted Date field is populated but Stage = 2. Prospect or 3. Solution then clear the date.</description>
+        <name>Clear_RFP_Submitted_Date_Field_Decision</name>
+        <label>Clear RFP Submitted Date Field?</label>
+        <locationX>1216</locationX>
+        <locationY>1427</locationY>
+        <defaultConnector>
+            <targetReference>Update_Owner_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Clear_RFP_Date_Submitted_Field_Outcome</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2. Prospect</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3. Solution</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RFP_Submitted_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_RFP_Submitted_Date_Field</targetReference>
+            </connector>
+            <label>Yes - Clear Field</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Has the Opportunity been closed in the last 12 months and the Closed Last 12 Months field is FALSE. so then set &apos;Closed Last 12 Months&apos; TRUE. Otherwise set FALSE or Skip the update all together. Field used in Rollup Summary Criteria.</description>
+        <name>Closed_Last_12_Months_Update_Required_Decision</name>
+        <label>Closed Last 12 Months Update Required?</label>
+        <locationX>424</locationX>
+        <locationY>5903</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Custom_Probability_Forecasting_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip Update</defaultConnectorLabel>
+        <rules>
+            <name>Update_True_Outcome</name>
+            <conditionLogic>(1 OR 2 OR 3) AND 4 AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5. Closed Withdrawn</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6. Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7. Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CloseDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>f_Date_12Months_Ago</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Closed_Last_12_Months__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Closed_12_Months_TRUE</targetReference>
+            </connector>
+            <label>Yes - Set True</label>
+        </rules>
+        <rules>
+            <name>Update_False_Outcome</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Closed_Last_12_Months__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CloseDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_Date_12Months_Ago</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Closed_12_Months_FALSE</targetReference>
+            </connector>
+            <label>Yes - Set False</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If the Opp has been Closed Won but the standard Probability field is not 100% then update this to 100 correct it.</description>
+        <name>Closed_Won_Probability_Update_Needed</name>
+        <label>Closed Won Probability Update Needed?</label>
+        <locationX>468</locationX>
+        <locationY>6419</locationY>
+        <defaultConnector>
+            <targetReference>Won_Value_Population_Required</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_100_Prob</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7. Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Probability</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>100.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Probability_100_Percent</targetReference>
+            </connector>
+            <label>Yes - Set 100% Prob</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Create_or_Update</name>
+        <label>Create or Update</label>
+        <locationX>875</locationX>
+        <locationY>611</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Service_Type_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update</defaultConnectorLabel>
+        <rules>
+            <name>Create</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>v_isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Generated_via_Lead_Conversion</targetReference>
+            </connector>
+            <label>Create</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Where either the Standard Forecast Category or Custom Forecast Category does not align and one is changed, update the other so that they always align.</description>
+        <name>Does_Forecast_Category_Matches_Forecast_Category_Custom</name>
+        <label>Does Forecast Category Matches Forecast Category Custom</label>
+        <locationX>1326</locationX>
+        <locationY>5903</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Pursued_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>FC Matched</defaultConnectorLabel>
+        <rules>
+            <name>Forecast_Categories_Standard_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ForecastCategoryName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ForecastCategoryName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Forecast_Category__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Updated_Custom_Forecast_Category</targetReference>
+            </connector>
+            <label>FC Standard Changed</label>
+        </rules>
+        <rules>
+            <name>Forecast_Categories_Custom_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Forecast_Category__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Forecast_Category__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.ForecastCategoryName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Updated_Standard_Forecast_Category</targetReference>
+            </connector>
+            <label>FC Custom Changed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Evaluate_Config_Switch</name>
+        <label>Evaluate Config Switch</label>
+        <locationX>1474</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Automation_Enabled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Flows_Disabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Is_New1</targetReference>
+            </connector>
+            <label>Automation Enabled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Generated_via_Lead_Conversion</name>
+        <label>Generated via Lead Conversion?</label>
+        <locationX>380</locationX>
+        <locationY>719</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Record_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Continue</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Lead_Conversion_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead_ID__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Required_Record_Type_Decision</targetReference>
+            </connector>
+            <label>Yes - Lead Conversion</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Head_of_Bid_Found_Decision</name>
+        <label>Head of Bid Found?</label>
+        <locationX>677</locationX>
+        <locationY>5411</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Current_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Head_of_Bid_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>v_HeadOfBid_Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Head_of_Bid</targetReference>
+            </connector>
+            <label>Yes - Set Head of Bid</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Legacy_Fields_Populated</name>
+        <label>Legacy Fields Populated</label>
+        <locationX>380</locationX>
+        <locationY>2519</locationY>
+        <defaultConnector>
+            <targetReference>Update_Owner_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Populated</defaultConnectorLabel>
+        <rules>
+            <name>Clear_Legacy_ID</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Legacy_Id__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Legacy_IDs</targetReference>
+            </connector>
+            <label>Clear Legacy ID</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Is Opportunity Lite Opportunity?
+
+If so then keep Sub Stage updated based on Stage.
+Also ensure RFP Submitted Date is cleared if Stage moved from 4. Post Submission to 3. Solution.</description>
+        <name>Lite_Opportunity_Decision</name>
+        <label>Lite Opportunity?</label>
+        <locationX>1370</locationX>
+        <locationY>1019</locationY>
+        <defaultConnector>
+            <targetReference>Update_Owner_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Lite_Opportunity_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lite_Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stage_Sub_Stage_Aligned_Decision</targetReference>
+            </connector>
+            <label>Yes - Lite Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Is the Country in the Creator_Country__c one of the Countries where OCS does business?</description>
+        <name>Marketing_Unit_Aligned_Decision</name>
+        <label>Marketing Unit Aligned?</label>
+        <locationX>875</locationX>
+        <locationY>4403</locationY>
+        <defaultConnector>
+            <targetReference>Amount_Hidden_Update_Needed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes - Skip</defaultConnectorLabel>
+        <rules>
+            <name>No_Update_Marketing_Unit_Outcome</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Assigned_Marketing_Unit__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_marketingunit</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Marketing_Unit</targetReference>
+            </connector>
+            <label>No - Update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opp_Record_Type</name>
+        <label>Opp Record Type</label>
+        <locationX>380</locationX>
+        <locationY>1919</locationY>
+        <defaultConnector>
+            <targetReference>Award_Date_after_Contract_Start_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Target</defaultConnectorLabel>
+        <rules>
+            <name>Target</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Record_Type_Target.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Created_Forecast_Type</targetReference>
+            </connector>
+            <label>Target</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If the Campaign was found and the Opp does not already link to the Campaign then populate the Campaign lookup on the Opp record. This will trigger the after save flow to create the relevant Campaign Influence record.
+
+Otherwise skip.</description>
+        <name>Opp_Update_Needed</name>
+        <label>Opp Update Needed?</label>
+        <locationX>721</locationX>
+        <locationY>3419</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Name_Correct</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Link_to_ExternalTelemarketing_FutureOpps_Campaign_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_External_Telemarketing_Open_Doors_Future_Opps_Campaign.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CampaignId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_External_Telemarketing_Open_Doors_Future_Opps_Campaign.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Link_to_External_Telemarketing_Open_Doors_Future_Opps_Campaign</targetReference>
+            </connector>
+            <label>Yes - Link to Campaign</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Current_Stage</name>
+        <label>Opportunity Current Stage</label>
+        <locationX>875</locationX>
+        <locationY>5795</locationY>
+        <defaultConnector>
+            <targetReference>Does_Forecast_Category_Matches_Forecast_Category_Custom</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Open</defaultConnectorLabel>
+        <rules>
+            <name>Closed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5. Closed Withdrawn</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6. Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7. Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Closed_Last_12_Months_Update_Required_Decision</targetReference>
+            </connector>
+            <label>Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Does the Opportunity Name align with the intended Formula for Opportunity Name?</description>
+        <name>Opportunity_Name_Correct</name>
+        <label>Opportunity Name Correct?</label>
+        <locationX>875</locationX>
+        <locationY>3803</locationY>
+        <defaultConnector>
+            <targetReference>Changed_from_Renewal_to_Non_Renewal_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes - Continue</defaultConnectorLabel>
+        <rules>
+            <name>No_Update_Name</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_OpportunityName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_Name</targetReference>
+            </connector>
+            <label>No - Update Name</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If Stage = 3. Solution or 4. Post-Submission or Sub Stage = 2.3 and Opportunity Pursued Tickbox = FALSE then set Opportunity Pursued Tickbox to TRUE.</description>
+        <name>Opportunity_Pursued_Decision</name>
+        <label>Opportunity Pursued?</label>
+        <locationX>1326</locationX>
+        <locationY>6203</locationY>
+        <defaultConnector>
+            <targetReference>UK_based_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Opportunity_Pursued_Outcome</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_Pursued__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3. Solution</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4. Post-Submission</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sub_Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2.3 Pursuing</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Opportunity_Pursued</targetReference>
+            </connector>
+            <label>Yes - Opportunity Pursued</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Based on the types of Opportunity Line Items set the Service Type field (Contract Type)</description>
+        <name>Opportunity_Service_Type_Decision</name>
+        <label>Opportunity Service Type Decision</label>
+        <locationX>1370</locationX>
+        <locationY>719</locationY>
+        <defaultConnector>
+            <targetReference>Lite_Opportunity_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update Not Required - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Contractual_Service_Type_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Annual_Contractual_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Ad_hoc_Revenue__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Project_Revenue__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contract_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Contractual</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Contract_Type_Contractual</targetReference>
+            </connector>
+            <label>Set Contractual</label>
+        </rules>
+        <rules>
+            <name>Set_Ad_Hoc_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Annual_Ad_hoc_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Contractual_Revenue__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Project_Revenue__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contract_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ad-Hoc</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Contract_Type_Ad_Hoc</targetReference>
+            </connector>
+            <label>Set Ad-Hoc</label>
+        </rules>
+        <rules>
+            <name>Set_Project_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Annual_Project_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Ad_hoc_Revenue__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Contractual_Revenue__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contract_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Project</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Contract_Type_Project</targetReference>
+            </connector>
+            <label>Set Project</label>
+        </rules>
+        <rules>
+            <name>Set_Combined_Outcome</name>
+            <conditionLogic>((1 AND 2) OR (3 AND 4) OR (5 AND 6)) AND 7</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Annual_Contractual_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Ad_hoc_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Contractual_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Project_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Project_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Annual_Ad_hoc_Revenue__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contract_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Combined</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Contract_Type_Combined</targetReference>
+            </connector>
+            <label>Set Combined</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Based on the running user&apos;s permissions set the Opp Record Type.</description>
+        <name>Required_Record_Type_Decision</name>
+        <label>Required Record Type</label>
+        <locationX>182</locationX>
+        <locationY>827</locationY>
+        <defaultConnector>
+            <targetReference>Set_Full_Opportunity_Record_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Full Opportunity</defaultConnectorLabel>
+        <rules>
+            <name>Lite_Opportunity_Record_Type_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.Enable_Lite_Opportunity_Record_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Lite_Opportunity_Record_Type</targetReference>
+            </connector>
+            <label>Lite Opportunity</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Was Public or Private Selected as Bid Team</description>
+        <name>Selected_Bid_Team_Decisino</name>
+        <label>Selected Bid Team</label>
+        <locationX>677</locationX>
+        <locationY>5111</locationY>
+        <defaultConnector>
+            <targetReference>Get_Pub_Sec_HoB</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Public</defaultConnectorLabel>
+        <rules>
+            <name>Private_Bid_Team_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Bid_Team__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Private</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Priv_Sec_HoB</targetReference>
+            </connector>
+            <label>Private</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Stage_Sub_Stage_Aligned_Decision</name>
+        <label>Stage/Sub Stage Aligned?</label>
+        <locationX>1216</locationX>
+        <locationY>1127</locationY>
+        <defaultConnector>
+            <targetReference>Clear_RFP_Submitted_Date_Field_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes - Skip</defaultConnectorLabel>
+        <rules>
+            <name>No_Set_Sub_Stage_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_LiteOpp_SubStage</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>f_LiteOpp_SubStage</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Sub_Stage__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Opportunity_Sub_Stage</targetReference>
+            </connector>
+            <label>No - Set Sub Stage</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If Sub Stage is not populated on creation then set Sub Stage = 2.2 Needs Analysis</description>
+        <name>Sub_Stage_Blank_Decision</name>
+        <label>Sub Stage Blank?</label>
+        <locationX>182</locationX>
+        <locationY>1427</locationY>
+        <defaultConnector>
+            <targetReference>Set_Primary_Contact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Sub_Stage_Creation_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sub_Stage__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Sub_Stage_2_2_Needs_Analysis</targetReference>
+            </connector>
+            <label>Yes - Set Sub Stage</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Sub_Stage_Changed</name>
+        <label>Sub-Stage Changed?</label>
+        <locationX>1172</locationX>
+        <locationY>6611</locationY>
+        <defaultConnector>
+            <targetReference>Bid_No_Bid_Approved_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sub_Stage__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Probability</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>UK_based_Opportunity</name>
+        <label>UK based Opportunity?</label>
+        <locationX>1326</locationX>
+        <locationY>6503</locationY>
+        <defaultConnector>
+            <targetReference>Bid_No_Bid_Approved_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not UK - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_UK</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Creator_Country__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>United Kingdom</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sub_Stage_Changed</targetReference>
+            </connector>
+            <label>Yes UK</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If the Opp is UK&amp;I and 2.1 Future Opportunity and the Owner is changed from a non-External Telemarketing user to an External Telemarketing User then ensure the opp is linked to the UK&amp;I - External Telemarketing - Open Doors - Future Opps campaign.</description>
+        <name>UK_I_Owner_Changed_to_External_Telemarketing_Decision</name>
+        <label>UK&amp;I - Owner Changed to External Telemarketing?</label>
+        <locationX>875</locationX>
+        <locationY>3203</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Name_Correct</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Check_Campaign_Link_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner_Region__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>UK&amp;I</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sub_Stage__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2.1 Future Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.Business_Unit__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>External Telemarketing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Owner.Business_Unit__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>External Telemarketing</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_External_Telemarketing_Open_Doors_Future_Opps_Campaign</targetReference>
+            </connector>
+            <label>Yes - Check Campaign Link</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Update key owner fields like Corporate Type, Business Unit etc?</description>
+        <name>Update_Owner_Fields</name>
+        <label>Update Owner/Creator Fields?</label>
+        <locationX>875</locationX>
+        <locationY>2903</locationY>
+        <defaultConnector>
+            <targetReference>UK_I_Owner_Changed_to_External_Telemarketing_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Continue</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update_Owner_Fields</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Corporate_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Owner.Corporate_Type__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner_Region__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Owner.Region__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Business_Unit__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Owner.Business_Unit__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner_Country__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Owner.Country</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Creator_Country__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.CreatedBy.Country</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Creator_Region__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.CreatedBy.Region__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Managers_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Owner.Manager.Email</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Owner_Creator_Fields</targetReference>
+            </connector>
+            <label>Yes - Update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Has the Opportunity moved into a Closed Stage</description>
+        <name>Updated_to_Closed</name>
+        <label>Updated to Closed</label>
+        <locationX>424</locationX>
+        <locationY>7103</locationY>
+        <defaultConnectorLabel>Not Updated To Closed</defaultConnectorLabel>
+        <rules>
+            <name>Opp_updated_to_Closed</name>
+            <conditionLogic>(1 OR 2 OR 3) AND (4 OR 5 OR 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2. Prospect</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3. Solution</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4. Post-Submission</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5. Closed Withdrawn</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6. Closed Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7. Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Closure_Details</targetReference>
+            </connector>
+            <label>Opp updated to Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If User has permission for both Opp record types then require them to confirm Record Type when they open the Opp.
+Otherwise do not require this confirmation so set &apos;System&apos; field to TRUE.</description>
+        <name>User_Assigned_Both_Record_Types_Decision</name>
+        <label>User Assigned Both Record Types?</label>
+        <locationX>182</locationX>
+        <locationY>1127</locationY>
+        <defaultConnector>
+            <targetReference>Confirm_Record_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Confirm Record Type</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Assigned_both_Record_Types_Skip_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.Enable_Lite_Opportunity_Record_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Permission.Enable_Full_Opportunity_Record_Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sub_Stage_Blank_Decision</targetReference>
+            </connector>
+            <label>Yes - Skip</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Is the Opportunity Won and the Won Value field does not align with the Annual Revenue field (Amount)? If so then copy the Annual Revenue value into the field. Won Value should always be the most up to date value.
+
+Used alongside Annual Revenue field to allow for easier Win Rate calculations with fewer filters/formulae.</description>
+        <name>Won_Value_Population_Required</name>
+        <label>Won Value Population Required?</label>
+        <locationX>468</locationX>
+        <locationY>6719</locationY>
+        <defaultConnector>
+            <targetReference>Updated_to_Closed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Set_Won_Value</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7. Closed Won</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Won_Value__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Amount</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Won_Value</targetReference>
+            </connector>
+            <label>Yes - Set Won Value</label>
+        </rules>
+    </decisions>
+    <description>Remove Next Steps logic. This is now in Next Step before trigger flow.
+Forecast Category Added</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Date from TODAY - 12 Months</description>
+        <name>f_Date_12Months_Ago</name>
+        <dataType>Date</dataType>
+        <expression>ADDMONTHS({!$Flow.CurrentDate},-12)</expression>
+    </formulas>
+    <formulas>
+        <description>Day before Contract Start Date</description>
+        <name>f_Day_Before_Contract_Start_Date</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.Contract_Start_Date__c} - 1</expression>
+    </formulas>
+    <formulas>
+        <name>f_daystring</name>
+        <dataType>String</dataType>
+        <expression>TEXT(DAY({!$Flow.CurrentDate}))</expression>
+    </formulas>
+    <formulas>
+        <name>f_isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <description>Formula to determine the Sub Stage for Lite Opportunities.
+
+If Sub Stage = 2.1 Future Opportunity do not automatically set the Sub Stage based on Stage. For all other Sub Stages where the Opp is Open set Sub Stage based on Stage.</description>
+        <name>f_LiteOpp_SubStage</name>
+        <dataType>String</dataType>
+        <expression>IF( ISPICKVAL({!$Record.Sub_Stage__c}, &quot;2.1 Future Opportunity&quot;), &quot;2.1 Future Opportunity&quot;,
+CASE(TEXT({!$Record.StageName}),
+&quot;2. Prospect&quot;, &quot;2.2 Needs Analysis&quot;,
+&quot;3. Solution&quot;, &quot;3.3 Develop Solution&quot;,
+&quot;4. Post-Submission&quot;, &quot;4.2 Negotiation&quot;,
+NULL
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>f_marketingunit</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.Creator_Country__c}, 
+&apos;United Kingdom&apos;,&apos;OCS - UK &amp; IRE&apos;, 
+&apos;Ireland&apos;, &apos;OCS - UK &amp; IRE&apos;,
+&apos;Bangladesh&apos;, &apos;OCS - APAC&apos;, 
+&apos;India&apos;, &apos;OCS - APAC&apos;, 
+&apos;Indonesia&apos;,  &apos;OCS - APAC&apos;,
+&apos;Malaysia&apos;, &apos;OCS - APAC&apos;,
+&apos;Philippines&apos;, &apos;OCS - APAC&apos;,
+&apos;Qatar&apos;, &apos;OCS - APAC&apos;, 
+&apos;Saudi Arabia&apos;, &apos;OCS - APAC&apos;,
+&apos;Singapore&apos;, &apos;OCS - APAC&apos;, 
+&apos;United Arab Emirates&apos;, &apos;OCS - APAC&apos;,
+&apos;Vietnam&apos;, &apos;OCS - APAC&apos;, 
+&apos;Australia&apos;, &apos;OCS - ANZ&apos;,
+&apos;New Zealand&apos;, &apos;OCS - ANZ&apos;,
+&apos;Thailand&apos;, &apos;PCS&apos;,
+&apos;Cambodia&apos;, &apos;PCS&apos;,
+&apos;&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>f_monthstring</name>
+        <dataType>String</dataType>
+        <expression>CASE(MONTH({!$Flow.CurrentDate}), 
+    1, &quot;Jan&quot;, 
+    2, &quot;Feb&quot;, 
+    3, &quot;Mar&quot;, 
+    4, &quot;Apr&quot;, 
+    5, &quot;May&quot;, 
+    6, &quot;Jun&quot;, 
+    7, &quot;Jul&quot;, 
+    8, &quot;Aug&quot;, 
+    9, &quot;Sep&quot;, 
+    10, &quot;Oct&quot;, 
+    11, &quot;Nov&quot;, 
+    12, &quot;Dec&quot;, 
+    &quot;Unknown&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>f_newline</name>
+        <dataType>String</dataType>
+        <expression>BR()</expression>
+    </formulas>
+    <formulas>
+        <description>Formula to return Opportunity Name based on agreed naming convention.
+Logic is included to avoid duplicate values or duplicate hyphens between blank values.</description>
+        <name>f_OpportunityName</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+/* User Account Known As name if available - otherwise use full Account Name*/
+IF(ISBLANK({!$Record.Account.Known_As__c}),{!$Record.Account.Name}, {!$Record.Account.Known_As__c})&amp;
+/* Add Primary Service */
+IF(ISBLANK(TEXT({!$Record.Primary_Service__c})), NULL,&quot; - &quot;&amp;TEXT({!$Record.Primary_Service__c}))&amp;
+
+/* If Owner BU matches Primary Service then do not include Owner BU to avoid repetition*/
+IF(TEXT({!$Record.Owner.Business_Unit__c}) = TEXT({!$Record.Primary_Service__c}),NULL,IF(ISBLANK(TEXT({!$Record.Owner.Business_Unit__c})),NULL,&quot; - &quot;&amp;TEXT({!$Record.Owner.Business_Unit__c})))&amp;
+
+/* If Reference matches Owner BU then do not include Reference to avoid repetition*/
+IF(TEXT({!$Record.Owner.Business_Unit__c}) = {!$Record.Reference__c}, NULL, IF(ISBLANK({!$Record.Reference__c}),NULL,&quot; - &quot;&amp;{!$Record.Reference__c})),
+120)</expression>
+    </formulas>
+    <formulas>
+        <name>f_yearstring</name>
+        <dataType>String</dataType>
+        <expression>Text(YEAR({!$Flow.CurrentDate}))</expression>
+    </formulas>
+    <formulas>
+        <name>SubStage_Probability</name>
+        <dataType>Number</dataType>
+        <expression>CASE( 
+    {!$Record.Sub_Stage__c},
+    &quot;2.1 Future Opportunity&quot;, 0,
+    &quot;2.2 Needs Analysis&quot;, 10,
+    &quot;2.3 Pursuing&quot;, 15,
+    &quot;3.1 RFI in Progress&quot;, 20,
+    &quot;3.2 RFI Submitted&quot;, 20,
+    &quot;3.3 Develop Solution&quot;, 30,
+    &quot;3.4 Solution Submitted&quot;, 40,
+    &quot;4.1 Presentation&quot;, 60,
+    &quot;4.2 Negotiation&quot;, 80,
+    &quot;4.3 Verbal Acceptance&quot;, 100,
+    null
+)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Opportunity: Before Create and Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: Before Create and Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_External_Telemarketing_Open_Doors_Future_Opps_Campaign</name>
+        <label>Get External Telemarketing - Open Doors - Future Opps Campaign</label>
+        <locationX>721</locationX>
+        <locationY>3311</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Opp_Update_Needed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>UK&amp;I - External Telemarketing - Open Doors - Future Opps</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Campaign</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Priv_Sec_HoB</name>
+        <label>Get Priv. Sec. HoB</label>
+        <locationX>545</locationX>
+        <locationY>5219</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Head_of_Bid_Found_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>FederationIdentifier</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>sally.beard@ocs.com</stringValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputAssignments>
+            <assignToReference>v_HeadOfBid_Id</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Pub_Sec_HoB</name>
+        <label>Get Pub. Sec. HoB</label>
+        <locationX>809</locationX>
+        <locationY>5219</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Head_of_Bid_Found_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>FederationIdentifier</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>fiona.paton@ocs.com</stringValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputAssignments>
+            <assignToReference>v_HeadOfBid_Id</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Record_Type_Target</name>
+        <label>Get Record Type - Target</label>
+        <locationX>875</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_or_Update</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Target</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Full Opportunity Record Type and set the Record Type in the Opportunity $Record variable.</description>
+        <name>Set_Full_Opportunity_Record_Type</name>
+        <label>Set Full Opportunity Record Type</label>
+        <locationX>314</locationX>
+        <locationY>935</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>User_Assigned_Both_Record_Types_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Opportunity</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Full_Bid_Opportunity</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>$Record.RecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Lite Opportunity Record Type and set the Record Type in the Opportunity $Record variable.</description>
+        <name>Set_Lite_Opportunity_Record_Type</name>
+        <label>Set Lite Opportunity Record Type</label>
+        <locationX>50</locationX>
+        <locationY>935</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>User_Assigned_Both_Record_Types_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Opportunity</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lite_Opportunity</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>$Record.RecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>1348</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Evaluate_Config_Switch</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>v_HeadOfBid_Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>v_isNew</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

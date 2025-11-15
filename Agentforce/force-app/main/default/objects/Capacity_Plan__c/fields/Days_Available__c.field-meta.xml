@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_Available__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(MOD( Issue_Date__c - DATE(1900, 1, 7), 7),
+  0, (FLOOR((Submission_Date__c - Issue_Date__c)/7)*5),
+  1, (FLOOR((Submission_Date__c - Issue_Date__c)/7)*5) + MIN(5, MAX(0, MOD(Submission_Date__c - DATE(1900, 1, 7), 7)-1)),
+  2, (FLOOR((Submission_Date__c - Issue_Date__c)/7)*5) + MIN(5, MAX(0, MOD(Submission_Date__c - DATE(1900, 1, 7), 7)-2)),
+  3, (FLOOR((Submission_Date__c - Issue_Date__c)/7)*5) + MIN(5, MAX(0, MOD(Submission_Date__c - DATE(1900, 1, 7), 7)-3)),
+  4, (FLOOR((Submission_Date__c - Issue_Date__c)/7)*5) + MIN(5, MAX(0, MOD(Submission_Date__c - DATE(1900, 1, 7), 7)-4)),
+  5, (FLOOR((Submission_Date__c - Issue_Date__c)/7)*5) + MIN(5, MAX(0, MOD(Submission_Date__c - DATE(1900, 1, 7), 7)-5)),
+  (FLOOR((Submission_Date__c - Issue_Date__c)/7)*5) + MIN(5, MAX(0, MOD(Submission_Date__c - DATE(1900, 1, 7), 7)-6))
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Days Available</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

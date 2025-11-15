@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Termination_Reason__c</fullName>
+    <description>AD-402 the ability to terminate a Contract</description>
+    <label>Termination Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Capability</fullName>
+                <default>false</default>
+                <label>Capability</label>
+            </value>
+            <value>
+                <fullName>Closure</fullName>
+                <default>false</default>
+                <label>Closure</label>
+            </value>
+            <value>
+                <fullName>Commitments</fullName>
+                <default>false</default>
+                <label>Commitments</label>
+            </value>
+            <value>
+                <fullName>Duplicated</fullName>
+                <default>false</default>
+                <label>Duplicated</label>
+            </value>
+            <value>
+                <fullName>ESG</fullName>
+                <default>false</default>
+                <label>ESG</label>
+            </value>
+            <value>
+                <fullName>Geography</fullName>
+                <default>false</default>
+                <label>Geography</label>
+            </value>
+            <value>
+                <fullName>Moved In-House</fullName>
+                <default>false</default>
+                <label>Moved In-House</label>
+            </value>
+            <value>
+                <fullName>Move to Global Deal</fullName>
+                <default>false</default>
+                <label>Move to Global Deal</label>
+            </value>
+            <value>
+                <fullName>Not in Strategy</fullName>
+                <default>false</default>
+                <label>Not in Strategy</label>
+            </value>
+            <value>
+                <fullName>People</fullName>
+                <default>false</default>
+                <label>People</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Resource</fullName>
+                <default>false</default>
+                <label>Resource</label>
+            </value>
+            <value>
+                <fullName>Risk - Financial</fullName>
+                <default>false</default>
+                <label>Risk - Financial</label>
+            </value>
+            <value>
+                <fullName>Risk - Reputation</fullName>
+                <default>false</default>
+                <label>Risk - Reputation</label>
+            </value>
+            <value>
+                <fullName>Self Delivery</fullName>
+                <default>false</default>
+                <label>Self Delivery</label>
+            </value>
+            <value>
+                <fullName>Size</fullName>
+                <default>false</default>
+                <label>Size</label>
+            </value>
+            <value>
+                <fullName>Solution</fullName>
+                <default>false</default>
+                <label>Solution</label>
+            </value>
+            <value>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <label>Technology</label>
+            </value>
+            <value>
+                <fullName>Terms &amp; Conditions</fullName>
+                <default>false</default>
+                <label>Terms &amp; Conditions</label>
+            </value>
+            <value>
+                <fullName>Third Party</fullName>
+                <default>false</default>
+                <label>Third Party</label>
+            </value>
+            <value>
+                <fullName>Timeline - Long</fullName>
+                <default>false</default>
+                <label>Timeline - Long</label>
+            </value>
+            <value>
+                <fullName>Timeline - Short</fullName>
+                <default>false</default>
+                <label>Timeline - Short</label>
+            </value>
+            <value>
+                <fullName>Trade Unions</fullName>
+                <default>false</default>
+                <label>Trade Unions</label>
+            </value>
+            <value>
+                <fullName>Customer Closed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer Closed</label>
+            </value>
+            <value>
+                <fullName>Financial Risk</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Financial Risk</label>
+            </value>
+            <value>
+                <fullName>Lost To Competitor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lost To Competitor</label>
+            </value>
+            <value>
+                <fullName>No Longer Trading</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Longer Trading</label>
+            </value>
+            <value>
+                <fullName>Not In Scope</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not In Scope</label>
+            </value>
+            <value>
+                <fullName>Not Renewed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Renewed</label>
+            </value>
+            <value>
+                <fullName>Reason Pending</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reason Pending</label>
+            </value>
+            <value>
+                <fullName>Service Issue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Service Issue</label>
+            </value>
+            <value>
+                <fullName>Termination 1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Termination 1</label>
+            </value>
+            <value>
+                <fullName>Termination 2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Termination 2</label>
+            </value>
+            <value>
+                <fullName>Termination 3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Termination 3</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

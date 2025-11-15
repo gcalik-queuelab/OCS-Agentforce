@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commission_Eligible__c</fullName>
+    <description>Identifies if Contract Terms, Incumbent, External Debrief exists and the Sub-Stage is 7.2 T&amp;Cs Signed.</description>
+    <formula>AND(
+    Contract_Signed__c = TRUE,
+    Incumbent_Exists__c = TRUE,
+    Contract_Terms_Exist__c  = TRUE,
+    External_Debrief_Exists__c = TRUE
+)</formula>
+    <label>Commission Eligible</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

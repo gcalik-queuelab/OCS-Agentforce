@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Progress</fullName>
+    <columns>Action_Plan__c</columns>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Progress__c</columns>
+    <columns>Type__c</columns>
+    <columns>Action_Plan_Start_Date__c</columns>
+    <columns>Action_Plan_End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Open,In Progress</value>
+    </filters>
+    <label>In Progress</label>
+</ListView>

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LinkedIn</fullName>
+    <active>true</active>
+    <description>Used for LinkedIn Tasks</description>
+    <label>LinkedIn</label>
+    <picklistValues>
+        <picklist>Call_Outcome__c</picklist>
+        <values>
+            <fullName>Contact made</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Switchboard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_direction__c</picklist>
+        <values>
+            <fullName>Inbound</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outbound</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Attendance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Type__c</picklist>
+        <values>
+            <fullName>Cricket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dinners - Awards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dinners - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Football</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Golf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horse Racing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry Seminar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motor Racing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Music Concert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rugby League</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rugby Union</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tennis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theatre</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YSP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HR_Notifications__c</picklist>
+        <values>
+            <fullName>Assignee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hospitality_Type__c</picklist>
+        <values>
+            <fullName>Awards Dinner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charity Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concerts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cricket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cycling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Football</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formal Dinner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Golf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horse Racing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry Seminar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motor Racing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Sports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rugby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tennis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theatre %26 Arts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Meeting_Outcome__c</picklist>
+        <values>
+            <fullName>Follow Up Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Identified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recall%2FReminder</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>AMER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>APAC %26 ME</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GROUP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UK %26 IRE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Overdue</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Send Quote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Telemarketing_Result__c</picklist>
+        <values>
+            <fullName>Appointment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Detractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery Follow Up Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inaccurate Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Decision Maker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Reason for Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not in Scope</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned Follow Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Delivered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Survey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unknown</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Initial Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship Call</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Discovery Follow Up Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discovery Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Follow Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telemarketing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

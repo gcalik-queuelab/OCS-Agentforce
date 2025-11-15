@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobilisation_Completion_Date</fullName>
+    <active>true</active>
+    <description>AD-to record the mobilisation complete date</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+     (OR(Contract_End_Date__c  &lt;  Mobilisation_Complete_Date__c,  Mobilisation_Start_Date__c  &gt; 
+           Mobilisation_Complete_Date__c
+        )
+      )
+   )</errorConditionFormula>
+    <errorDisplayField>Mobilisation_Complete_Date__c</errorDisplayField>
+    <errorMessage>Mobilisation Complete Date must be after the Mobilisation Start Date and before the Contract End Date</errorMessage>
+</ValidationRule>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>Senior_Chairs</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Capacity_Planning</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Senior_Chair_User</name>
+    </customPermissions>
+    <description>AD-77 - Create Permission Sets</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Competitor_Services__c.Competitor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Senior Chair User</label>
+    <license>Salesforce</license>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ApiEnabled</name>
+    </userPermissions>
+</PermissionSet>

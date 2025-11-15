@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>AD-831 To capture steps that are being taken to mitigate the risk identified</description>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contract Risk</fullName>
+                <default>false</default>
+                <label>Contract Risk</label>
+            </value>
+            <value>
+                <fullName>Financial Risk</fullName>
+                <default>false</default>
+                <label>Financial Risk</label>
+            </value>
+            <value>
+                <fullName>H&amp;S Risk</fullName>
+                <default>false</default>
+                <label>H&amp;S Risk</label>
+            </value>
+            <value>
+                <fullName>Operational Risk</fullName>
+                <default>false</default>
+                <label>Operational Risk</label>
+            </value>
+            <value>
+                <fullName>Relationship Risk</fullName>
+                <default>false</default>
+                <label>Relationship Risk</label>
+            </value>
+            <value>
+                <fullName>Tender Risk</fullName>
+                <default>false</default>
+                <label>Tender Risk</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surveyor_Edit_After_60_Days</fullName>
+    <active>true</active>
+    <description>Do not allow an NPS Surveyor to edit the NPS Response of a closed NPS Survey more than 60 days after the Survey was submitted.
+
+NOTE: The error message deliberately says 30 days even though it is only triggered after 60 Days.</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				 ISPICKVAL(NPS__r.Status__c, &quot;Closed&quot;),
+				 $User.Id = NPS__r.NPS_Surveyor__c,
+				 NPS__r.Reviewed__c &lt; TODAY() - 60
+				
+				)</errorConditionFormula>
+    <errorMessage>You may only edit this Response upto 30 Days after the NPS Survey was submitted. Please contact an Administrator to arrange for the necessary changes to be made.</errorMessage>
+</ValidationRule>

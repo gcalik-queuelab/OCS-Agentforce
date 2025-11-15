@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_NPS_No_Response__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>AD-181 - Denotes that there has been no response to an NPS Survey sent via Pardot</description>
+    <label>Contact NPS No Response</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

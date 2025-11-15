@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Open_Doors_DNC__c</fullName>
+    <formula>IF ((Customer_Type_f__c = &apos;Existing&apos;
+||
+ISPICKVAL(Account_Type__c, &apos;Domestic Strategic Account&apos;)
+||
+ISPICKVAL(Account_Type__c, &apos;Global Strategic Account&apos;)
+||
+Count_of_Active_Opps__c &gt; 0
+|| 
+Competitor__c = TRUE
+|| 
+Supplier__c = TRUE
+|| 
+Partner__c = TRUE
+||
+Do_Not_Contact__c = TRUE
+)
+,true, false
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Open Doors DNC</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Term_Months__c</fullName>
+    <description>Tracks the contract term in months</description>
+    <externalId>false</externalId>
+    <formula>MOD(
+    IF( /** Baseline Mths - Same Yr */
+      YEAR(Contract_End_Date__c) = YEAR(Contract_Start_Date__c),
+          IF(
+            DAY(Contract_Start_Date__c) =1,
+            MONTH(Contract_End_Date__c) - MONTH(Contract_Start_Date__c),
+            MONTH(Contract_End_Date__c) - MONTH(Contract_Start_Date__c)-1          
+            ),0
+          )
+    +
+    IF( /** Correct Baseline Mths for same Yr, Same Mth, Start Day != 1, +1 month to avoid -1 result */
+      AND(
+        YEAR(Contract_End_Date__c) = YEAR(Contract_Start_Date__c),
+        MONTH(Contract_End_Date__c) = MONTH(Contract_Start_Date__c),
+        DAY(Contract_Start_Date__c) != 1
+      ),
+      1,
+      0)      
+    +
+    IF( /**Baseline Mths - Diff Yrs &amp; Start = 1st */
+      AND( 
+        YEAR(Contract_End_Date__c) &gt; YEAR(Contract_Start_Date__c),
+        DAY(Contract_Start_Date__c) =1
+        ),
+        12-MONTH(Contract_Start_Date__c) + MONTH(Contract_End_Date__c),
+        0)
+    +
+    IF( /** Baseline Mths - Diff Yrs &amp; Start != 1st */
+      AND( 
+        YEAR(Contract_End_Date__c) &gt; YEAR(Contract_Start_Date__c),
+        DAY(Contract_Start_Date__c) != 1
+      ),
+        IF( /** Part of above */
+          AND(
+            MONTH(Contract_End_Date__c) = MONTH(Contract_Start_Date__c),
+            DAY(Contract_End_Date__c) &gt;= DAY (Contract_Start_Date__c-1)
+            ),
+            0,
+        12-MONTH(Contract_Start_Date__c) + MONTH(Contract_End_Date__c)-1
+      ),
+      0)
+      +
+    IF( /** Start is the 1st and End is last Mth day +1 Mth */
+        AND(
+          DAY(Contract_Start_Date__c) = 1,
+          DAY(Contract_End_Date__c + 1) &lt; DAY(Contract_End_Date__c)
+        ),
+        1,
+        0)
+    +
+    IF( /** Diff Mths &amp; Start != 1st &amp; Start Day &gt;= (End Day -1), +1 Mth */
+      AND(
+        MONTH(Contract_Start_Date__c) != MONTH(Contract_End_Date__c),
+        DAY(Contract_Start_Date__c) != 1,
+        DAY(Contract_End_Date__c) &gt;= DAY(Contract_Start_Date__c-1)
+      ),
+      1,
+      0)
+  ,12)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contract Term (Months)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

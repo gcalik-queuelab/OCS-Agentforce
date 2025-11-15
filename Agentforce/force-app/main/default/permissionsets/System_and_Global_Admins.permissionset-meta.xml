@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>System_Global_Admins</name>
+    </customPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>User.System_User_Currency__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>System and Global Admins</label>
+</PermissionSet>

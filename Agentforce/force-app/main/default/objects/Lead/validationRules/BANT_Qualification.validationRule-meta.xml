@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BANT_Qualification</fullName>
+    <active>false</active>
+    <description>AD-109 - validation rule to ensure BANT has been qualified before converting a lead</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+    IsConverted,
+    OR(
+        NOT(Budget__c),
+        NOT(Authority__c),
+        NOT(Need__c),
+        NOT(Timeline__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>BANT Qualification must be completed</errorMessage>
+</ValidationRule>

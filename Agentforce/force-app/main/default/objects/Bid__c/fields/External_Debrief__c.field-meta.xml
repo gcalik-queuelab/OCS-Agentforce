@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Debrief__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>External Debrief held with the Client.</description>
+    <label>External Debrief</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The record selected is not an External Debrief. Please select an External Debrief.</errorMessage>
+        <filterItems>
+            <field>Debrief__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>External Debrief</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Debrief__c</referenceTo>
+    <relationshipLabel>Bids (External Debrief)</relationshipLabel>
+    <relationshipName>Bids_External_Debrief</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

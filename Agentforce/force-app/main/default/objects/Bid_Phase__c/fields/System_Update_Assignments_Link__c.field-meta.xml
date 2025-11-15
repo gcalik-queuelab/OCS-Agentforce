@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Update_Assignments_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+				AND(
+				$Permission.Create_Bid_Phase_Assignment,
+				$Permission.Delete_Bid_Phase_Assignment,
+								Not_Resourced__c = FALSE
+								),
+
+HYPERLINK(
+&quot;/lightning/action/quick/Bid_Phase__c.Update_Assignments?objectApiName&amp;context=RECORD_DETAIL&amp;recordId=&quot; &amp; CASESAFEID(Id) &amp; &quot;&amp;backgroundContext=%2Flightning%2Fr%2FOpportunity%2F&quot; &amp; CASESAFEID(Opportunity__c) &amp; &quot;%2Fview&quot;,
+			&quot;Update&quot;, &quot;_self&quot;),
+				NULL
+				)
+				
+				/* If neither the Opp nor Bid is Closed, the Phase&apos;s has not been Closed and the user has permission to Create/Delete
+				Planning Phase Assignment records then show the user the link to update Assignments. Otherwise hide this link.*/</formula>
+    <label>System: Update Assignments Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

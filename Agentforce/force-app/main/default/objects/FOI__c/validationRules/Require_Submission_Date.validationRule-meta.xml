@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Submission_Date</fullName>
+    <active>false</active>
+    <description>AD-66 - Require FOI submitted date</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+    NOT(
+        TEXT(Status__c) == &apos;Pending Submission&apos; 
+        &amp;&amp; ISBLANK(Submitted_Date__c)
+    ),
+    NOT(
+        TEXT(Status__c) == &apos;Closed&apos; 
+        &amp;&amp; TEXT(Closed_Reason__c) == &apos;Pending Deletion&apos; 
+        &amp;&amp; ISBLANK(Submitted_Date__c)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Submitted_Date__c</errorDisplayField>
+    <errorMessage>Submitted Date is required</errorMessage>
+</ValidationRule>

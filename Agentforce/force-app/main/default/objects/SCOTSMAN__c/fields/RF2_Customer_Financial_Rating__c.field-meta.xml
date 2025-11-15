@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RF2_Customer_Financial_Rating__c</fullName>
+    <inlineHelpText>Customer financial rating</inlineHelpText>
+    <label>Customer Financial Rating</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Insolvency risk</fullName>
+                <default>false</default>
+                <label>Insolvency risk</label>
+            </value>
+            <value>
+                <fullName>Customer plans to sell</fullName>
+                <default>false</default>
+                <label>Customer plans to sell</label>
+            </value>
+            <value>
+                <fullName>Poor financial health, doesn’t pay</fullName>
+                <default>false</default>
+                <label>Poor financial health, doesn’t pay</label>
+            </value>
+            <value>
+                <fullName>Poor financial health, pays on time</fullName>
+                <default>false</default>
+                <label>Poor financial health, pays on time</label>
+            </value>
+            <value>
+                <fullName>Good financial health, doesn’t pay</fullName>
+                <default>false</default>
+                <label>Good financial health, doesn’t pay</label>
+            </value>
+            <value>
+                <fullName>Good financial health, pays on time</fullName>
+                <default>false</default>
+                <label>Good financial health, pays on time</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

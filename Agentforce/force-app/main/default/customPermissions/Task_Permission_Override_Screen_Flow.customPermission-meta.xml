@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allow usage of Screen Flow on Task Lightning Pages to Update/Delete all Task records the user has Read access to, bypassing record permissions. Intended to be given to limited named users only.</description>
+    <isLicensed>false</isLicensed>
+    <label>Task - Permission Override Screen Flow</label>
+</CustomPermission>

@@ -1,0 +1,40 @@
+.slds-profile {
+    background-color: var(--background-color);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+  }
+  
+  .font-color {
+    color: var(--text-color);
+  }
+  
+  .icon-style {
+    --slds-c-icon-color-foreground-default: var(--icon-foreground-color,#FFFFFF);
+    --slds-c-icon-color-background: var(--background-color);
+  }
+  
+  .stretch-width{
+    width:100%;
+  }
+  
+  .profile-photo {
+    border-radius: 50%;
+    width: 70px;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  h2 {
+    font-size: 14px;
+  }
+  
+  .slds-border_bottom {
+    border-bottom: 1px solid var(--icon-foreground-color,#FFFFFF);
+  }
+  
+  .value-align-top {
+    height: 17px;
+  }

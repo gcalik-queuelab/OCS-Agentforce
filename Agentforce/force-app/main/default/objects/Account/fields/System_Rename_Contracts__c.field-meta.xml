@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Rename_Contracts__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Tick to trigger renaming of all Contracts associated to the Account. The field will be automatically unchecked by the system when the process finishes.</inlineHelpText>
+    <label>System: Rename Contracts</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

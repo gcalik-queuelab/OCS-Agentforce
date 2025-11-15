@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Debrief_Accepted_Required_On_Closure</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  !$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+				RecordType.Name = &quot;External Debrief&quot;,
+				ISPICKVAL(Status__c, &quot;Closed&quot;),
+  ISBLANK(TEXT(Customer_Accepted_Debrief__c))
+)</errorConditionFormula>
+    <errorDisplayField>Customer_Accepted_Debrief__c</errorDisplayField>
+    <errorMessage>Customer Debrief Outcome Required on Closure</errorMessage>
+</ValidationRule>

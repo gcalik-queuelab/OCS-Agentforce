@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Access to Plauti Deduplication tool</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Plauti Deduplication</label>
+    <permissionSets>dupcheck__dupcheck</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

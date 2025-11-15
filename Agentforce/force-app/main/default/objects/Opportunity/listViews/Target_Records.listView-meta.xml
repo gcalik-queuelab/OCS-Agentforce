@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Records</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Individual_Contract_Revenue_Target__c</columns>
+    <columns>Individual_Adhoc_Revenue_Target__c</columns>
+    <columns>Individual_Project_Revenue_Target__c</columns>
+    <columns>Individual_Total_Revenue_Target__c</columns>
+    <columns>Individual_Gross_Margin_Target__c</columns>
+    <columns>Individual_In_Year_Gross_Margin_Target__c</columns>
+    <columns>Individual_In_Year_Revenue_Target__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Target</value>
+    </filters>
+    <label>Target Records</label>
+    <sharedTo>
+        <role>ANZ_Country_Delegated_Admin</role>
+        <role>APAC_Regional_Delegated_Admin</role>
+        <role>Aktrion_Regional_Delegated_Admin</role>
+        <role>India_Country_Delegated_Admin</role>
+        <role>Indonesia_Country_Delegated_Admin</role>
+        <role>OCS_Group_Global_Delegated_Admin</role>
+        <role>OCS_Group_System_Administrator</role>
+        <role>Thailand_Country_Delegated_Admin</role>
+        <role>UK_I_Regional_Delegated_Admin</role>
+    </sharedTo>
+</ListView>

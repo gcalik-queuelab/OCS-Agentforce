@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Screen flow that calls Create Action Subflow</description>
+    <environments>Default</environments>
+    <interviewLabel>Contract: Action Creation Screenflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract: Action Creation Screenflow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <start>
+        <locationX>453</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Create_Action_Subflow</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Create_Action_Subflow</name>
+        <label>Create Action Subflow</label>
+        <locationX>579</locationX>
+        <locationY>182</locationY>
+        <flowName>Create_Action_Subflow</flowName>
+        <inputAssignments>
+            <name>vInput_AccountId</name>
+            <value>
+                <elementReference>recordId.Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>vInput_ContractId</name>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>vInput_Triggering_Object_Label</name>
+            <value>
+                <stringValue>Contract</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>vInput_Triggering_RecordId</name>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contract__c</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Variations_Created_by_Me</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Contract__c</columns>
+    <columns>Type__c</columns>
+    <columns>Value__c</columns>
+    <columns>Variation_Date__c</columns>
+    <columns>Variation_Comments__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Variations Created by Me</label>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Enable_Full_Opportunity_Record_Type</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Enable_Lite_Opportunity_Record_Type</name>
+    </customPermissions>
+    <description>Enable the user to be able to select between Full and Light Opportunities</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Opportunity - Enable Record Type Selection</label>
+</PermissionSet>

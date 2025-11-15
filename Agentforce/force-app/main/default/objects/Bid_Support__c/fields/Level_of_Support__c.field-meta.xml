@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Level_of_Support__c</fullName>
+    <label>Level of Support</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Support</fullName>
+                <default>false</default>
+                <label>Full Support</label>
+            </value>
+            <value>
+                <fullName>Information Sourcing &amp; Formatting</fullName>
+                <default>false</default>
+                <label>Information Sourcing &amp; Formatting</label>
+            </value>
+            <value>
+                <fullName>No Support</fullName>
+                <default>false</default>
+                <label>No Support</label>
+            </value>
+            <value>
+                <fullName>Design Support Only</fullName>
+                <default>false</default>
+                <label>Design Support Only</label>
+            </value>
+            <value>
+                <fullName>Proof Reading &amp; Formatting</fullName>
+                <default>false</default>
+                <label>Proof Reading &amp; Formatting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

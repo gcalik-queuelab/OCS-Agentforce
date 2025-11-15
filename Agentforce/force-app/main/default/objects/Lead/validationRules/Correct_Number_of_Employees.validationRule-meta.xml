@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Correct_Number_of_Employees</fullName>
+    <active>true</active>
+    <description>AD-28 Record the correct number of employees</description>
+    <errorConditionFormula>AND( 
+  NOT( 
+   $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c 
+     ),
+  NOT(ISNULL(NumberOfEmployees)),
+  NumberOfEmployees&lt;0
+    )</errorConditionFormula>
+    <errorDisplayField>NumberOfEmployees</errorDisplayField>
+    <errorMessage>Please input the correct number of employees</errorMessage>
+</ValidationRule>

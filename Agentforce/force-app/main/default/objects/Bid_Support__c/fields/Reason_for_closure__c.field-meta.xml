@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_closure__c</fullName>
+    <description>AD-443 Create Bid Support Records</description>
+    <label>Reason for Closure</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Opportunity Lost</fullName>
+                <default>false</default>
+                <label>Opportunity Lost</label>
+            </value>
+            <value>
+                <fullName>Opportunity Withdrawn</fullName>
+                <default>false</default>
+                <label>Opportunity Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Bid Support Rejected</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bid Support Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

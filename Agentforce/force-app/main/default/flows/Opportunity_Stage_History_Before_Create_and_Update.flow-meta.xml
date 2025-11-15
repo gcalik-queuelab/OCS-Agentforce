@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Duration</name>
+        <label>Set Duration</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Duration__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_Duration_Days</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Automation_Enabled</name>
+        <label>Automation Enabled?</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>No - Stop</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Automation_Enabled_Continue_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Flows_Disabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_or_Update_Decision</targetReference>
+            </connector>
+            <label>Yes - Continue</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Create_or_Update_Decision</name>
+        <label>Create or Update</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Duration_Update_Required</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update</defaultConnectorLabel>
+        <rules>
+            <name>Create_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Duration_Update_Required</targetReference>
+            </connector>
+            <label>Create</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>For both Create and Update paths if the Record&apos;s Duration does not match the calculated Duration (Flow Formula) then update the record.</description>
+        <name>Duration_Update_Required</name>
+        <label>Duration Update Required?</label>
+        <locationX>182</locationX>
+        <locationY>587</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update_Duration_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Duration__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_Duration_Days</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Duration</targetReference>
+            </connector>
+            <label>Yes - Update Duration</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculate the days between the start date and the end date.</description>
+        <name>f_Duration_Days</name>
+        <dataType>Number</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.End_Date__c})),DATEVALUE({!$Record.End_Date__c}) - DATEVALUE({!$Record.Start_Date__c}),TODAY() - DATEVALUE({!$Record.Start_Date__c}))</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Opportunity Stage History: Before Create and Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Stage History: Before Create and Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Automation_Enabled</targetReference>
+        </connector>
+        <object>Opportunity_Stage_History__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

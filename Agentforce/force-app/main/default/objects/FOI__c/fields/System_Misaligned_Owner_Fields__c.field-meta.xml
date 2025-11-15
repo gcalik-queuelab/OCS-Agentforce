@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Misaligned_Owner_Fields__c</fullName>
+    <description>Ticked when an FOI&apos;s Ownership fields are misaligned. Used as trigger for Scheduled Flow.</description>
+    <formula>OR(
+TEXT(Corporate_Type__c) != TEXT(Owner:User.Corporate_Type__c),
+TEXT(Owner_Region__c) != TEXT(Owner:User.Region__c),
+TEXT(Owner_Business_Unit__c) != TEXT(Owner:User.Business_Unit__c),
+Owner_Country__c != Owner:User.Country,
+Creator_Country__c != CreatedBy.Country
+)</formula>
+    <inlineHelpText>System fields</inlineHelpText>
+    <label>System: Misaligned Owner Fields</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

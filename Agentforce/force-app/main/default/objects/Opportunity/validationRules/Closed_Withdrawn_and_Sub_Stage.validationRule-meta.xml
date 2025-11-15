@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Withdrawn_and_Sub_Stage</fullName>
+    <active>true</active>
+    <description>AD-337 - validation rule to ensure that sub-stage is populated when moving the stage to &apos;Closed Withdrawn&apos;</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+RecordType.DeveloperName != &quot;Target&quot;,
+    ISPICKVAL(StageName, &apos;5. Closed Withdrawn&apos;),
+    ISBLANK(TEXT(Sub_Stage__c))
+)</errorConditionFormula>
+    <errorMessage>Please populate the &apos;Sub-Stage&apos; to identify the reason for withdrawing.</errorMessage>
+</ValidationRule>

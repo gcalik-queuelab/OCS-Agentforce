@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Opportunity_Closed_Reason</fullName>
+    <active>true</active>
+    <description>Certain Closed Reasons are not allowed for Renewal Opps (Rebid/Extension).</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				OR(
+								ISPICKVAL(Type, &quot;Rebid&quot;),
+								ISPICKVAL(Type, &quot;Extension&quot;)
+						),
+				OR(
+								ISPICKVAL(Closed_Reason__c, &quot;Benchmarking&quot;),
+								ISPICKVAL(Closed_Reason__c, &quot;Client Withdrawn&quot;),
+								ISPICKVAL(Closed_Reason__c, &quot;Reason Pending&quot;)
+								)
+				)</errorConditionFormula>
+    <errorMessage>This Closed Reason is not allowed for Rebid/Extension Opportunities. Please choose a different Closed Reason and try again.</errorMessage>
+</ValidationRule>

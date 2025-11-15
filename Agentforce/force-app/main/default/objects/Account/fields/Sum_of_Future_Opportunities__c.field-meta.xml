@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_of_Future_Opportunities__c</fullName>
+    <label>Sum of Future Opportunities</label>
+    <summarizedField>Opportunity.Amount_Hidden__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.Sub_Stage__c</field>
+        <operation>equals</operation>
+        <value>2.1 Future Opportunity</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

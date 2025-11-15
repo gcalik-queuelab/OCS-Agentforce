@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Last_12_Months__c</fullName>
+    <formula>AND(
+TEXT(StageName) = &quot;7. Closed Won&quot;,
+CloseDate &gt;= ADDMONTHS(TODAY(),-12)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Ticked if Opportunity was Closed Won within the Last 12 Months</inlineHelpText>
+    <label>Won Last 12 Months</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

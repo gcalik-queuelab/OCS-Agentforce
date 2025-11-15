@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Account Profile Card</masterLabel>
+    <description>This is an LWC created to highlight an Account&#39;s profile and field values on the Account record page.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+          <property name="backgroundHexCode" type="String" default="#293771" label="Background Colour (HEX Code)" />
+          <property name="textHexCode" type="String" default="#FFFFFF" label="Text Colour (HEX Code)" />
+          <property name="iconForegroundHexCode" type="String" default="#FFFFFF" label="Icon Foreground Colour (HEX Code)" />
+          <objects>
+            <object>Account</object>
+          </objects>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

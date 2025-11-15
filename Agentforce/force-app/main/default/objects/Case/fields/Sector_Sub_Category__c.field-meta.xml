@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sector_Sub_Category__c</fullName>
+    <description>Used by the HR team as child picklists to the Sector field</description>
+    <label>Sector Sub-Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sector__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Business &amp; Industry</fullName>
+                <default>false</default>
+                <label>Business &amp; Industry</label>
+            </value>
+            <value>
+                <fullName>Client Solutions</fullName>
+                <default>false</default>
+                <label>Client Solutions</label>
+            </value>
+            <value>
+                <fullName>Core</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>CPS</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>CPS</label>
+            </value>
+            <value>
+                <fullName>Destinations</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Destinations</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>ESG</fullName>
+                <default>false</default>
+                <label>ESG</label>
+            </value>
+            <value>
+                <fullName>Estates</fullName>
+                <default>false</default>
+                <label>Estates</label>
+            </value>
+            <value>
+                <fullName>Exclusive</fullName>
+                <default>false</default>
+                <label>Exclusive</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Groceries</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Groceries</label>
+            </value>
+            <value>
+                <fullName>H&amp;E - Other</fullName>
+                <default>false</default>
+                <label>H&amp;E - Other</label>
+            </value>
+            <value>
+                <fullName>H&amp;E - PFI</fullName>
+                <default>false</default>
+                <label>H&amp;E - PFI</label>
+            </value>
+            <value>
+                <fullName>Healthcare &amp; Education</fullName>
+                <default>false</default>
+                <label>Healthcare &amp; Education</label>
+            </value>
+            <value>
+                <fullName>HMCTS</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>HMCTS</label>
+            </value>
+            <value>
+                <fullName>Hotels</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Hotels</label>
+            </value>
+            <value>
+                <fullName>HR</fullName>
+                <default>false</default>
+                <label>HR</label>
+            </value>
+            <value>
+                <fullName>Industries</fullName>
+                <default>false</default>
+                <label>Industries</label>
+            </value>
+            <value>
+                <fullName>Industry</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Industry</label>
+            </value>
+            <value>
+                <fullName>Integrated Services</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Integrated Services</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>Legal &amp; Risk</fullName>
+                <default>false</default>
+                <label>Legal &amp; Risk</label>
+            </value>
+            <value>
+                <fullName>Leisure</fullName>
+                <default>false</default>
+                <label>Leisure</label>
+            </value>
+            <value>
+                <fullName>M&amp;A</fullName>
+                <default>false</default>
+                <label>M&amp;A</label>
+            </value>
+            <value>
+                <fullName>Marcomms</fullName>
+                <default>false</default>
+                <label>Marcomms</label>
+            </value>
+            <value>
+                <fullName>Maxim</fullName>
+                <default>false</default>
+                <label>Maxim</label>
+            </value>
+            <value>
+                <fullName>MOJ/HO</fullName>
+                <default>false</default>
+                <label>MOJ/HO</label>
+            </value>
+            <value>
+                <fullName>Morrisons</fullName>
+                <default>false</default>
+                <label>Morrisons</label>
+            </value>
+            <value>
+                <fullName>North</fullName>
+                <default>false</default>
+                <label>North</label>
+            </value>
+            <value>
+                <fullName>Payroll</fullName>
+                <default>false</default>
+                <label>Payroll</label>
+            </value>
+            <value>
+                <fullName>People into Work</fullName>
+                <default>false</default>
+                <label>People into Work</label>
+            </value>
+            <value>
+                <fullName>Pest</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Pest</label>
+            </value>
+            <value>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+                <label>Procurement</label>
+            </value>
+            <value>
+                <fullName>Profile</fullName>
+                <default>false</default>
+                <label>Profile</label>
+            </value>
+            <value>
+                <fullName>Project Mgt</fullName>
+                <default>false</default>
+                <label>Project Mgt</label>
+            </value>
+            <value>
+                <fullName>QSHE &amp; Compliance</fullName>
+                <default>false</default>
+                <label>QSHE &amp; Compliance</label>
+            </value>
+            <value>
+                <fullName>Resourcing &amp; Talent</fullName>
+                <default>false</default>
+                <label>Resourcing &amp; Talent</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Shared Services</fullName>
+                <default>false</default>
+                <label>Shared Services</label>
+            </value>
+            <value>
+                <fullName>South</fullName>
+                <default>false</default>
+                <label>South</label>
+            </value>
+            <value>
+                <fullName>SWC</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>SWC</label>
+            </value>
+            <value>
+                <fullName>Technical</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Technical</label>
+            </value>
+            <value>
+                <fullName>Transport</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Transport</label>
+            </value>
+            <value>
+                <fullName>Venues</fullName>
+                <default>false</default>
+                <label>Venues</label>
+            </value>
+            <value>
+                <fullName>Workplaces</fullName>
+                <default>false</default>
+                <label>Workplaces</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <valueName>Business &amp; Industry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <valueName>Healthcare &amp; Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <valueName>North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <valueName>South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Client Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>ESG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Estates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Finance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>HR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>IT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Legal &amp; Risk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>M&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Marcomms</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Payroll</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>People into Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Project Mgt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>QSHE &amp; Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Resourcing &amp; Talent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Central Functions</controllingFieldValue>
+            <valueName>Shared Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>CPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Exclusive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Groceries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Hotels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Industry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Leisure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Maxim</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Pest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Retail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>SWC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Transport</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>Core</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <valueName>Technical</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Destinations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Industries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Integrated Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Venues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Private</controllingFieldValue>
+            <valueName>Workplaces</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Public</controllingFieldValue>
+            <valueName>Government</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Public</controllingFieldValue>
+            <valueName>H&amp;E - Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Public</controllingFieldValue>
+            <valueName>H&amp;E - PFI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Public</controllingFieldValue>
+            <valueName>HMCTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Public</controllingFieldValue>
+            <valueName>MOJ/HO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>Morrisons</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>Profile</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Required</fullName>
+    <active>true</active>
+    <description>Opportunity Lookup must be populated.</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				ISBLANK(Opportunity__c)
+				)</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>The Phase must be linked to an Opportunity.</errorMessage>
+</ValidationRule>

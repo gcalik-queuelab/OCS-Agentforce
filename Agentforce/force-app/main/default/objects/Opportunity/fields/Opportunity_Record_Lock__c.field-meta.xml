@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Record_Lock__c</fullName>
+    <description>Ticked for Closed Opps when 90 days have passed since the Award Date. Used as criteria for Validation Rule and messaging component to user.</description>
+    <formula>AND(
+				RecordType.DeveloperName != &quot;Target&quot;,
+				IsClosed = TRUE,
+				NOT(ISPICKVAL(Sub_Stage__c, &quot;7.1 Written Confirmation&quot;)),
+				CloseDate &lt;= TODAY() - 90
+				)</formula>
+    <label>Opportunity Record Lock</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

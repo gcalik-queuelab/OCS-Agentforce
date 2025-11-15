@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Market__c</fullName>
+    <description>Displays the Target Market for CD&amp;R Reporting</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+  TEXT( OCS_Sector__c ),
+  
+  &quot;Accommodation &amp; Food Services&quot;,       &quot;Hospitality&quot;,
+  
+  &quot;Agriculture, Forestry &amp; Fishing&quot;,     &quot;Other&quot;,
+  &quot;Charities &amp; Non-Profit Organisations&quot;,&quot;Other&quot;,
+  &quot;Media &amp; Telecommunications&quot;,          &quot;Other&quot;,
+  &quot;Mining&quot;,                              &quot;Other&quot;,
+  &quot;Utilities&quot;,                           &quot;Other&quot;,
+  
+  &quot;Arts, Entertainment &amp; Leisure&quot;,       &quot;Destinations&quot;,
+  
+  &quot;Construction&quot;,                        &quot;Construction&quot;,
+
+  &quot;Distribution &amp; Logistics&quot;,            &quot;Logistics&quot;,
+  
+  &quot;Education&quot;,                           &quot;Education&quot;,
+  
+  &quot;Financial &amp; Insurance&quot;,               &quot;Corporate&quot;,
+  &quot;Professional Services&quot;,               &quot;Corporate&quot;,
+
+  &quot;Government &amp; Public Sector&quot;,          &quot;Government&quot;,
+  
+  &quot;Healthcare&quot;,                          &quot;Healthcare&quot;,
+
+  &quot;Property Management &amp; FM Services&quot;,   &quot;Managing Agents&quot;,
+
+  &quot;Manufacturing&quot;,                       &quot;Manufacturing&quot;,
+
+  &quot;Retail&quot;,                              &quot;Retail&quot;,
+
+  &quot;Transportation&quot;,                      &quot;Transport&quot;,
+  
+  &quot;Other&quot;
+)</formula>
+    <label>Target Market</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

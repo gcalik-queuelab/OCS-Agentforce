@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Require users to use MFA for Salesforce User Interface logins.
+SSO users will NOT be required to use MFA if this permission is assigned to them.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Competitor_Services__c.Competitor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Authentication - Enforce MFA</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ForceTwoFactor</name>
+    </userPermissions>
+</PermissionSet>

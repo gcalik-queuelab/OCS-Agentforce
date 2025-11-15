@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incumbent</fullName>
+    <active>true</active>
+    <label>Incumbent</label>
+    <picklistValues>
+        <picklist>Current_Provided_Service__c</picklist>
+        <values>
+            <fullName>Automotive Aftersales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Automation %26 Data Exchange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Business Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Development %26 Launch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Fleet %26 Remarketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive HV Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Hail Repair Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Logistics %26 Handling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Paintshop Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Production Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive QPDI services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Warranty %26 Dealer Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biomedical Management Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car Park Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleaning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compliance Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hard Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horticulture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Painting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IoT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pest Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soft Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategic Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TFM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAS Specialized Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waste Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Role__c</picklist>
+        <values>
+            <fullName>Incumbent</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

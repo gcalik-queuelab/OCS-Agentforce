@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Different_Country__c</fullName>
+    <formula>Creator_Country__c  &lt;&gt;   Country</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Different Country</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

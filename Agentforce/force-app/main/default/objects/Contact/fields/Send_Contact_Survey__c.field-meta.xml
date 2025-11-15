@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Contact_Survey__c</fullName>
+    <description>AD-368 - This denotes if we can send an NPS Survey to this contact or not</description>
+    <formula>AND( Survey_Contact__c ,OR(ISBLANK(Last_NPS_Survey__c),NPS_Due_Date__c &lt;= TODAY()))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Send Contact Survey</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Question__c</fullName>
+    <description>AD-376 - Store picklist of NPS Questions</description>
+    <label>Question</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contractual Delivery?</fullName>
+                <default>false</default>
+                <label>Contractual Delivery?</label>
+            </value>
+            <value>
+                <fullName>How open &amp; honest is our relationship?</fullName>
+                <default>false</default>
+                <label>How open &amp; honest is our relationship?</label>
+            </value>
+            <value>
+                <fullName>How readily available are we to meet you?</fullName>
+                <default>false</default>
+                <label>How readily available are we to meet you?</label>
+            </value>
+            <value>
+                <fullName>Dealing with serious issues?</fullName>
+                <default>false</default>
+                <label>Dealing with serious issues?</label>
+            </value>
+            <value>
+                <fullName>How innovative and creative are we?</fullName>
+                <default>false</default>
+                <label>How innovative and creative are we?</label>
+            </value>
+            <value>
+                <fullName>Do our colleagues show good work ethic?</fullName>
+                <default>false</default>
+                <label>Do our colleagues show good work ethic?</label>
+            </value>
+            <value>
+                <fullName>Do we provide accurate information?</fullName>
+                <default>false</default>
+                <label>Do we provide accurate information?</label>
+            </value>
+            <value>
+                <fullName>Do we look for future opportunities?</fullName>
+                <default>false</default>
+                <label>Do we look for future opportunities?</label>
+            </value>
+            <value>
+                <fullName>Do we support your business needs?</fullName>
+                <default>false</default>
+                <label>Do we support your business needs?</label>
+            </value>
+            <value>
+                <fullName>How do we compare to our competitors?</fullName>
+                <default>false</default>
+                <label>How do we compare to our competitors?</label>
+            </value>
+            <value>
+                <fullName>How well do we represent value for money?</fullName>
+                <default>false</default>
+                <label>How well do we represent value for money?</label>
+            </value>
+            <value>
+                <fullName>How well do you rate our website?</fullName>
+                <default>false</default>
+                <label>How well do you rate our website?</label>
+            </value>
+            <value>
+                <fullName>Are we improving?</fullName>
+                <default>false</default>
+                <label>Are we improving?</label>
+            </value>
+            <value>
+                <fullName>Further Comments/Easier to work with?</fullName>
+                <default>false</default>
+                <label>Further Comments/Easier to work with?</label>
+            </value>
+            <value>
+                <fullName>Would you recommend us?</fullName>
+                <default>false</default>
+                <label>Would you recommend us?</label>
+            </value>
+            <value>
+                <fullName>Any questions that we should have asked?</fullName>
+                <default>false</default>
+                <label>Any questions that we should have asked?</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

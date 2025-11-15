@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Managing_Agents</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY_CODE</columns>
+    <columns>Key_Contact__c</columns>
+    <columns>DUNS_No__c</columns>
+    <columns>dnb_exclude_company__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Managing_Agent__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Managing Agents</label>
+</ListView>

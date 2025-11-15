@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to drive D&amp;B Hoovers component visibility on Lightning Pages.</description>
+    <isLicensed>false</isLicensed>
+    <label>D&amp;B Hoovers Enabled</label>
+</CustomPermission>

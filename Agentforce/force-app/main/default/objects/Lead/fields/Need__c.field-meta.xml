@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>AD-109 - checkbox to be used in the BANT validation</description>
+    <inlineHelpText>Genuine need for the work to be completed.</inlineHelpText>
+    <label>Need</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

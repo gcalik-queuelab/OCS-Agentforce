@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TH_Consent_Status__c</fullName>
+    <description>AD-409 - Tracks the current status of the TH consent process for this Contact</description>
+    <label>TH Consent Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consent Requested</fullName>
+                <default>false</default>
+                <label>Consent Requested</label>
+            </value>
+            <value>
+                <fullName>Opted In</fullName>
+                <default>false</default>
+                <label>Opted In</label>
+            </value>
+            <value>
+                <fullName>Opted Out</fullName>
+                <default>false</default>
+                <label>Opted Out</label>
+            </value>
+            <value>
+                <fullName>No Response</fullName>
+                <default>false</default>
+                <label>No Response</label>
+            </value>
+            <value>
+                <fullName>Delete</fullName>
+                <default>false</default>
+                <label>Delete</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

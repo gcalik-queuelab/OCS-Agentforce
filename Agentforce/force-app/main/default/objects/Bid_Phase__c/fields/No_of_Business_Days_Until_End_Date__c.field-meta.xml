@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Business_Days_Until_End_Date__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(TODAY() &lt; End_Date__c,
+
+(5 * ( FLOOR( ( End_Date__c - DATE( 1900, 1, 8) ) / 7 ) ) + MIN( 5, MOD( End_Date__c - DATE( 1900, 1, 8), 7 ) ) )
+ 
+
+-
+ 
+
+(5 * ( FLOOR( ( TODAY() - DATE( 1900, 1, 8) ) / 7 ) ) + MIN( 5, MOD( TODAY() - DATE( 1900, 1, 8), 7 ) ) )
+			
+			 , 0) /* End portion of IF */</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>For a Phase where the End Date is in the future calculate the number of working days between now until the End Date.</inlineHelpText>
+    <label># Business Days Until End Date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

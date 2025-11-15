@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date_is_before_the_End_Date</fullName>
+    <active>true</active>
+    <description>AD-753 ensure the Start Date is before the End Date</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+Action_Plan_End_Date__c &lt; Action_Plan_Start_Date__c 
+)</errorConditionFormula>
+    <errorDisplayField>Action_Plan_End_Date__c</errorDisplayField>
+    <errorMessage>Please ensure the Start Date is before the End Date</errorMessage>
+</ValidationRule>

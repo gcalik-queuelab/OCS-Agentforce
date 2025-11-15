@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ITT_RFP_Brief_Compliance_And_Scoring__c</fullName>
+    <inlineHelpText>ITT/RFP - Did we meet and or exceed the brief? Were we compliant? Where did we score well? Why? Where did we not score well? Why? What was missing compared to the winning bidder?</inlineHelpText>
+    <label>ITT RFP Brief Compliance And Scoring</label>
+    <length>5000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

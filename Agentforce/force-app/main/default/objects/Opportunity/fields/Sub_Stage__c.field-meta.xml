@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Stage__c</fullName>
+    <description>Defines where in the Opportunity Process the Opportunity sits within the pipeline</description>
+    <label>Sub Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2.1 Future Opportunity</fullName>
+                <default>false</default>
+                <label>2.1 Future Opportunity</label>
+            </value>
+            <value>
+                <fullName>2.2 Needs Analysis</fullName>
+                <default>false</default>
+                <label>2.2 Needs Analysis</label>
+            </value>
+            <value>
+                <fullName>2.3 Pursuing</fullName>
+                <default>false</default>
+                <label>2.3 Pursuing</label>
+            </value>
+            <value>
+                <fullName>3.1 RFI In Progress</fullName>
+                <default>false</default>
+                <label>3.1 RFI In Progress</label>
+            </value>
+            <value>
+                <fullName>3.2 RFI Submitted</fullName>
+                <default>false</default>
+                <label>3.2 RFI Submitted</label>
+            </value>
+            <value>
+                <fullName>3.3 Develop Solution</fullName>
+                <default>false</default>
+                <label>3.3 Develop Solution</label>
+            </value>
+            <value>
+                <fullName>3.4 Solution Submitted</fullName>
+                <default>false</default>
+                <label>3.4 Solution Submitted</label>
+            </value>
+            <value>
+                <fullName>4.1 Presentation</fullName>
+                <default>false</default>
+                <label>4.1 Presentation</label>
+            </value>
+            <value>
+                <fullName>4.2 Negotiation</fullName>
+                <default>false</default>
+                <label>4.2 Negotiation</label>
+            </value>
+            <value>
+                <fullName>4.3 Verbal Acceptance</fullName>
+                <default>false</default>
+                <label>4.3 Verbal Acceptance</label>
+            </value>
+            <value>
+                <fullName>5.1 OCS Withdrawn</fullName>
+                <default>false</default>
+                <label>5.1 OCS Withdrawn</label>
+            </value>
+            <value>
+                <fullName>5.2 Customer Withdrawn</fullName>
+                <default>false</default>
+                <label>5.2 Customer Withdrawn</label>
+            </value>
+            <value>
+                <fullName>6.1 Closed Lost</fullName>
+                <default>false</default>
+                <label>6.1 Closed Lost</label>
+            </value>
+            <value>
+                <fullName>7.1 Written Confirmation</fullName>
+                <default>false</default>
+                <label>7.1 Written Confirmation</label>
+            </value>
+            <value>
+                <fullName>7.2 T&amp;Cs Signed</fullName>
+                <default>false</default>
+                <label>7.2 T&amp;Cs Signed</label>
+            </value>
+            <value>
+                <fullName>Individual</fullName>
+                <default>false</default>
+                <label>Individual</label>
+            </value>
+            <value>
+                <fullName>Team</fullName>
+                <default>false</default>
+                <label>Team</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>2. Prospect</controllingFieldValue>
+            <valueName>2.1 Future Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2. Prospect</controllingFieldValue>
+            <valueName>2.2 Needs Analysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2. Prospect</controllingFieldValue>
+            <valueName>2.3 Pursuing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Solution</controllingFieldValue>
+            <valueName>3.1 RFI In Progress</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Solution</controllingFieldValue>
+            <valueName>3.2 RFI Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Solution</controllingFieldValue>
+            <valueName>3.3 Develop Solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Solution</controllingFieldValue>
+            <valueName>3.4 Solution Submitted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4. Post-Submission</controllingFieldValue>
+            <valueName>4.1 Presentation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4. Post-Submission</controllingFieldValue>
+            <valueName>4.2 Negotiation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4. Post-Submission</controllingFieldValue>
+            <valueName>4.3 Verbal Acceptance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5. Closed Withdrawn</controllingFieldValue>
+            <valueName>5.1 OCS Withdrawn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5. Closed Withdrawn</controllingFieldValue>
+            <valueName>5.2 Customer Withdrawn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6. Closed Lost</controllingFieldValue>
+            <valueName>6.1 Closed Lost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>7. Closed Won</controllingFieldValue>
+            <valueName>7.1 Written Confirmation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>7. Closed Won</controllingFieldValue>
+            <valueName>7.2 T&amp;Cs Signed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Target</controllingFieldValue>
+            <valueName>Individual</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Target</controllingFieldValue>
+            <valueName>Team</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

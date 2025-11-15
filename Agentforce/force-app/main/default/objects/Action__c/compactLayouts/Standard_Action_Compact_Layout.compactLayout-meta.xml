@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standard_Action_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Parent_Action__c</fields>
+    <fields>Type__c</fields>
+    <fields>Percentage_Complete__c</fields>
+    <label>Standard Action Compact Layout</label>
+</CompactLayout>

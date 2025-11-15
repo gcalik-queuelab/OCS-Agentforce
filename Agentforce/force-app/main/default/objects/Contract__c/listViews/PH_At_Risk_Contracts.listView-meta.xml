@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PH_At_Risk_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>Contract_Name__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>Contract_Start_Date__c</columns>
+    <columns>Contract_End_Date__c</columns>
+    <columns>Contract_Last_Renewed__c</columns>
+    <columns>Rolling_Contract__c</columns>
+    <columns>No_of_Contract_Lines__c</columns>
+    <columns>Owner_Country__c</columns>
+    <columns>Owner_Full_Name__c</columns>
+    <columns>Contracted_Services__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Active_Annual_Revenue__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>At Risk</value>
+    </filters>
+    <filters>
+        <field>Owner_Country__c</field>
+        <operation>equals</operation>
+        <value>Philippines</value>
+    </filters>
+    <label>PH - At Risk Contracts</label>
+    <sharedTo>
+        <roleAndSubordinates>Philippines_Contract_Manager</roleAndSubordinates>
+        <roleAndSubordinates>Phillippines</roleAndSubordinates>
+    </sharedTo>
+</ListView>

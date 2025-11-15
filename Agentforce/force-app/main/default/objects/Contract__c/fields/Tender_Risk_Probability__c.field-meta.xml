@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tender_Risk_Probability__c</fullName>
+    <description>AD-850 to capture the likelihood of the delivery against tender risk occurring</description>
+    <label>Tender Risk</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Risk_Likelihood</valueSetName>
+    </valueSet>
+</CustomField>

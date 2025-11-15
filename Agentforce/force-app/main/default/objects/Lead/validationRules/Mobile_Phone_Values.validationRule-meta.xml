@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_Phone_Values</fullName>
+    <active>false</active>
+    <description>AD-19 - validation rule to ensure the Mobile Phone is correctly populated</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c, NOT(REGEX(  MobilePhone ,&apos;^(?:[\\d+()]+)?$&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>MobilePhone</errorDisplayField>
+    <errorMessage>Please enter a valid mobile number</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visit_Finish_Date_after_Visit_Start_Date</fullName>
+    <active>true</active>
+    <description>AD-426 - validation rule to ensure the visit finish date is after the visit start date</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+    NOT(ISBLANK(Visit_Finish__c)), 
+    NOT(ISBLANK(Visit_Start__c)), 
+    Visit_Finish__c &lt; Visit_Start__c
+)</errorConditionFormula>
+    <errorMessage>Please ensure Visit Finish date is after Visit Start date</errorMessage>
+</ValidationRule>

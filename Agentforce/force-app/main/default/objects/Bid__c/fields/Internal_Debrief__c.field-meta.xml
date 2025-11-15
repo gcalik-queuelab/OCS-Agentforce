@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Debrief__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Debrief held internally</description>
+    <label>Internal Debrief</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The record selected is not an Internal Debrief. Please select an Internal Debrief.</errorMessage>
+        <filterItems>
+            <field>Debrief__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Internal Debrief</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Debrief__c</referenceTo>
+    <relationshipLabel>Bids (Internal Debrief)</relationshipLabel>
+    <relationshipName>Bids_Internal_Debrief</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

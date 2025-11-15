@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Compact_Layout</fullName>
+    <fields>Subject</fields>
+    <fields>Call_Outcome__c</fields>
+    <fields>CompletedDateTime</fields>
+    <fields>WhatId</fields>
+    <fields>WhoId</fields>
+    <label>Call Compact Layout</label>
+</CompactLayout>

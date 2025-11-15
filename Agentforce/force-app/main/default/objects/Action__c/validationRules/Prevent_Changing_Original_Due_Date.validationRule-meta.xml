@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Changing_Original_Due_Date</fullName>
+    <active>true</active>
+    <description>Validation rule to prevent users from changing the original due date once it has been set</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+    ISCHANGED(Original_Due_Date__c),
+    NOT(ISBLANK(PRIORVALUE(Original_Due_Date__c)))
+)</errorConditionFormula>
+    <errorDisplayField>Original_Due_Date__c</errorDisplayField>
+    <errorMessage>Original Due Date cannot be edited, please use Current Due Date to reflect changes</errorMessage>
+</ValidationRule>

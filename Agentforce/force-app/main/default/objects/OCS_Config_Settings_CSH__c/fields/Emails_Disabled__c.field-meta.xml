@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Emails_Disabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Used to control whether or not flows triggered by this user will send email notifications. Note this does not apply to Approval Process emails or other notifications sent outside of Flow.</inlineHelpText>
+    <label>Emails Disabled</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

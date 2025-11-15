@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Managing_Agent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Select where Account is a Managing Agent or Consultant</inlineHelpText>
+    <label>Managing Agent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

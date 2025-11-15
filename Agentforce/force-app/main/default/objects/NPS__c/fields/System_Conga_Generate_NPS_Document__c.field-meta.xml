@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Conga_Generate_NPS_Document__c</fullName>
+    <description>Used by Conga Trigger to automatically generate NPS PDF Document and email completed document to MD.</description>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;Id=&quot; + Id + 
+&quot;&amp;QueryId=[Question2]0Q_002UAA254265,&quot; +
+&quot;[Question3]0Q_003UAA829410,&quot; +
+&quot;[Question4]0Q_004UAA328222,&quot; +
+&quot;[Question5]0Q_005UAA378520,&quot; +
+&quot;[Question6]0Q_006UAA015579,&quot; +
+&quot;[Question7]0Q_007UAA039638,&quot; +
+&quot;[Question8]0Q_008UAA540193,&quot; +
+&quot;[Question9]0Q_009UAA319475,&quot; +
+&quot;[NPSRecordData]0Q_000UAA924864,&quot; +
+&quot;[Question1]0Q_001UAA490645,&quot; +
+&quot;[Question10]0Q_010UAA444287,&quot; +
+&quot;[Question11]0Q_011UAA044732,&quot; +
+&quot;[Question12]0Q_012UAA914661,&quot; +
+&quot;[FurtherComments]0Q_013UAA712034&quot; +
+&quot;&amp;TemplateId=0T_001UAA761155&quot; +
+&quot;&amp;DefaultPDF=1&quot; +
+&quot;&amp;OFN=NPS Survey - &quot; + Account__r.Name + &quot; - &quot; + TEXT(DAY( TODAY() )) + &quot;-&quot; + TEXT(MONTH( TODAY() )) + &quot;-&quot; + TEXT(YEAR( TODAY() )) +
+&quot;&amp;DS7=12&quot; +
+&quot;&amp;SC0=1&quot; +
+&quot;&amp;SC1=attachments&quot; +
+&quot;&amp;EmailAdditionalTo=&quot; + MD_Email__c + &quot;,&quot; + NPS_Surveyor_Email__c + IF(ISBLANK(Ops_Director__r.Email),NULL,&quot;,&quot; + Ops_Director__r.Email) +
+&quot;&amp;EmailCC=salesforce@ocs.com&quot; +
+&quot;&amp;EmailSubject=&quot; + Name + &quot; Completed - &quot;+ Account__r.Name +
+&quot;&amp;EmailFromId=0D2Tw00000002eX&quot; +
+&quot;&amp;CongaEmailTemplateId=0E_000EAT912997&quot; +
+&quot;&amp;QMode=SendEmail&quot;</formula>
+    <label>System: Conga Generate NPS Document</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

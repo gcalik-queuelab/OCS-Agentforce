@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_NPS_Surveyor__c</fullName>
+    <description>Ticked if the Current User is the Account&apos;s NPS Surveyor</description>
+    <formula>$User.Id = NPS_Surveyor__c</formula>
+    <label>Is NPS Surveyor</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

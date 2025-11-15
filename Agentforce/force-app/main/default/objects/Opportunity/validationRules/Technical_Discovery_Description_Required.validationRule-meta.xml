@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technical_Discovery_Description_Required</fullName>
+    <active>false</active>
+    <description>AD-682 If an Opportunity contains (IOT) as a product family, it should be required to populate the &quot;Technical Discovery Description&quot; field</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+			
+				 Service_Summary_Contains_IoT__c = True,
+				 ISBLANK(Technical_Discovery_Description__c)
+)</errorConditionFormula>
+    <errorDisplayField>Technical_Discovery_Description__c</errorDisplayField>
+    <errorMessage>Please populate Technical Discovery Description</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Birth_Correctly_Recorded</fullName>
+    <active>true</active>
+    <description>AD-158 Birth is recorded correctly</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,NOT(ISNULL(Birthdate)) &amp;&amp; (Birthdate &gt; DATE(YEAR(TODAY())-18, MONTH(TODAY()), DAY(TODAY()))))</errorConditionFormula>
+    <errorDisplayField>Birthdate</errorDisplayField>
+    <errorMessage>The contact should be older than 18 years old</errorMessage>
+</ValidationRule>

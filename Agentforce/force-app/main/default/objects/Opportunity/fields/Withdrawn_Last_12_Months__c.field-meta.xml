@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Withdrawn_Last_12_Months__c</fullName>
+    <formula>AND(
+TEXT(StageName) = &quot;5. Closed Withdrawn&quot;,
+CloseDate &gt;= ADDMONTHS(TODAY(),-12)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Ticked if Opportunity is Withdrawn in Last 12 Months</inlineHelpText>
+    <label>Withdrawn Last 12 Months</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

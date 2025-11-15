@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_triggered_contact_NPS__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>AD-916: Used in Pardot for the NPS Survey Form functionality Automation Rule.</description>
+    <label>Marketing triggered contact NPS</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

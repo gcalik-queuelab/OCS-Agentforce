@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Forensics_Lead_Review_Website_Visit</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Facilities - UKI - LF - Lead Review</label>
+    <queue>Facilities_UKI_LF_Lead_Review</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

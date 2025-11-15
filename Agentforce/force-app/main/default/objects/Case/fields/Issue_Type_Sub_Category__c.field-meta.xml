@@ -1,0 +1,2095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Type_Sub_Category__c</fullName>
+    <label>Issue Type Sub-Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Issue_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Absence reporting</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Absence reporting</label>
+            </value>
+            <value>
+                <fullName>Accessory</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Accessory</label>
+            </value>
+            <value>
+                <fullName>Accessory to a Disciplinary Offence</fullName>
+                <default>false</default>
+                <label>Accessory to a Disciplinary Offence</label>
+            </value>
+            <value>
+                <fullName>Accident at Work</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Accident at Work</label>
+            </value>
+            <value>
+                <fullName>Accident Outside of Work</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Accident Outside of Work</label>
+            </value>
+            <value>
+                <fullName>Addiction</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Addiction</label>
+            </value>
+            <value>
+                <fullName>Adverse Weather</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Adverse Weather</label>
+            </value>
+            <value>
+                <fullName>Allergies, Poisoning</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Allergies, Poisoning</label>
+            </value>
+            <value>
+                <fullName>Anaemia</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Anaemia</label>
+            </value>
+            <value>
+                <fullName>Annual leave</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Annual leave</label>
+            </value>
+            <value>
+                <fullName>Arthritis</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Arthritis</label>
+            </value>
+            <value>
+                <fullName>Asthma</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Asthma</label>
+            </value>
+            <value>
+                <fullName>Authorised and permitted (management use only)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Authorised and permitted (management use only)</label>
+            </value>
+            <value>
+                <fullName>Authorised Leave</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Authorised Leave</label>
+            </value>
+            <value>
+                <fullName>Back, Neck, Spinal Disorder</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Back, Neck, Spinal Disorder</label>
+            </value>
+            <value>
+                <fullName>Back &amp; neck problems</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Back &amp; neck problems</label>
+            </value>
+            <value>
+                <fullName>Bereavement/Compassionate</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Bereavement/Compassionate</label>
+            </value>
+            <value>
+                <fullName>Birthday Time Off</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Birthday Time Off</label>
+            </value>
+            <value>
+                <fullName>Blood Disorder</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Blood Disorder</label>
+            </value>
+            <value>
+                <fullName>Breach of Code of Conduct</fullName>
+                <default>false</default>
+                <label>Breach of Code of Conduct</label>
+            </value>
+            <value>
+                <fullName>Breach of Company Policy</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Breach of Company Policy</label>
+            </value>
+            <value>
+                <fullName>Breach of Confidentiality</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Breach of Confidentiality</label>
+            </value>
+            <value>
+                <fullName>Breach of Dress Code</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Breach of Dress Code</label>
+            </value>
+            <value>
+                <fullName>Breach of GDPR/Data Protection</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Breach of GDPR/Data Protection</label>
+            </value>
+            <value>
+                <fullName>Breach of GDPR/InfoSec</fullName>
+                <default>false</default>
+                <label>Breach of GDPR/InfoSec</label>
+            </value>
+            <value>
+                <fullName>Breach of H&amp;S</fullName>
+                <default>false</default>
+                <label>Breach of H&amp;S</label>
+            </value>
+            <value>
+                <fullName>Breach of Security Policy</fullName>
+                <default>false</default>
+                <label>Breach of Security Policy</label>
+            </value>
+            <value>
+                <fullName>Breach of Security Protocols</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Breach of Security Protocols</label>
+            </value>
+            <value>
+                <fullName>Breach of Social Media Policy</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Breach of Social Media Policy</label>
+            </value>
+            <value>
+                <fullName>Breach of Trust &amp; Confidence</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Breach of Trust &amp; Confidence</label>
+            </value>
+            <value>
+                <fullName>Bringing the company into disrepute</fullName>
+                <default>false</default>
+                <label>Bringing the company into disrepute</label>
+            </value>
+            <value>
+                <fullName>Bronchitis</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Bronchitis</label>
+            </value>
+            <value>
+                <fullName>Bullying/Harrassment</fullName>
+                <default>false</default>
+                <label>Bullying/Harrassment</label>
+            </value>
+            <value>
+                <fullName>Cancer</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Cancer</label>
+            </value>
+            <value>
+                <fullName>Career Break</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Career Break</label>
+            </value>
+            <value>
+                <fullName>Chest &amp; Respiritory</fullName>
+                <default>false</default>
+                <label>Chest &amp; Respiritory</label>
+            </value>
+            <value>
+                <fullName>Child / Family emergency</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Child / Family emergency</label>
+            </value>
+            <value>
+                <fullName>Client Removal Request</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Client Removal Request</label>
+            </value>
+            <value>
+                <fullName>Cold, Cough, Influenza</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Cold, Cough, Influenza</label>
+            </value>
+            <value>
+                <fullName>Colleague Misconduct</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Colleague Misconduct</label>
+            </value>
+            <value>
+                <fullName>Concussion</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Concussion</label>
+            </value>
+            <value>
+                <fullName>Confidentiality breach</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Confidentiality breach</label>
+            </value>
+            <value>
+                <fullName>Conflict of Interest</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Conflict of Interest</label>
+            </value>
+            <value>
+                <fullName>Convictions</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Convictions</label>
+            </value>
+            <value>
+                <fullName>Coronavirus</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Coronavirus</label>
+            </value>
+            <value>
+                <fullName>Covid-19</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Covid-19</label>
+            </value>
+            <value>
+                <fullName>Daily equipment check fail</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Daily equipment check fail</label>
+            </value>
+            <value>
+                <fullName>Damage to Property</fullName>
+                <default>false</default>
+                <label>Damage to Property</label>
+            </value>
+            <value>
+                <fullName>DBS Failure</fullName>
+                <default>false</default>
+                <label>DBS Failure</label>
+            </value>
+            <value>
+                <fullName>Dental</fullName>
+                <default>false</default>
+                <label>Dental</label>
+            </value>
+            <value>
+                <fullName>Dependancy Care Leave</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Dependancy Care Leave</label>
+            </value>
+            <value>
+                <fullName>Diabetes</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Diabetes</label>
+            </value>
+            <value>
+                <fullName>Disciplinary</fullName>
+                <default>false</default>
+                <label>Disciplinary</label>
+            </value>
+            <value>
+                <fullName>Discrimination</fullName>
+                <default>false</default>
+                <label>Discrimination</label>
+            </value>
+            <value>
+                <fullName>Dishonesty</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Dishonesty</label>
+            </value>
+            <value>
+                <fullName>Disrepute</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Disrepute</label>
+            </value>
+            <value>
+                <fullName>Driving offences</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Driving offences</label>
+            </value>
+            <value>
+                <fullName>Ear, Eye, Nose &amp; Mouth</fullName>
+                <default>false</default>
+                <label>Ear, Eye, Nose &amp; Mouth</label>
+            </value>
+            <value>
+                <fullName>Ear, Eye, Nose &amp; Mouth/Dental</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Ear, Eye, Nose &amp; Mouth/Dental</label>
+            </value>
+            <value>
+                <fullName>Ear, Nose, Throat</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Ear, Nose, Throat</label>
+            </value>
+            <value>
+                <fullName>Eligibility to Work</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Eligibility to Work</label>
+            </value>
+            <value>
+                <fullName>End of Fixed Term Contract</fullName>
+                <default>false</default>
+                <label>End of Fixed Term Contract</label>
+            </value>
+            <value>
+                <fullName>Equipment Check Fail</fullName>
+                <default>false</default>
+                <label>Equipment Check Fail</label>
+            </value>
+            <value>
+                <fullName>Evidence outstanding</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Evidence outstanding</label>
+            </value>
+            <value>
+                <fullName>Evidence received – British citizenship</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Evidence received – British citizenship</label>
+            </value>
+            <value>
+                <fullName>Evidence received – Invalid</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Evidence received – Invalid</label>
+            </value>
+            <value>
+                <fullName>Evidence received – Irish citizenship</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Evidence received – Irish citizenship</label>
+            </value>
+            <value>
+                <fullName>Evidence received – Pre-settled status</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Evidence received – Pre-settled status</label>
+            </value>
+            <value>
+                <fullName>Evidence received – Settled status</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Evidence received – Settled status</label>
+            </value>
+            <value>
+                <fullName>Eyes</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Eyes</label>
+            </value>
+            <value>
+                <fullName>Failure to adhere to contractual working hours</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Failure to adhere to contractual working hours</label>
+            </value>
+            <value>
+                <fullName>Failure to Disclose Information</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Failure to Disclose Information</label>
+            </value>
+            <value>
+                <fullName>Failure to Follow Absence Reporting Procedure</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Failure to Follow Absence Reporting Procedure</label>
+            </value>
+            <value>
+                <fullName>Failure to Follow Absent Reporting Procedures</fullName>
+                <default>false</default>
+                <label>Failure to Follow Absent Reporting Procedures</label>
+            </value>
+            <value>
+                <fullName>Failure to Follow Reasonable Instruction</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Failure to Follow Reasonable Instruction</label>
+            </value>
+            <value>
+                <fullName>Failure to follow reasonable instructions</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Failure to follow reasonable instructions</label>
+            </value>
+            <value>
+                <fullName>Failure to Provide Right to Work</fullName>
+                <default>false</default>
+                <label>Failure to Provide Right to Work</label>
+            </value>
+            <value>
+                <fullName>Failure to Report Convictions</fullName>
+                <default>false</default>
+                <label>Failure to Report Convictions</label>
+            </value>
+            <value>
+                <fullName>Failure to Report Driving Conviction</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Failure to Report Driving Conviction</label>
+            </value>
+            <value>
+                <fullName>Fatigue</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Fatigue</label>
+            </value>
+            <value>
+                <fullName>Fractures</fullName>
+                <default>false</default>
+                <label>Fractures</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>Garden Leave</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Garden Leave</label>
+            </value>
+            <value>
+                <fullName>Gastroenteritis</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Gastroenteritis</label>
+            </value>
+            <value>
+                <fullName>GDPR breach</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>GDPR breach</label>
+            </value>
+            <value>
+                <fullName>Genito-Urinary</fullName>
+                <default>false</default>
+                <label>Genito-Urinary</label>
+            </value>
+            <value>
+                <fullName>Genito-urinary/gynaecological (incl period pains)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Genito-urinary/gynaecological (incl period pains)</label>
+            </value>
+            <value>
+                <fullName>Grievance</fullName>
+                <default>false</default>
+                <label>Grievance</label>
+            </value>
+            <value>
+                <fullName>Gynaecological</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Gynaecological</label>
+            </value>
+            <value>
+                <fullName>H&amp;S breach</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>H&amp;S breach</label>
+            </value>
+            <value>
+                <fullName>Haemorrhage</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Haemorrhage</label>
+            </value>
+            <value>
+                <fullName>Headache &amp; Migraine</fullName>
+                <default>false</default>
+                <label>Headache &amp; Migraine</label>
+            </value>
+            <value>
+                <fullName>Heart, blood pressure &amp; circulation</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Heart, blood pressure &amp; circulation</label>
+            </value>
+            <value>
+                <fullName>Heart, Stroke, Circulatory Problem</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Heart, Stroke, Circulatory Problem</label>
+            </value>
+            <value>
+                <fullName>Hospitalisation</fullName>
+                <default>false</default>
+                <label>Hospitalisation</label>
+            </value>
+            <value>
+                <fullName>Infection</fullName>
+                <default>false</default>
+                <label>Infection</label>
+            </value>
+            <value>
+                <fullName>Inflammation</fullName>
+                <default>false</default>
+                <label>Inflammation</label>
+            </value>
+            <value>
+                <fullName>Injury</fullName>
+                <default>false</default>
+                <label>Injury</label>
+            </value>
+            <value>
+                <fullName>Joint Issues</fullName>
+                <default>false</default>
+                <label>Joint Issues</label>
+            </value>
+            <value>
+                <fullName>Jury Service</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Jury Service</label>
+            </value>
+            <value>
+                <fullName>Lack of Support</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Lack of Support</label>
+            </value>
+            <value>
+                <fullName>Loss of Airside Pass</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Loss of Airside Pass</label>
+            </value>
+            <value>
+                <fullName>Loss of Driving Licence</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Loss of Driving Licence</label>
+            </value>
+            <value>
+                <fullName>Loss of Government Clearance</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Loss of Government Clearance</label>
+            </value>
+            <value>
+                <fullName>Loss of Other Licence</fullName>
+                <default>false</default>
+                <label>Loss of Other Licence</label>
+            </value>
+            <value>
+                <fullName>Loss of SIA Licence</fullName>
+                <default>false</default>
+                <label>Loss of SIA Licence</label>
+            </value>
+            <value>
+                <fullName>Lung and Respiratory Disorders</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Lung and Respiratory Disorders</label>
+            </value>
+            <value>
+                <fullName>Manager Misconduct</fullName>
+                <default>false</default>
+                <label>Manager Misconduct</label>
+            </value>
+            <value>
+                <fullName>Maternity/Paternity/Shared Parental Leave</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Maternity/Paternity/Shared Parental Leave</label>
+            </value>
+            <value>
+                <fullName>Medical Appointments</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Medical Appointments</label>
+            </value>
+            <value>
+                <fullName>Mental Health</fullName>
+                <default>false</default>
+                <label>Mental Health</label>
+            </value>
+            <value>
+                <fullName>Misuse of Company Devices</fullName>
+                <default>false</default>
+                <label>Misuse of Company Devices</label>
+            </value>
+            <value>
+                <fullName>Misuse of Company Equipment</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Misuse of Company Equipment</label>
+            </value>
+            <value>
+                <fullName>Misuse of Company Vehicle</fullName>
+                <default>false</default>
+                <label>Misuse of Company Vehicle</label>
+            </value>
+            <value>
+                <fullName>Mouth and Throat Disorders</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Mouth and Throat Disorders</label>
+            </value>
+            <value>
+                <fullName>Musculoskeletal</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Musculoskeletal</label>
+            </value>
+            <value>
+                <fullName>Negligence</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Negligence</label>
+            </value>
+            <value>
+                <fullName>Nervous System</fullName>
+                <default>false</default>
+                <label>Nervous System</label>
+            </value>
+            <value>
+                <fullName>Neurological</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Neurological</label>
+            </value>
+            <value>
+                <fullName>Non-Medical</fullName>
+                <default>false</default>
+                <label>Non-Medical</label>
+            </value>
+            <value>
+                <fullName>Non-renewal of fixed term</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Non-renewal of fixed term</label>
+            </value>
+            <value>
+                <fullName>Organisational Change</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Organisational Change</label>
+            </value>
+            <value>
+                <fullName>Organisational Restructure</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Organisational Restructure</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other Medical</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Other Medical</label>
+            </value>
+            <value>
+                <fullName>Other Mental Health Condition</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Other Mental Health Condition</label>
+            </value>
+            <value>
+                <fullName>Other Policy Breach</fullName>
+                <default>false</default>
+                <label>Other Policy Breach</label>
+            </value>
+            <value>
+                <fullName>Paid Leave (SOSR)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Paid Leave (SOSR)</label>
+            </value>
+            <value>
+                <fullName>Panic Alarm test fail</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Panic Alarm test fail</label>
+            </value>
+            <value>
+                <fullName>Parental Leave</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Parental Leave</label>
+            </value>
+            <value>
+                <fullName>Pay/Finances</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Pay/Finances</label>
+            </value>
+            <value>
+                <fullName>PEN Test Fail</fullName>
+                <default>false</default>
+                <label>PEN Test Fail</label>
+            </value>
+            <value>
+                <fullName>Physical/verbal abuse</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Physical/verbal abuse</label>
+            </value>
+            <value>
+                <fullName>Policy breach</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Policy breach</label>
+            </value>
+            <value>
+                <fullName>Poor Hygiene</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Poor Hygiene</label>
+            </value>
+            <value>
+                <fullName>Post Natal Condition</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Post Natal Condition</label>
+            </value>
+            <value>
+                <fullName>Pregnancy Related Illness</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Pregnancy Related Illness</label>
+            </value>
+            <value>
+                <fullName>Process-Related</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Process-Related</label>
+            </value>
+            <value>
+                <fullName>Ramification of Criminal Conviction</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Ramification of Criminal Conviction</label>
+            </value>
+            <value>
+                <fullName>Reduction in Work</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Reduction in Work</label>
+            </value>
+            <value>
+                <fullName>Redundancy</fullName>
+                <default>false</default>
+                <label>Redundancy</label>
+            </value>
+            <value>
+                <fullName>Refusal to Accept New Terms</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Refusal to Accept New Terms</label>
+            </value>
+            <value>
+                <fullName>Refusal to follow reasonable instructions</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Refusal to follow reasonable instructions</label>
+            </value>
+            <value>
+                <fullName>Relationship breakdown</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Relationship breakdown</label>
+            </value>
+            <value>
+                <fullName>Reputational Risk</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Reputational Risk</label>
+            </value>
+            <value>
+                <fullName>Resignation Complaint</fullName>
+                <default>false</default>
+                <label>Resignation Complaint</label>
+            </value>
+            <value>
+                <fullName>Security Breach</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Security Breach</label>
+            </value>
+            <value>
+                <fullName>Sexual Harrassment</fullName>
+                <default>false</default>
+                <label>Sexual Harrassment</label>
+            </value>
+            <value>
+                <fullName>Site Closure</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Site Closure</label>
+            </value>
+            <value>
+                <fullName>Skin Disorder</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Skin Disorder</label>
+            </value>
+            <value>
+                <fullName>Sleeping</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Sleeping</label>
+            </value>
+            <value>
+                <fullName>Smoking</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Smoking</label>
+            </value>
+            <value>
+                <fullName>SOSR TPP</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>SOSR TPP</label>
+            </value>
+            <value>
+                <fullName>Sprains, Strains, Bruises</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Sprains, Strains, Bruises</label>
+            </value>
+            <value>
+                <fullName>Stomach, Liver, Kidney &amp; Digestion</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Stomach, Liver, Kidney &amp; Digestion</label>
+            </value>
+            <value>
+                <fullName>Stress (Work Related)</fullName>
+                <default>false</default>
+                <label>Stress (Work Related)</label>
+            </value>
+            <value>
+                <fullName>Stroke</fullName>
+                <default>false</default>
+                <label>Stroke</label>
+            </value>
+            <value>
+                <fullName>Surgery</fullName>
+                <default>false</default>
+                <label>Surgery</label>
+            </value>
+            <value>
+                <fullName>Surgery, Hospitalisation</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Surgery, Hospitalisation</label>
+            </value>
+            <value>
+                <fullName>Suspension (Medical)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Suspension (Medical)</label>
+            </value>
+            <value>
+                <fullName>Suspension (Misconduct)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Suspension (Misconduct)</label>
+            </value>
+            <value>
+                <fullName>Terms of Employment</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Terms of Employment</label>
+            </value>
+            <value>
+                <fullName>Theft</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Theft</label>
+            </value>
+            <value>
+                <fullName>Thyroid, Hormonal Condition</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Thyroid, Hormonal Condition</label>
+            </value>
+            <value>
+                <fullName>Time off for Interview</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Time off for Interview</label>
+            </value>
+            <value>
+                <fullName>Trade Union Duties</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Trade Union Duties</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>TUPE - Gain</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>TUPE - Gain</label>
+            </value>
+            <value>
+                <fullName>TUPE - Loss</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>TUPE - Loss</label>
+            </value>
+            <value>
+                <fullName>TUPE - Tender</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>TUPE - Tender</label>
+            </value>
+            <value>
+                <fullName>Ulcer</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Ulcer</label>
+            </value>
+            <value>
+                <fullName>Unauthorised Absence</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Unauthorised Absence</label>
+            </value>
+            <value>
+                <fullName>Under the influence</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Under the influence</label>
+            </value>
+            <value>
+                <fullName>Unfair Treatment</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Unfair Treatment</label>
+            </value>
+            <value>
+                <fullName>Victimisation</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Victimisation</label>
+            </value>
+            <value>
+                <fullName>Volunteering</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Volunteering</label>
+            </value>
+            <value>
+                <fullName>Wellbeing</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Wellbeing</label>
+            </value>
+            <value>
+                <fullName>Whistleblowing (in Public Interest)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Whistleblowing (in Public Interest)</label>
+            </value>
+            <value>
+                <fullName>Willful Refusal of Management Instruction</fullName>
+                <default>false</default>
+                <label>Willful Refusal of Management Instruction</label>
+            </value>
+            <value>
+                <fullName>Workplace Rules or Conditions</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Workplace Rules or Conditions</label>
+            </value>
+            <value>
+                <fullName>Wounds, Burns</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Wounds, Burns</label>
+            </value>
+            <value>
+                <fullName>Wrongdoing</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Wrongdoing</label>
+            </value>
+            <value>
+                <fullName>Stress, Depression &amp; Anxiety</fullName>
+                <default>false</default>
+                <label>Stress, Depression &amp; Anxiety</label>
+            </value>
+            <value>
+                <fullName>Accessory to a Disciplinary Offense</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accessory to a Disciplinary Offense</label>
+            </value>
+            <value>
+                <fullName>Accident outside work</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Accident outside work</label>
+            </value>
+            <value>
+                <fullName>Allergy/Skin Complaint</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Allergy/Skin Complaint</label>
+            </value>
+            <value>
+                <fullName>Anxiety and Depression</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Anxiety and Depression</label>
+            </value>
+            <value>
+                <fullName>Anxiety/Stress/Depression</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Anxiety/Stress/Depression</label>
+            </value>
+            <value>
+                <fullName>Back Pain</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Back Pain</label>
+            </value>
+            <value>
+                <fullName>Back pain and sciatica</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Back pain and sciatica</label>
+            </value>
+            <value>
+                <fullName>Bone Fracture</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bone Fracture</label>
+            </value>
+            <value>
+                <fullName>Bullying/Harassment</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bullying/Harassment</label>
+            </value>
+            <value>
+                <fullName>Chest &amp; respiratory</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Chest &amp; respiratory</label>
+            </value>
+            <value>
+                <fullName>Chronic Back Pain</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Chronic Back Pain</label>
+            </value>
+            <value>
+                <fullName>Chronic Fatigue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Chronic Fatigue</label>
+            </value>
+            <value>
+                <fullName>Damage of Property</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Damage of Property</label>
+            </value>
+            <value>
+                <fullName>Dental Problem</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dental Problem</label>
+            </value>
+            <value>
+                <fullName>Depression</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Depression</label>
+            </value>
+            <value>
+                <fullName>Depression, Anxiety</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Depression, Anxiety</label>
+            </value>
+            <value>
+                <fullName>Dermatitis, Eczema</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dermatitis, Eczema</label>
+            </value>
+            <value>
+                <fullName>Diziness</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Diziness</label>
+            </value>
+            <value>
+                <fullName>Dizzy Spells/Vertigo/Faintings</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Dizzy Spells/Vertigo/Faintings</label>
+            </value>
+            <value>
+                <fullName>Doctor/Hospital</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Doctor/Hospital</label>
+            </value>
+            <value>
+                <fullName>Ear/Nose/Throat</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ear/Nose/Throat</label>
+            </value>
+            <value>
+                <fullName>Eye, ear, nose &amp; mouth/dental</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Eye, ear, nose &amp; mouth/dental</label>
+            </value>
+            <value>
+                <fullName>Fighting, assault or abusive behaviour</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fighting, assault or abusive behaviour</label>
+            </value>
+            <value>
+                <fullName>Fracture</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fracture</label>
+            </value>
+            <value>
+                <fullName>Fractured Humerus</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fractured Humerus</label>
+            </value>
+            <value>
+                <fullName>Hand Injury</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hand Injury</label>
+            </value>
+            <value>
+                <fullName>Hand Swelling</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hand Swelling</label>
+            </value>
+            <value>
+                <fullName>Headache and low back pain after lumbar puncture</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Headache and low back pain after lumbar puncture</label>
+            </value>
+            <value>
+                <fullName>Headache, Migraine</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Headache, Migraine</label>
+            </value>
+            <value>
+                <fullName>Hernia</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hernia</label>
+            </value>
+            <value>
+                <fullName>Home Stress</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Home Stress</label>
+            </value>
+            <value>
+                <fullName>Infections</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Infections</label>
+            </value>
+            <value>
+                <fullName>Infectious Disease</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Infectious Disease</label>
+            </value>
+            <value>
+                <fullName>Inflammation and Swelling</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inflammation and Swelling</label>
+            </value>
+            <value>
+                <fullName>Joint Disorder</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Joint Disorder</label>
+            </value>
+            <value>
+                <fullName>Kidney and Bladder Disorders</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kidney and Bladder Disorders</label>
+            </value>
+            <value>
+                <fullName>Knee Pain</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Knee Pain</label>
+            </value>
+            <value>
+                <fullName>Lateness</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lateness</label>
+            </value>
+            <value>
+                <fullName>Left Sided Weaknees</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Left Sided Weaknees</label>
+            </value>
+            <value>
+                <fullName>Loss of Other License</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loss of Other License</label>
+            </value>
+            <value>
+                <fullName>Loss of SIA License</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loss of SIA License</label>
+            </value>
+            <value>
+                <fullName>Low back / SHOULDER PAIN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low back / SHOULDER PAIN</label>
+            </value>
+            <value>
+                <fullName>Low mood and Stress &amp; Hypertension</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Low mood and Stress &amp; Hypertension</label>
+            </value>
+            <value>
+                <fullName>Management Misconduct</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Management Misconduct</label>
+            </value>
+            <value>
+                <fullName>Melanoma</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Melanoma</label>
+            </value>
+            <value>
+                <fullName>Multiple Medical Issues</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Multiple Medical Issues</label>
+            </value>
+            <value>
+                <fullName>Muscular skeletal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Muscular skeletal</label>
+            </value>
+            <value>
+                <fullName>Neurological (incl headaches and migraine)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Neurological (incl headaches and migraine)</label>
+            </value>
+            <value>
+                <fullName>Other Mental Health Reason</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Mental Health Reason</label>
+            </value>
+            <value>
+                <fullName>Other Physical Health Condition</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Physical Health Condition</label>
+            </value>
+            <value>
+                <fullName>Other musculo-skeletal problems</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other musculo-skeletal problems</label>
+            </value>
+            <value>
+                <fullName>Other non-medical</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other non-medical</label>
+            </value>
+            <value>
+                <fullName>Paranoid Schizophrenia</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Paranoid Schizophrenia</label>
+            </value>
+            <value>
+                <fullName>Pen test failure</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pen test failure</label>
+            </value>
+            <value>
+                <fullName>Personal problems</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Personal problems</label>
+            </value>
+            <value>
+                <fullName>Pins and Needles</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pins and Needles</label>
+            </value>
+            <value>
+                <fullName>Post Op</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Post Op</label>
+            </value>
+            <value>
+                <fullName>Pregnancy Related Sickness</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pregnancy Related Sickness</label>
+            </value>
+            <value>
+                <fullName>Pregnancy related</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pregnancy related</label>
+            </value>
+            <value>
+                <fullName>Property damage</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Property damage</label>
+            </value>
+            <value>
+                <fullName>Prostate Cancer and Andominal Pain</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Prostate Cancer and Andominal Pain</label>
+            </value>
+            <value>
+                <fullName>Recent Surgery</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Recent Surgery</label>
+            </value>
+            <value>
+                <fullName>Respiratory/Cold/Flu/Covid-19</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Respiratory/Cold/Flu/Covid-19</label>
+            </value>
+            <value>
+                <fullName>Rheumatoid arthritis &amp; navicular fracture</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rheumatoid arthritis &amp; navicular fracture</label>
+            </value>
+            <value>
+                <fullName>Right Knee Total Replacement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Right Knee Total Replacement</label>
+            </value>
+            <value>
+                <fullName>Right Scapula Fracture</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Right Scapula Fracture</label>
+            </value>
+            <value>
+                <fullName>Right to Work</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Right to Work</label>
+            </value>
+            <value>
+                <fullName>Sciatica</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sciatica</label>
+            </value>
+            <value>
+                <fullName>Seizure</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Seizure</label>
+            </value>
+            <value>
+                <fullName>Sickness - Certification not provided</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sickness - Certification not provided</label>
+            </value>
+            <value>
+                <fullName>Stomach Disorder</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stomach Disorder</label>
+            </value>
+            <value>
+                <fullName>Stomach and Intestinal Disorders</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stomach and Intestinal Disorders</label>
+            </value>
+            <value>
+                <fullName>Stress</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stress</label>
+            </value>
+            <value>
+                <fullName>Stress (Mixture of Work and Personal)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stress (Mixture of Work and Personal)</label>
+            </value>
+            <value>
+                <fullName>Stress (Personal)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stress (Personal)</label>
+            </value>
+            <value>
+                <fullName>Stress (Unknown Cause)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stress (Unknown Cause)</label>
+            </value>
+            <value>
+                <fullName>Stress (Work-Related)</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stress (Work-Related)</label>
+            </value>
+            <value>
+                <fullName>Stress and Burnout</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stress and Burnout</label>
+            </value>
+            <value>
+                <fullName>Stress and Low Mood</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stress and Low Mood</label>
+            </value>
+            <value>
+                <fullName>Stress, depression, mental health &amp; fatigue syndromes</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stress, depression, mental health &amp; fatigue syndromes</label>
+            </value>
+            <value>
+                <fullName>Surgery and hospitalisation</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Surgery and hospitalisation</label>
+            </value>
+            <value>
+                <fullName>TUPE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TUPE</label>
+            </value>
+            <value>
+                <fullName>TUPE Gain</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TUPE Gain</label>
+            </value>
+            <value>
+                <fullName>TUPE Loss</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TUPE Loss</label>
+            </value>
+            <value>
+                <fullName>Timekeeping</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Timekeeping</label>
+            </value>
+            <value>
+                <fullName>Unpaid Compassionate Leave</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unpaid Compassionate Leave</label>
+            </value>
+            <value>
+                <fullName>Unpaid Personal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unpaid Personal</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Redundancy</controllingFieldValue>
+            <valueName>Organisational Restructure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Redundancy</controllingFieldValue>
+            <valueName>Reduction in Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Redundancy</controllingFieldValue>
+            <valueName>Site Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOSR TPP</controllingFieldValue>
+            <valueName>Breach of Trust &amp; Confidence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOSR TPP</controllingFieldValue>
+            <valueName>Client Removal Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOSR TPP</controllingFieldValue>
+            <valueName>Conflict of Interest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOSR TPP</controllingFieldValue>
+            <valueName>End of Fixed Term Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOSR TPP</controllingFieldValue>
+            <valueName>Relationship breakdown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SOSR TPP</controllingFieldValue>
+            <valueName>Reputational Risk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Statutory Illegality</controllingFieldValue>
+            <valueName>DBS Failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Statutory Illegality</controllingFieldValue>
+            <valueName>Failure to Provide Right to Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Statutory Illegality</controllingFieldValue>
+            <valueName>Loss of Airside Pass</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Statutory Illegality</controllingFieldValue>
+            <valueName>Loss of Driving Licence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Statutory Illegality</controllingFieldValue>
+            <valueName>Loss of Government Clearance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Statutory Illegality</controllingFieldValue>
+            <valueName>Loss of Other Licence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Statutory Illegality</controllingFieldValue>
+            <valueName>Loss of SIA Licence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TUPE</controllingFieldValue>
+            <valueName>TUPE - Gain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TUPE</controllingFieldValue>
+            <valueName>TUPE - Loss</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TUPE</controllingFieldValue>
+            <valueName>TUPE - Tender</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Accessory to a Disciplinary Offence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Breach of Code of Conduct</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Breach of Company Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Breach of Confidentiality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Breach of Dress Code</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Breach of GDPR/InfoSec</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Breach of H&amp;S</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Breach of Security Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Breach of Social Media Policy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Bringing the company into disrepute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Bullying/Harrassment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Convictions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Damage to Property</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Dishonesty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Driving offences</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Equipment Check Fail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Failure to adhere to contractual working hours</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Failure to Disclose Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Failure to Follow Absent Reporting Procedures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Failure to Follow Reasonable Instruction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Failure to Report Convictions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Fraud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Misuse of Company Devices</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Misuse of Company Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Misuse of Company Vehicle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Negligence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Other Policy Breach</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Panic Alarm test fail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>PEN Test Fail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Physical/verbal abuse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Poor Hygiene</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Sexual Harrassment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Sleeping</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Smoking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Theft</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Unauthorised Absence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Under the influence</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Disciplinary</controllingFieldValue>
+            <valueName>Willful Refusal of Management Instruction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Colleague Misconduct</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Discrimination</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Lack of Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Manager Misconduct</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Organisational Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Pay/Finances</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>Process-Related</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Resignation Complaint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Terms of Employment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Training</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Unfair Treatment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Grievance</controllingFieldValue>
+            <valueName>Victimisation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Arthritis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Back &amp; neck problems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Chest &amp; Respiritory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Ear, Eye, Nose &amp; Mouth</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Heart, blood pressure &amp; circulation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Joint Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <valueName>Mental Health</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Musculoskeletal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ill Health Capability</controllingFieldValue>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Stomach, Liver, Kidney &amp; Digestion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Accident at Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Accident Outside of Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Covid-19</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Dental</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Fractures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Genito-Urinary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Gynaecological</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Headache &amp; Migraine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Hospitalisation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Infection</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Inflammation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Injury</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Nervous System</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Neurological</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Non-Medical</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Other Medical</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Stress (Work Related)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Stroke</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medical Capability</controllingFieldValue>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Surgery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Cancer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Diabetes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Other Mental Health Condition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Pregnancy Related Illness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Skin Disorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Thyroid, Hormonal Condition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Long Term Sick</controllingFieldValue>
+            <valueName>Stress, Depression &amp; Anxiety</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>Disciplinary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>Grievance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>Redundancy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Appeal</controllingFieldValue>
+            <valueName>SOSR TPP</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

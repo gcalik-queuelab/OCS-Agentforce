@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Submitted_Record</fullName>
+    <active>true</active>
+    <description>Lock record when Risk Assessment has been submitted</description>
+    <errorConditionFormula>AND(
+    $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+    NOT(
+        OR(
+            $Permission.System_Administrator = TRUE,
+            $Permission.Regional_Delegated_Administrator = TRUE,
+            $Permission.Delegated_Admin = TRUE,
+            $Permission.Country_Delegated_Administrator = TRUE
+        )
+    ),
+    System_Is_Submitted__c
+)</errorConditionFormula>
+    <errorMessage>Unable to change Risk Assessments which have been submitted.</errorMessage>
+</ValidationRule>

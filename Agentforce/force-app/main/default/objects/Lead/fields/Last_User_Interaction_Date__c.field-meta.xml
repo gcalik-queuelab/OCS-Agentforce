@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_User_Interaction_Date__c</fullName>
+    <formula>IF(
+    AND(
+        ISBLANK(LastActivityDate),
+        ISBLANK(DATEVALUE(Latest_Next_Step__c)),
+        ISBLANK(Last_Contact_Date__c),
+        ISBLANK(Initial_Contact_Attempt__c),
+								ISBLANK(Initial_Contact_Date__c),
+								ISBLANK(Next_Contact_Date__c),
+        ISBLANK(Revisit_Date__c),
+								ISBLANK(Latest_Task_Due_Date__c)
+    ),
+    DATEVALUE(CreatedDate),
+    DATE(1900, 01, 01) - 
+    MIN(
+        DATE(1900, 01, 01) - BLANKVALUE(LastActivityDate, DATE(1900, 01, 01)),
+        DATE(1900, 01, 01) - BLANKVALUE(DATEVALUE(Latest_Next_Step__c), DATE(1900, 01, 01)),
+        DATE(1900, 01, 01) - BLANKVALUE(Last_Contact_Date__c, DATE(1900, 01, 01)),
+								DATE(1900, 01, 01) - BLANKVALUE(Initial_Contact_Date__c, DATE(1900, 01, 01)),
+        DATE(1900, 01, 01) - BLANKVALUE(Initial_Contact_Attempt__c, DATE(1900, 01, 01)),
+        DATE(1900, 01, 01) - BLANKVALUE(Revisit_Date__c, DATE(1900, 01, 01)),
+								DATE(1900, 01, 01) - BLANKVALUE(Next_Contact_Date__c, DATE(1900, 01, 01)),
+								DATE(1900, 01, 01) - BLANKVALUE(Latest_Task_Due_Date__c, DATE(1900, 01, 01))
+								
+    )
+)
+
+/* Return the maximum date from Last Activity, Latest Next Step, Last Contact Date, Next Contact Date, Initial Contact Date, Initial Contact Attempt, Revisit Date and Latest Task Due Date. If none of these are populated then return CreatedDate.
+The way this formula achieves the latest date works around not being able to use MAX function with Dates natively.
+The formula calculates the latest date by replacing any blank fields with 01/01/1900 and then finding the minimum when each date is subtracted from 01/01/1900. The minimum result from this series of subtractions will be the latest date.
+Once the minimum is found among these dates it is added to 01/01/1900 which results in the latest date being returned. */</formula>
+    <inlineHelpText>Used to identify stalled Leads. Returns the latest date from Created Date, Last Activity, Latest Next Step, Last Contact, Initial Contact, Initial Contact Attempt, Revisit and Latest Task Due Date.</inlineHelpText>
+    <label>Last User Interaction Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

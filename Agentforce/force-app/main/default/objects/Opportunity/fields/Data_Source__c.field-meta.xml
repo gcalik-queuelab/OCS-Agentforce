@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Data_Source__c</fullName>
+    <label>Data Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aktrion</fullName>
+                <default>false</default>
+                <label>Aktrion</label>
+            </value>
+            <value>
+                <fullName>Arthur McKay</fullName>
+                <default>false</default>
+                <label>Arthur McKay</label>
+            </value>
+            <value>
+                <fullName>Catering Academy</fullName>
+                <default>false</default>
+                <label>Catering Academy</label>
+            </value>
+            <value>
+                <fullName>Legacy Atalian</fullName>
+                <default>false</default>
+                <label>Legacy Atalian</label>
+            </value>
+            <value>
+                <fullName>Legacy OCS</fullName>
+                <default>false</default>
+                <label>Legacy OCS</label>
+            </value>
+            <value>
+                <fullName>Master Contract June 18</fullName>
+                <default>false</default>
+                <label>Master Contract June 18</label>
+            </value>
+            <value>
+                <fullName>SugarCRM</fullName>
+                <default>false</default>
+                <label>SugarCRM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

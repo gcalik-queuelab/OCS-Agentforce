@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Lead_Forensics_Website_Visits__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>The number of Lead Forensics Website Visits that took place while the Opportunity was Open.
+When the number is incremented a notification is sent by the Opportunity After Save flow to the Opp Owner.</description>
+    <externalId>false</externalId>
+    <label># Lead Forensics Website Visits</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

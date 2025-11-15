@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Child_Action</fullName>
+    <availability>online</availability>
+    <description>List Button to add Child Action to a Parent Action</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>New Child Action</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/lightning/action/quick/Action__c.Add_Child_Actions?objectApiName&amp;context=RECORD_DETAIL&amp;recordId={!CASESAFEID(Action__c.Id)}&amp;backgroundContext=%2Flightning%2Fr%2FAction__c%2F{!CASESAFEID(Action__c.Id)}%2Fview</url>
+</WebLink>

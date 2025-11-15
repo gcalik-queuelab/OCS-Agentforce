@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>AD-77 - Create Permission Set Groups</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Estimator</label>
+    <permissionSets>API_Integration</permissionSets>
+    <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>Account_Create_Read_and_Edit</permissionSets>
+    <permissionSets>Account_Role_Read_Create_Edit</permissionSets>
+    <permissionSets>Action_Create_Read_and_Edit</permissionSets>
+    <permissionSets>Activity_Read_Create_Edit</permissionSets>
+    <permissionSets>Bid_Read</permissionSets>
+    <permissionSets>CEV_Read</permissionSets>
+    <permissionSets>Commitment_Read</permissionSets>
+    <permissionSets>Competitor_Services_Read</permissionSets>
+    <permissionSets>Contact_Read_Create_and_Edit</permissionSets>
+    <permissionSets>Continuous_Improvement_Read</permissionSets>
+    <permissionSets>Contract_Line_Item_Read</permissionSets>
+    <permissionSets>Contract_Read</permissionSets>
+    <permissionSets>Contract_Terms_Read</permissionSets>
+    <permissionSets>Contract_Update_Read</permissionSets>
+    <permissionSets>Contract_Variation_Read</permissionSets>
+    <permissionSets>Create_and_Customise_List_Views</permissionSets>
+    <permissionSets>DNBConnect__DNB_Connect_Components_access</permissionSets>
+    <permissionSets>DnBConnect_Custom_Object_Field_Permissions</permissionSets>
+    <permissionSets>Error_Log_Create_Read_and_Edit</permissionSets>
+    <permissionSets>Estimator_User</permissionSets>
+    <permissionSets>Financial_Risk_History_Create_Read</permissionSets>
+    <permissionSets>Framework_Agreement_Read</permissionSets>
+    <permissionSets>NPS_Read</permissionSets>
+    <permissionSets>Perception_History_Create_Read_and_Edit</permissionSets>
+    <permissionSets>PhoneTools_Access</permissionSets>
+    <permissionSets>USF_Flow_Screen_Component_Datatable</permissionSets>
+    <permissionSets>User_Read</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

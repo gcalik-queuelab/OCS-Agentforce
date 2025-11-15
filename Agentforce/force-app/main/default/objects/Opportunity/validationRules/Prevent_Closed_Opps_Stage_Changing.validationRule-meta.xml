@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Closed_Opps_Stage_Changing</fullName>
+    <active>true</active>
+    <description>AD-378 - validation rule to prevent all users, apart from System Admins from changing the Opportunity stage when it is Closed</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+RecordType.DeveloperName != &quot;Target&quot;,
+    OR(
+        ISPICKVAL(PRIORVALUE(StageName), &apos;7. Closed Won&apos;),
+        ISPICKVAL(PRIORVALUE(StageName), &apos;6. Closed Lost&apos;),
+        ISPICKVAL(PRIORVALUE(StageName), &apos;5. Closed Withdrawn&apos;)
+    ),
+    ISCHANGED(StageName),
+AND(
+NOT($Permission.System_Administrator),
+NOT( $Permission.Delegated_Admin ),
+NOT( $Permission.Country_Delegated_Administrator ))
+)</errorConditionFormula>
+    <errorMessage>You are unable to edit the stage of a closed Opportunity</errorMessage>
+</ValidationRule>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enquiry_Service__c</fullName>
+    <description>Stores the Service that the customer has enquired about</description>
+    <label>Enquiry Service</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Corporate_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Enquiry_Service</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Aviation Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Bundled Soft Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Cabling &amp; Networking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Catering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Cleaning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Energy Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Fire</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Front of House &amp; Concierge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>HVAC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Industrial Processes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Landscaping</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>M&amp;E Frameworks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>M&amp;E Projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Mail Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Management Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Pest Control</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Security</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Space Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Technical Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Total Facilities Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Waste Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facilities</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Window Cleaning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Aftersales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Warranty &amp; Dealer Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Business Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Development &amp; Launch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Fleet &amp; Remarketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Hail Repair Solutions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive HV Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Automation &amp; Data Exchange</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Logistics &amp; Handling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Paintshop Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive Production Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Automotive</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Automotive QPDI services</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Existing_Account_Type__c</fullName>
+    <description>Identifies the matched Existing Account Type</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Existing_Account__r.Account_Type__c)</formula>
+    <label>Existing Account Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

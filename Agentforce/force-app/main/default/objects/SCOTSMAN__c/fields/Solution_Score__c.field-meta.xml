@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solution_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  OR(
+    NOT(ISBLANK(TEXT(Score_1_1__c))),
+    NOT(ISBLANK(TEXT(Score_1_2__c))),
+    NOT(ISBLANK(TEXT(Score_1_3__c))),
+    NOT(ISBLANK(TEXT(Score_1_4__c))),
+    NOT(ISBLANK(TEXT(Score_1_5__c))),
+    NOT(ISBLANK(TEXT(Score_1_6__c))),
+    NOT(ISBLANK(TEXT(Score_1_7__c)))
+  ),
+  MAX(
+    VALUE(TEXT(Score_1_1__c)),
+    VALUE(TEXT(Score_1_2__c)),
+    VALUE(TEXT(Score_1_3__c)),
+    VALUE(TEXT(Score_1_4__c)),
+    VALUE(TEXT(Score_1_5__c)),
+    VALUE(TEXT(Score_1_6__c)),
+    VALUE(TEXT(Score_1_7__c))
+  ),
+  NULL
+)</formula>
+    <inlineHelpText>The total score from the Solution section. Only calculated where all scores are completed.</inlineHelpText>
+    <label>Solution Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

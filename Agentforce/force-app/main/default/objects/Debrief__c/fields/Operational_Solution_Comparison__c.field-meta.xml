@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operational_Solution_Comparison__c</fullName>
+    <description>Review of the operational solution against the brief and where lost, the winning bidder.</description>
+    <inlineHelpText>Did our operational solution meet the brief? How did it compare to others bidding including the winning bidder?</inlineHelpText>
+    <label>Operational Solution Comparison</label>
+    <length>5000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

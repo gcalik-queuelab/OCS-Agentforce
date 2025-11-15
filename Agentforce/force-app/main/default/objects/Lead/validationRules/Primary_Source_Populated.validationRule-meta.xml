@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Source_Populated</fullName>
+    <active>true</active>
+    <description>AD-5 - validation to ensure Primary Source is populated</description>
+    <errorConditionFormula>AND(
+				$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				(ISBLANK(TEXT(Primary_Source__c))),
+				OR(
+								ISNEW(),
+								ISCHANGED(Status)
+								)
+)
+
+/* When creating or updating the Status of a Lead, Primary Source is required.
+Set this way to reduce the number of Flow/DLRS errors when not actively updating a Lead */</errorConditionFormula>
+    <errorDisplayField>Primary_Source__c</errorDisplayField>
+    <errorMessage>Primary Source is required</errorMessage>
+</ValidationRule>

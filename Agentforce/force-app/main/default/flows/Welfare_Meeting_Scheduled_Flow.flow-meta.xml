@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Automatic_Closure_Email_Alert</name>
+        <label>Automatic Closure Email Alert</label>
+        <locationX>798</locationX>
+        <locationY>576</locationY>
+        <actionName>Welfare_Meeting__c.Welfare_Meeting_Automatic_Closure</actionName>
+        <actionType>emailAlert</actionType>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Welfare_Meeting__c.Welfare_Meeting_Automatic_Closure</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Pending_Scheduling_Reminder_Case_Manager</name>
+        <label>Pending Scheduling Reminder - Case Manager</label>
+        <locationX>1854</locationX>
+        <locationY>468</locationY>
+        <actionName>Welfare_Meeting__c.Welfare_Meeting_Pending_Scheduling_Reminder</actionName>
+        <actionType>emailAlert</actionType>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Welfare_Meeting__c.Welfare_Meeting_Pending_Scheduling_Reminder</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Welfare_Meeting_Overdue_Notify_Case_Manager</name>
+        <label>Welfare Meeting Overdue - Notify Case Manager</label>
+        <locationX>314</locationX>
+        <locationY>1116</locationY>
+        <actionName>Welfare_Meeting__c.Welfare_Meeting_Overdue_Notify_Case_Owner</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>How_Many_Days_Overdue_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Welfare_Meeting__c.Welfare_Meeting_Overdue_Notify_Case_Owner</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Case_Manager_Email_Populated</name>
+        <label>Case Manager Email Populated?</label>
+        <locationX>842</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Email_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Case_Manager_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Manager_Notifications_Enabled</targetReference>
+            </connector>
+            <label>Yes - Email Populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Have the Case Manager Auto Reminders been paused on the Case? If so then do not send email.</description>
+        <name>Case_Manager_Notifications_Enabled</name>
+        <label>Case Manager Notifications Enabled?</label>
+        <locationX>578</locationX>
+        <locationY>1008</locationY>
+        <defaultConnectorLabel>No - Do Not Send</defaultConnectorLabel>
+        <rules>
+            <name>CM_Notifications_Enabled_Send</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Pause_Case_Manager_Auto_Reminder_Emails__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Welfare_Meeting_Overdue_Notify_Case_Manager</targetReference>
+            </connector>
+            <label>Yes - Send Notification</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>How many days have passed since the scheduled Meeting Date?</description>
+        <name>Days_Passed_Decision</name>
+        <label>Days Passed Decision?</label>
+        <locationX>842</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>X7_Days_Passed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_Days_Passed_Calc</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>7.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Manager_Email_Populated</targetReference>
+            </connector>
+            <label>7 Days Passed</label>
+        </rules>
+        <rules>
+            <name>X14_Days_Passed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_Days_Passed_Calc</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>14.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Manager_Email_Populated</targetReference>
+            </connector>
+            <label>14 Days Passed</label>
+        </rules>
+        <rules>
+            <name>X21_Days_Passed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_Days_Passed_Calc</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>21.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Manager_Email_Populated</targetReference>
+            </connector>
+            <label>21 Days Passed</label>
+        </rules>
+        <rules>
+            <name>X28_Days_Passed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_Days_Passed_Calc</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>28.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Manager_Email_Populated</targetReference>
+            </connector>
+            <label>28 Days Passed</label>
+        </rules>
+        <rules>
+            <name>X35_Days_Passed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_Days_Passed_Calc</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>35.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_Welfare_Meeting</targetReference>
+            </connector>
+            <label>35 Days Passed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Depending on how many days overdue the Welfare Meeting is create Case Comments and Next Actions with slightly different wording.</description>
+        <name>How_Many_Days_Overdue_Decision</name>
+        <label>How Many Days Overdue?</label>
+        <locationX>314</locationX>
+        <locationY>1224</locationY>
+        <defaultConnectorLabel>Other - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Less_than_28_Days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_Days_Passed_Calc</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>28.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Case_Comment_Less_Than_28_Days</targetReference>
+            </connector>
+            <label>Less than 28 Days</label>
+        </rules>
+        <rules>
+            <name>X28_Days_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_Days_Passed_Calc</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>28.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Case_Comment_28_Days</targetReference>
+            </connector>
+            <label>28 Days</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Scheduled_or_Pending</name>
+        <label>Scheduled or Pending</label>
+        <locationX>1744</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Other - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Scheduled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Scheduled</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Days_Passed_Decision</targetReference>
+            </connector>
+            <label>Scheduled</label>
+        </rules>
+        <rules>
+            <name>Pending</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X7_Days_Passed_Decision</targetReference>
+            </connector>
+            <label>Pending</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>X7_Days_Passed_Decision</name>
+        <label>7 Days Passed Decision</label>
+        <locationX>2118</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_7_Days_Passed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>f_Days_Passed_Calc</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>7.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Pending_Scheduling_Reminder_Case_Manager</targetReference>
+            </connector>
+            <label>Yes - 7 Days Passed</label>
+        </rules>
+    </decisions>
+    <description>Scheduled Flow to send reminder notifications and automatically close incomplete Welfare Meetings.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Used in creation of Case Comments/Next Action Date. Add 35 Days to the Date/Time of the Welfare Meeting.</description>
+        <name>f_Automatic_Closure_Date</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Record.Date_Time__c}) + 35</expression>
+    </formulas>
+    <formulas>
+        <name>f_Days_Passed_Calc</name>
+        <dataType>Number</dataType>
+        <expression>IF(DATEVALUE({!$Record.Date_Time__c}) &lt;= TODAY(),
+TODAY() - DATEVALUE({!$Record.Date_Time__c}),
+0
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>7 Days in the future from today.</description>
+        <name>f_Today_Plus_7</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate} + 7</expression>
+    </formulas>
+    <interviewLabel>Welfare Meeting: Scheduled Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Welfare Meeting: Scheduled Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>If 28 Days after Welfare Meeting Date then create Case Comment so that the Case Owner can see that the automated chaser email has been sent including the Next Automated Chaser Email date. Include automated Welfare Meeting Closure date.</description>
+        <name>Create_Case_Comment_28_Days</name>
+        <label>Create Case Comment (28 Days)</label>
+        <locationX>314</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>Create_Next_Action_28_Days</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CommentBody</field>
+            <value>
+                <stringValue>Welfare Meeting {!$Record.Name} has been Pending an update for the last  {!f_Days_Passed_Calc}. Automated chaser email was just sent to {!$Record.Case_Manager_Email__c}. The Welfare Meeting will be automatically closed down as Not Completed on {!f_Today_Plus_7}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsPublished</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CaseComment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>If 7/14/21 Days after Welfare Meeting Date then create Case Comment so that the Case Owner can see that the automated chaser email has been sent including the Next Automated Chaser Email date.</description>
+        <name>Create_Case_Comment_Less_Than_28_Days</name>
+        <label>Create Case Comment (&lt;28 Days)</label>
+        <locationX>50</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>Create_Next_Action_Less_Than_28_Days</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CommentBody</field>
+            <value>
+                <stringValue>Welfare Meeting {!$Record.Name} has been Pending an update for the last  {!f_Days_Passed_Calc}. Automated chaser email was just sent to {!$Record.Case_Manager_Email__c}. Next Automated Chaser Email due to be sent on {!f_Today_Plus_7}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ParentId</field>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CaseComment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Next_Action_28_Days</name>
+        <label>Create Next Action (28 Days)</label>
+        <locationX>314</locationX>
+        <locationY>1440</locationY>
+        <inputAssignments>
+            <field>Case__c</field>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comments__c</field>
+            <value>
+                <stringValue>Automated Welfare Meeting Chaser Email sent. Follow up with {!$Record.Case__r.Case_Manager_Lookup__r.Name} before the Welfare Meeting is automatically closed down as Not Completed on {!f_Today_Plus_7}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Next_Action_Date__c</field>
+            <value>
+                <elementReference>f_Today_Plus_7</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Next_Action__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Next_Action_Less_Than_28_Days</name>
+        <label>Create Next Action (&lt;28 Days)</label>
+        <locationX>50</locationX>
+        <locationY>1440</locationY>
+        <inputAssignments>
+            <field>Case__c</field>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Comments__c</field>
+            <value>
+                <stringValue>Automated Welfare Meeting Chaser Email sent. Follow up with {!$Record.Case__r.Case_Manager_Lookup__r.Name}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Next_Action_Date__c</field>
+            <value>
+                <elementReference>f_Today_Plus_7</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Next_Action__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>Close_Welfare_Meeting</name>
+        <label>Close Welfare Meeting</label>
+        <locationX>798</locationX>
+        <locationY>468</locationY>
+        <connector>
+            <targetReference>Automatic_Closure_Email_Alert</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Log_Error</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Automated_Closure__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reason_Meeting_Not_Completed__c</field>
+            <value>
+                <stringValue>Automatic closure, no details provided</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Not Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1618</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Scheduled_or_Pending</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Scheduled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pending</stringValue>
+            </value>
+        </filters>
+        <object>Welfare_Meeting__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-04-23</startDate>
+            <startTime>23:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Log_Error</name>
+        <label>Log Error</label>
+        <locationX>1326</locationX>
+        <locationY>576</locationY>
+        <flowName>Utility_Error_Log_Creation</flowName>
+        <inputAssignments>
+            <name>Level</name>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Messages</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>OriginName</name>
+            <value>
+                <stringValue>Welfare Meeting: Automated Closure Scheduled Flow</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Type</name>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

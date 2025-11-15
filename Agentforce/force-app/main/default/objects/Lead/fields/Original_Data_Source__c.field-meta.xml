@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_Data_Source__c</fullName>
+    <description>Original Data Source- Data Dictionary Consolidation</description>
+    <label>Original Data Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arthur McKay</fullName>
+                <default>false</default>
+                <label>Arthur McKay</label>
+            </value>
+            <value>
+                <fullName>Catering Academy</fullName>
+                <default>false</default>
+                <label>Catering Academy</label>
+            </value>
+            <value>
+                <fullName>Nomination</fullName>
+                <default>false</default>
+                <label>Nomination</label>
+            </value>
+            <value>
+                <fullName>SugarCRM</fullName>
+                <default>false</default>
+                <label>SugarCRM</label>
+            </value>
+            <value>
+                <fullName>Incentive</fullName>
+                <default>false</default>
+                <label>Incentive</label>
+            </value>
+            <value>
+                <fullName>Atalian</fullName>
+                <default>false</default>
+                <label>Atalian</label>
+            </value>
+            <value>
+                <fullName>OCS</fullName>
+                <default>false</default>
+                <label>OCS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

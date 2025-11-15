@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Enable the HR Task Record Type</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Task - HR Task Record Type</label>
+    <recordTypeVisibilities>
+        <recordType>Task.HR_Task</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+</PermissionSet>

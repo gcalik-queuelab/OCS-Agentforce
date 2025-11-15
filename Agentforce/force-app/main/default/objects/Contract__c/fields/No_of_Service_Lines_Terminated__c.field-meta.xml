@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_of_Service_Lines_Terminated__c</fullName>
+    <label># Service Lines Terminated</label>
+    <summaryFilterItems>
+        <field>Contract_Line_Item__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Terminated</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Contract_Line_Item__c.Contract__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

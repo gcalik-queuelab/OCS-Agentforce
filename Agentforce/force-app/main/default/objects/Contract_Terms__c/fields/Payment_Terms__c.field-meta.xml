@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Terms__c</fullName>
+    <label>Payment Terms (Days)</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&lt;30 Days</fullName>
+                <default>false</default>
+                <label>&lt;30 Days</label>
+            </value>
+            <value>
+                <fullName>30 Days</fullName>
+                <default>false</default>
+                <label>30 Days</label>
+            </value>
+            <value>
+                <fullName>45 Days</fullName>
+                <default>false</default>
+                <label>45 Days</label>
+            </value>
+            <value>
+                <fullName>60 Days</fullName>
+                <default>false</default>
+                <label>60 Days</label>
+            </value>
+            <value>
+                <fullName>61+ Days</fullName>
+                <default>false</default>
+                <label>61+ Days</label>
+            </value>
+            <value>
+                <fullName>0</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>0</label>
+            </value>
+            <value>
+                <fullName>120</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>120</label>
+            </value>
+            <value>
+                <fullName>30</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>30</label>
+            </value>
+            <value>
+                <fullName>30 days or less</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>30 days or less</label>
+            </value>
+            <value>
+                <fullName>31 – 60 days</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>31 – 60 days</label>
+            </value>
+            <value>
+                <fullName>45</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>45</label>
+            </value>
+            <value>
+                <fullName>60</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>60</label>
+            </value>
+            <value>
+                <fullName>75</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>75</label>
+            </value>
+            <value>
+                <fullName>90</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>90</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

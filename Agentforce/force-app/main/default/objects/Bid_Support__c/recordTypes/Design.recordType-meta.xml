@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Design</fullName>
+    <active>true</active>
+    <label>Design</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AvTech_Picklist__c</picklist>
+        <values>
+            <fullName>AvTech Passenger Assistance - Console</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AvTech Passenger Assistance - Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AvTech Shuttle - Console</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AvTech Shuttle - Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AvTech Turnaround - Console</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AvTech Turnaround - Mobile</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bid_Team_DEP__c</picklist>
+        <values>
+            <fullName>Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CAFM_Picklist__c</picklist>
+        <values>
+            <fullName>Concept Evolution %28Core System%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concept Reach %28Client Portal%2C Concept%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connect %28Supplier Portal%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FSI Go %28Mobile Working%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cancelled_Reason__c</picklist>
+        <values>
+            <fullName>Bid Support Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bid Support Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Withdrawn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Won</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Closed_Reason__c</picklist>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Withdrawn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Won</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Document_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IT_Equipment_Picklist__c</picklist>
+        <values>
+            <fullName>AD Account%2FMS365</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Headsets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MFD%2FPrinter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer%2FDesktop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SIM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tablet</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Level_of_Support__c</picklist>
+        <values>
+            <fullName>Full Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Sourcing %26 Formatting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Support</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Network_Picklist__c</picklist>
+        <values>
+            <fullName>%28FTTC%29 Fiber cabinet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADSL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ethernet</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Proposal_Type__c</picklist>
+        <values>
+            <fullName>Generic Proposal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Proposed_Systems__c</picklist>
+        <values>
+            <fullName>Audim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Epsys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kafoodle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MS365%2FPowerBi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Servicetrac</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telephony</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teletrac Navman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timegate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trackforce Variant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visual Business Retail %28VBR%29 - EPOS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RFP_Result__c</picklist>
+        <values>
+            <fullName>Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verbal Award</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdraw</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason_for_closure__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Review_Outcome__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Lead_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resource Allocation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Timegate_Picklist__c</picklist>
+        <values>
+            <fullName>Employee App</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Portal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Trackforce_Valiant_Picklist__c</picklist>
+        <values>
+            <fullName>Post %28Desktop Application%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trackforce mPost %28Mobile Application%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Generic Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generic Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intro Pack</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

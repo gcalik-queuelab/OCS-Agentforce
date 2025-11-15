@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Service__c</fullName>
+    <description>Stores the service that the customer has enquired about</description>
+    <inlineHelpText>The primary service that this Opportunity relates to. The value is used in the automatic naming of the Opportunity.</inlineHelpText>
+    <label>Primary Service</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Enquiry_Service</valueSetName>
+    </valueSet>
+</CustomField>

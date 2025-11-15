@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Sector_or_Sub_Sector_Mismatch__c</fullName>
+    <formula>IF(ISBLANK(SIC_Code__c),FALSE,
+			   OR(
+							 TEXT(OCS_Sector__c) != TEXT(SIC_Code__r.OCS_Sector__c) ,
+							 TEXT(OCS_Sub_Sector__c) != TEXT(SIC_Code__r.OCS_Sub_Sector__c) 
+							)
+			)
+			
+			/* Where the SIC Lookup is populated and either the Sector or Sub Sector do not align with
+			the OCS Sector/Sub Sector from the SIC Code record mark flag = TRUE*/</formula>
+    <label>System: Sector or Sub Sector Mismatch</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

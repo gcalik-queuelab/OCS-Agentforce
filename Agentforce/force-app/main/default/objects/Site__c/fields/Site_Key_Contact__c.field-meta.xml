@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Site_Key_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>AD 185 to create a Site from an Account, marking the site as &apos;Active&apos; or &apos;In-Active&apos;</description>
+    <label>Site Key Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Sites</relationshipLabel>
+    <relationshipName>Sites</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Singapore_Sales_Opportunities</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Custom_Probability__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Sub_Stage__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Contract_Start_Date__c</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>Service_Summary_Text__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Owner_Country_Formula__c</field>
+        <operation>equals</operation>
+        <value>Singapore</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.TYPE</field>
+        <operation>equals</operation>
+        <value>New Customer,Cross-Sell,Upsell</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>2. Prospect,3. Solution,4. Post-Submission</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2024</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>lessOrEqual</operation>
+        <value>12/31/2025</value>
+    </filters>
+    <label>Singapore Sales Opportunities</label>
+    <sharedTo>
+        <role>Singapore_Malaysia</role>
+        <roleAndSubordinates>Singapore</roleAndSubordinates>
+    </sharedTo>
+</ListView>

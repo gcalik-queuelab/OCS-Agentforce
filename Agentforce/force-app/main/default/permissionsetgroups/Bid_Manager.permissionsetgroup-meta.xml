@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>AD-77 - Create Permission Set Groups</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bid Manager</label>
+    <permissionSets>API_Integration</permissionSets>
+    <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>Account_Read_and_Edit</permissionSets>
+    <permissionSets>Account_Role_Read_Create_Edit</permissionSets>
+    <permissionSets>Action_Plan_Read</permissionSets>
+    <permissionSets>Actions_Read_Only</permissionSets>
+    <permissionSets>Activity_Read_Create_Edit</permissionSets>
+    <permissionSets>BidSupport_Create_Read_Edit</permissionSets>
+    <permissionSets>Bid_Manager_User</permissionSets>
+    <permissionSets>Bid_Phase_Read_Only</permissionSets>
+    <permissionSets>Bid_Read_and_Edit</permissionSets>
+    <permissionSets>CEV_Read</permissionSets>
+    <permissionSets>Commitment_Create_Read_and_Edit</permissionSets>
+    <permissionSets>Competitor_Services_Read</permissionSets>
+    <permissionSets>Contact_Read_Create_and_Edit</permissionSets>
+    <permissionSets>Continuous_Improvement_Create_Read_Edit</permissionSets>
+    <permissionSets>Contract_Line_Item_Read</permissionSets>
+    <permissionSets>Contract_Read</permissionSets>
+    <permissionSets>Contract_Terms_Create_Read_Edit</permissionSets>
+    <permissionSets>Contract_Update_Read</permissionSets>
+    <permissionSets>Contract_Variation_Read</permissionSets>
+    <permissionSets>Create_and_Customise_List_Views</permissionSets>
+    <permissionSets>DNBConnect__DNB_Connect_Components_access</permissionSets>
+    <permissionSets>Debrief_Read_Only</permissionSets>
+    <permissionSets>DnBConnect_Custom_Object_Field_Permissions</permissionSets>
+    <permissionSets>Error_Log_Create_Read_and_Edit</permissionSets>
+    <permissionSets>Financial_Risk_History_Create_Read</permissionSets>
+    <permissionSets>Framework_Agreement_Read</permissionSets>
+    <permissionSets>Good_News_Story_Read</permissionSets>
+    <permissionSets>NPS_Read</permissionSets>
+    <permissionSets>Operational_Opportunity_Read</permissionSets>
+    <permissionSets>Perception_History_Create_Read_and_Edit</permissionSets>
+    <permissionSets>PhoneTools_Access</permissionSets>
+    <permissionSets>SCOTSMAN_Read_Only</permissionSets>
+    <permissionSets>SIC_Code_Read</permissionSets>
+    <permissionSets>SWOT_Read</permissionSets>
+    <permissionSets>Site_Read_Create_Edit</permissionSets>
+    <permissionSets>USF_Flow_Screen_Component_Datatable</permissionSets>
+    <permissionSets>User_Read</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

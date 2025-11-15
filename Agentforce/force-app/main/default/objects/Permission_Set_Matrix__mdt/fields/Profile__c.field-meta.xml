@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profile__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Profile</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Manager Level 1</fullName>
+                <default>true</default>
+                <label>Account Manager Level 1</label>
+            </value>
+            <value>
+                <fullName>Account Manager Level 2</fullName>
+                <default>false</default>
+                <label>Account Manager Level 2</label>
+            </value>
+            <value>
+                <fullName>Bid Manager</fullName>
+                <default>false</default>
+                <label>Bid Manager</label>
+            </value>
+            <value>
+                <fullName>Bid Support - Level 1</fullName>
+                <default>false</default>
+                <label>Bid Support - Level 1</label>
+            </value>
+            <value>
+                <fullName>Client Solutions Director</fullName>
+                <default>false</default>
+                <label>Client Solutions Director</label>
+            </value>
+            <value>
+                <fullName>Country Delegated Admin</fullName>
+                <default>false</default>
+                <label>Country Delegated Admin</label>
+            </value>
+            <value>
+                <fullName>Estimator</fullName>
+                <default>false</default>
+                <label>Estimator</label>
+            </value>
+            <value>
+                <fullName>Global Delegated Admin</fullName>
+                <default>false</default>
+                <label>Global Delegated Admin</label>
+            </value>
+            <value>
+                <fullName>HR User</fullName>
+                <default>false</default>
+                <label>HR User</label>
+            </value>
+            <value>
+                <fullName>Identity</fullName>
+                <default>false</default>
+                <label>Identity</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Marketing User</fullName>
+                <default>false</default>
+                <label>Marketing User</label>
+            </value>
+            <value>
+                <fullName>Mobilisations</fullName>
+                <default>false</default>
+                <label>Mobilisations</label>
+            </value>
+            <value>
+                <fullName>NPS Scheduler</fullName>
+                <default>false</default>
+                <label>NPS Scheduler</label>
+            </value>
+            <value>
+                <fullName>NPS Surveyor</fullName>
+                <default>false</default>
+                <label>NPS Surveyor</label>
+            </value>
+            <value>
+                <fullName>Principal Bid Manager</fullName>
+                <default>false</default>
+                <label>Principal Bid Manager</label>
+            </value>
+            <value>
+                <fullName>Read Only</fullName>
+                <default>false</default>
+                <label>Read Only</label>
+            </value>
+            <value>
+                <fullName>Regional Delegated Admin</fullName>
+                <default>false</default>
+                <label>Regional Delegated Admin</label>
+            </value>
+            <value>
+                <fullName>Sales Director</fullName>
+                <default>false</default>
+                <label>Sales Director</label>
+            </value>
+            <value>
+                <fullName>Sales User</fullName>
+                <default>false</default>
+                <label>Sales User</label>
+            </value>
+            <value>
+                <fullName>Senior Chair</fullName>
+                <default>false</default>
+                <label>Senior Chair</label>
+            </value>
+            <value>
+                <fullName>System Administrator</fullName>
+                <default>false</default>
+                <label>System Administrator</label>
+            </value>
+            <value>
+                <fullName>Telemarketing</fullName>
+                <default>false</default>
+                <label>Telemarketing</label>
+            </value>
+            <value>
+                <fullName>External Telemarketing</fullName>
+                <default>false</default>
+                <label>External Telemarketing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

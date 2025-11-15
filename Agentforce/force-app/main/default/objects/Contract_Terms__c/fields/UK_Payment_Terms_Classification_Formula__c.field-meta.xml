@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UK_Payment_Terms_Classification_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case (Payment_Terms__c ,  
+&quot;&lt;30 Days&quot;,&quot;30 days or less&quot;,  
+&quot;30 days&quot;,&quot;30 days or less&quot;,  
+&quot;45 days&quot;,&quot;31 – 60 days&quot;,
+&quot;60 Days&quot;, &quot;31 – 60 days&quot;,
+&quot;61+ days&quot;,&quot;60+ days&quot;,
+						&quot;&quot;)</formula>
+    <label>UK Payment Terms Classification</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

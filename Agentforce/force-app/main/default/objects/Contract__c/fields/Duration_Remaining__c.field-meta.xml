@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duration_Remaining__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    Contract_Start_Date__c &gt; TODAY(), 
+    &quot;Contract Not Started&quot;, 
+    IF(
+        Contract_End_Date__c &lt; Contract_Start_Date__c, 
+        &quot;Contract End Date Passed&quot;, 
+        IF(
+            FLOOR((Contract_End_Date__c - Contract_Start_Date__c) / 365) &gt; 0, 
+            TEXT(FLOOR((Contract_End_Date__c - Contract_Start_Date__c) / 365)) &amp; 
+            IF(
+                FLOOR((Contract_End_Date__c - Contract_Start_Date__c) / 365) = 1, 
+                &quot; Year&quot;, 
+                &quot; Years&quot;
+            ), 
+            &quot;&quot;
+        ) &amp; 
+        IF(
+            FLOOR(MOD((Contract_End_Date__c - Contract_Start_Date__c), 365) / 30) &gt; 0, 
+            IF(
+                FLOOR((Contract_End_Date__c - Contract_Start_Date__c) / 365) &gt; 0, 
+                &quot; &quot;, 
+                &quot;&quot;
+            ) &amp; 
+            TEXT(FLOOR(MOD((Contract_End_Date__c - Contract_Start_Date__c), 365) / 30)) &amp; 
+            IF(
+                FLOOR(MOD((Contract_End_Date__c - Contract_Start_Date__c), 365) / 30) = 1, 
+                &quot; Month&quot;, 
+                &quot; Months&quot;
+            ), 
+            &quot;&quot;
+        ) &amp; 
+        IF(
+            MOD((Contract_End_Date__c - Contract_Start_Date__c), 30) &gt; 0, 
+            IF(
+                FLOOR((Contract_End_Date__c - Contract_Start_Date__c) / 365) &gt; 0 || FLOOR(MOD((Contract_End_Date__c - Contract_Start_Date__c), 365) / 30) &gt; 0, 
+                &quot; &quot;, 
+                &quot;&quot;
+            ) &amp; 
+            TEXT(MOD((Contract_End_Date__c - Contract_Start_Date__c), 30)) &amp; 
+            IF(
+                MOD((Contract_End_Date__c - Contract_Start_Date__c), 30) = 1, 
+                &quot; Day&quot;, 
+                &quot; Days&quot;
+            ), 
+            &quot;&quot;
+        )
+    )
+)</formula>
+    <label>Duration Remaining</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

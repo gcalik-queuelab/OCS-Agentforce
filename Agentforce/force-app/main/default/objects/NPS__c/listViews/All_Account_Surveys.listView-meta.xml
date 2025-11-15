@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Account_Surveys</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>NPS_Surveyor_Name__c</columns>
+    <columns>Visit_Start__c</columns>
+    <columns>Visit_Finish__c</columns>
+    <columns>Client_Visiting_Name__c</columns>
+    <columns>Total_NPS_Score__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>NPS__c.Account</value>
+    </filters>
+    <label>All Account Surveys</label>
+</ListView>

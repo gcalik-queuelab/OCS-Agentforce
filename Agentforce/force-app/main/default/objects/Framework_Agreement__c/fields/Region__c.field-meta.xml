@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region__c</fullName>
+    <label>Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UK</fullName>
+                <default>false</default>
+                <label>UK</label>
+            </value>
+            <value>
+                <fullName>England</fullName>
+                <default>false</default>
+                <label>England</label>
+            </value>
+            <value>
+                <fullName>Scotland</fullName>
+                <default>false</default>
+                <label>Scotland</label>
+            </value>
+            <value>
+                <fullName>Wales</fullName>
+                <default>false</default>
+                <label>Wales</label>
+            </value>
+            <value>
+                <fullName>Ireland</fullName>
+                <default>false</default>
+                <label>Ireland</label>
+            </value>
+            <value>
+                <fullName>England - North</fullName>
+                <default>false</default>
+                <label>England - North</label>
+            </value>
+            <value>
+                <fullName>England - East</fullName>
+                <default>false</default>
+                <label>England - East</label>
+            </value>
+            <value>
+                <fullName>England - South</fullName>
+                <default>false</default>
+                <label>England - South</label>
+            </value>
+            <value>
+                <fullName>England - West</fullName>
+                <default>false</default>
+                <label>England - West</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

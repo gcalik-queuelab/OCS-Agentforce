@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Record_to_Edits_Closed_Won_TCs</fullName>
+    <active>false</active>
+    <description>AD-300 - validation rule to lock a record to edits when the stage is Closed Won and sub-stage is T&amp;Cs Signed</description>
+    <errorConditionFormula>AND(
+/* Bypass if Custom Setting for Validation Rules is disabled */
+$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				
+/* Bypass if the user has got one the following permissions */
+$Permission.System_Administrator = FALSE,
+$Permission.Regional_Delegated_Administrator = FALSE,
+$Permission.Delegated_Admin = FALSE,
+$Permission.Country_Delegated_Administrator = FALSE,
+				
+/* Bypass if Opportunity Record Type is Target */
+RecordType.DeveloperName != &quot;Target&quot;,
+				
+/* Lock Record when Sub-Stage is &quot;7.2 T&amp;Cs Signed&quot; */
+ISPICKVAL(Sub_Stage__c, &apos;7.2 T&amp;Cs Signed&apos;),
+				
+/* Except for where Sub-Stage is Changed */
+NOT(ISCHANGED(Sub_Stage__c)),
+				
+/* Allow changes to the following; */
+NOT(ISCHANGED(Competitor__c)),
+NOT(ISCHANGED(Competitor_Assigned__c)),
+NOT(ISCHANGED(Winning_Competitor_Assigned__c)),
+NOT(ISCHANGED(Winning_Competitor__c)),
+NOT(ISCHANGED( No_of_Incumbents__c )),
+NOT(ISCHANGED(Incumbent__c)),
+NOT(ISCHANGED(Contract__c)),
+NOT(ISCHANGED(Current_Contract_Value__c)),
+NOT(ISCHANGED(NextStep)),
+NOT(ISCHANGED(Next_Step_History__c)),
+NOT(ISCHANGED(Contract_Start_Date__c)),
+NOT(ISCHANGED(Contract_End_Date__c)),
+NOT(ISCHANGED(Create_Missing_Contract__c)),
+NOT(ISCHANGED(Name)),
+NOT(ISCHANGED(Reference__c)),
+NOT(ISCHANGED(Primary_Service__c)),
+NOT(ISCHANGED(Service_Summary_Text__c)),
+NOT(ISCHANGED(Headcount__c)),
+NOT(ISCHANGED(Closed_Last_12_Months__c)),
+NOT(ISCHANGED(Closed_Stage__c)),
+NOT(ISCHANGED(Closed_Sub_Stage__c)),
+NOT(ISCHANGED(No_of_Debriefs__c)),
+NOT(ISCHANGED(Closed_Reason__c)),
+NOT(ISCHANGED(PaymentTermsDays__c)),
+NOT(ISCHANGED(Closed_Further_Details__c)),
+NOT(ISCHANGED(Liability_Cap__c)),
+NOT(ISCHANGED(Contract_Specification__c)),
+NOT(ISCHANGED(PMO_Support__c))
+)</errorConditionFormula>
+    <errorMessage>You are only able to make specific changes to this Won Opportunity. Please contact your Regional Admin if you need changes made to this record.</errorMessage>
+</ValidationRule>

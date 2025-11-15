@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Manager_CaseSafeID__c</fullName>
+    <description>CaseSafeID of the Case Manager</description>
+    <externalId>false</externalId>
+    <formula>CASESAFEID( Case_Manager_Lookup__r.Id )</formula>
+    <label>Case Manager CaseSafeID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Input_Less_Than_Custom_Probability</fullName>
+    <active>false</active>
+    <description>AD-442 - validation rule to ensure that if a User enters a value less than the automated custom probability value then an error is thrown</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+RecordType.DeveloperName != &quot;Target&quot;,
+    OR(
+        ISPICKVAL(Sub_Stage__c, &quot;2.2 Needs Analysis&quot;),
+        ISPICKVAL(Sub_Stage__c, &quot;2.3 Pursuing&quot;),
+        ISPICKVAL(Sub_Stage__c, &quot;3.1 RFI in Progress&quot;),
+        ISPICKVAL(Sub_Stage__c, &quot;3.2 RFI Submitted&quot;),
+        ISPICKVAL(Sub_Stage__c, &quot;3.3 Develop Solution&quot;),
+        ISPICKVAL(Sub_Stage__c, &quot;3.4 Solution Submitted&quot;)
+        /** ISPICKVAL(Sub_Stage__c, &quot;4.1 Presentation&quot;), **/
+        /** ISPICKVAL(Sub_Stage__c, &quot;4.2 Negotiation&quot;), **/
+        /** ISPICKVAL(Sub_Stage__c, &quot;4.3 Verbal Acceptance&quot;) **/
+    ),
+    ISCHANGED(Custom_Probability__c),
+    Custom_Probability__c &lt; PRIORVALUE(Custom_Probability__c)
+)
+
+/** 4/3/24- CB Edited to remove sub stages as VR causing Flow Erros
+When moving between Presentation/Negotiation/Verbal Acceptance. **/</errorConditionFormula>
+    <errorDisplayField>Custom_Probability__c</errorDisplayField>
+    <errorMessage>You are unable to input a custom probability % lower than the current value</errorMessage>
+</ValidationRule>

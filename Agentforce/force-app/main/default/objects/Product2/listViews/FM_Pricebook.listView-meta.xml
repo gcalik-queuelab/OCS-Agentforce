@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FM_Pricebook</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>PRODUCT2.DESCRIPTION</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>notEqual</operation>
+        <value>Automotive Aftersales,Automotive Warranty &amp; Dealer Support,Automotive Business Services,Automotive Development &amp; Launch,Automotive Fleet &amp; Remarketing,Automotive Hail Repair Solutions</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>notEqual</operation>
+        <value>Automotive HV Management,Automotive Automation &amp; Data Exchange,Automotive Logistics &amp; Handling,Automotive Paintshop Services,Automotive Production Support,Automotive QPDI services</value>
+    </filters>
+    <label>FM Pricebook</label>
+</ListView>

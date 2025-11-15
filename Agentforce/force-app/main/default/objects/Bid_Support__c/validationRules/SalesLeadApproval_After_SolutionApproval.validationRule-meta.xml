@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SalesLeadApproval_After_SolutionApproval</fullName>
+    <active>true</active>
+    <description>Sales Lead Approval Date must be after both Solution Approval</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				NOT(ISBLANK( Sales_Lead_Approval__c)),
+				IF(ISBLANK( Solution_Approval_Date__c ),
+							Sales_Lead_Approval__c &lt; Bid__r.Bid_Start_Date__c,
+							Sales_Lead_Approval__c &lt; Solution_Approval_Date__c
+)
+				)</errorConditionFormula>
+    <errorDisplayField>Sales_Lead_Approval__c</errorDisplayField>
+    <errorMessage>Sales Lead Approval must be after both Solution Approval and Process Start Date</errorMessage>
+</ValidationRule>

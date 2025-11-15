@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apprenticeships</fullName>
+                <default>false</default>
+                <label>Apprenticeships</label>
+            </value>
+            <value>
+                <fullName>Auditing</fullName>
+                <default>false</default>
+                <label>Auditing</label>
+            </value>
+            <value>
+                <fullName>Awards</fullName>
+                <default>false</default>
+                <label>Awards</label>
+            </value>
+            <value>
+                <fullName>Benchmark</fullName>
+                <default>false</default>
+                <label>Benchmark</label>
+            </value>
+            <value>
+                <fullName>Bid Commitment</fullName>
+                <default>false</default>
+                <label>Bid Commitment</label>
+            </value>
+            <value>
+                <fullName>CAFM</fullName>
+                <default>false</default>
+                <label>CAFM</label>
+            </value>
+            <value>
+                <fullName>Communication</fullName>
+                <default>false</default>
+                <label>Communication</label>
+            </value>
+            <value>
+                <fullName>Complaint Trend</fullName>
+                <default>false</default>
+                <label>Complaint Trend</label>
+            </value>
+            <value>
+                <fullName>Continuous Improvement</fullName>
+                <default>false</default>
+                <label>Continuous Improvement</label>
+            </value>
+            <value>
+                <fullName>Contract Delivery</fullName>
+                <default>false</default>
+                <label>Contract Delivery</label>
+            </value>
+            <value>
+                <fullName>Cost Analysis</fullName>
+                <default>false</default>
+                <label>Cost Analysis</label>
+            </value>
+            <value>
+                <fullName>Cost Savings</fullName>
+                <default>false</default>
+                <label>Cost Savings</label>
+            </value>
+            <value>
+                <fullName>Customer Feedback</fullName>
+                <default>false</default>
+                <label>Customer Feedback</label>
+            </value>
+            <value>
+                <fullName>Customer Strategic Update</fullName>
+                <default>false</default>
+                <label>Customer Strategic Update</label>
+            </value>
+            <value>
+                <fullName>Efficiency</fullName>
+                <default>false</default>
+                <label>Efficiency</label>
+            </value>
+            <value>
+                <fullName>Engagement</fullName>
+                <default>false</default>
+                <label>Engagement</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Growth</fullName>
+                <default>false</default>
+                <label>Growth</label>
+            </value>
+            <value>
+                <fullName>H&amp;S</fullName>
+                <default>false</default>
+                <label>H&amp;S</label>
+            </value>
+            <value>
+                <fullName>HR</fullName>
+                <default>false</default>
+                <label>HR</label>
+            </value>
+            <value>
+                <fullName>Innovation</fullName>
+                <default>false</default>
+                <label>Innovation</label>
+            </value>
+            <value>
+                <fullName>Invoicing</fullName>
+                <default>false</default>
+                <label>Invoicing</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>KPI</fullName>
+                <default>false</default>
+                <label>KPI</label>
+            </value>
+            <value>
+                <fullName>Management</fullName>
+                <default>false</default>
+                <label>Management</label>
+            </value>
+            <value>
+                <fullName>Mystery Shopping</fullName>
+                <default>false</default>
+                <label>Mystery Shopping</label>
+            </value>
+            <value>
+                <fullName>OCS Promotion</fullName>
+                <default>false</default>
+                <label>OCS Promotion</label>
+            </value>
+            <value>
+                <fullName>One Team</fullName>
+                <default>false</default>
+                <label>One Team</label>
+            </value>
+            <value>
+                <fullName>Operations</fullName>
+                <default>false</default>
+                <label>Operations</label>
+            </value>
+            <value>
+                <fullName>Partnership Working</fullName>
+                <default>false</default>
+                <label>Partnership Working</label>
+            </value>
+            <value>
+                <fullName>Payroll</fullName>
+                <default>false</default>
+                <label>Payroll</label>
+            </value>
+            <value>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+                <label>Procurement</label>
+            </value>
+            <value>
+                <fullName>Quality Improvement</fullName>
+                <default>false</default>
+                <label>Quality Improvement</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>Retention</fullName>
+                <default>false</default>
+                <label>Retention</label>
+            </value>
+            <value>
+                <fullName>Risk Management</fullName>
+                <default>false</default>
+                <label>Risk Management</label>
+            </value>
+            <value>
+                <fullName>Security</fullName>
+                <default>false</default>
+                <label>Security</label>
+            </value>
+            <value>
+                <fullName>Showcase</fullName>
+                <default>false</default>
+                <label>Showcase</label>
+            </value>
+            <value>
+                <fullName>Social Value</fullName>
+                <default>false</default>
+                <label>Social Value</label>
+            </value>
+            <value>
+                <fullName>Strategic Update</fullName>
+                <default>false</default>
+                <label>Strategic Update</label>
+            </value>
+            <value>
+                <fullName>Surveying</fullName>
+                <default>false</default>
+                <label>Surveying</label>
+            </value>
+            <value>
+                <fullName>Sustainability</fullName>
+                <default>false</default>
+                <label>Sustainability</label>
+            </value>
+            <value>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <label>Technology</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Waste</fullName>
+                <default>false</default>
+                <label>Waste</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

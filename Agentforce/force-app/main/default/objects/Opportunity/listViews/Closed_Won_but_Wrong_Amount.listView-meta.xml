@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Won_but_Wrong_Amount</fullName>
+    <booleanFilter>(1 AND 2)  OR (3 AND 4) OR 5</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Original_Opportunity_Name__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Sub_Stage__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Contract_Start_Date__c</columns>
+    <columns>Contract_End_Date__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>7. Closed Won</value>
+    </filters>
+    <filters>
+        <field>Owner_Country__c</field>
+        <operation>equals</operation>
+        <value>Thailand</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.AMOUNT</field>
+        <operation>lessOrEqual</operation>
+        <value>THB 1</value>
+    </filters>
+    <filters>
+        <field>Sub_Stage__c</field>
+        <operation>equals</operation>
+        <value>7.1 Written Confirmation</value>
+    </filters>
+    <filters>
+        <field>Sub_Stage__c</field>
+        <operation>equals</operation>
+        <value>7.2 T&amp;Cs Signed</value>
+    </filters>
+    <label>Closed Won but Wrong Amount</label>
+    <sharedTo>
+        <roleAndSubordinates>Thailand</roleAndSubordinates>
+        <roleAndSubordinates>Thailand_Sales_Director</roleAndSubordinates>
+        <roleAndSubordinates>Thailand_Sales_Manager</roleAndSubordinates>
+    </sharedTo>
+</ListView>

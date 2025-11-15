@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Country_Risk_Alert__c</fullName>
+    <description>List of Related Countries</description>
+    <formula>IF (
+   CONTAINS(BillingCountry,&apos;Russia&apos;)
+|| CONTAINS(DNBConnect__D_B_Connect_Company_Profile__r.HQ_primAddr_Cntry_name__c , &apos;Russia&apos;)
+|| CONTAINS(DNBConnect__D_B_Connect_Company_Profile__r.mailingAddr_Cntry_name__c , &apos;Russia&apos;) 
+|| CONTAINS(DNBConnect__D_B_Connect_Company_Profile__r.parent_primAddr_Cntry_name__c , &apos;Russia&apos;)
+|| CONTAINS(DNBConnect__D_B_Connect_Company_Profile__r.primAddr_Cntry_name__c , &apos;Russia&apos;) 
+|| CONTAINS(DNBConnect__D_B_Connect_Company_Profile__r.DU_primAddr_Cntry_name__c , &apos;Russia&apos;)
+|| CONTAINS(DNBConnect__D_B_Connect_Company_Profile__r.primAddr_Cntry_name__c , &apos;Russia&apos;)
+,true,false)</formula>
+    <label>System: Country Risk Alert</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

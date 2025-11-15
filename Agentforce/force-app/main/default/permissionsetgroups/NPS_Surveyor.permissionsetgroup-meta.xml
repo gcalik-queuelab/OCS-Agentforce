@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>AD-77 - Create Permission Set Groups</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>NPS Surveyor</label>
+    <permissionSets>API_Integration</permissionSets>
+    <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>Account_Contact_Relationship_Create_Read_Edit</permissionSets>
+    <permissionSets>Account_Create_Read_and_Edit</permissionSets>
+    <permissionSets>Account_Role_Read_Create_Edit</permissionSets>
+    <permissionSets>Action_Create_Read_and_Edit</permissionSets>
+    <permissionSets>Action_Plan_Read</permissionSets>
+    <permissionSets>Activity_Read_Create_Edit</permissionSets>
+    <permissionSets>CEV_Create_Read_Edit</permissionSets>
+    <permissionSets>Contact_Read_Create_and_Edit</permissionSets>
+    <permissionSets>Continuous_Improvement_Read</permissionSets>
+    <permissionSets>Create_and_Customise_List_Views</permissionSets>
+    <permissionSets>Error_Log_Create_Read_and_Edit</permissionSets>
+    <permissionSets>Financial_Risk_History_Create_Read</permissionSets>
+    <permissionSets>Good_News_Story</permissionSets>
+    <permissionSets>NPS_Create_Read_and_Edit</permissionSets>
+    <permissionSets>NPS_Reponse</permissionSets>
+    <permissionSets>NPS_Surveyor_User</permissionSets>
+    <permissionSets>Perception_History_Create_Read_and_Edit</permissionSets>
+    <permissionSets>PhoneTools_Access</permissionSets>
+    <permissionSets>SIC_Code_Read</permissionSets>
+    <permissionSets>USF_Flow_Screen_Component_Datatable</permissionSets>
+    <permissionSets>User_Read</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

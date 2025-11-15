@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Days_Since_Last_User_Interaction__c</fullName>
+    <description>Used as criteria in Scheduled Flow for notifications of stalled Leads</description>
+    <externalId>false</externalId>
+    <formula>TODAY() -  Last_User_Interaction_Date__c</formula>
+    <label>System: Days Since Last User Interaction</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

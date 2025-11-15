@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Is the Last Renewed Date today? If so then update Budget finance values.</description>
+        <name>Renewed_Date_Today_Decision</name>
+        <label>Renewed Date = Today</label>
+        <locationX>182</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>End</defaultConnectorLabel>
+        <rules>
+            <name>Last_Renewed_Today</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contract_Last_Renewed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Budget_Values</targetReference>
+            </connector>
+            <label>Last Renewed = Today</label>
+        </rules>
+    </decisions>
+    <description>Stamp Budget finance fields with value from Actual finance fields on Contract Last Renewed Date.</description>
+    <environments>Default</environments>
+    <interviewLabel>Contract Scheduled Flow - Update Budget Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract Scheduled Flow - Update Budget Fields</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Budget_Values</name>
+        <label>Update Budget Values</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <inputAssignments>
+            <field>Budget_Annual_Value__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Annual_Contractual_Revenue__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Budget_GM_Percent__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.AnnualContractualGMPercentage__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Budget_Gross_Margin__c</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Annual_Contractual_GM__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Renewed_Date_Today_Decision</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Terminated</stringValue>
+            </value>
+        </filters>
+        <object>Contract__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-03-01</startDate>
+            <startTime>03:15:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

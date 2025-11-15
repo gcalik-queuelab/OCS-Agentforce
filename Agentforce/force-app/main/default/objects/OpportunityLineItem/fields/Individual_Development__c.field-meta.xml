@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Individual_Development__c</fullName>
+    <formula>IF(
+OR
+(
+Opportunity.Total_Development__c &lt;= 0,
+Opportunity.Total_Performance__c &lt;= 0,
+NOT(ISPICKVAL(Service_Type__c, &quot;Contractual&quot; ))
+),
+0,
+(TotalPrice / Opportunity.Annual_Contractual_Revenue__c) * Opportunity.Total_Development__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Retention</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

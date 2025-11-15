@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NZ_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>Address__c</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY_CODE</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>DUNS_No__c</columns>
+    <columns>Count_of_Active_Opps__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Owner_Country__c</field>
+        <operation>equals</operation>
+        <value>New Zealand</value>
+    </filters>
+    <label>NZ Accounts</label>
+    <sharedTo>
+        <roleAndSubordinates>New_Zealand</roleAndSubordinates>
+    </sharedTo>
+</ListView>

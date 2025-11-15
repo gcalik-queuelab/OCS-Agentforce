@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_New_Won_Opps</fullName>
+    <active>false</active>
+    <description>Prevents new opps being created at stage &apos;Closed Won&apos;</description>
+    <errorConditionFormula>AND(
+    !$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+    ISPICKVAL(Stage__c, &quot;Closed Won&quot;),
+    ISNEW()
+)</errorConditionFormula>
+    <errorDisplayField>Stage__c</errorDisplayField>
+    <errorMessage>Unable to Create a New Opportunity with Stage &apos;Closed Won&apos;</errorMessage>
+</ValidationRule>

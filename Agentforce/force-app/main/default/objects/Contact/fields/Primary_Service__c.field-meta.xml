@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Service__c</fullName>
+    <description>AD-967 - Stores the Primary Service Interest for this Contact. Used for Enquiry Generation</description>
+    <label>Primary Service</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Service_Family</valueSetName>
+    </valueSet>
+</CustomField>

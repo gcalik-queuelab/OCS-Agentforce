@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_Received_Date</fullName>
+    <active>true</active>
+    <description>Require FOI received date when at awaiting review</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+(TEXT(Status__c) == &apos;Pending Review&apos;),
+ISBLANK(Received_Date__c)
+)</errorConditionFormula>
+    <errorDisplayField>Received_Date__c</errorDisplayField>
+    <errorMessage>The Received Date is required</errorMessage>
+</ValidationRule>

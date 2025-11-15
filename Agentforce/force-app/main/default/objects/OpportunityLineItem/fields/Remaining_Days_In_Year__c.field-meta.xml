@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remaining_Days_In_Year__c</fullName>
+    <description>Copy the Remaining Days In Year from Opportunity.
+The number of days of the Opp in the start year. Used for In Year calculations.</description>
+    <externalId>false</externalId>
+    <formula>Opportunity.Remaining_Days_In_Year__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Remaining Days In Year</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

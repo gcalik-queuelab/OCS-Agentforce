@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Account_Plan</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://ocsgroup.my.salesforce.com/a0yTw0000001y5NIAQ
+03-Jun-2025 10:51:34 AM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Account Plan</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!Account.Id}
+
+&amp;QueryId=[AccPlanAccObj]0Q_018UAA866674,
+[AccPlanCompServiObj]0Q_022UAA549953,
+[AccPlanCommitmentObj]0Q_020UAA706912,
+[AccPlanGoodNewsObj]0Q_023UAA517533,
+[AccPlanContactObj]0Q_021UAA109998,
+[AccPlanActionPlanObj]0Q_024UAA011414,
+[AccPlanContractiObj]0Q_019UAA823024,
+[AccPlanOpptyObj]0Q_025UAA200815,
+[AccPlanNPSData]0Q_033UAA566294,
+[AccPlanNPSQ10]0Q_035UAA406927,
+[AccPlanActionObj]0Q_036UAA669756,
+[AccPlanSwotObj]0Q_043UAA950044,
+[AccPlanContracts]0Q_047UAA269047,
+[AccPlanContractUpdat]0Q_042EAT958482
+
+&amp;TemplateId=0T_006UAA509957
+
+&amp;OFN=Account Plan - {!Account.Name} - {!DAY(TODAY())}-{!MONTH(TODAY())}-{!YEAR(TODAY())}
+&amp;DS7=3</url>
+    <width>900</width>
+</WebLink>

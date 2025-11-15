@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_of_Closed_Won_Lost_Last_12_Months__c</fullName>
+    <description>Sum of won and lost opps in the last 12 months</description>
+    <formula>Sum_of_Closed_Won_Last_12_Months__c +  Sum_of_Closed_Lost_Last_12_Months__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sum of Closed Won &amp; Lost Last 12 Months</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

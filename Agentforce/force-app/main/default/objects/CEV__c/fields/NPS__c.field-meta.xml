@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NPS__c</fullName>
+    <description>AD-211 - Stores the NPS that this CEV was captured against</description>
+    <label>NPS</label>
+    <referenceTo>NPS__c</referenceTo>
+    <relationshipLabel>CEVs</relationshipLabel>
+    <relationshipName>CEVs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

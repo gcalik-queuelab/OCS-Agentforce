@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surface_Area__c</fullName>
+    <label>Surface Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>&lt;1000 m2</fullName>
+                <default>false</default>
+                <label>&lt;1000 m2</label>
+            </value>
+            <value>
+                <fullName>&gt;50000</fullName>
+                <default>false</default>
+                <label>&gt;50000</label>
+            </value>
+            <value>
+                <fullName>1000-4999</fullName>
+                <default>false</default>
+                <label>1000-4999</label>
+            </value>
+            <value>
+                <fullName>20000-49999</fullName>
+                <default>false</default>
+                <label>20000-49999</label>
+            </value>
+            <value>
+                <fullName>5000-19999</fullName>
+                <default>false</default>
+                <label>5000-19999</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

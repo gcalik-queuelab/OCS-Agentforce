@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>AD-443 Create Bid Support Records</description>
+    <label>Type DEP</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Intro Pack</fullName>
+                <default>false</default>
+                <label>Intro Pack</label>
+            </value>
+            <value>
+                <fullName>Generic Proposal</fullName>
+                <default>false</default>
+                <label>Generic Proposal</label>
+            </value>
+            <value>
+                <fullName>Generic Presentation</fullName>
+                <default>false</default>
+                <label>Generic Presentation</label>
+            </value>
+            <value>
+                <fullName>Risk Analysis</fullName>
+                <default>false</default>
+                <label>Risk Analysis</label>
+            </value>
+            <value>
+                <fullName>Contract Variation</fullName>
+                <default>false</default>
+                <label>Contract Variation</label>
+            </value>
+            <value>
+                <fullName>Quotation</fullName>
+                <default>false</default>
+                <label>Quotation</label>
+            </value>
+            <value>
+                <fullName>Commercial Offer</fullName>
+                <default>false</default>
+                <label>Commercial Offer</label>
+            </value>
+            <value>
+                <fullName>RFI</fullName>
+                <default>false</default>
+                <label>RFI</label>
+            </value>
+            <value>
+                <fullName>RFP</fullName>
+                <default>false</default>
+                <label>RFP</label>
+            </value>
+            <value>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+                <label>Presentation</label>
+            </value>
+            <value>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+                <label>Proposal</label>
+            </value>
+            <value>
+                <fullName>Other (Generic Types)</fullName>
+                <default>false</default>
+                <label>Other (Generic Types)</label>
+            </value>
+            <value>
+                <fullName>Bid Management</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bid Management</label>
+            </value>
+            <value>
+                <fullName>IT Requirements</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>IT Requirements</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pricing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

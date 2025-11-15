@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Contract_Plan</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://ocsgroup--apxtconga4.vf.force.com/a0yTw0000001v2fIAA
+31-Jan-2024 10:18:33 AM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Contract Plan</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!Contract__c.Id}
+
+&amp;QueryId=[CPlanCompetitorSObj]0Q_022UAA549953%3Fpv0%3D{QVar1},
+[CPlanContractObj]0Q_027UAA209853,
+[CPlanCommitmentsObj]0Q_029UAA695242,
+[CPlanAccObj]0Q_018UAA866674,
+[CPlanContactObj]0Q_031UAA780630,
+[CPlanGoodNewsObj]0Q_038UAA650094%3Fpv0%3D{QVar1},
+[CPlanActionPlan]0Q_040UAA602986,
+[CPlanNPSRecordData]0Q_042UAA183381%3Fpv0%3D{QVar1},
+[CPlanAccountId]0Q_044UAA591199,
+[CPlanActionobj]0Q_046UAA400442,
+[AccPlanNPSData]0Q_033UAA566294%3Fpv0%3D{QVar1}
+
+&amp;TemplateId=0T_007UAA881525
+
+&amp;QVar1ID=0Q_044UAA591199
+&amp;OFN=Contract Plan_{!Contract__c.Name}_{!DAY( TODAY() )}{!MONTH( TODAY() )}{!YEAR( TODAY() )}
+&amp;DS7=3</url>
+    <width>900</width>
+</WebLink>

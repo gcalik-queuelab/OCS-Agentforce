@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AskNicely_Opt_Out_Reason__c</fullName>
+    <description>Reason the Contact has opted out of the AskNicely NPS</description>
+    <label>AskNicely Opt Out Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No longer the appropriate contact</fullName>
+                <default>false</default>
+                <label>No longer the appropriate contact</label>
+            </value>
+            <value>
+                <fullName>Change in role or responsibilities</fullName>
+                <default>false</default>
+                <label>Change in role or responsibilities</label>
+            </value>
+            <value>
+                <fullName>Leaving the organisation</fullName>
+                <default>false</default>
+                <label>Leaving the organisation</label>
+            </value>
+            <value>
+                <fullName>New contact manages the service relationship</fullName>
+                <default>false</default>
+                <label>New contact manages the service relationship</label>
+            </value>
+            <value>
+                <fullName>New contact will provide the feedback</fullName>
+                <default>false</default>
+                <label>New contact will provide the feedback</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

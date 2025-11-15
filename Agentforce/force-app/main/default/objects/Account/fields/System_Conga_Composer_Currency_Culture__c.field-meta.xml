@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Conga_Composer_Currency_Culture__c</fullName>
+    <description>System Formula field to drive Currency/Locale/Date Format in Conga Generated Documents.
+
+https://documentation.conga.com/composer/latest/salesforce/dynamic-currency-formats-in-word-165940029.html</description>
+    <externalId>false</externalId>
+    <formula>CASE(CurrencyIsoCode,
+					&quot;GBP&quot;,&quot;en-GB&quot;,
+					&quot;EUR&quot;,&quot;fr-FR&quot;,
+					&quot;THB&quot;,&quot;th-TH&quot;,
+					&quot;SAR&quot;,&quot;ar-SA&quot;,
+					&quot;AUD&quot;,&quot;en-AU&quot;,
+					&quot;NZD&quot;,&quot;en-NZ&quot;,
+					&quot;INR&quot;,&quot;en-IN&quot;,
+					&quot;IDR&quot;,&quot;id-ID&quot;,
+					&quot;USD&quot;,&quot;en-US&quot;,
+					&quot;SGD&quot;,&quot;en-SG&quot;,
+					&quot;QAR&quot;,&quot;ar-QA&quot;,
+					&quot;AED&quot;,&quot;ar-AE&quot;,
+					&quot;MYR&quot;,&quot;ms-MY&quot;,
+					&quot;PHP&quot;,&quot;en-PH&quot;,
+					&quot;BDT&quot;,&quot;bn-BD&quot;,
+					&quot;HUF&quot;,&quot;hu-HU&quot;,
+					&quot;PLN&quot;,&quot;pl-PL&quot;,
+					&quot;CZK&quot;,&quot;cs-CZ&quot;,
+					&quot;RON&quot;,&quot;ro-RO&quot;,
+					&quot;en-GB&quot;
+					)</formula>
+    <label>System: Conga Composer Currency Culture</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

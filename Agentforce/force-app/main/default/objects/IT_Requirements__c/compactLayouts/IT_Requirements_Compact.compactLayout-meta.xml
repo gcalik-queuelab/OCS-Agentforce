@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IT_Requirements_Compact</fullName>
+    <fields>Name</fields>
+    <fields>OwnerId</fields>
+    <label>IT Requirements Compact</label>
+</CompactLayout>

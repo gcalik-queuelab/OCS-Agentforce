@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contact_Surveys</fullName>
+    <columns>NAME</columns>
+    <columns>NPS_Contact__c</columns>
+    <columns>Visiting_Contact__c</columns>
+    <columns>Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>Survey_Category__c</columns>
+    <columns>Average_Response_Score__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>NPS__c.Contact</value>
+    </filters>
+    <label>My Contact Surveys</label>
+</ListView>

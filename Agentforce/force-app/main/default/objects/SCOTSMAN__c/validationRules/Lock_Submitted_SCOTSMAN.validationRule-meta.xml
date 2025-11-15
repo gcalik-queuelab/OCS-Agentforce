@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lock_Submitted_SCOTSMAN</fullName>
+    <active>true</active>
+    <description>Lock record once Submitted.</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				 ISPICKVAL(Status__c,&quot;Submitted&quot;),
+				 NOT(ISCHANGED(Status__c)),
+				 NOT(ISCHANGED(System_Record_Cloned__c)),
+				 NOT(ISCHANGED(Bid__c))
+				)</errorConditionFormula>
+    <errorMessage>This SCOTSMAN is locked because it has been submitted. To record any updates please clone this record using the button provided.</errorMessage>
+</ValidationRule>

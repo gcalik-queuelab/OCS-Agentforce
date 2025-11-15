@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owned_By_Current_User__c</fullName>
+    <formula>Owner__c = $User.Id</formula>
+    <inlineHelpText>Ticked when the Current User is the Owner of the Opportunity Service.</inlineHelpText>
+    <label>Owned By Current User</label>
+    <type>Checkbox</type>
+</CustomField>

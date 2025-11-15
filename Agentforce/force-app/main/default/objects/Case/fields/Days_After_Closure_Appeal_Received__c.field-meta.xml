@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_After_Closure_Appeal_Received__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+				AND(
+								Latest_Appeal_Received__c != NULL,
+								Initial_Closure_Date__c != NULL,
+								Latest_Appeal_Received__c &gt;= Initial_Closure_Date__c
+								),
+				Latest_Appeal_Received__c - Initial_Closure_Date__c,
+				NULL
+				)</formula>
+    <label>Days After Closure Appeal Received</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

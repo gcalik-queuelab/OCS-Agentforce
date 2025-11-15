@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hobbies_Interests__c</fullName>
+    <label>Hobbies &amp; Interests</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sports</fullName>
+                <default>false</default>
+                <label>Sports</label>
+            </value>
+            <value>
+                <fullName>Food</fullName>
+                <default>false</default>
+                <label>Food</label>
+            </value>
+            <value>
+                <fullName>Food &amp; Beverage</fullName>
+                <default>false</default>
+                <label>Food &amp; Beverage</label>
+            </value>
+            <value>
+                <fullName>Industry Events</fullName>
+                <default>false</default>
+                <label>Industry Events</label>
+            </value>
+            <value>
+                <fullName>Others – Please Specify</fullName>
+                <default>false</default>
+                <label>Others – Please Specify</label>
+            </value>
+            <value>
+                <fullName>Theatre &amp; Arts</fullName>
+                <default>false</default>
+                <label>Theatre &amp; Arts</label>
+            </value>
+            <value>
+                <fullName>Concerts</fullName>
+                <default>false</default>
+                <label>Concerts</label>
+            </value>
+            <value>
+                <fullName>Charitable Events</fullName>
+                <default>false</default>
+                <label>Charitable Events</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_Number_Values</fullName>
+    <active>false</active>
+    <description>AD-19 - validation rule to check if the phone number only contains the correct values</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c, NOT(REGEX( Phone,&apos;^(?:[\\d+()]+)?$&apos;))
+)</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Please enter a valid phone number</errorMessage>
+</ValidationRule>

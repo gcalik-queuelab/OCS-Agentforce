@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Q1_to_6_Red__c</fullName>
+    <description>Identifies if any Questions in Q1-6 are Red</description>
+    <formula>OR(
+    ISPICKVAL(Q01_Estimated_Annual_Contract_Value__c, &quot;More than £3m&quot;),
+    ISPICKVAL(Q01_Estimated_Annual_Contract_Value__c, &quot;Unknown (Framework or similar)&quot;),
+    ISPICKVAL(Q02_Framework_Master_Service_Agreement__c, &quot;Yes&quot;),
+    ISPICKVAL(Q03_Public_Contract_Utilities_Contract__c, &quot;Yes&quot;),
+    ISPICKVAL(Q04_Construction_or_Project__c, &quot;Yes&quot;),
+    ISPICKVAL(Q05_PFI_or_LIFT__c, &quot;Yes&quot;),
+    ISPICKVAL(Q06_New_Business_Activity_or_New_Sector__c, &quot;Yes&quot;)
+)</formula>
+    <label>Q1 to 6 - Red</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

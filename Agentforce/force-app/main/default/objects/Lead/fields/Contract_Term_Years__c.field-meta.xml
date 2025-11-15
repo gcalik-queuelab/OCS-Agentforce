@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Term_Years__c</fullName>
+    <description>Stores the contract term years based on the Estimated Start and End Dates</description>
+    <externalId>false</externalId>
+    <formula>FLOOR((YEAR(Estimated_End_Date__c) - YEAR(Estimated_Start_Date__c)) +
+  IF( /**End Yr &gt; Start Yr &amp; End Mth &lt;= Start Mth -1 since a full yr has not necessarily passed. If full yr has passed then 2x IF()s  below will sort. */
+    AND(
+      YEAR(Estimated_End_Date__c) &gt; YEAR(Estimated_Start_Date__c),
+      MONTH(Estimated_End_Date__c) &lt;= MONTH(Estimated_Start_Date__c)
+    ),
+    -1,
+    0)
+  +
+  IF( /**Different Yrs, Same Months, End Day &gt;= (Start Day-1) +1 yr */
+    AND(
+      YEAR(Estimated_End_Date__c) &gt; YEAR(Estimated_Start_Date__c),
+      MONTH(Estimated_End_Date__c) = MONTH(Estimated_Start_Date__c),
+      OR(
+        DAY(Estimated_End_Date__c) &gt;= DAY(Estimated_Start_Date__c-1),
+        DAY(Estimated_Start_Date__c) = 1
+        )
+    ),
+    1,
+    0)
+  +
+  IF( /** If End Mth = (Start Mth -1), Start Date is 1st and End Date is last Mth day, +1 yr */
+    AND(
+      MONTH(Estimated_End_Date__c) = MONTH(Estimated_Start_Date__c-1),
+      DAY(Estimated_Start_Date__c) = 1,
+      DAY(Estimated_End_Date__c + 1) &lt; DAY(Estimated_End_Date__c)
+    ),
+    1,
+    0)
+ )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Contract Term (Years)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

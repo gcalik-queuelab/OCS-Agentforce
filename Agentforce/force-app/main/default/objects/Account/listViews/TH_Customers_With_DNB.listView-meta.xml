@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TH_Customers_With_DNB</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Address__c</columns>
+    <columns>DUNS_No__c</columns>
+    <columns>Count_of_Active_Contracts__c</columns>
+    <columns>Total_No_of_Contracts__c</columns>
+    <columns>Count_of_Open_Active_Opps__c</columns>
+    <columns>OCS_Sector__c</columns>
+    <columns>OCS_Sub_Sector__c</columns>
+    <columns>Owner_Business_Unit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Owner_Country__c</field>
+        <operation>equals</operation>
+        <value>Thailand</value>
+    </filters>
+    <filters>
+        <field>DNBConnect__D_B_Connect_Company_Profile__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>TH Customers - With DNB</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Thailand</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Sector_Not_Populated__c</fullName>
+    <formula>ISBLANK(TEXT(OCS_Sector__c))</formula>
+    <label>Sector Not Populated</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

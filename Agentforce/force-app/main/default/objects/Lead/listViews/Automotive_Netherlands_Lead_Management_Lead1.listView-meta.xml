@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automotive_Netherlands_Lead_Management_Lead1</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Automotive - Netherlands Lead Management</label>
+    <queue>Automotive_Netherlands_Lead_Management</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

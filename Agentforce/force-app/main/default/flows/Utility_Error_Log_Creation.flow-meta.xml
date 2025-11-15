@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>If the Error Log insertion fails. Send an email to the running user to pass to their administrator.</description>
+        <name>Send_Email_to_Running_User</name>
+        <label>Send Email to Running User</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>salesforce@ocs.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Salesforce Error Notification</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>ErrorLogEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Are_Flows_Running</name>
+        <label>Are Flows Running?</label>
+        <locationX>314</locationX>
+        <locationY>134</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Processes_are_still_running</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Flows_Disabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Error_Log_Record</targetReference>
+            </connector>
+            <label>Yes Processes are still running</label>
+        </rules>
+    </decisions>
+    <description>Utility Subflow used to create an Error Log in the system, with a back-up email to the running user if this fails.</description>
+    <environments>Default</environments>
+    <interviewLabel>Utility - Error Log Creation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Utility: Error Log Creation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Used to create the Error Log Record in Salesforce where a DML error has originated from a different automation.</description>
+        <name>Create_Error_Log_Record</name>
+        <label>Create Error Log Record</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <faultConnector>
+            <targetReference>Send_Email_to_Running_User</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Level__c</field>
+            <value>
+                <elementReference>Level</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Messages__c</field>
+            <value>
+                <elementReference>Messages</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Object_Name__c</field>
+            <value>
+                <elementReference>Object</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Origin_Name__c</field>
+            <value>
+                <elementReference>OriginName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Record_Id__c</field>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <elementReference>Type</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Error_Log__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Are_Flows_Running</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>A Final Email Template to send to the running user should the Error Log ever fail to insert into the system.</description>
+        <name>ErrorLogEmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Dear Salesforce CoE Team&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;An error has taken place within the Salesforce platform as outlined below;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Origin: {!OriginName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Error Message: {!Messages}&lt;/p&gt;&lt;p&gt;Type: {!Type}&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://ocsgroup.my.salesforce.com/%7B!RecordId%7D&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Open Error&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>The Level of the Error Log (Error or Warning)</description>
+        <name>Level</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The Message of the Error Log output.</description>
+        <name>Messages</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Object</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The originating Flow or Automation that caused the error to start. Usually the name of the flow.</description>
+        <name>OriginName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The originating record related to the flow that is attempting to be updated or created</description>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The automation type used for filtering and reporting primarily. Either Batch, Trigger, or Apex. (Picklist Driven).</description>
+        <name>Type</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

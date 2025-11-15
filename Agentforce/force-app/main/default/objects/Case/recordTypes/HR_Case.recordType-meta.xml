@@ -1,0 +1,1499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HR_Case</fullName>
+    <active>true</active>
+    <businessProcess>HR Case Management</businessProcess>
+    <compactLayoutAssignment>HR_Compact</compactLayoutAssignment>
+    <label>HR Case</label>
+    <picklistValues>
+        <picklist>Issue_Type_Sub_Category__c</picklist>
+        <values>
+            <fullName>Absence reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accessory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accessory to a Disciplinary Offence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accident Outside of Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accident at Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Addiction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adverse Weather</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allergies%2C Poisoning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anaemia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annual leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arthritis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asthma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authorised Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authorised and permitted %28management use only%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Back %26 neck problems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Back%2C Neck%2C Spinal Disorder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bereavement%2FCompassionate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Birthday Time Off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blood Disorder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of Code of Conduct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of Company Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of Confidentiality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of Dress Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of GDPR%2FData Protection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of GDPR%2FInfoSec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of H%26S</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of Security Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of Security Protocols</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of Social Media Policy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Breach of Trust %26 Confidence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bringing the company into disrepute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bronchitis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bullying%2FHarrassment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Career Break</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chest %26 Respiritory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Child %2F Family emergency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Removal Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold%2C Cough%2C Influenza</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colleague Misconduct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concussion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confidentiality breach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conflict of Interest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Convictions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coronavirus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covid-19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DBS Failure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daily equipment check fail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damage to Property</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dependancy Care Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diabetes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disciplinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Discrimination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dishonesty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disrepute</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driving offences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ear%2C Eye%2C Nose %26 Mouth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ear%2C Eye%2C Nose %26 Mouth%2FDental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ear%2C Nose%2C Throat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eligibility to Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>End of Fixed Term Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment Check Fail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evidence outstanding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evidence received %E2%80%93 British citizenship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evidence received %E2%80%93 Invalid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evidence received %E2%80%93 Irish citizenship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evidence received %E2%80%93 Pre-settled status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evidence received %E2%80%93 Settled status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eyes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Disclose Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Follow Absence Reporting Procedure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Follow Absent Reporting Procedures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Follow Reasonable Instruction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Provide Right to Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Report Convictions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to Report Driving Conviction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to adhere to contractual working hours</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure to follow reasonable instructions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fatigue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fractures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fraud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GDPR breach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garden Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gastroenteritis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genito-Urinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genito-urinary%2Fgynaecological %28incl period pains%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grievance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gynaecological</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H%26S breach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Haemorrhage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Headache %26 Migraine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heart%2C Stroke%2C Circulatory Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heart%2C blood pressure %26 circulation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitalisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inflammation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Injury</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Joint Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jury Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loss of Airside Pass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loss of Driving Licence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loss of Government Clearance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loss of Other Licence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loss of SIA Licence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lung and Respiratory Disorders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manager Misconduct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maternity%2FPaternity%2FShared Parental Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Appointments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mental Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misuse of Company Devices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misuse of Company Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Misuse of Company Vehicle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mouth and Throat Disorders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Musculoskeletal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negligence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nervous System</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neurological</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-renewal of fixed term</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organisational Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organisational Restructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Medical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Mental Health Condition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Policy Breach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PEN Test Fail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid Leave %28SOSR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panic Alarm test fail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parental Leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pay%2FFinances</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physical%2Fverbal abuse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Policy breach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Hygiene</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Natal Condition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pregnancy Related Illness</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process-Related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ramification of Criminal Conviction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reduction in Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redundancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refusal to Accept New Terms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refusal to follow reasonable instructions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship breakdown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reputational Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resignation Complaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOSR TPP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security Breach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sexual Harrassment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Closure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skin Disorder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sleeping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smoking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sprains%2C Strains%2C Bruises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stomach%2C Liver%2C Kidney %26 Digestion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stress %28Work Related%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stress%2C Depression %26 Anxiety</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stroke</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surgery%2C Hospitalisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspension %28Medical%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suspension %28Misconduct%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUPE - Gain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUPE - Loss</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUPE - Tender</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terms of Employment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thyroid%2C Hormonal Condition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Time off for Interview</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Union Duties</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ulcer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unauthorised Absence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under the influence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unfair Treatment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Victimisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wellbeing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whistleblowing %28in Public Interest%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Willful Refusal of Management Instruction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workplace Rules or Conditions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wounds%2C Burns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrongdoing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue_Type__c</picklist>
+        <values>
+            <fullName>AWOL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appeal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Variation %2F Restructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disciplinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early Conciliation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flexible Working</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frustration of Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grievance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ill Health Capability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long Term Sick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Capability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Probation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redundancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resignation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOSR TPP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Term Sick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Statutory Illegality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUPE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Whistleblowing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Management_Pack__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Notice_Served__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Occupational_Health_Referral__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>ACAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safecall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Outcome__c</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agreement to Change to T%26Cs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alternative Proposal Agreed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alternative agreed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COT3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colleague TUPE Transferred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Extended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Terminated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Variation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Death in service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demotion%2FRedeployment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dismissal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dismissal %26 Reingagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dismissal and reengagement %28with notice%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dismissal with notice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dismissal without Notice %28Summary%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents Provided - No Further Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documents Provided%2C No Further Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extended</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Final Written Warning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Written Warning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forced Changed to T%26C%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informal PIP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informal Resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Involuntary change to terms and conditions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Letter of concern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mediation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Capability Dismissal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple Outcomes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Contact Made From Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Contact from Case Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Contact from employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Further Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Upheld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not proceeding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partially Upheld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Passed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Postponed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process not going ahead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reasonable Adjustments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redeployed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redeployment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redundancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reengagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rehearing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reinstatement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected after Trial Period</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resignation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retained in role</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returned to Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Settled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUPE Postponed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUPE Transfer in complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUPE Transfer out complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TUPE info provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upheld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Various outcomes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voluntary change to terms and conditions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Withdrawn</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RAG__c</picklist>
+        <values>
+            <fullName>Amber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sector_Sub_Category__c</picklist>
+        <values>
+            <fullName>Business %26 Industry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Destinations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exclusive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groceries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H%26E - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>H%26E - PFI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HMCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare %26 Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrated Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal %26 Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leisure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M%26A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MOJ%2FHO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marcomms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maxim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morrisons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payroll</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People into Work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procurement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Profile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Mgt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QSHE %26 Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resourcing %26 Talent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SWC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shared Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transport</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workplaces</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sector__c</picklist>
+        <values>
+            <fullName>Catering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central Functions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleaning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hard Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Type__c</picklist>
+        <values>
+            <fullName>Hazardous Waste</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recycling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waste Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sick_Pay_Status__c</picklist>
+        <values>
+            <fullName>CSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Pay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Support_Required__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Face to Face</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telephone</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Training_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Feature Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

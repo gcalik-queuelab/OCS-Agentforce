@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Credit Score</fullName>
+                <default>false</default>
+                <label>Credit Score</label>
+            </value>
+            <value>
+                <fullName>Delinquency Score</fullName>
+                <default>false</default>
+                <label>Delinquency Score</label>
+            </value>
+            <value>
+                <fullName>Failure Score</fullName>
+                <default>false</default>
+                <label>Failure Score</label>
+            </value>
+            <value>
+                <fullName>Max Recommended Credit Limit</fullName>
+                <default>false</default>
+                <label>Max Recommended Credit Limit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

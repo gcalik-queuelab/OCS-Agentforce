@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resource_Planning_Require_Bid_Team</fullName>
+    <active>true</active>
+    <description>Require Bid Team selection if ticking box to include Opp in Resource Planning</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				 Include_in_Resource_Planning__c = TRUE,
+				ISBLANK(TEXT(Bid_Team__c))
+				)</errorConditionFormula>
+    <errorDisplayField>Bid_Team__c</errorDisplayField>
+    <errorMessage>Bid Team must be selected if flagging the Opportunity to be included in Resource Planning.</errorMessage>
+</ValidationRule>

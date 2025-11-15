@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_NPS</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://ocsgroup--apxtconga4.vf.force.com/a0yTw0000001vqfIAA
+11-Jul-2024 04:02:10 PM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate NPS</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!NPS__c.Id}
+
+&amp;QueryId=[Question2]0Q_002UAA254265,
+[Question3]0Q_003UAA829410,
+[Question4]0Q_004UAA328222,
+[Question5]0Q_005UAA378520,
+[Question6]0Q_006UAA015579,
+[Question7]0Q_007UAA039638,
+[Question8]0Q_008UAA540193,
+[Question9]0Q_009UAA319475,
+[NPSRecordData]0Q_000UAA924864,
+[Question1]0Q_001UAA490645,
+[Question10]0Q_010UAA444287,
+[Question11]0Q_011UAA044732,
+[Question12]0Q_012UAA914661,
+[FurtherComments]0Q_013UAA712034
+
+&amp;TemplateId=0T_001UAA761155
+
+&amp;DefaultPDF=1
+&amp;OFN=NPS Survey - {!NPS__c.Account__c} - {!DAY( TODAY() )}-{!MONTH( TODAY() )}-{!YEAR( TODAY() )}
+&amp;SC0=1
+&amp;SC1=attachments
+&amp;DS7=1</url>
+    <width>900</width>
+</WebLink>

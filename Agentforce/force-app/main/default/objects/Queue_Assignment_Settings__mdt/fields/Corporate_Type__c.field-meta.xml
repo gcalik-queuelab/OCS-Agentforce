@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corporate_Type__c</fullName>
+    <description>AD-1012 - Stores the Corporate Type to be matched against this Queue Assignment. Note that Global Value Sets are not supported at the time of creation.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Corporate Type</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Facilities</fullName>
+                <default>true</default>
+                <label>Facilities</label>
+            </value>
+            <value>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+                <label>Automotive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

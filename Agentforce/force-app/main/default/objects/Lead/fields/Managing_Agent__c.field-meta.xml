@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Managing_Agent__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>AD-88 - Add lookup to Managing Agent Account</description>
+    <label>Managing Agent</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The Managing Agent does not meet the criteria.</errorMessage>
+        <filterItems>
+            <field>Account.Managing_Agent__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Leads (Managing Agent)</relationshipLabel>
+    <relationshipName>Leads1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

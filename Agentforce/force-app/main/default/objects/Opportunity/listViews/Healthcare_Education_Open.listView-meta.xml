@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Healthcare_Education_Open</fullName>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Sub_Stage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>2. Prospect,3. Solution,4. Post-Submission</value>
+    </filters>
+    <filters>
+        <field>Sub_Stage__c</field>
+        <operation>notEqual</operation>
+        <value>2.1 Future Opportunity</value>
+    </filters>
+    <filters>
+        <field>Owner_Team_Formula__c</field>
+        <operation>equals</operation>
+        <value>Healthcare &amp; Education</value>
+    </filters>
+    <filters>
+        <field>Owner_Business_Unit_Formula__c</field>
+        <operation>equals</operation>
+        <value>Public FM</value>
+    </filters>
+    <label>Healthcare &amp; Education UK Open</label>
+</ListView>

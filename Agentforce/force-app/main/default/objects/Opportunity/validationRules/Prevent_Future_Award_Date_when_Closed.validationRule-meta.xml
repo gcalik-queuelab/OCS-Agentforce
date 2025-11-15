@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Future_Award_Date_when_Closed</fullName>
+    <active>true</active>
+    <description>When Opportunity is Closed prevent the user from setting a future award date</description>
+    <errorConditionFormula>AND(
+$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+
+$Permission.System_Administrator = FALSE,
+$Permission.Regional_Delegated_Administrator = FALSE,
+$Permission.Delegated_Admin = FALSE,
+$Permission.Country_Delegated_Administrator = FALSE,
+
+RecordType.DeveloperName != &quot;Target&quot;,
+IsClosed = TRUE,
+ISCHANGED(CloseDate),
+CloseDate &gt; TODAY()
+
+)</errorConditionFormula>
+    <errorMessage>Award Date cannot be set in the future for Closed Opportunities</errorMessage>
+</ValidationRule>

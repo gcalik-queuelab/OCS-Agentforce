@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Ticket_Type__c</fullName>
+    <inlineHelpText>Used in marketing forms.</inlineHelpText>
+    <label>Event Ticket Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Networking opportunity</fullName>
+                <default>false</default>
+                <label>Networking opportunity</label>
+            </value>
+            <value>
+                <fullName>Evening dinner and networking</fullName>
+                <default>false</default>
+                <label>Evening dinner and networking</label>
+            </value>
+            <value>
+                <fullName>Day and evening attendance</fullName>
+                <default>false</default>
+                <label>Day and evening attendance</label>
+            </value>
+            <value>
+                <fullName>Drinks package</fullName>
+                <default>false</default>
+                <label>Drinks package</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

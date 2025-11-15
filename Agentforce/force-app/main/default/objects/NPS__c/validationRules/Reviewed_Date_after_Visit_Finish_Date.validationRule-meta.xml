@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reviewed_Date_after_Visit_Finish_Date</fullName>
+    <active>true</active>
+    <description>AD-426 - validation rule to ensure the Reviewed date is after the Visit Finish date (allow the finish date itself to be used.</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+Reviewed__c &lt; DATEVALUE(Visit_Finish__c))</errorConditionFormula>
+    <errorMessage>Please ensure Reviewed date is after Visit Finish date</errorMessage>
+</ValidationRule>

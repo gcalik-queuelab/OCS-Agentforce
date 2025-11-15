@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operational_Opportunity_Same_Account</fullName>
+    <active>true</active>
+    <description>Operational Opportunity (if linked) must relate to the same Account as the Contract.</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				NOT(ISBLANK(Operational_Opportunity__c)),
+				Operational_Opportunity__r.Account__c !=  Contract__r.Account__c 
+				)</errorConditionFormula>
+    <errorDisplayField>Operational_Opportunity__c</errorDisplayField>
+    <errorMessage>Operational Opportunity must relate to the same Account as this Contract Variation</errorMessage>
+</ValidationRule>

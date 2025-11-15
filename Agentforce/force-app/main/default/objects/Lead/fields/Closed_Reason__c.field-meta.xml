@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Reason__c</fullName>
+    <description>AD-23 - information to capture the reason why a Lead has been closed</description>
+    <label>Closed Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Benchmarking</fullName>
+                <default>false</default>
+                <label>Benchmarking</label>
+            </value>
+            <value>
+                <fullName>Capability</fullName>
+                <default>false</default>
+                <label>Capability</label>
+            </value>
+            <value>
+                <fullName>Client Withdrawn</fullName>
+                <default>false</default>
+                <label>Client Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Closed Site</fullName>
+                <default>false</default>
+                <label>Closed Site</label>
+            </value>
+            <value>
+                <fullName>Financial Risk</fullName>
+                <default>false</default>
+                <label>Financial Risk</label>
+            </value>
+            <value>
+                <fullName>Geography</fullName>
+                <default>false</default>
+                <label>Geography</label>
+            </value>
+            <value>
+                <fullName>Location</fullName>
+                <default>false</default>
+                <label>Location</label>
+            </value>
+            <value>
+                <fullName>Low Value</fullName>
+                <default>false</default>
+                <label>Low Value</label>
+            </value>
+            <value>
+                <fullName>No Longer at Business</fullName>
+                <default>false</default>
+                <label>No Longer at Business</label>
+            </value>
+            <value>
+                <fullName>No Relationship</fullName>
+                <default>false</default>
+                <label>No Relationship</label>
+            </value>
+            <value>
+                <fullName>No Requirements</fullName>
+                <default>false</default>
+                <label>No Requirements</label>
+            </value>
+            <value>
+                <fullName>Not Decision-Maker</fullName>
+                <default>false</default>
+                <label>Not Decision-Maker</label>
+            </value>
+            <value>
+                <fullName>Not in Strategy</fullName>
+                <default>false</default>
+                <label>Not in Strategy</label>
+            </value>
+            <value>
+                <fullName>Resource</fullName>
+                <default>false</default>
+                <label>Resource</label>
+            </value>
+            <value>
+                <fullName>Spam Enquiry</fullName>
+                <default>false</default>
+                <label>Spam Enquiry</label>
+            </value>
+            <value>
+                <fullName>Timeline</fullName>
+                <default>false</default>
+                <label>Timeline</label>
+            </value>
+            <value>
+                <fullName>Trade Unions</fullName>
+                <default>false</default>
+                <label>Trade Unions</label>
+            </value>
+            <value>
+                <fullName>Unknown Contact</fullName>
+                <default>false</default>
+                <label>Unknown Contact</label>
+            </value>
+            <value>
+                <fullName>Unresponsive</fullName>
+                <default>false</default>
+                <label>Unresponsive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

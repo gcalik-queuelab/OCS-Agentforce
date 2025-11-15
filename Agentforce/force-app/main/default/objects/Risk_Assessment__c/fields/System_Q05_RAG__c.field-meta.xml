@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Q05_RAG__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE (TEXT(Q05_PFI_or_LIFT__c),
+&quot;Yes&quot;, IMAGE( &apos;/resource/RedCircleCross&apos;, &apos;Red&apos;),
+&quot;No&quot;, IMAGE( &apos;/resource/GreenCircleTick&apos;, &apos;Green&apos;),
+&quot;&quot;)</formula>
+    <label>System:Q05 RAG</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

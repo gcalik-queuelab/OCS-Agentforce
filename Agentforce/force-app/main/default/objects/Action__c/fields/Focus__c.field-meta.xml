@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Focus__c</fullName>
+    <label>Focus</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Satisfaction</fullName>
+                <default>false</default>
+                <label>Customer Satisfaction</label>
+            </value>
+            <value>
+                <fullName>Exceeding Customer Expectations</fullName>
+                <default>false</default>
+                <label>Exceeding Customer Expectations</label>
+            </value>
+            <value>
+                <fullName>Promote Customer</fullName>
+                <default>false</default>
+                <label>Promote Customer</label>
+            </value>
+            <value>
+                <fullName>Promote OCS</fullName>
+                <default>false</default>
+                <label>Promote OCS</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Contract Delivery</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contract Delivery</label>
+            </value>
+            <value>
+                <fullName>Excelling Customer Expectations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Excelling Customer Expectations</label>
+            </value>
+            <value>
+                <fullName>Non-Strategic Programme Action</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Non-Strategic Programme Action</label>
+            </value>
+            <value>
+                <fullName>Promote Clients Brand Reputation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Promote Clients Brand Reputation</label>
+            </value>
+            <value>
+                <fullName>Promote Clients Market Position</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Promote Clients Market Position</label>
+            </value>
+            <value>
+                <fullName>Senior Client Objectives</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Senior Client Objectives</label>
+            </value>
+            <value>
+                <fullName>Stakeholder Satisfaction</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Stakeholder Satisfaction</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

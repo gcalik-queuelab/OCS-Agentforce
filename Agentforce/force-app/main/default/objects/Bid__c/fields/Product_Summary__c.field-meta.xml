@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Summary__c</fullName>
+    <description>AD-307 - text field to show the Service Summary of the Opportunity</description>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Automotive&quot;), &quot;Automotive; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Biomedical Management Services&quot;), &quot;Biomedical Management Services; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Car Park Management&quot;), &quot;Car Park Management; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Catering&quot;), &quot;Catering; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Cleaning&quot;), &quot;Cleaning; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Compliance Services&quot;), &quot;Compliance Services; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Hard Services&quot;), &quot;Hard Services; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Horticulture&quot;), &quot;Horticulture; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Industrial Painting&quot;), &quot;Industrial Painting; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;IoT&quot;), &quot;IoT; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Management Services&quot;), &quot;Management Services; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Other&quot;), &quot;Other; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Pest Control&quot;), &quot;Pest Control; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;PRM&quot;), &quot;PRM; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Security&quot;), &quot;Security; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Soft Services&quot;), &quot;Soft Services; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Strategic Consulting&quot;), &quot;Strategic Consulting; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Technical&quot;), &quot;Technical; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;TFM&quot;), &quot;TFM; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;VAS Specialized Services&quot;), &quot;VAS Specialized Services; &quot;, null) &amp;
+IF(INCLUDES(Opportunity__r.Service_Summary__c, &quot;Waste Management&quot;), &quot;Waste Management; &quot;, null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Summary</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

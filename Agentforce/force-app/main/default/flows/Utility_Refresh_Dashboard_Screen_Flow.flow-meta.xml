@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Refresh_Dashboard_via_REST_API</name>
+        <label>Refresh Dashboard via REST API</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>SalesforceRESTAPI.Refresh Dashboard</actionName>
+        <actionType>externalService</actionType>
+        <connector>
+            <targetReference>LogAPIResponse</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>DashboardID</name>
+            <value>
+                <elementReference>Get_Dashboard.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>SalesforceRESTAPI.Refresh Dashboard</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>If the dashboard is not found then the user doesn&apos;t have access. Therefore do not refresh, but do show the blank screen to avoid the &apos;your flow finished&apos; message.</description>
+        <name>Dashboard_Found_Decision</name>
+        <label>Dashboard Found?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Blank_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Refresh_Dashboard_Continue_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Dashboard.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Refresh_Dashboard_via_REST_API</targetReference>
+            </connector>
+            <label>Yes - Continue</label>
+        </rules>
+    </decisions>
+    <description>Screen Flow that sends the API request to refresh a dashboard. Primarily used on the Homepages to refresh the homepage dashboards</description>
+    <environments>Default</environments>
+    <interviewLabel>Utility: Refresh Dashboard Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Utility: Refresh Dashboard Screen Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Dashboard</name>
+        <label>Get Dashboard</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Dashboard_Found_Decision</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Log_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vIn_Dashboard_API_Name</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Dashboard</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <description>Prevent Flow showing &apos;Your Flow Finished&apos; message</description>
+        <name>Blank_Screen</name>
+        <label>Blank Screen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Dashboard</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Log_Error</name>
+        <label>Log Error</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Blank_Screen</targetReference>
+        </connector>
+        <flowName>Utility_Error_Log_Creation</flowName>
+        <inputAssignments>
+            <name>Level</name>
+            <value>
+                <stringValue>Error</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Messages</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>OriginName</name>
+            <value>
+                <stringValue>Utility: Refresh Dashboard Screen Flow</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordId</name>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Type</name>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>LogAPIResponse</name>
+        <label>Log API Response</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Blank_Screen</targetReference>
+        </connector>
+        <flowName>Utility_Error_Log_Creation</flowName>
+        <inputAssignments>
+            <name>Level</name>
+            <value>
+                <stringValue>Information</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Messages</name>
+            <value>
+                <stringValue>{!Refresh_Dashboard_via_REST_API.responseCode} - {!Refresh_Dashboard_via_REST_API.defaultExc} - {!Refresh_Dashboard_via_REST_API.2XX.statusUrl}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>OriginName</name>
+            <value>
+                <stringValue>Utility: Refresh Dashboard Screen Flow</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Type</name>
+            <value>
+                <stringValue>Flow</stringValue>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>vIn_Dashboard_API_Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

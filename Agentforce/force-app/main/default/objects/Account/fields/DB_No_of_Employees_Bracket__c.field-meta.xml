@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DB_No_of_Employees_Bracket__c</fullName>
+    <label># Employees Bracket</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100 to 149</fullName>
+                <default>false</default>
+                <label>100 to 149</label>
+            </value>
+            <value>
+                <fullName>1000 to 4999</fullName>
+                <default>false</default>
+                <label>1000 to 4999</label>
+            </value>
+            <value>
+                <fullName>150 to 199</fullName>
+                <default>false</default>
+                <label>150 to 199</label>
+            </value>
+            <value>
+                <fullName>200 to 499</fullName>
+                <default>false</default>
+                <label>200 to 499</label>
+            </value>
+            <value>
+                <fullName>50 to 99</fullName>
+                <default>false</default>
+                <label>50 to 99</label>
+            </value>
+            <value>
+                <fullName>500 to 999</fullName>
+                <default>false</default>
+                <label>500 to 999</label>
+            </value>
+            <value>
+                <fullName>Less than 50 employees</fullName>
+                <default>false</default>
+                <label>Less than 50 employees</label>
+            </value>
+            <value>
+                <fullName>More than 5000</fullName>
+                <default>false</default>
+                <label>More than 5000</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

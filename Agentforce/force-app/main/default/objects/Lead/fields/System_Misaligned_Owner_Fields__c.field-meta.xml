@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Misaligned_Owner_Fields__c</fullName>
+    <description>Ticked when a Lead&apos;s Ownership fields are misaligned. Used as trigger for Scheduled Flow.</description>
+    <formula>AND(
+Owner:User.Full_Name__c != &apos;B2BMA Integration&apos;, /* Only mark as misaligned where Record not owned by B2BMA Integration (Pardot) User */
+Owner:User.Username != &quot;&quot;, /* Owned by User not owned by Queue - username will be blank where owned by Queue */
+OR(
+TEXT(Corporate_Type__c) != TEXT(Owner:User.Corporate_Type__c),
+TEXT(Owner_Region__c) !=  TEXT(Owner:User.Region__c),
+TEXT(Owner_Business_Unit__c) != TEXT(Owner:User.Business_Unit__c),
+Owner_Country__c !=  Owner:User.Country,
+System_Lead_Owner_Managers_Email__c != Owner:User.Manager_Email__c,  
+Owner_Team__c !=  TEXT(Owner:User.Team__c)
+)
+)</formula>
+    <inlineHelpText>System field.</inlineHelpText>
+    <label>System: Misaligned Owner Fields</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

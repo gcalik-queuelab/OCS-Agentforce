@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Systems__c</fullName>
+    <label>Proposed Systems</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Audim</fullName>
+                <default>false</default>
+                <label>Audim</label>
+            </value>
+            <value>
+                <fullName>Epsys</fullName>
+                <default>false</default>
+                <label>Epsys</label>
+            </value>
+            <value>
+                <fullName>Kafoodle</fullName>
+                <default>false</default>
+                <label>Kafoodle</label>
+            </value>
+            <value>
+                <fullName>Maple</fullName>
+                <default>false</default>
+                <label>Maple</label>
+            </value>
+            <value>
+                <fullName>MS365/PowerBi</fullName>
+                <default>false</default>
+                <label>MS365/PowerBi</label>
+            </value>
+            <value>
+                <fullName>Servicetrac</fullName>
+                <default>false</default>
+                <label>Servicetrac</label>
+            </value>
+            <value>
+                <fullName>Telephony</fullName>
+                <default>false</default>
+                <label>Telephony</label>
+            </value>
+            <value>
+                <fullName>Teletrac Navman</fullName>
+                <default>false</default>
+                <label>Teletrac Navman</label>
+            </value>
+            <value>
+                <fullName>Timegate</fullName>
+                <default>false</default>
+                <label>Timegate</label>
+            </value>
+            <value>
+                <fullName>Trackforce Variant</fullName>
+                <default>false</default>
+                <label>Trackforce Variant</label>
+            </value>
+            <value>
+                <fullName>Visual Business Retail (VBR) - EPOS</fullName>
+                <default>false</default>
+                <label>Visual Business Retail (VBR) - EPOS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_User_Edit_Access_f__c</fullName>
+    <description>Identifies if the viewing User matches the Account Owner Country, allowing the UK and Ireland to make edits in the UK&amp;I.</description>
+    <formula>OR(
+    AND(
+        TEXT(Owner_Region__c) = &quot;UK&amp;I&quot;,
+        TEXT($User.Region__c) = &quot;UK&amp;I&quot;
+    ),
+    Owner_Country__c = $User.Country,
+    $Permission.Delegated_Admin = TRUE,
+    $Permission.System_Administrator = TRUE
+)</formula>
+    <label>System: User Edit Access</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_For_ESG_Strategy__c</fullName>
+    <description>Feedback on the alignment of their ESG strategy</description>
+    <inlineHelpText>Did we support your ESG strategy? What were the positives and negatives? What else could we have done to show more alignment?</inlineHelpText>
+    <label>Support For ESG Strategy</label>
+    <length>5000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

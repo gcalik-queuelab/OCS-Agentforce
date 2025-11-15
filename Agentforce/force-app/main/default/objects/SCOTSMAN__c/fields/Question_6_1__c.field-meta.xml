@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Question_6_1__c</fullName>
+    <defaultValue>&quot;Are there consequences to us of losing or not bidding?&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Question 6.1</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

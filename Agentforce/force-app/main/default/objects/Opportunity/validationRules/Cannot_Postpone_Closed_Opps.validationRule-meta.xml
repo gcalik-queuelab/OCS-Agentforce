@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Postpone_Closed_Opps</fullName>
+    <active>true</active>
+    <description>Postpone_Close_Date_Reason__c, Postpone_Comments__c, Postpone_Date__c fields cannot be edited for Closed Opportunities.</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+OR(
+ISCHANGED(Postpone_Close_Date_Reason__c),
+ISCHANGED(Postpone_Comments__c),
+ISCHANGED(Postpone_Date__c)
+),
+NOT(ISCHANGED(StageName)),
+IsClosed=TRUE
+)</errorConditionFormula>
+    <errorMessage>Postpone details cannot be changed on Closed Opportunities.</errorMessage>
+</ValidationRule>

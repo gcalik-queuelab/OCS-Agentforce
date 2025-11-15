@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Overdue_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.TITLE</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Headcount__c</columns>
+    <columns>Primary_Source__c</columns>
+    <columns>Secondary_Source__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_WEEK</value>
+    </filters>
+    <label>Overdue Leads</label>
+    <sharedTo>
+        <roleAndSubordinates>Thailand_Country_Delegated_Admin</roleAndSubordinates>
+        <roleAndSubordinates>Thailand_Sales_Director</roleAndSubordinates>
+        <roleAndSubordinates>Thailand_Sales_Manager</roleAndSubordinates>
+    </sharedTo>
+</ListView>

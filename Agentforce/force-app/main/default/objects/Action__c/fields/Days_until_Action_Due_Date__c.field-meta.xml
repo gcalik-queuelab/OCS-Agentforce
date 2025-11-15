@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_until_Action_Due_Date__c</fullName>
+    <description>AD-130 - field to calculate the number of days until an action is due</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    OR(
+        ISPICKVAL(Status__c, &apos;Pending&apos;),
+        ISPICKVAL(Status__c, &apos;In Progress&apos;)
+    ),
+    IF(
+        ISBLANK(Due_Date__c),
+        null,
+        Due_Date__c - TODAY()
+    ),
+    null
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Days until Action Due Date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

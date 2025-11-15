@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_7_Day_Opportunity_Overdue_Notification</name>
+        <label>Send 7 Day Opportunity Overdue Notification</label>
+        <locationX>50</locationX>
+        <locationY>576</locationY>
+        <actionName>Opportunity.AD_311_Overdue_Opportunity</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.AD_311_Overdue_Opportunity</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Automation_Enabled</name>
+        <label>Automation Enabled</label>
+        <locationX>611</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Automation Disabled</defaultConnectorLabel>
+        <rules>
+            <name>Automation_Enabled_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Flows_Disabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Emails_Enabled_Decision</targetReference>
+            </connector>
+            <label>Automation Enabled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Emails_Enabled_Decision</name>
+        <label>Emails Enabled?</label>
+        <locationX>380</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>Emails Disabled</defaultConnectorLabel>
+        <rules>
+            <name>Emails_Enabled_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Emails_Disabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Owner_Active</targetReference>
+            </connector>
+            <label>Emails Enabled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Owner_Active</name>
+        <label>Is Owner Active</label>
+        <locationX>182</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Not Active</defaultConnectorLabel>
+        <rules>
+            <name>Owner_Active</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Owner_Active__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_7_Day_Opportunity_Overdue_Notification</targetReference>
+            </connector>
+            <label>Owner Active</label>
+        </rules>
+    </decisions>
+    <description>Send email to Opp Owner 7 Days after Award Date</description>
+    <environments>Default</environments>
+    <interviewLabel>Opportunity: 7 Day Overdue Notification - Scheduled Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: 7 Day Overdue Notification - Scheduled Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Automation_Enabled</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsClosed</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Days_Since_Award_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>7.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Target</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-04-24</startDate>
+            <startTime>08:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

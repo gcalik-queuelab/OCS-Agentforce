@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Lead__r.Owned_by_Queue__c = TRUE,  Lead__r.Owner:Queue.QueueName ,  Lead__r.Owner:User.Full_Name__c )</formula>
+    <label>Owner</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

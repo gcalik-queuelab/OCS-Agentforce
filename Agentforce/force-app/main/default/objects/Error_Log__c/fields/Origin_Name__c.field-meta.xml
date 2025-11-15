@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Origin_Name__c</fullName>
+    <description>The flow / apex that the error message originated from. Used as a further descriptor for reporting and debugging.</description>
+    <externalId>false</externalId>
+    <label>Origin Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Received__c</fullName>
+    <description>Ticked if the Report Date field is completed. Used in visibility criteria for the Report Received button on the Occupational Health Lightning Page</description>
+    <formula>NOT(ISBLANK(Report_Date__c))</formula>
+    <label>Report Received</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

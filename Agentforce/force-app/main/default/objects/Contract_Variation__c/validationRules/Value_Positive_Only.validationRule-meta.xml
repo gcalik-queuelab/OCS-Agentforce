@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_Positive_Only</fullName>
+    <active>true</active>
+    <description>Ensure Value is not a negative number</description>
+    <errorConditionFormula>$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE
+&amp;&amp;
+Value__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>Value__c</errorDisplayField>
+    <errorMessage>Value cannot be a negative number. To reflect a negative variation you must enter a positive number here and tick the &apos;Negative Impact&apos; box.</errorMessage>
+</ValidationRule>

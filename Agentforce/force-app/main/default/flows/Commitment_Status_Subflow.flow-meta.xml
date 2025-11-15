@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Status_In_Progress</name>
+        <label>Set Status = In Progress</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>vInputOutput_Commitment.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>In Progress</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Status_Overdue</name>
+        <label>Set Status = Overdue</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>vInputOutput_Commitment.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Overdue</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Does the record need updating to In Progress or updating to Overdue?</description>
+        <name>Status_Update_Decision</name>
+        <label>Status Update Decision</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Set_Status_In_Progress</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>In Progress</defaultConnectorLabel>
+        <rules>
+            <name>Overdue_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vInputOutput_Commitment.Due_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>vInputOutput_Commitment.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Status_Overdue</targetReference>
+            </connector>
+            <label>Overdue</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Only do status update for Fixed-Term Commitments. Exclude Full-Term Commitments.</description>
+        <name>Type_Decision</name>
+        <label>Type Decision</label>
+        <locationX>380</locationX>
+        <locationY>134</locationY>
+        <defaultConnectorLabel>Full-Term</defaultConnectorLabel>
+        <rules>
+            <name>Fixed_Term_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vInputOutput_Commitment.Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fixed-Term</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Status_Update_Decision</targetReference>
+            </connector>
+            <label>Fixed-Term</label>
+        </rules>
+    </decisions>
+    <description>Subflow to calculate the Status for Fixed-Term Commitments.</description>
+    <environments>Default</environments>
+    <interviewLabel>Commitment: Status Subflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Commitment: Status Subflow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Type_Decision</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>vInputOutput_Commitment</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Commitment__c</objectType>
+    </variables>
+</Flow>

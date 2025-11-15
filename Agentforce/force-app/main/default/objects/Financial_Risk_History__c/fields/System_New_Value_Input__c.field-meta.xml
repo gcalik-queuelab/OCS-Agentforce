@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_New_Value_Input__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>String field to be used as input for New Value field. Formula field then used to return New Value String/Numerical in formatted manner</inlineHelpText>
+    <label>System: New Value Input</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

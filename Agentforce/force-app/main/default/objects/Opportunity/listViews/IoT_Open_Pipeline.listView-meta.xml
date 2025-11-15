@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IoT_Open_Pipeline</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Original_Opportunity_Name__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Contract_Start_Date__c</columns>
+    <columns>Contract_End_Date__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Incumbent__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>Business_Unit__c</field>
+        <operation>equals</operation>
+        <value>IOT</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>2. Prospect,3. Solution,4. Post-Submission</value>
+    </filters>
+    <label>IoT Open Pipeline</label>
+    <sharedTo>
+        <roleAndSubordinates>Thailand</roleAndSubordinates>
+        <roleAndSubordinates>Thailand_Sales_Director</roleAndSubordinates>
+        <roleAndSubordinates>Thailand_Sales_Manager</roleAndSubordinates>
+    </sharedTo>
+</ListView>

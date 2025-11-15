@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referrer_Business_Unit__c</fullName>
+    <label>Referrer Business Unit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Owner_Region__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Business_Unit</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>UK&amp;I</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Catering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK&amp;I</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Cleaning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK&amp;I</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Corporate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK&amp;I</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Hard Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK&amp;I</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Ireland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK&amp;I</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Private FM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK&amp;I</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Public FM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>UK&amp;I</controllingFieldValue>
+            <controllingFieldValue>Group</controllingFieldValue>
+            <valueName>Security</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

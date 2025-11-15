@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Negative_Quantities</fullName>
+    <active>true</active>
+    <description>Do not allow Negative Opportunity Service</description>
+    <errorConditionFormula>AND( $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				Quantity &lt; 0
+				)</errorConditionFormula>
+    <errorMessage>Quantity cannot be a negative number</errorMessage>
+</ValidationRule>

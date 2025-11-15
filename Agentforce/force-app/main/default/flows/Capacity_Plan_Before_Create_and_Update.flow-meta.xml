@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Is_New</name>
+        <label>Assign Is New?</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>v_Is_New</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_Is_New</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_or_Update</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Operational_Lead_Email_Required</name>
+        <label>Operational Lead Email Required</label>
+        <locationX>50</locationX>
+        <locationY>719</locationY>
+        <customErrorMessages>
+            <errorMessage>Please provide {!$Record.Operational_Lead__c}s email address</errorMessage>
+            <fieldSelection>Operational_Lead_Email__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Operational_Lead_Name_Required</name>
+        <label>Operational Lead Name Required</label>
+        <locationX>314</locationX>
+        <locationY>719</locationY>
+        <customErrorMessages>
+            <errorMessage>Please provide the name assigned to the email address {!$Record.Operational_Lead_Email__c}</errorMessage>
+            <fieldSelection>Operational_Lead__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Automation_Enabled</name>
+        <label>Automation Enabled</label>
+        <locationX>446</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Disabled</defaultConnectorLabel>
+        <rules>
+            <name>Enabled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Flows_Disabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Is_New</targetReference>
+            </connector>
+            <label>Enabled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Create_or_Update</name>
+        <label>Create or Update</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Operational_Lead_Populated_Fully</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update</defaultConnectorLabel>
+        <rules>
+            <name>Create</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>v_Is_New</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Create</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Operational_Lead_Populated_Fully</name>
+        <label>Operational Lead Populated Fully?</label>
+        <locationX>314</locationX>
+        <locationY>611</locationY>
+        <defaultConnectorLabel>Operational Lead Complete</defaultConnectorLabel>
+        <rules>
+            <name>Operational_Lead_Incomplete_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Operational_Lead__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Operational_Lead_Email__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Operational_Lead_Email_Required</targetReference>
+            </connector>
+            <label>Operational Lead Email Incomplete</label>
+        </rules>
+        <rules>
+            <name>Operational_Lead_Name_Incomplete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Operational_Lead__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Operational_Lead_Email__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Operational_Lead_Name_Required</targetReference>
+            </connector>
+            <label>Operational Lead Name Incomplete</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>f_Is_New</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Capacity Plan - Before Create {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Capacity Plan - Before Create and Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Automation_Enabled</targetReference>
+        </connector>
+        <object>Capacity_Plan__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>Create_Name</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Capacity_Plan_No__c} - {!$Record.Planning_Status__c} - {!$Record.Bid_Team__c} - {!$Record.Document_Type__c}</text>
+    </textTemplates>
+    <variables>
+        <name>v_Is_New</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>D_B_Hoovers_Industry_Description__c</fullName>
+    <description>D&amp;B Hoovers Industry Class Description</description>
+    <externalId>false</externalId>
+    <formula>DNBConnect__D_B_Connect_Company_Profile__r.DNB_Hoovers_Indtry_Class_Desc_Priority1__c</formula>
+    <label>D&amp;B: Hoovers Industry Description</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Provides create access to Case, Next Action, Medigold Referral &amp; Suspension</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>HR Case Manager</label>
+    <permissionSets>API_Integration</permissionSets>
+    <permissionSets>Appeal_Create_Read_Edit</permissionSets>
+    <permissionSets>Case_Create_Read_Edit</permissionSets>
+    <permissionSets>Case_Transfer_Case_Ownership</permissionSets>
+    <permissionSets>Create_and_Customise_List_Views</permissionSets>
+    <permissionSets>Employee_Create_Read_Edit</permissionSets>
+    <permissionSets>Export_Reports</permissionSets>
+    <permissionSets>Next_Action_Create_Read_Edit</permissionSets>
+    <permissionSets>Occupational_Health_Referral_Create_Read_Edit</permissionSets>
+    <permissionSets>Reports_Dashboard_Create_and_Edit</permissionSets>
+    <permissionSets>Suspension_Create_Read_Edit</permissionSets>
+    <permissionSets>Task_HR_Task_Record_Type</permissionSets>
+    <permissionSets>Transfer_Record_Ownership</permissionSets>
+    <permissionSets>Welfare_Meeting_Create_Read_Edit</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

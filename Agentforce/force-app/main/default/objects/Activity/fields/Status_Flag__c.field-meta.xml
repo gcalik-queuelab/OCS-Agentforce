@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Flag__c</fullName>
+    <description>AD-55 - flag to indicate if the task is open, not started, completed or overdue</description>
+    <externalId>false</externalId>
+    <formula>CASE(
+Status,
+&apos;Completed&apos;, IMAGE(&apos;/resource/RAGFlagGreen&apos;, &apos; &apos;),
+IF(
+ActivityDate &lt; TODAY(),
+IMAGE(&apos;/resource/RAGFlagGIF&apos;, &apos; &apos;),
+IF(
+ActivityDate = TODAY(),
+IMAGE(&apos;/resource/RAGFlagRed&apos;, &apos; &apos;),
+IF(
+AND(ActivityDate &gt; TODAY(), (ActivityDate - TODAY()) &lt;= 2),
+IMAGE(&apos;/resource/RAGFlagAmber&apos;, &apos; &apos;),
+IMAGE(&apos;/resource/RAGFlagAmber&apos;, &apos; &apos;)
+)
+)
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status Flag</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

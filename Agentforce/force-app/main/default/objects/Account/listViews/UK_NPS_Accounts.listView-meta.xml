@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UK_NPS_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>DUNS_No__c</columns>
+    <columns>NPS_Surveyor__c</columns>
+    <columns>Next_NPS_Visit_Due__c</columns>
+    <columns>Next_NPS_Visit__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Owner_Country_f__c</field>
+        <operation>equals</operation>
+        <value>United Kingdom</value>
+    </filters>
+    <filters>
+        <field>NPS_Surveyor__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>UK NPS Accounts</label>
+    <sharedTo>
+        <role>OCS_Group_Global_Delegated_Admin</role>
+        <role>UKI_NPS_Surveyor</role>
+        <role>UK_I_Senior_Team_Chairs</role>
+    </sharedTo>
+</ListView>

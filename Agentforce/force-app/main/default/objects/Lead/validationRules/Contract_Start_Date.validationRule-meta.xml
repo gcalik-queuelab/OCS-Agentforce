@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Start_Date</fullName>
+    <active>true</active>
+    <description>Start Date must be in the future where the lead is open</description>
+    <errorConditionFormula>AND(
+				$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE, 
+    OR(
+      ISPICKVAL(Status, &apos;Open&apos;),
+      ISPICKVAL(Status, &apos;Contacted&apos;),
+      ISPICKVAL(Status, &apos;Revisit&apos;)
+    ),
+			 OR(
+					 ISCHANGED(Estimated_Start_Date__c),
+					 ISCHANGED(Status)
+							),
+    Estimated_Start_Date__c &lt;= TODAY()
+)</errorConditionFormula>
+    <errorDisplayField>Estimated_Start_Date__c</errorDisplayField>
+    <errorMessage>Please update the &apos;Estimated Start Date&apos; to a date in the future.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Closed_Cases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Employee_Lookup__c</columns>
+    <columns>Case_Manager_Lookup__c</columns>
+    <columns>Site_Text__c</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.CLOSED_DATE</columns>
+    <columns>Issue_Type__c</columns>
+    <columns>Issue_Type_Sub_Category__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Closed Cases</label>
+    <sharedTo>
+        <roleAndSubordinates>UK_I_HR</roleAndSubordinates>
+    </sharedTo>
+</ListView>

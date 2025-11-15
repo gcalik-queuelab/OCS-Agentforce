@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue_Type__c</fullName>
+    <label>Issue Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AIP</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AIP</label>
+            </value>
+            <value>
+                <fullName>Appeal</fullName>
+                <default>false</default>
+                <label>Appeal</label>
+            </value>
+            <value>
+                <fullName>Appeal - Disciplinary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Appeal - Disciplinary</label>
+            </value>
+            <value>
+                <fullName>Appeal - Grievance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Appeal - Grievance</label>
+            </value>
+            <value>
+                <fullName>Appeal - Redundancy</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Appeal - Redundancy</label>
+            </value>
+            <value>
+                <fullName>Appeals against process</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Appeals against process</label>
+            </value>
+            <value>
+                <fullName>Appeal - SOSR TTP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Appeal - SOSR TTP</label>
+            </value>
+            <value>
+                <fullName>AWOL</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>AWOL</label>
+            </value>
+            <value>
+                <fullName>Career breaks/sabbaticals</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Career breaks/sabbaticals</label>
+            </value>
+            <value>
+                <fullName>Change to Ts &amp; Cs</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Change to Ts &amp; Cs</label>
+            </value>
+            <value>
+                <fullName>Consultations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Consultations</label>
+            </value>
+            <value>
+                <fullName>Contract Variation/Restructure</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Contract Variation/Restructure</label>
+            </value>
+            <value>
+                <fullName>Contract Variation / Restructure</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Contract Variation / Restructure</label>
+            </value>
+            <value>
+                <fullName>Disciplinary</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Disciplinary</label>
+            </value>
+            <value>
+                <fullName>Early Conciliation</fullName>
+                <default>false</default>
+                <label>Early Conciliation</label>
+            </value>
+            <value>
+                <fullName>EU Separation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EU Separation</label>
+            </value>
+            <value>
+                <fullName>Flexible Working</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Flexible Working</label>
+            </value>
+            <value>
+                <fullName>Frustration of Contract</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Frustration of Contract</label>
+            </value>
+            <value>
+                <fullName>Grievance</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Grievance</label>
+            </value>
+            <value>
+                <fullName>Ill Health Capability</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Ill Health Capability</label>
+            </value>
+            <value>
+                <fullName>Investigations</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Investigations</label>
+            </value>
+            <value>
+                <fullName>Long Term Sick</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Long Term Sick</label>
+            </value>
+            <value>
+                <fullName>Maternity / Paternity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Maternity / Paternity</label>
+            </value>
+            <value>
+                <fullName>Mediation</fullName>
+                <default>false</default>
+                <label>Mediation</label>
+            </value>
+            <value>
+                <fullName>Medical Capability</fullName>
+                <default>false</default>
+                <label>Medical Capability</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Other Reason for Absence</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other Reason for Absence</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Probation</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Probation</label>
+            </value>
+            <value>
+                <fullName>Redundancy</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Redundancy</label>
+            </value>
+            <value>
+                <fullName>Resignation</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Resignation</label>
+            </value>
+            <value>
+                <fullName>Right to Work</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Right to Work</label>
+            </value>
+            <value>
+                <fullName>Short Term Sick</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Short Term Sick</label>
+            </value>
+            <value>
+                <fullName>Sickness</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sickness</label>
+            </value>
+            <value>
+                <fullName>SOSR TPP</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>SOSR TPP</label>
+            </value>
+            <value>
+                <fullName>Statutory Illegality</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Statutory Illegality</label>
+            </value>
+            <value>
+                <fullName>Statutory Illigality</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Statutory Illigality</label>
+            </value>
+            <value>
+                <fullName>Subject Access Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Subject Access Request</label>
+            </value>
+            <value>
+                <fullName>TUPE</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>TUPE</label>
+            </value>
+            <value>
+                <fullName>Whistleblowing</fullName>
+                <color>#FFFFFF</color>
+                <default>false</default>
+                <label>Whistleblowing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

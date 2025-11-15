@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FOI_No__c</fullName>
+    <description>Used to identify FOI Record</description>
+    <displayFormat>FOI-{000000}</displayFormat>
+    <externalId>false</externalId>
+    <label>FOI No</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

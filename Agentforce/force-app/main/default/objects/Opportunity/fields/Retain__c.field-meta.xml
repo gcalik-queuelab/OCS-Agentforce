@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Retain__c</fullName>
+    <description>Retain Value = Retention Value and Extension Value</description>
+    <formula>IF(
+    OR(
+        ISPICKVAL(Type, &quot;Rebid&quot;),
+        ISPICKVAL(Type, &quot;Extension&quot;)
+    ),
+    (Retention_Value__c + Extension_Value__c),
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Retain</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

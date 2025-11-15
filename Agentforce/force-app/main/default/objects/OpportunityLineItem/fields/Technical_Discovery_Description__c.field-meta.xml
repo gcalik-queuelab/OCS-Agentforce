@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technical_Discovery_Description__c</fullName>
+    <description>AD-682 description for Products with Product Family equal to IOT</description>
+    <label>Technical Discovery Description</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

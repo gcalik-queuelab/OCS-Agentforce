@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Q07_Services_Delivered__c</fullName>
+    <inlineHelpText>What are the services to be delivered?</inlineHelpText>
+    <label>Services Delivered</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>Pest</fullName>
+                <default>false</default>
+                <label>Pest</label>
+            </value>
+            <value>
+                <fullName>Specialist/ Window cleaning</fullName>
+                <default>false</default>
+                <label>Specialist/ Window cleaning</label>
+            </value>
+            <value>
+                <fullName>Security Systems</fullName>
+                <default>false</default>
+                <label>Security Systems</label>
+            </value>
+            <value>
+                <fullName>Other not listed or multi service</fullName>
+                <default>false</default>
+                <label>Other not listed or multi service</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

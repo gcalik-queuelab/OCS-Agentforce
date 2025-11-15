@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_CEV_Score__c</fullName>
+    <description>AD-211 - Count the total CEV score for all CEVs captured under this NPS</description>
+    <label>Total CEV Score</label>
+    <summarizedField>CEV__c.Colleague_Recommendation_Score__c</summarizedField>
+    <summaryForeignKey>CEV__c.NPS__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Last_12_Months__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox used as criteria for Rollup Summaries since you cannot use Formulas containing Relative Dates (eg: TODAY). Checkbox set by Opportunity Before Create and Update Flow and Opportunity Scheduled Flow.</description>
+    <label>Closed Last 12 Months</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

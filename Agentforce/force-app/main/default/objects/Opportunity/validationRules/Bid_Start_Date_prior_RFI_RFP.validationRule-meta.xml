@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bid_Start_Date_prior_RFI_RFP</fullName>
+    <active>true</active>
+    <description>AD-303 Bid Start Date to be validated against the award date and the RFI/RFP dates.
+Only perform this validation when one of the dates (Process Start Date, RFI Submitted Date, RFP Submitted Date) is changed.</description>
+    <errorConditionFormula>AND(
+  !$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+  RecordType.DeveloperName != &quot;Target&quot;,
+  NOT((TEXT(StageName) = &quot;7. Closed Won&quot;)),
+  OR(
+    Bid_Start_Date__c &gt; RFI_Submitted_Date__c,
+    Bid_Start_Date__c &gt; RFP_Submitted_Date__c
+  ),
+			OR( /* Only trigger validation when at least one of the dates is changed to minimise flow errors */
+							ISCHANGED(Bid_Start_Date__c),
+							ISCHANGED(RFI_Submitted_Date__c),
+							ISCHANGED(RFP_Submitted_Date__c)
+							)
+)</errorConditionFormula>
+    <errorDisplayField>Bid_Start_Date__c</errorDisplayField>
+    <errorMessage>Process Start Date must be prior to the RFI/RFP submitted dates</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFI_End_Before_Award_Date</fullName>
+    <active>true</active>
+    <description>Trigger only where End Date is changed</description>
+    <errorConditionFormula>AND(
+$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+TEXT(Type__c) = &quot;SQ/RFI&quot;,
+End_Date__c &gt; Opportunity__r.CloseDate,
+ISCHANGED(End_Date__c)
+)</errorConditionFormula>
+    <errorMessage>RFI End Date must be before Award Date</errorMessage>
+</ValidationRule>

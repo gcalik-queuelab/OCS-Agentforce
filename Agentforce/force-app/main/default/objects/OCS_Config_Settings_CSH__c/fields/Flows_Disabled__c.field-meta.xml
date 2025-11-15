@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flows_Disabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to control whether or not flows will run within a transaction</description>
+    <inlineHelpText>Check this to disable all flows in the system</inlineHelpText>
+    <label>Flows Disabled</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

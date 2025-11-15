@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Reason__c</fullName>
+    <description>AD-281 The ability to capture the Lost/Withdrawn Reason on a Lost or Withdrawn Opportunity. The abilitiy to prompt the user with key questions for the Customer to ensure that &apos;Price&apos; isn&apos;t defaulted to as the root cause of Opportunity Losses.</description>
+    <label>Closed Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Sub_Stage__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Benchmarking</fullName>
+                <default>false</default>
+                <label>Benchmarking</label>
+            </value>
+            <value>
+                <fullName>Capability</fullName>
+                <default>false</default>
+                <label>Capability</label>
+            </value>
+            <value>
+                <fullName>Closure</fullName>
+                <default>false</default>
+                <label>Closure</label>
+            </value>
+            <value>
+                <fullName>Commitments</fullName>
+                <default>false</default>
+                <label>Commitments</label>
+            </value>
+            <value>
+                <fullName>Customer Withdrawn</fullName>
+                <default>false</default>
+                <label>Customer Withdrawn</label>
+            </value>
+            <value>
+                <fullName>Duplicated</fullName>
+                <default>false</default>
+                <label>Duplicated</label>
+            </value>
+            <value>
+                <fullName>ESG</fullName>
+                <default>false</default>
+                <label>ESG</label>
+            </value>
+            <value>
+                <fullName>Geography</fullName>
+                <default>false</default>
+                <label>Geography</label>
+            </value>
+            <value>
+                <fullName>Moved In-House</fullName>
+                <default>false</default>
+                <label>Moved In-House</label>
+            </value>
+            <value>
+                <fullName>Move to Global Deal</fullName>
+                <default>false</default>
+                <label>Move to Global Deal</label>
+            </value>
+            <value>
+                <fullName>Not in Strategy</fullName>
+                <default>false</default>
+                <label>Not in Strategy</label>
+            </value>
+            <value>
+                <fullName>People</fullName>
+                <default>false</default>
+                <label>People</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Postponed</fullName>
+                <default>false</default>
+                <label>Postponed</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Resource</fullName>
+                <default>false</default>
+                <label>Resource</label>
+            </value>
+            <value>
+                <fullName>Risk Diversity</fullName>
+                <default>false</default>
+                <label>Risk Diversity</label>
+            </value>
+            <value>
+                <fullName>Risk - Financial</fullName>
+                <default>false</default>
+                <label>Risk - Financial</label>
+            </value>
+            <value>
+                <fullName>Risk - Reputation</fullName>
+                <default>false</default>
+                <label>Risk - Reputation</label>
+            </value>
+            <value>
+                <fullName>Size</fullName>
+                <default>false</default>
+                <label>Size</label>
+            </value>
+            <value>
+                <fullName>Solution</fullName>
+                <default>false</default>
+                <label>Solution</label>
+            </value>
+            <value>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <label>Technology</label>
+            </value>
+            <value>
+                <fullName>Terms &amp; Conditions</fullName>
+                <default>false</default>
+                <label>Terms &amp; Conditions</label>
+            </value>
+            <value>
+                <fullName>Third Party</fullName>
+                <default>false</default>
+                <label>Third Party</label>
+            </value>
+            <value>
+                <fullName>Timeline - Long</fullName>
+                <default>false</default>
+                <label>Timeline - Long</label>
+            </value>
+            <value>
+                <fullName>Timeline - Short</fullName>
+                <default>false</default>
+                <label>Timeline - Short</label>
+            </value>
+            <value>
+                <fullName>Trade Unions</fullName>
+                <default>false</default>
+                <label>Trade Unions</label>
+            </value>
+            <value>
+                <fullName>Covid-19</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Covid-19</label>
+            </value>
+            <value>
+                <fullName>Financial Risk</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Financial Risk</label>
+            </value>
+            <value>
+                <fullName>Historical Performance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Historical Performance</label>
+            </value>
+            <value>
+                <fullName>Long Timeline</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Long Timeline</label>
+            </value>
+            <value>
+                <fullName>No Relationship</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Relationship</label>
+            </value>
+            <value>
+                <fullName>OCS Merger</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OCS Merger</label>
+            </value>
+            <value>
+                <fullName>Offer Quality</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Offer Quality</label>
+            </value>
+            <value>
+                <fullName>Reason Pending</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Reason Pending</label>
+            </value>
+            <value>
+                <fullName>Rejected by OCS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rejected by OCS</label>
+            </value>
+            <value>
+                <fullName>Short Timeline</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Short Timeline</label>
+            </value>
+            <value>
+                <fullName>Site Closure</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site Closure</label>
+            </value>
+            <value>
+                <fullName>Solution Design</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Solution Design</label>
+            </value>
+            <value>
+                <fullName>Third Party Lost</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Third Party Lost</label>
+            </value>
+            <value>
+                <fullName>Unsuccessful Tender</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unsuccessful Tender</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <valueName>Benchmarking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Capability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Commitments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Duplicated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Not in Strategy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <controllingFieldValue>5.2 Customer Withdrawn</controllingFieldValue>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>People</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <controllingFieldValue>5.2 Customer Withdrawn</controllingFieldValue>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Resource</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Risk - Financial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Risk - Reputation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Size</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Terms &amp; Conditions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Timeline - Long</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Timeline - Short</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.1 OCS Withdrawn</controllingFieldValue>
+            <valueName>Trade Unions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.2 Customer Withdrawn</controllingFieldValue>
+            <valueName>Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.2 Customer Withdrawn</controllingFieldValue>
+            <valueName>Customer Withdrawn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.2 Customer Withdrawn</controllingFieldValue>
+            <valueName>Moved In-House</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5.2 Customer Withdrawn</controllingFieldValue>
+            <valueName>Postponed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>ESG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <valueName>Geography</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <valueName>Move to Global Deal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Quality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <valueName>Risk Diversity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6.1 Closed Lost</controllingFieldValue>
+            <valueName>Third Party</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>7.1 Written Confirmation</controllingFieldValue>
+            <controllingFieldValue>7.2 T&amp;Cs Signed</controllingFieldValue>
+            <valueName>Technology</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

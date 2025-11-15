@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_RF4_RAG__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE (TEXT(RF4_Financial_Model__c),
+&quot;Fixed Price&quot;,IMAGE( &apos;/resource/RedRiskImage&apos;, &apos;Red&apos;,20,40),
+&quot;Open Book&quot;,IMAGE( &apos;/resource/GreenGoImage&apos;, &apos;Green&apos;,20,40),
+&quot;Cost Pass Through&quot;,IMAGE( &apos;/resource/GreenGoImage&apos;, &apos;Green&apos;,20,40),
+&quot;&quot;)</formula>
+    <label>RAG</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

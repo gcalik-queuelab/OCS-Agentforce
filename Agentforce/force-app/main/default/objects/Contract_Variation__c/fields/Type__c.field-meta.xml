@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>AD-326 to ensure a document is uploaded when a contract variation with the type of Additional Site is created.</description>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Additional Site</fullName>
+                <default>false</default>
+                <label>Additional Site</label>
+            </value>
+            <value>
+                <fullName>Change to T&amp;Cs</fullName>
+                <default>false</default>
+                <label>Change to T&amp;Cs</label>
+            </value>
+            <value>
+                <fullName>Contract Extension</fullName>
+                <default>false</default>
+                <label>Contract Extension</label>
+            </value>
+            <value>
+                <fullName>New Service</fullName>
+                <default>false</default>
+                <label>New Service</label>
+            </value>
+            <value>
+                <fullName>Price Increase</fullName>
+                <default>false</default>
+                <label>Price Increase</label>
+            </value>
+            <value>
+                <fullName>Service Increase</fullName>
+                <default>false</default>
+                <label>Service Increase</label>
+            </value>
+            <value>
+                <fullName>Service Reduction</fullName>
+                <default>false</default>
+                <label>Service Reduction</label>
+            </value>
+            <value>
+                <fullName>Site Closure</fullName>
+                <default>false</default>
+                <label>Site Closure</label>
+            </value>
+            <value>
+                <fullName>Structure Change</fullName>
+                <default>false</default>
+                <label>Structure Change</label>
+            </value>
+            <value>
+                <fullName>Annual Price Increase</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Annual Price Increase</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

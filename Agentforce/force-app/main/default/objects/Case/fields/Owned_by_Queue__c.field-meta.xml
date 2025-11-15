@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owned_by_Queue__c</fullName>
+    <description>Ticked if the Case Owner is a Queue</description>
+    <formula>IF(Owner:User.Username = &quot;&quot;,TRUE,FALSE)</formula>
+    <label>Owned by Queue</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

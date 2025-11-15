@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bid_Quality_Assessment__c</fullName>
+    <description>Review of the Bid quality against other bidders</description>
+    <inlineHelpText>Bid quality - Was it to your expectation? How did it compare to the winning &amp; other bidders?</inlineHelpText>
+    <label>Bid Quality Assessment</label>
+    <length>5000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

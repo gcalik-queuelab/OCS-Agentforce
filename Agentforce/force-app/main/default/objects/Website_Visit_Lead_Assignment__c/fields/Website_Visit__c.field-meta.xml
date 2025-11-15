@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Website_Visit__c</fullName>
+    <label>Website Visit</label>
+    <referenceTo>Website_Visit__c</referenceTo>
+    <relationshipLabel>Website Visit Lead Assignments</relationshipLabel>
+    <relationshipName>Website_Visit_Lead_Assignments</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

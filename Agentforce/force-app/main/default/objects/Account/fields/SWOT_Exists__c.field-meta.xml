@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SWOT_Exists__c</fullName>
+    <description>True if SWOT exists</description>
+    <formula>NOT(ISBLANK(SWOT__c))</formula>
+    <label>SWOT Exists</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

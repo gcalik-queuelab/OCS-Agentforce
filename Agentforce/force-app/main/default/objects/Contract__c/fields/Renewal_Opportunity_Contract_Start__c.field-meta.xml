@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Renewal_Opportunity_Contract_Start__c</fullName>
+    <formula>Rebid_Opportunity__r.Contract_Start_Date__c</formula>
+    <label>Renewal Opportunity Contract Start</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

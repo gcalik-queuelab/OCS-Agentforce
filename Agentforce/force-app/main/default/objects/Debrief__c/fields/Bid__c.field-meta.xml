@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bid__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup to Bid</description>
+    <label>Bid</label>
+    <referenceTo>Bid__c</referenceTo>
+    <relationshipLabel>Debrief</relationshipLabel>
+    <relationshipName>Debriefs</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

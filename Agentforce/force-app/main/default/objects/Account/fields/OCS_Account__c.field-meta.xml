@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OCS_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>AD-284 - Marks an Account to be the internal OCS Account. This will be the default account used as the winning competitor for Closed Won Opportunities</description>
+    <label>OCS Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

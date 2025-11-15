@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>Bid_Management</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Capacity_Planning</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Head_of_Bid</name>
+    </customPermissions>
+    <description>AD-77 - Create Permission Sets</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Action__c.Due_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Competitor_Services__c.Competitor__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Principal Bid Manager User</label>
+    <license>Salesforce</license>
+</PermissionSet>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operational_Risk_Score__c</fullName>
+    <description>AD-851 to understand the overall contract risk rating</description>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(Operational_Risk_Probability__c),
+&quot;Very Low&quot;, 1,
+&quot;Low&quot;, 2,
+&quot;Moderate&quot;, 3,
+&quot;High&quot;, 4,
+&quot;Very High&quot;, 5, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Operational Risk Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

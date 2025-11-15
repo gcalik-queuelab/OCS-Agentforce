@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_NPS__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Latest NPS</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The Account on the NPS does not match the NPS Account</errorMessage>
+        <filterItems>
+            <field>NPS__c.Account__r.Id</field>
+            <operation>equals</operation>
+            <valueField>$Source.Id</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>NPS__c</referenceTo>
+    <relationshipLabel>Accounts</relationshipLabel>
+    <relationshipName>Account_NPS</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

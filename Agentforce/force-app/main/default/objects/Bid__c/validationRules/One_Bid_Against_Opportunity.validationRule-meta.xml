@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_Bid_Against_Opportunity</fullName>
+    <active>true</active>
+    <description>AD-289 - validation rule to verify if the related Opportunity already has a Bid against it</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+    ISNEW(),
+    Opportunity__r.Bid_Exists__c
+)</errorConditionFormula>
+    <errorMessage>You are unable to create a new bid as one already exists against this Opportunity</errorMessage>
+</ValidationRule>

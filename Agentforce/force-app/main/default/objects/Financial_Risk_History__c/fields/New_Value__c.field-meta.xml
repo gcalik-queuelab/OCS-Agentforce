@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Value__c</fullName>
+    <description>Formula converts System: New Value Input field into formatted string for display to user.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+AND(
+System_Numerical_Indicator__c = TRUE,
+NOT(ISBLANK(System_New_Value_Input__c))
+),
+(TEXT(CurrencyIsoCode) &amp; &quot; &quot;),NULL) &amp; System_New_Value_Input__c</formula>
+    <label>New Value</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

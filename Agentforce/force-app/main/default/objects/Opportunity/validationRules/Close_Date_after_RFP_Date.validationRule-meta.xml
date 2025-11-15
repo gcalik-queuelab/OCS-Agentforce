@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Date_after_RFP_Date</fullName>
+    <active>true</active>
+    <description>AD- 306 RFP Submitted. Exclude Lite Opps Only apply validation when at least one of the dates is changed.</description>
+    <errorConditionFormula>AND($Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+RecordType.DeveloperName != &quot;Target&quot;,
+RecordType.DeveloperName != &quot;Lite_Opportunity&quot;,
+ NOT(ISPICKVAL( Type , &quot;Rebid&quot;)), 
+	NOT(TEXT(StageName) == &apos;7. Closed Won&apos;),
+ CloseDate &lt; RFP_Submitted_Date__c,
+	OR( /* Only apply validation when at least one of the dates is changed to minimise flow errors */
+					ISCHANGED(CloseDate),
+					ISCHANGED(RFP_Submitted_Date__c)
+					)
+)</errorConditionFormula>
+    <errorDisplayField>RFP_Submitted_Date__c</errorDisplayField>
+    <errorMessage>Award Date must be after RFP date</errorMessage>
+</ValidationRule>

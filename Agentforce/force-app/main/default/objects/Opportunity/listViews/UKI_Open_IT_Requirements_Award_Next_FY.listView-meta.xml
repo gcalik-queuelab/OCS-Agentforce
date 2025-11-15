@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UKI_Open_IT_Requirements_Award_Next_FY</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Owner_Full_Name__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Sub_Stage__c</columns>
+    <columns>OPPORTUNITY.TYPE</columns>
+    <columns>Service_Summary__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Contract_Start_Date__c</columns>
+    <columns>Contract_Term_String__c</columns>
+    <columns>RFP_Submission_Date__c</columns>
+    <columns>IT_Requirements__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>2. Prospect,3. Solution,4. Post-Submission</value>
+    </filters>
+    <filters>
+        <field>Request_IT_Support__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>IT_Requirements__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RFP_Submission_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_YEAR</value>
+    </filters>
+    <filters>
+        <field>Owner_Country_Formula__c</field>
+        <operation>equals</operation>
+        <value>United Kingdom,Ireland</value>
+    </filters>
+    <label>Open IT Requirements - Award Next FY</label>
+    <sharedTo>
+        <role>UK_I_Bid_Manager</role>
+    </sharedTo>
+</ListView>

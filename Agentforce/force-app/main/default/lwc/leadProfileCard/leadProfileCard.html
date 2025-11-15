@@ -1,0 +1,194 @@
+<template>
+  <div class="slds-card slds-profile" style={backgroundColorStyle}>
+    <div class="slds-grid slds-wrap font-color" style={textColorStyle}>
+      <div style={iconForegroundColorStyle}>
+        <template lwc:if={isLoaded}>
+          <div class="slds-size_1-of-1">
+            <div class="slds-grid slds-wrap slds-p-top_small slds-p-bottom_small slds-p-right_medium slds-p-left_medium">
+              <div class="slds-grid slds-wrap stretch-width">
+                <div class="slds-size_1-of-1">
+                  <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-1 slds-p-bottom_large">
+                      <div class="slds-grid slds-wrap">
+                        <div class="slds-align-middle slds-text-align_center">
+                          <!-- <img class="profile-photo" src="https://res.cloudinary.com/btahub/image/upload/v1708357811/ntbg5p1mwixury672dxy.png" /> -->
+                          <lightning-icon class="icon-style" icon-name="utility:lead" size="large"></lightning-icon>
+                        </div>
+                        <div class="slds-align-middle slds-p-left_medium">
+                          <h1 class="font-color"><strong>{name}</strong></h1>  
+                          <h2 class="font-color">{title}</h2>
+                          <h2 class="font-color">{company}</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slds-size_1-of-1 slds-p-bottom_large slds-border_bottom">
+                    <div class="slds-grid slds-wrap">
+                      <div class="slds-size_1-of-2 slds-p-bottom_x-small" if:true={email}>
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-size_1-of-1">
+                            <span class="slds-form-element__label font-color">Email</span>
+                            <div class="slds-form-element__control">
+                              <div class="slds-form-element__static font-color">
+                                <strong><a class="font-color" href={emaillink}>{email}</a></strong>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-size_1-of-2 slds-p-bottom_x-small" if:true={primarySource}>
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-size_1-of-1">
+                            <span class="slds-form-element__label font-color">Source</span>
+                            <div class="slds-form-element__control">
+                              <div class="slds-form-element__static font-color">
+                                <strong>{primarySource} - {secondarySource}</strong>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-size_1-of-2 slds-p-bottom_x-small" if:true={phonemobileconcat}>
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-size_1-of-1">
+                            <span class="slds-form-element__label font-color">Phone</span>
+                            <div class="slds-form-element__control">
+                              <div class="slds-form-element__static font-color">
+                                <strong if:true={phone}><a class="font-color" href={phonelink}>{phone}</a><br if:true={mobile}></strong>
+                                <strong><a class="font-color" href={mobilelink}>{mobile}</a></strong>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-size_1-of-2" if:true={lastActivityDate}>
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-size_1-of-1">
+                            <span class="slds-form-element__label font-color">Last Activity</span>
+                            <div class="slds-form-element__control">
+                              <div class="slds-form-element__static font-color">
+                                <strong>
+                                  <lightning-formatted-date-time value={lastActivityDate}></lightning-formatted-date-time>
+                                </strong>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>            
+                  <div class="slds-size_1-of-1 slds-p-bottom_small slds-p-top_small">
+                    <div class="slds-grid slds-wrap">
+                      <div class="slds-size_1-of-1" if:true={enquiryService}>
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-size_1-of-12 slds-align-middle slds-p-bottom_x-small">
+                            <lightning-icon icon-name="utility:cart" size="x-small" class="icon-style"></lightning-icon>
+                          </div>
+                          <div class="slds-size_11-of-12 slds-align-middle slds-p-bottom_x-small">
+                            <div class="slds-grid slds-wrap">
+                              <div class="slds-size_1-of-1">
+                                <div class="slds-grid slds-wrap">
+                                  <div class="slds-align-middle">
+                                    <p class="font-color slds-p-left_x-small slds-p-right_small">Enquiry Service</p>
+                                  </div>
+                                  <div class="slds-align-middle">
+                                    <div class="slds-align-middle font-color">
+                                      <strong>{enquiryService}</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-size_1-of-1" if:true={estimatedAnnualValue}>
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-size_1-of-12 slds-align-middle  slds-p-bottom_x-small">
+                            <lightning-icon icon-name="utility:moneybag" size="x-small"  class="icon-style"></lightning-icon>
+                          </div>
+                          <div class="slds-size_11-of-12 slds-align-middle">
+                            <div class="slds-grid slds-wrap">
+                              <div class="slds-size_1-of-1">
+                                <div class="slds-grid slds-wrap">
+                                  <div class="slds-align-middle">
+                                    <p class="font-color slds-p-left_x-small slds-p-right_small  slds-p-bottom_x-small">Estimated Annual Value</p>
+                                  </div>
+                                  <div class="font-color value-align-top">
+                                    <div>
+                                      <strong>
+                                        <lightning-formatted-number
+                                          value={estimatedAnnualValue}
+                                          format-style="currency"
+                                          currency-code={currencyCode}
+                                          >
+                                        </lightning-formatted-number>
+                                      </strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-size_1-of-1 slds-p-bottom_x-small" if:true={estimatedStartDate}>
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-size_1-of-12 slds-align-middle">
+                            <lightning-icon icon-name="utility:event" size="x-small" class="icon-style"></lightning-icon>
+                          </div>
+                          <div class="slds-size_11-of-12 slds-align-middle">
+                            <div class="slds-grid slds-wrap">
+                              <div class="slds-size_1-of-1">
+                                <div class="slds-grid slds-wrap">
+                                  <div class="slds-align-middle">
+                                    <p class="font-color slds-p-left_x-small slds-p-right_small">Estimated Start Date</p>
+                                  </div>
+                                  <div class="slds-align-middle">
+                                    <div class="slds-align-middle font-color">
+                                      <strong>
+                                        <lightning-formatted-date-time value={estimatedStartDate}></lightning-formatted-date-time>
+                                      </strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slds-size_1-of-1" if:true={estimatedContractTerm}>
+                        <div class="slds-grid slds-wrap">
+                          <div class="slds-size_1-of-12 slds-align-middle">
+                            <lightning-icon icon-name="utility:contract_doc" size="x-small" class="icon-style"></lightning-icon>
+                          </div>
+                          <div class="slds-size_11-of-12 slds-align-middle">
+                            <div class="slds-grid slds-wrap">
+                              <div class="slds-size_1-of-1">
+                                <div class="slds-grid slds-wrap">
+                                  <div class="slds-align-middle">
+                                    <p class="font-color slds-p-left_x-small slds-p-right_small">Estimated Contract Term</p>
+                                  </div>
+                                  <div class="slds-align-middle">
+                                    <div class="slds-align-middle font-color">
+                                      <strong>{estimatedContractTerm}</strong>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template lwc:elseif={error}> Error: {error} </template>
+      </div>
+    </div>
+  </div>
+</template>

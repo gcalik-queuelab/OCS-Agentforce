@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Value_Numerical__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(System_Numerical_Indicator__c = TRUE,VALUE(SUBSTITUTE(System_New_Value_Input__c,&quot;,&quot;,&quot;&quot;)),NULL)
+
+/* Include SUBSTITUTE to remove commas as provided in Value Input field by DnB */</formula>
+    <inlineHelpText>Formula to return Numerical value of New Value field for use in Report Charts.</inlineHelpText>
+    <label>New Value (Numerical)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Contractual_Value_Growth__c</fullName>
+    <description>AD-839 Annual Contractual Value Growth</description>
+    <formula>IF(
+OR(
+TEXT(Type) = &apos;New Customer&apos;,
+TEXT(Type) = &apos;New Service&apos;,
+TEXT(Type) = &apos;Upsell&apos;
+),
+Annual_Contractual_Revenue__c,
+IF(
+Annual_Contractual_Revenue__c - Current_Contract_Value__c &lt;= 0,
+0,
+Annual_Contractual_Revenue__c - Current_Contract_Value__c
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Annual Contractual Value Growth</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

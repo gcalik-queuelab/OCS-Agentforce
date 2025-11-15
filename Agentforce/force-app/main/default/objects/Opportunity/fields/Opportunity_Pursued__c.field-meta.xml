@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Pursued__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to identify where the Opportunity has progressed through Sub-Stage 2.3 or Stage 3 or 4</description>
+    <label>Opportunity Pursued</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

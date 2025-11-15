@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team__c</fullName>
+    <label>Team</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Unit__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Team</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Thailand</controllingFieldValue>
+            <controllingFieldValue>Central Engineering</controllingFieldValue>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <controllingFieldValue>Education</controllingFieldValue>
+            <controllingFieldValue>Foodhouse</controllingFieldValue>
+            <controllingFieldValue>1M</controllingFieldValue>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <controllingFieldValue>IOT</controllingFieldValue>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <controllingFieldValue>Retail</controllingFieldValue>
+            <valueName>Engineering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Thailand</controllingFieldValue>
+            <controllingFieldValue>UK &amp; IRE</controllingFieldValue>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <controllingFieldValue>Central Engineering</controllingFieldValue>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <controllingFieldValue>Education</controllingFieldValue>
+            <controllingFieldValue>Foodhouse</controllingFieldValue>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <controllingFieldValue>IOT</controllingFieldValue>
+            <controllingFieldValue>Ireland</controllingFieldValue>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <controllingFieldValue>Private FM</controllingFieldValue>
+            <controllingFieldValue>Public FM</controllingFieldValue>
+            <controllingFieldValue>Retail</controllingFieldValue>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>FM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Private FM</controllingFieldValue>
+            <valueName>Destinations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Food &amp; Distribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Public FM</controllingFieldValue>
+            <valueName>Government &amp; Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <controllingFieldValue>Public FM</controllingFieldValue>
+            <valueName>Healthcare</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Hotels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Pest Control</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Retail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Retail &amp; Distribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Window Cleaning</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>United Kingdom</controllingFieldValue>
+            <controllingFieldValue>Private FM</controllingFieldValue>
+            <valueName>Workplace &amp; Industry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>Central Scotland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>East Scotland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>Isles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>Lifecycle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>Midlands</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>North England</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>North Scotland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>South England</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FES</controllingFieldValue>
+            <valueName>West Scotland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <valueName>Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <controllingFieldValue>FM</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Northern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Catering</controllingFieldValue>
+            <controllingFieldValue>FM</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Southern</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>CPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Exclusive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Manufacturing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <valueName>Public</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cleaning</controllingFieldValue>
+            <valueName>Transport</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>C1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>C2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>C3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FM</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>Central</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FM</controllingFieldValue>
+            <controllingFieldValue>New Zealand</controllingFieldValue>
+            <valueName>NSO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1M</controllingFieldValue>
+            <valueName>Mechanical</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <valueName>Data &amp; Networks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <valueName>Energy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <valueName>Private</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <valueName>Projects</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <valueName>Technical Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hard Services</controllingFieldValue>
+            <valueName>Utilities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Manufacturing 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Manufacturing 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manufacturing</controllingFieldValue>
+            <valueName>Manufacturing 3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>Systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Security</controllingFieldValue>
+            <valueName>Temporary Work</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

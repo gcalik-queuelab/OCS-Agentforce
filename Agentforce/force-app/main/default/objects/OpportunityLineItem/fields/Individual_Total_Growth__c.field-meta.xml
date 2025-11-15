@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Individual_Total_Growth__c</fullName>
+    <formula>if( or( TotalPrice &lt;=0,Opportunity.Total_Performance__c &lt;=0,Opportunity.Total_Growth__c &lt;=0) , 0 , (TotalPrice / Opportunity.Total_Performance__c )* Opportunity.Total_Growth__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Individual Total Growth</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <type>Currency</type>
+</CustomField>

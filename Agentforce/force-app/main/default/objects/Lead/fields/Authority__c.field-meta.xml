@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Authority__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>AD-109 - checkbox to be used in the BANT validation</description>
+    <inlineHelpText>We are speaking to the right people from an Authority perspective. Decision Makers, Influencers etc.</inlineHelpText>
+    <label>Authority</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bid_Type__c</fullName>
+    <description>AD-447 - picklist values to identify the Bid record type</description>
+    <label>Bid Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Bid</fullName>
+                <default>false</default>
+                <label>RFI &amp; RFP</label>
+            </value>
+            <value>
+                <fullName>Lite Bid</fullName>
+                <default>false</default>
+                <label>RFP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

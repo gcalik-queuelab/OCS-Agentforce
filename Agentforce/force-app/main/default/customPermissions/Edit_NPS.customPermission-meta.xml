@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used as indicator if the user has permission to edit NPS for visibility of buttons and other screen components.</description>
+    <isLicensed>false</isLicensed>
+    <label>Edit NPS</label>
+</CustomPermission>

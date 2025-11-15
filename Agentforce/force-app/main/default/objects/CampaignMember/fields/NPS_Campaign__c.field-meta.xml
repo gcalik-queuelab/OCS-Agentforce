@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NPS_Campaign__c</fullName>
+    <description>AD-370 - Store whether the related campaign is an NPS campaign</description>
+    <formula>Campaign.NPS_Campaign__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>NPS Campaign</label>
+    <type>Checkbox</type>
+</CustomField>

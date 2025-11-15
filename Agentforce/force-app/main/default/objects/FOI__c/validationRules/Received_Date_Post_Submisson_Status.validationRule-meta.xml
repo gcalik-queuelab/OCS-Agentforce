@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Received_Date_Post_Submisson_Status</fullName>
+    <active>true</active>
+    <description>Received Date can only be populated after it has been submitted</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+AND
+(
+ISPICKVAL( Status__c , &apos;Pending Submission&apos;),
+NOT(ISBLANK(Received_Date__c))
+)
+)</errorConditionFormula>
+    <errorDisplayField>Received_Date__c</errorDisplayField>
+    <errorMessage>The Received Date can not be completed when the FOI has not been submitted.</errorMessage>
+</ValidationRule>

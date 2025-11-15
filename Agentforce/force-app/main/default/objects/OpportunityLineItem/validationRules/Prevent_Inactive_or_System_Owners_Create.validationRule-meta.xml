@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Inactive_or_System_Owners_Create</fullName>
+    <active>true</active>
+    <description>On creation of a record prevent the Owner being set to an Inactive user or a System user (where Owner Region = BLANK).</description>
+    <errorConditionFormula>AND(
+				$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				ISNEW(),
+				 OR(
+						 	Owner__r.IsActive = FALSE,
+							 ISBLANK(TEXT(Owner__r.Region__c)) /* Where Owner Region is blank we deem this to be a System User so do not allow it */
+					   )
+		)</errorConditionFormula>
+    <errorMessage>Opportunity Service Owner must be an Active User and cannot be a System User</errorMessage>
+</ValidationRule>

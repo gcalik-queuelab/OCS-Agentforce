@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>AD-77 - custom permission for Account Manager Level 2</description>
+    <isLicensed>false</isLicensed>
+    <label>Account Manager Level 2</label>
+</CustomPermission>

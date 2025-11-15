@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_Required</fullName>
+    <active>true</active>
+    <description>Company Address Country is required</description>
+    <errorConditionFormula>AND(
+NOT($Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c), 
+ISBLANK(Country)
+)</errorConditionFormula>
+    <errorDisplayField>Country</errorDisplayField>
+    <errorMessage>Please select the Country where the lead is located.</errorMessage>
+</ValidationRule>

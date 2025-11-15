@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Board_Sign_Off</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://ocsgroup--apxtconga4.vf.force.com/a0yTw0000001vU5IAI
+26-Jan-2024 11:58:25 AM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Board Sign Off</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!Bid__c.Id}
+
+&amp;QueryId=[BoardSignOffBid]0Q_014UAA887965,
+[BidSupportLegal]0Q_015UAA107691,
+[BidSupportPricing]0Q_016UAA655493
+
+&amp;TemplateId=0T_002UAA155014
+&amp;OFN=Board Sign Off_{!Bid__c.Account__c}_{!DAY( TODAY() )}_{!MONTH( TODAY() )}_{!YEAR( TODAY() )}
+&amp;DS7=3</url>
+    <width>900</width>
+</WebLink>

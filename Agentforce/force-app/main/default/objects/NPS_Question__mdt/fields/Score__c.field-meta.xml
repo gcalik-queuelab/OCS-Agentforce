@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Score__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>AD-180 - Denotes whether or not the question will prompt the entry of a score</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Score?</label>
+    <type>Checkbox</type>
+</CustomField>

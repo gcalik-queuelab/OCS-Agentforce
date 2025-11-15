@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Reason__c</fullName>
+    <label>Closed Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Stage__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Commitments</fullName>
+                <default>false</default>
+                <label>Commitments</label>
+            </value>
+            <value>
+                <fullName>ESG</fullName>
+                <default>false</default>
+                <label>ESG</label>
+            </value>
+            <value>
+                <fullName>People</fullName>
+                <default>false</default>
+                <label>People</label>
+            </value>
+            <value>
+                <fullName>Solution</fullName>
+                <default>false</default>
+                <label>Solution</label>
+            </value>
+            <value>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <label>Technology</label>
+            </value>
+            <value>
+                <fullName>Historical Performance</fullName>
+                <default>false</default>
+                <label>Historical Performance</label>
+            </value>
+            <value>
+                <fullName>Reason Pending</fullName>
+                <default>false</default>
+                <label>Reason Pending</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Solution Design</fullName>
+                <default>false</default>
+                <label>Solution Design</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Risk Diversity</fullName>
+                <default>false</default>
+                <label>Risk Diversity</label>
+            </value>
+            <value>
+                <fullName>Geography</fullName>
+                <default>false</default>
+                <label>Geography</label>
+            </value>
+            <value>
+                <fullName>Capability</fullName>
+                <default>false</default>
+                <label>Capability</label>
+            </value>
+            <value>
+                <fullName>Financial Risk</fullName>
+                <default>false</default>
+                <label>Financial Risk</label>
+            </value>
+            <value>
+                <fullName>Postponed</fullName>
+                <default>false</default>
+                <label>Postponed</label>
+            </value>
+            <value>
+                <fullName>Unsuccessful tender</fullName>
+                <default>false</default>
+                <label>Unsuccessful tender</label>
+            </value>
+            <value>
+                <fullName>OCS Merger</fullName>
+                <default>false</default>
+                <label>OCS Merger</label>
+            </value>
+            <value>
+                <fullName>Benchmarking</fullName>
+                <default>false</default>
+                <label>Benchmarking</label>
+            </value>
+            <value>
+                <fullName>Client Withdrew</fullName>
+                <default>false</default>
+                <label>Client Withdrew</label>
+            </value>
+            <value>
+                <fullName>Covid-19</fullName>
+                <default>false</default>
+                <label>Covid-19</label>
+            </value>
+            <value>
+                <fullName>Duplicated</fullName>
+                <default>false</default>
+                <label>Duplicated</label>
+            </value>
+            <value>
+                <fullName>Long Timeline</fullName>
+                <default>false</default>
+                <label>Long Timeline</label>
+            </value>
+            <value>
+                <fullName>No Relationship</fullName>
+                <default>false</default>
+                <label>No Relationship</label>
+            </value>
+            <value>
+                <fullName>Not in Strategy</fullName>
+                <default>false</default>
+                <label>Not in Strategy</label>
+            </value>
+            <value>
+                <fullName>Resource</fullName>
+                <default>false</default>
+                <label>Resource</label>
+            </value>
+            <value>
+                <fullName>Short Timeline</fullName>
+                <default>false</default>
+                <label>Short Timeline</label>
+            </value>
+            <value>
+                <fullName>Site Closure</fullName>
+                <default>false</default>
+                <label>Site Closure</label>
+            </value>
+            <value>
+                <fullName>Size</fullName>
+                <default>false</default>
+                <label>Size</label>
+            </value>
+            <value>
+                <fullName>Terms &amp; Conditions</fullName>
+                <default>false</default>
+                <label>Terms &amp; Conditions</label>
+            </value>
+            <value>
+                <fullName>Trade Unions</fullName>
+                <default>false</default>
+                <label>Trade Unions</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <valueName>Commitments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <valueName>ESG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <valueName>People</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <valueName>Solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <valueName>Technology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Historical Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Solution Design</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Quality</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Won</controllingFieldValue>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Capability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Reason Pending</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Risk Diversity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Geography</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Postponed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Unsuccessful tender</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Benchmarking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Terms &amp; Conditions</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Financial Risk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>OCS Merger</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Client Withdrew</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Covid-19</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Duplicated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Long Timeline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>No Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Not in Strategy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Resource</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Short Timeline</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Site Closure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Size</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Withdrawn</controllingFieldValue>
+            <valueName>Trade Unions</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

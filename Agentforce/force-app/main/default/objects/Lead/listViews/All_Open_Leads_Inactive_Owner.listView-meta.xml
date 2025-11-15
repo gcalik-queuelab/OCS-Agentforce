@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Open_Leads_Inactive_Owner</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.TITLE</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>Enquiry_Service__c</columns>
+    <columns>Estimated_Annual_Value__c</columns>
+    <columns>Estimated_Start_Date__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Owner_Full_Name__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed,Qualified</value>
+    </filters>
+    <filters>
+        <field>Owner_Active__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Open Leads - Inactive Owner</label>
+    <sharedTo>
+        <role>OCS_Group_Global_Delegated_Admin</role>
+        <role>OCS_Group_System_Administrator</role>
+    </sharedTo>
+</ListView>

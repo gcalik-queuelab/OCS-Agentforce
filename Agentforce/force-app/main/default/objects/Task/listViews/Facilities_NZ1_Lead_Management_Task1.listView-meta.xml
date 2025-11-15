@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Facilities_NZ1_Lead_Management_Task1</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Facilities - NZ1 - Lead Management</label>
+    <queue>Facilities_NZ1_Lead_Management</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

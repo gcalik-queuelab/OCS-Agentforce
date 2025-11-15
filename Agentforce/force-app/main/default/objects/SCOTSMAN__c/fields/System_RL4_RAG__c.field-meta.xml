@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_RL4_RAG__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE (TEXT(RL4_Terminate_for_Breach_or_Insolvency__c),
+&quot;Yes&quot;, IMAGE( &apos;/resource/GreenGoImage&apos;, &apos;Green&apos;,20,40),
+&quot;No&quot;, IMAGE( &apos;/resource/RedRiskImage&apos;, &apos;Red&apos;,20,40),
+&quot;&quot;)</formula>
+    <label>RAG</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

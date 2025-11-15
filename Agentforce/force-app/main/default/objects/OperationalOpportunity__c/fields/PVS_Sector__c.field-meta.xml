@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PVS_Sector__c</fullName>
+    <description>Identifies the Sector within the Business Unit</description>
+    <label>PVS Sector</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Destinations</fullName>
+                <default>false</default>
+                <label>Destinations</label>
+            </value>
+            <value>
+                <fullName>Industries</fullName>
+                <default>false</default>
+                <label>Industries</label>
+            </value>
+            <value>
+                <fullName>Venues</fullName>
+                <default>false</default>
+                <label>Venues</label>
+            </value>
+            <value>
+                <fullName>Workplace</fullName>
+                <default>false</default>
+                <label>Workplace</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

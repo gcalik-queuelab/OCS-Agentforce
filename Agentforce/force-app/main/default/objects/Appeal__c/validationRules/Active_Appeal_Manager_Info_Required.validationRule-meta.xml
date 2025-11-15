@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Appeal_Manager_Info_Required</fullName>
+    <active>true</active>
+    <description>Appeal Manager Information is required for Active/Closed Appeals. Allow Appeal Manager fields to be blank for Withdrawn Appeals since they may never have been Active.</description>
+    <errorConditionFormula>AND(
+				NOT(ISPICKVAL(Status__c,&quot;Pending&quot;)),
+				NOT(ISPICKVAL(Outcome__c,&quot;Withdrawn&quot;)),
+				OR(
+								ISBLANK(Appeal_Manager_First_Name__c),
+								ISBLANK(Appeal_Manager_Last_Name__c),
+								ISBLANK(Appeal_Manager_Email__c)
+								)
+				)</errorConditionFormula>
+    <errorMessage>Appeal Manager Contact information is required for all Active Appeals</errorMessage>
+</ValidationRule>

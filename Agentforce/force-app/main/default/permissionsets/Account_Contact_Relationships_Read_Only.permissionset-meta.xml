@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Read Only Access to Account Contact Relationships Object used to associate Contacts to Accounts</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Account Contact Relationships - Read Only</label>
+</PermissionSet>

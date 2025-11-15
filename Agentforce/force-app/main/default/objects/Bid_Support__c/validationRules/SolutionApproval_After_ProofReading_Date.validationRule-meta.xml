@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SolutionApproval_After_ProofReading_Date</fullName>
+    <active>true</active>
+    <description>Solution Approval must be after Proof Reading Date (if populated). Otherwise must be after Process Start Date</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				NOT(ISBLANK(Solution_Approval_Date__c)), 
+				IF(ISBLANK(Proof_Reading_Date__c),
+								Solution_Approval_Date__c &lt; Bid__r.Bid_Start_Date__c,
+								Solution_Approval_Date__c &lt; Proof_Reading_Date__c
+								)
+				)</errorConditionFormula>
+    <errorDisplayField>Solution_Approval_Date__c</errorDisplayField>
+    <errorMessage>Solution Approval Date cannot be before Process Start Date or Proof Reading Date</errorMessage>
+</ValidationRule>

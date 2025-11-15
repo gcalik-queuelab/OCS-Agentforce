@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operations_Director_Inactive__c</fullName>
+    <description>Identifies where Operations Director is Inactive</description>
+    <formula>Operational_Director__r.Inactive__c</formula>
+    <label>Operations Director Inactive</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

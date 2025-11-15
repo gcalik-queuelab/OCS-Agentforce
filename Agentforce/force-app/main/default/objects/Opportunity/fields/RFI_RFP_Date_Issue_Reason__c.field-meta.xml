@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFI_RFP_Date_Issue_Reason__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* Using the power of 2 to allow for all possible combinations */
+CASE(
+				  (IF(RFI_Issue_Date__c &gt; RFP_Issue_Date__c,1,0)
+					  + IF(RFI_Issue_Date__c &gt; RFI_Submission_Date__c,2,0)
+					  + IF(RFI_Issue_Date__c &gt; RFP_Submission_Date__c,4,0)
+							+ IF(RFP_Issue_Date__c &gt; RFP_Submission_Date__c ,8,0)
+				  )
+,1,&quot;RFI Issue Date after RFP Issue Date&quot;  /*1*/
+,2,&quot;RFI Issue Date after RFI Submission Date&quot;  /*2*/
+,3,&quot;RFI Issue Date after RFP Issue and RFI Submission Dates&quot;  /*1, 2*/
+,4,&quot;RFI Issue Date after RFP Submission Date&quot;  /*4*/
+,5,&quot;RFI Issue Date after RFP Issue and Submission Dates&quot;  /*1, 4*/
+,6,&quot;RFI Issue Date after RFI and RFP Submission Dates&quot;  /*2, 4*/
+,7,&quot;RFI Issue Date after RFP Issue Date and RFI and RFP Submission Dates&quot;  /*1, 2, 4*/
+,8,&quot;RFP Issue Date after RFP Submission Date&quot;  /*8*/
+,9,&quot;RFI Issue Date after RFP Issue Date which is after RFP Submission Date&quot;  /*1, 8*/
+,10,&quot;RFI Issue Date after RFI Issue Date, RFP Issue Date after RFP Submission Date&quot;  /*2, 8*/
+,11,&quot;RFI Issue Date after RFP Issue and RFI Submission Dates, RFP Issue Date after RFP Submission Date&quot;  /*1, 2, 8*/
+,12,&quot;RFI and RFP Issue Dates after RFP Submission Date&quot;  /*4, 8*/
+,13,&quot;RFI Issue Date after RFP Issue and Submission Dates, RFP Issue Date after RFP Submission Date&quot;  /*1, 4, 8*/
+,14,&quot;RFI Issue Date after RFI and RFP Submission Dates, RFP Issue Date after RFP Submission Date&quot;  /*2, 4, 8*/
+,15,&quot;RFI Issue Date after RFP Issue and Submission Dates and RFI Submission Date, RFP Issue Date after RFP Submission Date&quot;  /*1, 2, 4, 8*/
+
+,&quot;&quot;
+)</formula>
+    <label>RFI/RFP Date Issue Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Standard_RecordType_used_as_Parent</fullName>
+    <active>true</active>
+    <description>Do not allow Standard Actions to be used for Parents</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				 RecordType.DeveloperName = &quot;Parent&quot;,
+				 NOT(ISBLANK(Parent_Action__c))
+									)</errorConditionFormula>
+    <errorDisplayField>Parent_Action__c</errorDisplayField>
+    <errorMessage>You cannot Parent this Action to a record that is not a Parent Action. Convert the Parent into a Parent Action and try again.</errorMessage>
+</ValidationRule>

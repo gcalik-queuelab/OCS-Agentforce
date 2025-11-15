@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_at_Termination_Annual_Revenue__c</fullName>
+    <inlineHelpText>Annual Revenue from the Contract Lines that were Active at the point of Contract Termination.</inlineHelpText>
+    <label>Active at Termination Annual Revenue</label>
+    <summarizedField>Contract_Line_Item__c.Value__c</summarizedField>
+    <summaryFilterItems>
+        <field>Contract_Line_Item__c.Active_at_Contract_Termination__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Contract_Line_Item__c.Contract__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

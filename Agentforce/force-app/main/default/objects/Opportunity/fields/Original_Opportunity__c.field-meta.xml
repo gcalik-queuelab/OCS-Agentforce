@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Original_Opportunity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>AD-790 to be able to record the Growth on an Opportunity from the Original Contract/Opportunity</description>
+    <label>Original Opportunity</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Rebid Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

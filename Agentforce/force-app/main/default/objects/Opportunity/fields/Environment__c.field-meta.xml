@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Environment__c</fullName>
+    <description>AD-283 Environment values</description>
+    <label>Environment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bar</fullName>
+                <default>false</default>
+                <label>Bar</label>
+            </value>
+            <value>
+                <fullName>Bridges</fullName>
+                <default>false</default>
+                <label>Bridges</label>
+            </value>
+            <value>
+                <fullName>Campus</fullName>
+                <default>false</default>
+                <label>Campus</label>
+            </value>
+            <value>
+                <fullName>Care Homes</fullName>
+                <default>false</default>
+                <label>Care Homes</label>
+            </value>
+            <value>
+                <fullName>Clinics</fullName>
+                <default>false</default>
+                <label>Clinics</label>
+            </value>
+            <value>
+                <fullName>College</fullName>
+                <default>false</default>
+                <label>College</label>
+            </value>
+            <value>
+                <fullName>Conference Centre</fullName>
+                <default>false</default>
+                <label>Conference Centre</label>
+            </value>
+            <value>
+                <fullName>Construction Site</fullName>
+                <default>false</default>
+                <label>Construction Site</label>
+            </value>
+            <value>
+                <fullName>Courts</fullName>
+                <default>false</default>
+                <label>Courts</label>
+            </value>
+            <value>
+                <fullName>Data Centre</fullName>
+                <default>false</default>
+                <label>Data Centre</label>
+            </value>
+            <value>
+                <fullName>Emergency Services</fullName>
+                <default>false</default>
+                <label>Emergency Services</label>
+            </value>
+            <value>
+                <fullName>Energy Centre</fullName>
+                <default>false</default>
+                <label>Energy Centre</label>
+            </value>
+            <value>
+                <fullName>Extra Care Scheme</fullName>
+                <default>false</default>
+                <label>Extra Care Scheme</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Fleet</fullName>
+                <default>false</default>
+                <label>Fleet</label>
+            </value>
+            <value>
+                <fullName>Garden Centre</fullName>
+                <default>false</default>
+                <label>Garden Centre</label>
+            </value>
+            <value>
+                <fullName>Golf Course</fullName>
+                <default>false</default>
+                <label>Golf Course</label>
+            </value>
+            <value>
+                <fullName>Hanger</fullName>
+                <default>false</default>
+                <label>Hanger</label>
+            </value>
+            <value>
+                <fullName>Health Centre</fullName>
+                <default>false</default>
+                <label>Health Centre</label>
+            </value>
+            <value>
+                <fullName>Heritage Building</fullName>
+                <default>false</default>
+                <label>Heritage Building</label>
+            </value>
+            <value>
+                <fullName>Hospitals</fullName>
+                <default>false</default>
+                <label>Hospitals</label>
+            </value>
+            <value>
+                <fullName>Hotels</fullName>
+                <default>false</default>
+                <label>Hotels</label>
+            </value>
+            <value>
+                <fullName>Laboratory/Clean Room</fullName>
+                <default>false</default>
+                <label>Laboratory/Clean Room</label>
+            </value>
+            <value>
+                <fullName>Manufacturing Facility</fullName>
+                <default>false</default>
+                <label>Manufacturing Facility</label>
+            </value>
+            <value>
+                <fullName>Museum</fullName>
+                <default>false</default>
+                <label>Museum</label>
+            </value>
+            <value>
+                <fullName>Office</fullName>
+                <default>false</default>
+                <label>Office</label>
+            </value>
+            <value>
+                <fullName>Plant</fullName>
+                <default>false</default>
+                <label>Plant</label>
+            </value>
+            <value>
+                <fullName>Port</fullName>
+                <default>false</default>
+                <label>Port</label>
+            </value>
+            <value>
+                <fullName>Power Station</fullName>
+                <default>false</default>
+                <label>Power Station</label>
+            </value>
+            <value>
+                <fullName>Prisons</fullName>
+                <default>false</default>
+                <label>Prisons</label>
+            </value>
+            <value>
+                <fullName>Rail</fullName>
+                <default>false</default>
+                <label>Rail</label>
+            </value>
+            <value>
+                <fullName>Residential</fullName>
+                <default>false</default>
+                <label>Residential</label>
+            </value>
+            <value>
+                <fullName>Restaurant</fullName>
+                <default>false</default>
+                <label>Restaurant</label>
+            </value>
+            <value>
+                <fullName>Roads</fullName>
+                <default>false</default>
+                <label>Roads</label>
+            </value>
+            <value>
+                <fullName>School</fullName>
+                <default>false</default>
+                <label>School</label>
+            </value>
+            <value>
+                <fullName>Shopping Centre</fullName>
+                <default>false</default>
+                <label>Shopping Centre</label>
+            </value>
+            <value>
+                <fullName>Sports Centre</fullName>
+                <default>false</default>
+                <label>Sports Centre</label>
+            </value>
+            <value>
+                <fullName>Stadia</fullName>
+                <default>false</default>
+                <label>Stadia</label>
+            </value>
+            <value>
+                <fullName>Stations</fullName>
+                <default>false</default>
+                <label>Stations</label>
+            </value>
+            <value>
+                <fullName>Store</fullName>
+                <default>false</default>
+                <label>Store</label>
+            </value>
+            <value>
+                <fullName>Studios</fullName>
+                <default>false</default>
+                <label>Studios</label>
+            </value>
+            <value>
+                <fullName>Sub Stations</fullName>
+                <default>false</default>
+                <label>Sub Stations</label>
+            </value>
+            <value>
+                <fullName>Terminal</fullName>
+                <default>false</default>
+                <label>Terminal</label>
+            </value>
+            <value>
+                <fullName>Theatre</fullName>
+                <default>false</default>
+                <label>Theatre</label>
+            </value>
+            <value>
+                <fullName>Tourist Attraction</fullName>
+                <default>false</default>
+                <label>Tourist Attraction</label>
+            </value>
+            <value>
+                <fullName>University</fullName>
+                <default>false</default>
+                <label>University</label>
+            </value>
+            <value>
+                <fullName>Warehouse</fullName>
+                <default>false</default>
+                <label>Warehouse</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_Length_80</fullName>
+    <active>true</active>
+    <description>Name must be less than 80 characters</description>
+    <errorConditionFormula>AND
+(
+!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+LEN(Name) &gt; 80
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>The name must be less than 80 characters</errorMessage>
+</ValidationRule>

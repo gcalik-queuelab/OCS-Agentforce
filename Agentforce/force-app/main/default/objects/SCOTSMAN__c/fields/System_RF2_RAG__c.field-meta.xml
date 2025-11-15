@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_RF2_RAG__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE (TEXT(RF2_Customer_Financial_Rating__c),
+&quot;Insolvency risk&quot;,IMAGE( &apos;/resource/RedRiskImage&apos;, &apos;Red&apos;,20,40),
+&quot;Customer plans to sell&quot;,IMAGE( &apos;/resource/RedRiskImage&apos;, &apos;Red&apos;,20,40),
+&quot;Poor financial health, doesn’t pay&quot;, IMAGE(&apos;/resource/RedRiskImage&apos;, &apos;Red&apos;,20,40),
+&quot;Poor financial health, pays on time&quot;, IMAGE(&apos;/resource/RedRiskImage&apos;, &apos;Red&apos;,20,40),
+&quot;Good financial health, doesn’t pay&quot;,IMAGE( &apos;/resource/GreenGoImage&apos;, &apos;Green&apos;,20,40),
+&quot;Good financial health, pays on time&quot;,IMAGE( &apos;/resource/GreenGoImage&apos;, &apos;Green&apos;,20,40),
+&quot;&quot;)</formula>
+    <label>RAG</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

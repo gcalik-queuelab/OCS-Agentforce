@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Source_Required</fullName>
+    <active>true</active>
+    <description>Secondary Source must be completed.
+Only enforce when Sub Stage changed (user actively working on Opportunity) to ensure small/unrelated updates by users/system processes do not trigger validation.</description>
+    <errorConditionFormula>AND($Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				ISBLANK(TEXT(Secondary_Source__c)),
+				OR(
+								ISNEW(),
+								ISCHANGED(Sub_Stage__c)
+								)
+)
+
+/* When creating or updating the Sub Stage of an Opp, Secondary Source is required.
+Set this way to reduce the number of Flow/DLRS errors when not actively updating an Opp */</errorConditionFormula>
+    <errorDisplayField>Secondary_Source__c</errorDisplayField>
+    <errorMessage>Secondary Source is required</errorMessage>
+</ValidationRule>

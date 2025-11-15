@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Create_Opportunity</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Edit_Opportunity</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Read_Opportunity</name>
+    </customPermissions>
+    <description>To be granted to Global Delegated Admins only. Added to allow Delegated Admins to perform updates on records that are locked by an Approval Process.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Opportunity - Modify All</label>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Opportunity</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+</PermissionSet>

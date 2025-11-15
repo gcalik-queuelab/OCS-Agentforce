@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Type_Populated</fullName>
+    <active>true</active>
+    <description>Validation to ensure the event type is populated when creating an event</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+ISPICKVAL(Type, &quot;&quot;))</errorConditionFormula>
+    <errorDisplayField>Type</errorDisplayField>
+    <errorMessage>Event Type must be populated</errorMessage>
+</ValidationRule>

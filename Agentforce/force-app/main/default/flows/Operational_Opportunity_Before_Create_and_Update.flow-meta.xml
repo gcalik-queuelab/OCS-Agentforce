@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Is_New</name>
+        <label>Set Is New</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>v_IsNew</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_isNew</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_or_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Name</name>
+        <label>Update Name</label>
+        <locationX>50</locationX>
+        <locationY>803</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>f_Operational_Opportunity_Name</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Owner_Key_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update Corporate Type and Business Unit fields. All other Owner fields are formula fields at time of building.</description>
+        <name>Update_Owner_Fields</name>
+        <label>Update Owner Fields</label>
+        <locationX>50</locationX>
+        <locationY>1103</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Business_Unit__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Owner__r.Business_Unit__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Corporate_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Owner__r.Corporate_Type__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Create_or_Update</name>
+        <label>Create or Update</label>
+        <locationX>182</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Update_Name_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Update</defaultConnectorLabel>
+        <rules>
+            <name>Create</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>v_IsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Name_Decision</targetReference>
+            </connector>
+            <label>Create</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Name_Decision</name>
+        <label>Update Name?</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <defaultConnector>
+            <targetReference>Update_Owner_Key_Fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update_Name_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>f_Operational_Opportunity_Name</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Name</targetReference>
+            </connector>
+            <label>Yes - Update Name</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Owner_Key_Fields</name>
+        <label>Update Owner Key Fields?</label>
+        <locationX>182</locationX>
+        <locationY>995</locationY>
+        <defaultConnectorLabel>No - Skip</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Update_Info_Outcome</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Corporate_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Owner__r.Corporate_Type__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Business_Unit__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Owner__r.Business_Unit__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Owner_Fields</targetReference>
+            </connector>
+            <label>Yes - Update Info</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Validate_Config_Switch</name>
+        <label>Validate Config Switch</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Deactivated</defaultConnectorLabel>
+        <rules>
+            <name>Active</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.OCS_Config_Settings_CSH__c.Flows_Disabled__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Is_New</targetReference>
+            </connector>
+            <label>Active</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>f_isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <description>Account Name/Short Name - Reference</description>
+        <name>f_Operational_Opportunity_Name</name>
+        <dataType>String</dataType>
+        <expression>LEFT(
+/* Use Account Known As Name if available, otherwise full Account Name */
+IF(ISBLANK({!$Record.Account__r.Known_As__c}),{!$Record.Account__r.Name},{!$Record.Account__r.Known_As__c})
+&amp;
+/* If Service Summary is not blank then include it. Use Substitute function to remove Line Break from Service Summary text area and replace with &apos; + &apos; to join separate lines together */
+IF(ISBLANK({!$Record.Service_Summary_Text__c}),NULL,&quot; - &quot; &amp; SUBSTITUTE( {!$Record.Service_Summary_Text__c} ,SUBSTITUTE({!t_LineBreak}, &quot;-&quot;, &quot;&quot;),&quot; + &quot;))
+&amp;
+/* Include Reference if it is not blank and does not match Service Summary */
+IF(ISBLANK({!$Record.Reference__c}),NULL,
+IF({!$Record.Reference__c} = SUBSTITUTE( {!$Record.Service_Summary_Text__c} ,SUBSTITUTE({!t_LineBreak}, &quot;-&quot;, &quot;&quot;),&quot; + &quot;)
+,NULL,&quot; - &quot; &amp; {!$Record.Reference__c}))
+,80)
+/* Limit to 80 Chars for field char length limit */</expression>
+    </formulas>
+    <interviewLabel>Operational Opportunity: Before Create and Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Operational Opportunity: Before Create and Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Validate_Config_Switch</targetReference>
+        </connector>
+        <object>OperationalOpportunity__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Line Break text template to be used in Substitute Function to remove Line Break from Service Summary for use in auto naming.</description>
+        <name>t_LineBreak</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>-
+-</text>
+    </textTemplates>
+    <variables>
+        <name>v_IsNew</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

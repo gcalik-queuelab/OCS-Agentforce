@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Conga_Merge_In_Progress__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ticked automatically by NPS After Create and Update flow when the Outbound Message is sent to Conga to generate the PDF. Used as criteria to show message to user on NPS Lightning Page.</description>
+    <label>System: Conga Merge In Progress</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

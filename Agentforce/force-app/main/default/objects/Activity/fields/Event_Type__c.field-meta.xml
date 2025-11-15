@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Type__c</fullName>
+    <label>Event Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cricket</fullName>
+                <default>false</default>
+                <label>Cricket</label>
+            </value>
+            <value>
+                <fullName>Dinners - Awards</fullName>
+                <default>false</default>
+                <label>Dinners - Awards</label>
+            </value>
+            <value>
+                <fullName>Dinners - Other</fullName>
+                <default>false</default>
+                <label>Dinners - Other</label>
+            </value>
+            <value>
+                <fullName>Football</fullName>
+                <default>false</default>
+                <label>Football</label>
+            </value>
+            <value>
+                <fullName>Golf</fullName>
+                <default>false</default>
+                <label>Golf</label>
+            </value>
+            <value>
+                <fullName>Horse Racing</fullName>
+                <default>false</default>
+                <label>Horse Racing</label>
+            </value>
+            <value>
+                <fullName>Industry Seminar</fullName>
+                <default>false</default>
+                <label>Industry Seminar</label>
+            </value>
+            <value>
+                <fullName>Motor Racing</fullName>
+                <default>false</default>
+                <label>Motor Racing</label>
+            </value>
+            <value>
+                <fullName>Music Concert</fullName>
+                <default>false</default>
+                <label>Music Concert</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Rugby League</fullName>
+                <default>false</default>
+                <label>Rugby League</label>
+            </value>
+            <value>
+                <fullName>Rugby Union</fullName>
+                <default>false</default>
+                <label>Rugby Union</label>
+            </value>
+            <value>
+                <fullName>Sports Other</fullName>
+                <default>false</default>
+                <label>Sports Other</label>
+            </value>
+            <value>
+                <fullName>Tennis</fullName>
+                <default>false</default>
+                <label>Tennis</label>
+            </value>
+            <value>
+                <fullName>Theatre</fullName>
+                <default>false</default>
+                <label>Theatre</label>
+            </value>
+            <value>
+                <fullName>YSP</fullName>
+                <default>false</default>
+                <label>YSP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Year_Contractual_Annual_Revenue__c</fullName>
+    <description>AD-339 to see the In Year value for Contractual Products on an Opportunity</description>
+    <formula>IF(YEAR(Contract_Start_Date__c) = YEAR(Contract_End_Date__c), Annual_Contractual_Revenue__c,
+(Annual_Contractual_Revenue__c /365) * Remaining_Days_In_Year__c
+			)
+
+		/*	If the same year then show full value, if not the same year then
+show the value scaled down to reflect only the amount falling in the starting FY*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>In-Year Contractual Annual Revenue</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employee_Require_Payroll_Number_Or_Email</fullName>
+    <active>true</active>
+    <description>Require Email Address or Payroll Number</description>
+    <errorConditionFormula>AND(
+				 $Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c = FALSE,
+				ISBLANK(Email_Address__c),
+				ISBLANK(Payroll_Number__c)
+				)</errorConditionFormula>
+    <errorMessage>You must provide either an Email Address or a Payroll Number for this Employee</errorMessage>
+</ValidationRule>

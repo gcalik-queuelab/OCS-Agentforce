@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Enable_Account_Functionality__c</fullName>
+    <description>Checkbox formula that drives Account Page functionality if the user&apos;s country matches the record&apos;s Owner Country or if the user is a System/Global Delegated Admin.</description>
+    <formula>OR(
+				 $Permission.System_Administrator = TRUE,
+				 $Permission.Delegated_Admin,
+				 $User.Country = Owner_Country__c
+				)</formula>
+    <label>System: Enable Account Functionality</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Converting_a_Lead</fullName>
+    <active>true</active>
+    <description>AD-47 - validation rule to prevent users from converting a lead if the stage is not Contacted or Revisit</description>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+(ISPICKVAL(PRIORVALUE(Status), &apos;Open&apos;)),
+    ISPICKVAL(Status, &apos;Qualified&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>You are unable to convert an open lead</errorMessage>
+</ValidationRule>

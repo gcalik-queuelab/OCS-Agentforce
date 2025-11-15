@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Task_Permission_Override_Screen_Flow</name>
+    </customPermissions>
+    <description>Permission to use the Screen Flow on Task Lightning Pages running as system to Update/Delete all Tasks the user has read access to (bypassing Record/Role hierarchy permissions). Only assigned to limited named users.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Task - Permission Override Screen Flow</label>
+</PermissionSet>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tender_Process_Outcome__c</fullName>
+    <description>Customers answer to &quot;Did you achieve the outcome of the tender process you wished for?&quot;</description>
+    <inlineHelpText>Did you achieve the outcome of the tender process you wished for?</inlineHelpText>
+    <label>Tender Process Outcome</label>
+    <length>5000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

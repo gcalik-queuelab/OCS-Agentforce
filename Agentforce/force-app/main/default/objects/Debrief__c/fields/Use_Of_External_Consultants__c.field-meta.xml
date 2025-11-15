@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Of_External_Consultants__c</fullName>
+    <description>Detail around external consultants on the tender process.</description>
+    <inlineHelpText>Did you deploy external consultants during the process?</inlineHelpText>
+    <label>Use Of External Consultants</label>
+    <length>5000</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

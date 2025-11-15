@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Detail_Require</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(!$Setup.OCS_Config_Settings_CSH__c.Validation_Rules_Disabled__c,
+ISPICKVAL( Status, &quot;Closed&quot;)
+&amp;&amp;
+OR(
+(ISPICKVAL(Issue_Type__c, &quot;Appeal - Grievance&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Appeal - Disciplinary&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Appeal - Redundancy&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Appeal - SOSR TTP&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;AWOL&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Contract Variation/Restructure&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Disciplinary&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Flexible Working&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Grievance&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Long Term Sick&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Performance&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Probation&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Redundancy&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Short Term Sick&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;SOSR TPP&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Statutory Illigality&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Tupe&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Whistleblowing&quot;)),
+(ISPICKVAL(Issue_Type__c, &quot;Subject Access Request&quot;))
+)
+&amp;&amp;
+OR(
+ISBLANK(TEXT(Outcome__c)),
+ISBLANK(TEXT(Training_Required__c ))
+)
+)</errorConditionFormula>
+    <errorMessage>Please complete the fields Training Required/Outcome before closing the case.</errorMessage>
+</ValidationRule>
