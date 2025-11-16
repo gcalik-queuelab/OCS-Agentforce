@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Invokes the NPS Survey Summary Generator prompt template to create AI-powered analysis and recommendations for NPS survey responses.</description>
+    <invocationTarget>NPS_Survey_Summary_Generator</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>NPS Survey Summary Generator</masterLabel>
+    <progressIndicatorMessage>Analyzing NPS survey data and generating AI-powered summary...</progressIndicatorMessage>
+</GenAiFunction>
