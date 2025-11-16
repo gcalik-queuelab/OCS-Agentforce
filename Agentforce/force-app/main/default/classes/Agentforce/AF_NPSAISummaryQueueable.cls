@@ -101,49 +101,85 @@ public class AF_NPSAISummaryQueueable implements Queueable, Database.AllowsCallo
 
     /**
      * Generates AI summary using Agentforce/Einstein LLM
-     * Currently stubbed - will be implemented with actual Agentforce integration
      * @param promptData The formatted prompt string
      * @param nps The NPS survey record
      * @param responses List of responses
      * @return AI-generated summary text
      */
     private String generateAISummary(String promptData, NPS__c nps, List<NPS_Response__c> responses) {
-        // Log the prompt that would be sent to Agentforce
+        // Log the prompt data being sent
         System.debug('=== PROMPT DATA FOR NPS ' + nps.Name + ' ===');
         System.debug(promptData);
         System.debug('=== END PROMPT DATA ===');
 
-        // TODO: Implement actual Agentforce call
-        // Example (to be implemented):
-        /*
         try {
-            Map<String, ConnectApi.WrappedValue> inputParams = new Map<String, ConnectApi.WrappedValue>();
+            // Step 1: Create input value wrapper
             ConnectApi.WrappedValue inputValue = new ConnectApi.WrappedValue();
             inputValue.value = promptData;
-            inputParams.put('Input:NPSData', inputValue);
 
+            // Step 2: Create input parameters map
+            Map<String, ConnectApi.WrappedValue> inputParams = new Map<String, ConnectApi.WrappedValue>();
+            inputParams.put('Input:NPS_Data', inputValue);
+
+            // Step 3: Configure the invocation request
             ConnectApi.EinsteinPromptTemplateGenerationsInput promptInput =
                 new ConnectApi.EinsteinPromptTemplateGenerationsInput();
-            promptInput.inputParams = inputParams;
-            promptInput.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
-            promptInput.additionalConfig.numGenerations = 1;
-            promptInput.isPreview = false;
 
+            // Additional configuration
+            promptInput.additionalConfig = new ConnectApi.EinsteinLlmAdditionalConfigInput();
+            promptInput.additionalConfig.applicationName = 'PromptBuilderPreview';
+            promptInput.additionalConfig.numGenerations = 1;
+            promptInput.additionalConfig.enablePiiMasking = false;
+
+            // Set request properties
+            promptInput.isPreview = false;
+            promptInput.inputParams = inputParams;
+
+            // Step 4: Call the Agentforce API
             ConnectApi.EinsteinPromptTemplateGenerationsRepresentation output =
                 ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate(
                     'NPS_Survey_Summary_Generator',
                     promptInput
                 );
 
-            return output.generations[0].text;
+            // Step 5: Handle the response
+            if (output != null &&
+                output.generations != null &&
+                output.generations.size() > 0) {
+
+                ConnectApi.EinsteinLLMGenerationItemOutput generationResult = output.generations[0];
+                String aiGeneratedText = generationResult.text;
+
+                System.debug('=== AI GENERATED SUMMARY ===');
+                System.debug(aiGeneratedText);
+                System.debug('=== END AI SUMMARY ===');
+
+                return aiGeneratedText;
+
+            } else if (output != null &&
+                       output.generationErrors != null &&
+                       output.generationErrors.size() > 0) {
+
+                // Handle errors from AI generation
+                String errorMessages = '';
+                for (ConnectApi.EinsteinPromptTemplateGenerationsError error : output.generationErrors) {
+                    errorMessages += error.errorMessage + ' (Code: ' + error.messageCode + ') ';
+                }
+
+                System.debug(LoggingLevel.ERROR, 'Agentforce generation errors: ' + errorMessages);
+                throw new CalloutException('AI generation failed: ' + errorMessages);
+            } else {
+                throw new CalloutException('No AI response received');
+            }
+
         } catch (Exception e) {
             System.debug(LoggingLevel.ERROR, 'Agentforce call failed: ' + e.getMessage());
-            throw e;
-        }
-        */
+            System.debug(LoggingLevel.ERROR, 'Stack trace: ' + e.getStackTraceString());
 
-        // Placeholder summary for testing
-        return buildPlaceholderSummary(nps, responses);
+            // Fall back to placeholder summary if AI call fails
+            System.debug(LoggingLevel.WARN, 'Falling back to placeholder summary due to error');
+            return buildPlaceholderSummary(nps, responses);
+        }
     }
 
     /**
