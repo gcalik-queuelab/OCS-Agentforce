@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>AI_Summary__c</fullName>
-    <description>AI-generated summary of the NPS Survey in English, created by Agentforce</description>
+    <description>Full AI-generated summary text from Agentforce including executive summary, strengths, improvements, and recommendations</description>
     <label>AI Summary</label>
-    <length>32000</length>
+    <length>131072</length>
     <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>

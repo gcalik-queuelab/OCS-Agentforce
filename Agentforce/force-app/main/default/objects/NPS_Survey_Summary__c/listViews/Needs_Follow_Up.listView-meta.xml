@@ -8,7 +8,6 @@
     <columns>Survey_Date__c</columns>
     <columns>Sentiment_Analysis__c</columns>
     <columns>Action_Recommendations__c</columns>
-    <columns>CREATEDDATE</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Follow_Up_Required__c</field>

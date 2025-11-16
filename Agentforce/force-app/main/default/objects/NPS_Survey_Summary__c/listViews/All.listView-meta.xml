@@ -8,7 +8,6 @@
     <columns>Survey_Date__c</columns>
     <columns>Sentiment_Analysis__c</columns>
     <columns>Follow_Up_Required__c</columns>
-    <columns>CREATEDDATE</columns>
     <filterScope>Everything</filterScope>
     <label>All NPS Survey Summaries</label>
 </ListView>

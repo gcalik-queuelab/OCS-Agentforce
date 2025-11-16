@@ -42,12 +42,12 @@ private class AF_NPSTriggerHandlerTest {
         Id accountRTId = Schema.SObjectType.NPS__c.getRecordTypeInfosByDeveloperName()
             .get('Account').getRecordTypeId();
 
-        // Create NPS survey
+        // Create NPS survey - use Scheduled initially
         NPS__c nps = new NPS__c(
             RecordTypeId = accountRTId,
             Account__c = testAccount.Id,
             Visiting_Contact__c = testContact.Id,
-            Status__c = 'Pending Results'
+            Status__c = 'Scheduled'
         );
         insert nps;
 
@@ -130,7 +130,7 @@ private class AF_NPSTriggerHandlerTest {
 
         Test.startTest();
         // Change to different status (should not trigger)
-        nps.Status__c = 'Pending Results';
+        nps.Status__c = 'Scheduled';
         update nps;
         Test.stopTest();
 
@@ -157,7 +157,7 @@ private class AF_NPSTriggerHandlerTest {
                 RecordTypeId = accountRTId,
                 Account__c = testAccount.Id,
                 Visiting_Contact__c = testContact.Id,
-                Status__c = 'Pending Results'
+                Status__c = 'Scheduled'
             ));
         }
         insert npsList;
@@ -229,9 +229,9 @@ private class AF_NPSTriggerHandlerTest {
             SELECT Id, Name, Status__c, Survey_Category__c,
                    Account__c, Account__r.Name,
                    NPS_Contact__c, Visiting_Contact__c, Visiting_Contact__r.Name,
-                   Visit_Start__c, Recommend_Us_Score__c, Average_Score__c,
-                   Total_NPS_Score__c, Number_of_NPS_Responses__c,
-                   Comments__c, Visiting_Comments__c
+                   Visit_Start__c, Recommend_Us_Score__c,
+                   Average_Score__c, Total_NPS_Score__c, Number_of_NPS_Responses__c,
+                   Comments__c, Visiting_Comments__c, NPS_Surveyor__c
             FROM NPS__c
             WHERE Id = :nps.Id
         ];
@@ -277,7 +277,8 @@ private class AF_NPSTriggerHandlerTest {
             RecordTypeId = accountRTId,
             Account__c = testAccount.Id,
             Visiting_Contact__c = testContact.Id,
-            Status__c = 'Closed'
+            Status__c = 'Closed',
+            Reviewed__c = Date.today()
         );
         insert nps;
 
@@ -285,10 +286,10 @@ private class AF_NPSTriggerHandlerTest {
         System.assertEquals(false, hasData, 'Should return false when no responses');
 
         // Test: NPS with responses but not Closed
-        nps.Status__c = 'Pending Results';
+        nps.Status__c = 'Scheduled';
         update nps;
         List<NPS_Response__c> responses = new List<NPS_Response__c>{
-            new NPS_Response__c(NPS__c = nps.Id, Question__c = 'Test', Score__c = 5)
+            new NPS_Response__c(NPS__c = nps.Id, Question__c = 'Would you recommend us?', Score__c = 5)
         };
         insert responses;
 
@@ -297,6 +298,7 @@ private class AF_NPSTriggerHandlerTest {
 
         // Test: Valid data
         nps.Status__c = 'Closed';
+        nps.Reviewed__c = Date.today();
         update nps;
         hasData = AF_NPSPromptBuilder.hasRequiredData(nps, responses);
         System.assertEquals(true, hasData, 'Should return true when valid');
@@ -317,7 +319,7 @@ private class AF_NPSTriggerHandlerTest {
             RecordTypeId = accountRTId,
             Account__c = testAccount.Id,
             Visiting_Contact__c = testContact.Id,
-            Status__c = 'Pending Results',
+            Status__c = 'Scheduled',
             Survey_Category__c = 'Detractor'
         );
         insert detractor;
@@ -350,5 +352,35 @@ private class AF_NPSTriggerHandlerTest {
 
         System.assertEquals('Negative', summary.Sentiment_Analysis__c, 'Detractor should be Negative');
         System.assertEquals(true, summary.Follow_Up_Required__c, 'Detractor should require follow-up');
+    }
+
+    /**
+     * Test: Trigger handler coverage for status change without closure
+     */
+    @IsTest
+    static void testStatusChangeWithoutClosure() {
+        Account testAccount = [SELECT Id FROM Account LIMIT 1];
+        Contact testContact = [SELECT Id FROM Contact LIMIT 1];
+        Id accountRTId = Schema.SObjectType.NPS__c.getRecordTypeInfosByDeveloperName()
+            .get('Account').getRecordTypeId();
+
+        // Create NPS
+        NPS__c nps = new NPS__c(
+            RecordTypeId = accountRTId,
+            Account__c = testAccount.Id,
+            Visiting_Contact__c = testContact.Id,
+            Status__c = 'Scheduled'
+        );
+        insert nps;
+
+        Test.startTest();
+        // Change status but not to Closed
+        nps.Status__c = 'Overdue';
+        update nps;
+        Test.stopTest();
+
+        // Verify: No summary created
+        Integer summaryCount = [SELECT COUNT() FROM NPS_Survey_Summary__c WHERE NPS_Survey__c = :nps.Id];
+        System.assertEquals(0, summaryCount, 'Should not create summary when status is not Closed');
     }
 }
