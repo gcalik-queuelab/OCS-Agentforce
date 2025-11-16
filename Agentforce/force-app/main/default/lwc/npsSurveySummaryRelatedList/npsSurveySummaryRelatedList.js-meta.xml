@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>NPS__c</object>
+                <object>Account</object>
+            </objects>
+            <property name="title" type="String" label="Title" default="NPS Survey Summaries"/>
+            <property name="maxRecords" type="Integer" label="Max Records" default="100"/>
+            <property name="contextObject" type="String" label="Context Object" description="NPS__c or Account"/>
+        </targetConfig>
+    </targetConfigs>
+    <masterLabel>NPS Survey Summary Related List</masterLabel>
+    <description>Displays related NPS Survey Summary records for an NPS Survey or Account record with columns for Name, NPS Score, Survey Date, Sentiment, Follow-Up Required, and Generated Date</description>
+</LightningComponentBundle>
