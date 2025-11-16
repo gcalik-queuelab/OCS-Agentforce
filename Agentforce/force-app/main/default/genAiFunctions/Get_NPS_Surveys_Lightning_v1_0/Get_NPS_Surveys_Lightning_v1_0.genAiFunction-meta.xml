@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Find NPS surveys with optional status filter</description>
+    <invocationTarget>AFGetNPSSurveysAction</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Get NPS Surveys Lightning v1.0</masterLabel>
+    <progressIndicatorMessage>Getting your NPS surveys...</progressIndicatorMessage>
+</GenAiFunction>

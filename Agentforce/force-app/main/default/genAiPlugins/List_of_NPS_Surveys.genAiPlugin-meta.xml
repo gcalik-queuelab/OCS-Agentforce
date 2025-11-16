@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aiPluginUtterances>
+        <developerName>utterance_pleasegiveme0</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_pleasegiveme0</masterLabel>
+        <utterance>Please give me list of surveys</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_pleasegiveme1</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_pleasegiveme1</masterLabel>
+        <utterance>Please give me list of Closed surveys</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_showmeall2</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_showmeall2</masterLabel>
+        <utterance>Show me all NPS surveys</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_getmeclosed3</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_getmeclosed3</masterLabel>
+        <utterance>Get me closed NPS surveys</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_listall4</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_listall4</masterLabel>
+        <utterance>List all surveys</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_whatsurveys5</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_whatsurveys5</masterLabel>
+        <utterance>What surveys do I have?</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_showclosed6</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_showclosed6</masterLabel>
+        <utterance>Show me closed surveys</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_displayall7</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_displayall7</masterLabel>
+        <utterance>Display all NPS surveys</utterance>
+    </aiPluginUtterances>
+    <canEscalate>false</canEscalate>
+    <description>Retrieve NPS surveys with comprehensive details. Users can request all surveys or filter by status (e.g., Closed). Displays survey information including Name, Status, Account, Survey Date, NPS Score, Contact, and Owner.</description>
+    <developerName>List_of_NPS_Surveys</developerName>
+    <genAiFunctions>
+        <functionName>Get_NPS_Surveys_Lightning_v1_0</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always use the &quot;Get NPS Surveys Lightning&quot; action to retrieve survey data. When the user asks for &quot;list of surveys&quot; or &quot;all surveys&quot; without specifying a status, return all surveys regardless of status. Do not apply any status filter. When the user asks for &quot;Closed surveys&quot; or &quot;list of Closed surveys&quot;, pass &quot;Closed&quot; as the statusFilter parameter.</description>
+        <developerName>instruction_alwaysuse0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_alwaysuse0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>CRITICAL: You MUST display the complete availableSurveys output exactly as returned by the action. The availableSurveys output contains structured survey data that must be displayed to the user. Do not just acknowledge that surveys were retrieved - you MUST show the actual survey data including: Survey Name, Status, Account Name, Survey Date, Total NPS Score, Average Score, Contact Name, and Owner Name for EACH survey. Format the data clearly in a list or table format.</description>
+        <developerName>instruction_displaydata0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_displaydata0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Present all survey information in a well-formatted, easy-to-read manner. Include all fields from the availableSurveys output: Name, Status, Account, Survey Date, NPS Score (totalNPSScore), Average Score (averageScore), Contact Name, and Owner Name. Do not summarize or omit any survey data - show all surveys returned in the availableSurveys output.</description>
+        <developerName>instruction_display3</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_display3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Provide click-through links so users can open survey records directly in Salesforce.</description>
+        <developerName>instruction_provide4</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_provide4</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>List of NPS Surveys</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>This topic helps users access NPS surveys with comprehensive details including survey name, status, account, survey date, NPS score, contact, and owner. Users can request all surveys or filter by status (e.g., Closed). Displays surveys with clear formatting and navigation options.</scope>
+</GenAiPlugin>

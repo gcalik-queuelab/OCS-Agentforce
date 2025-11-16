@@ -29,6 +29,10 @@
         <apexClass>AF_NPSSummaryChecker</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>AFGetNPSSurveysAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
 
     <!-- Custom Permissions -->
     <customPermissions>

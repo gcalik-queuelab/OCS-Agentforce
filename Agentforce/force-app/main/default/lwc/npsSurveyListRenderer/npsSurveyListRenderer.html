@@ -1,0 +1,97 @@
+<template>
+    <lightning-card icon-name="standard:survey" class="survey-card-container">
+        <span class="surveyTitle">{displayTitle}</span>
+        
+        <!-- Surveys List Container -->
+        <div class="survey-list-container">
+            
+            <!-- No Surveys State -->
+            <template if:false={hasSurveys}>
+                <div class="no-surveys-container">
+                    <lightning-icon icon-name="utility:check" size="large" variant="success"></lightning-icon>
+                    <h3 class="no-surveys-title">No Surveys Found</h3>
+                    <p class="no-surveys-message">No NPS surveys match your criteria.</p>
+                </div>
+            </template>
+            
+            <!-- Surveys List -->
+            <template if:true={hasSurveys}>
+                <template for:each={surveyData} for:item="surveyItem">
+                    <div key={surveyItem.id} 
+                         class="survey-card" 
+                         onclick={handleSurveyClick} 
+                         data-survey-id={surveyItem.id}>
+                        
+                        <!-- Survey Header Info -->
+                        <div class="survey-info">
+                            <div class="survey-header-row">
+                                <h2 class="survey-name">{surveyItem.name}</h2>
+                                <div class="survey-badges">
+                                    <span class={surveyItem.statusClass}>{surveyItem.status}</span>
+                                    <span class={surveyItem.scoreClass}>NPS: {surveyItem.npsScoreDisplay}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Survey Details Grid -->
+                        <div class="survey-details-grid">
+                            <!-- Left Column -->
+                            <div class="detail-column">
+                                <div class="detail-item">
+                                    <lightning-icon icon-name="standard:account" size="x-small"></lightning-icon>
+                                    <span class="detail-label">Account:</span>
+                                    <span class="detail-value">{surveyItem.accountNameDisplay}</span>
+                                </div>
+                                
+                                <div class="detail-item">
+                                    <lightning-icon icon-name="standard:contact" size="x-small"></lightning-icon>
+                                    <span class="detail-label">Contact:</span>
+                                    <span class="detail-value">{surveyItem.contactNameDisplay}</span>
+                                </div>
+                            </div>
+
+                            <!-- Right Column -->
+                            <div class="detail-column">
+                                <div class="detail-item">
+                                    <lightning-icon icon-name="utility:user" size="x-small"></lightning-icon>
+                                    <span class="detail-label">Owner:</span>
+                                    <span class="detail-value">{surveyItem.ownerNameDisplay}</span>
+                                </div>
+                                
+                                <div class="detail-item">
+                                    <lightning-icon icon-name="utility:date_time" size="x-small"></lightning-icon>
+                                    <span class="detail-label">Survey Date:</span>
+                                    <span class="detail-value">{surveyItem.surveyDateFormatted}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Survey Scores -->
+                        <div class="survey-scores">
+                            <div class="score-item">
+                                <span class="score-label">Total NPS Score:</span>
+                                <span class="score-value">{surveyItem.npsScoreDisplay}</span>
+                            </div>
+                            <div class="score-divider">•</div>
+                            <div class="score-item">
+                                <span class="score-label">Average Score:</span>
+                                <span class="score-value">{surveyItem.averageScoreDisplay}</span>
+                            </div>
+                        </div>
+
+                        <!-- View Survey Button -->
+                        <div class="card-footer">
+                            <lightning-button 
+                                variant="brand" 
+                                label="View Survey" 
+                                onclick={handleSurveyClick} 
+                                data-survey-id={surveyItem.id}
+                                size="small">
+                            </lightning-button>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

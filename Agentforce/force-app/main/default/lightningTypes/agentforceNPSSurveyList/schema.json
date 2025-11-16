@@ -1,0 +1,6 @@
+{
+  "title" : "Available NPS Surveys Response",
+  "description" : "Available NPS Surveys for User Display",
+  "lightning:type" : "@apexClassType/c__AFGetNPSSurveysAction$NPSSurveyList"
+}
+

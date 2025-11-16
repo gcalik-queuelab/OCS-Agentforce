@@ -4,6 +4,9 @@
     <localActionLinks>
         <genAiFunctionName>AnswerQuestionsWithKnowledge_16j81b13c9abfb3</genAiFunctionName>
     </localActionLinks>
+    <localTopicLinks>
+        <genAiPluginName>List_of_NPS_Surveys</genAiPluginName>
+    </localTopicLinks>
     <masterLabel>EmployeeCopilotPlanner</masterLabel>
     <plannerActions>
         <fullName>AnswerQuestionsWithKnowledge_16j81b13c9abfb3</fullName>
