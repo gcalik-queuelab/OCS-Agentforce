@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows users to create NPS Survey Summaries via the Create Summary button</description>
+    <isLicensed>false</isLicensed>
+    <label>Create NPS Summary</label>
+</CustomPermission>

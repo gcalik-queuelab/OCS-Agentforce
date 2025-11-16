@@ -21,6 +21,20 @@
         <apexClass>NPSSurveySummaryRelatedListController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>AF_NPSSummaryCreator</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>AF_NPSSummaryChecker</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+
+    <!-- Custom Permissions -->
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Create_NPS_Summary</name>
+    </customPermissions>
 
     <!-- NPS_Survey_Summary__c Field Permissions -->
     <fieldPermissions>
