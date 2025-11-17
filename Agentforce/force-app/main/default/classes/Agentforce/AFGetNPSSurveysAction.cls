@@ -19,6 +19,14 @@ public with sharing class AFGetNPSSurveysAction {
     }
 
     /**
+     * Response wrapper for invocable method - contains list of surveys
+     */
+    public class SurveyResponse {
+        @AuraEnabled @InvocableVariable
+        public NPSSurveyList availableSurveys;
+    }
+
+    /**
      * Output wrapper for invocable method - contains list of surveys
      */
     public class NPSSurveyList {
@@ -61,13 +69,17 @@ public with sharing class AFGetNPSSurveysAction {
     /**
      * Retrieves NPS surveys with optional status filtering
      * @param requests List of SurveyRequest objects
-     * @return List of NPSSurveyList containing survey data
+     * @return List of SurveyResponse containing survey data
      */
     @InvocableMethod(label='Get NPS Surveys' description='Retrieves NPS surveys with optional status filter')
-    public static List<NPSSurveyList> getSurveys(List<SurveyRequest> requests) {
-        List<NPSSurveyList> results = new List<NPSSurveyList>();
+    public static List<SurveyResponse> getSurveys(List<SurveyRequest> requests) {
+        List<SurveyResponse> results = new List<SurveyResponse>();
         
         if (requests == null || requests.isEmpty()) {
+            SurveyResponse emptyResponse = new SurveyResponse();
+            emptyResponse.availableSurveys = new NPSSurveyList();
+            emptyResponse.availableSurveys.surveys = new List<NPSSurveyItem>();
+            results.add(emptyResponse);
             return results;
         }
         
@@ -107,15 +119,19 @@ public with sharing class AFGetNPSSurveysAction {
             
             NPSSurveyList surveyList = new NPSSurveyList();
             surveyList.surveys = surveyItems;
-            results.add(surveyList);
+            
+            SurveyResponse response = new SurveyResponse();
+            response.availableSurveys = surveyList;
+            results.add(response);
             
         } catch (Exception e) {
             System.debug(LoggingLevel.ERROR, 'Error retrieving NPS surveys: ' + e.getMessage());
             System.debug(LoggingLevel.ERROR, 'Stack trace: ' + e.getStackTraceString());
-            // Return empty list on error
-            NPSSurveyList surveyList = new NPSSurveyList();
-            surveyList.surveys = new List<NPSSurveyItem>();
-            results.add(surveyList);
+            // Return empty response on error
+            SurveyResponse errorResponse = new SurveyResponse();
+            errorResponse.availableSurveys = new NPSSurveyList();
+            errorResponse.availableSurveys.surveys = new List<NPSSurveyItem>();
+            results.add(errorResponse);
         }
         
         return results;

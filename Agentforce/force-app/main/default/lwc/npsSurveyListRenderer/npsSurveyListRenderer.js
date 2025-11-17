@@ -105,11 +105,11 @@ export default class NpsSurveyListRenderer extends NavigationMixin(LightningElem
         let surveysArray = null;
         
         if (this.value) {
-            // Check if value has surveys property (direct NPSSurveyList)
+            // Check if value has surveys property (direct NPSSurveyList - matches Lightning Type)
             if (this.value.surveys && Array.isArray(this.value.surveys)) {
                 surveysArray = this.value.surveys;
             }
-            // Check if value is the output schema wrapper with availableSurveys
+            // Check if value is the output schema wrapper with availableSurveys (from SurveyResponse)
             else if (this.value.availableSurveys) {
                 if (this.value.availableSurveys.surveys && Array.isArray(this.value.availableSurveys.surveys)) {
                     surveysArray = this.value.availableSurveys.surveys;

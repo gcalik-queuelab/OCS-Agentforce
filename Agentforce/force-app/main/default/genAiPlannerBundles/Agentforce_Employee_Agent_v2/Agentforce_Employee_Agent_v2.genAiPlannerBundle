@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Planner for ReAct-based Employee copilot.</description>
-    <localActionLinks>
+    <genAiFunctions>
         <genAiFunctionName>AnswerQuestionsWithKnowledge_16j81b13c9abfb3</genAiFunctionName>
-    </localActionLinks>
-    <localTopicLinks>
+    </genAiFunctions>
+    <genAiFunctions>
+        <genAiFunctionName>EmployeeCopilot__AnswerQuestionsWithKnowledge</genAiFunctionName>
+    </genAiFunctions>
+    <genAiPlugins>
         <genAiPluginName>List_of_NPS_Surveys</genAiPluginName>
-    </localTopicLinks>
+    </genAiPlugins>
     <masterLabel>EmployeeCopilotPlanner</masterLabel>
-    <plannerActions>
-        <fullName>AnswerQuestionsWithKnowledge_16j81b13c9abfb3</fullName>
-        <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
-        <developerName>AnswerQuestionsWithKnowledge_16j81b13c9abfb3</developerName>
-        <invocationTarget>streamKnowledgeSearch</invocationTarget>
-        <invocationTargetType>standardInvocableAction</invocationTargetType>
-        <isConfirmationRequired>false</isConfirmationRequired>
-        <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
-        <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
-        <masterLabel>Answer Questions with Knowledge</masterLabel>
-        <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
-    </plannerActions>
     <plannerType>AiCopilot__ReAct</plannerType>
 </GenAiPlannerBundle>
