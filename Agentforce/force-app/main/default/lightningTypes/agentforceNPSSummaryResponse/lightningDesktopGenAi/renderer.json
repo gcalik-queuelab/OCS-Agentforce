@@ -1,0 +1,10 @@
+{
+  "renderer" : {
+    "componentOverrides" : {
+      "$" : {
+        "definition" : "c/npsSummaryResponseRenderer"
+      }
+    }
+  }
+}
+

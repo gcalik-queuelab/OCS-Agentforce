@@ -1,0 +1,102 @@
+<template>
+    <lightning-card icon-name="standard:report" class="summary-card-container">
+        <span class="summaryTitle">{displayTitle}</span>
+        
+        <!-- Summary Container -->
+        <div class="summary-container">
+            
+            <!-- No Summary State -->
+            <template if:false={hasSummary}>
+                <div class="no-summary-container">
+                    <lightning-icon icon-name="utility:error" size="large" variant="error"></lightning-icon>
+                    <h3 class="no-summary-title">Summary Not Available</h3>
+                    <p class="no-summary-message">Unable to create or retrieve the summary.</p>
+                </div>
+            </template>
+            
+            <!-- Summary Display -->
+            <template if:true={hasSummary}>
+                <div class="summary-card" 
+                     onclick={handleSummaryClick} 
+                     data-summary-id={summaryData.id}>
+                    
+                    <!-- Summary Header Info -->
+                    <div class="summary-info">
+                        <div class="summary-header-row">
+                            <h2 class="summary-name">{summaryData.name}</h2>
+                            <div class="summary-badges">
+                                <span class={summaryData.sentimentClass}>{summaryData.sentimentAnalysis}</span>
+                                <span class="nps-score-badge">NPS: {summaryData.npsScoreDisplay}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Details Grid -->
+                    <div class="summary-details-grid">
+                        <!-- Left Column -->
+                        <div class="detail-column">
+                            <div class="detail-item">
+                                <lightning-icon icon-name="standard:account" size="x-small"></lightning-icon>
+                                <span class="detail-label">Account:</span>
+                                <span class="detail-value">{summaryData.accountNameDisplay}</span>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <lightning-icon icon-name="standard:survey" size="x-small"></lightning-icon>
+                                <span class="detail-label">Survey:</span>
+                                <span class="detail-value">{summaryData.npsSurveyNameDisplay}</span>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <lightning-icon icon-name="utility:date_time" size="x-small"></lightning-icon>
+                                <span class="detail-label">Survey Date:</span>
+                                <span class="detail-value">{summaryData.surveyDateFormatted}</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="detail-column">
+                            <div class="detail-item">
+                                <lightning-icon icon-name="utility:priority" size="x-small"></lightning-icon>
+                                <span class="detail-label">Sentiment:</span>
+                                <span class="detail-value">{summaryData.sentimentAnalysis}</span>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <lightning-icon icon-name="utility:task" size="x-small"></lightning-icon>
+                                <span class="detail-label">Follow-Up Required:</span>
+                                <span class="detail-value">{summaryData.followUpRequiredText}</span>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <lightning-icon icon-name="utility:clock" size="x-small"></lightning-icon>
+                                <span class="detail-label">Generated:</span>
+                                <span class="detail-value">{summaryData.summaryGenerationDateFormatted}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Scores -->
+                    <div class="summary-scores">
+                        <div class="score-item">
+                            <span class="score-label">NPS Score:</span>
+                            <span class="score-value">{summaryData.npsScoreDisplay}</span>
+                        </div>
+                    </div>
+
+                    <!-- View Summary Button -->
+                    <div class="card-footer">
+                        <lightning-button 
+                            variant="brand" 
+                            label="View Summary" 
+                            onclick={handleSummaryClick} 
+                            data-summary-id={summaryData.id}
+                            size="small">
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
+

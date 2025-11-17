@@ -1,0 +1,6 @@
+{
+  "title" : "NPS Survey Summary Response",
+  "description" : "NPS Survey Summary for User Display",
+  "lightning:type" : "@apexClassType/c__AFCreateNPSSummaryAction$NPSSummaryItem"
+}
+

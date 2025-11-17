@@ -48,11 +48,32 @@
         <masterLabel>utterance_displayall7</masterLabel>
         <utterance>What surveys do I have?</utterance>
     </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_createsummary0</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_createsummary0</masterLabel>
+        <utterance>Create a summary for survey xyz123</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_generatesummary1</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_generatesummary1</masterLabel>
+        <utterance>Generate summary for survey {surveyName}</utterance>
+    </aiPluginUtterances>
+    <aiPluginUtterances>
+        <developerName>utterance_createsummary2</developerName>
+        <language>en_US</language>
+        <masterLabel>utterance_createsummary2</masterLabel>
+        <utterance>Create summary for survey {surveyName}</utterance>
+    </aiPluginUtterances>
     <canEscalate>false</canEscalate>
-    <description>Retrieve NPS surveys with comprehensive details. Users can request all surveys or filter by status (e.g., Closed). Displays survey information including Name, Status, Account, Survey Date, NPS Score, Contact, and Owner.</description>
+    <description>Retrieve NPS surveys with comprehensive details and create AI-generated summaries. Users can request all surveys or filter by status (e.g., Closed). Users can also create summaries for specific surveys by name. Displays survey information including Name, Status, Account, Survey Date, NPS Score, Contact, and Owner. Summary creation returns summary details with Name, NPS Score, Survey Date, Sentiment Analysis, Follow-Up Required, Generated Date, and Account Name.</description>
     <developerName>List_of_NPS_Surveys</developerName>
     <genAiFunctions>
         <functionName>Get_NPS_Surveys_Lightning_v1_1_179UE0000002ymT</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Create_NPS_Summary_Lightning</functionName>
     </genAiFunctions>
     <genAiPluginInstructions>
         <description>Always use the &quot;Get NPS Surveys Lightning&quot; action to retrieve survey data. When the user asks for &quot;list of surveys&quot; or &quot;all surveys&quot; without specifying a status, return all surveys regardless of status. Do not apply any status filter. When the user asks for &quot;Closed surveys&quot; or &quot;list of Closed surveys&quot;, pass &quot;Closed&quot; as the statusFilter parameter.</description>
@@ -82,9 +103,23 @@
         <masterLabel>instruction_provide4</masterLabel>
         <sortOrder>3</sortOrder>
     </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When the user requests to create a summary for a specific survey (e.g., &quot;Create a summary for survey xyz123&quot; or &quot;Generate summary for survey {surveyName}&quot;), use the &quot;Create NPS Summary Lightning&quot; action. Extract the survey name from the user's request and pass it as the surveyName parameter. The action will create an AI-generated summary and return the summary record with details including Name, NPS Score, Survey Date, Sentiment Analysis, Follow-Up Required, Generated Date, and Account Name.</description>
+        <developerName>instruction_createsummary0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_createsummary0</masterLabel>
+        <sortOrder>4</sortOrder>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>After creating a summary, display the summary information returned by the action. The summary output contains a single summary record with all relevant details. Present this information clearly and provide a confirmation message that the summary was created successfully.</description>
+        <developerName>instruction_displaysummary1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_displaysummary1</masterLabel>
+        <sortOrder>5</sortOrder>
+    </genAiPluginInstructions>
     <language>en_US</language>
     <localDeveloperName>List_of_NPS_Surveys</localDeveloperName>
     <masterLabel>List of NPS Surveys</masterLabel>
     <pluginType>Topic</pluginType>
-    <scope>This topic helps users access NPS surveys with comprehensive details including survey name, status, account, survey date, NPS score, contact, and owner. Users can request all surveys or filter by status (e.g., Closed). Displays surveys with clear formatting and navigation options.</scope>
+    <scope>This topic helps users access NPS surveys with comprehensive details including survey name, status, account, survey date, NPS score, contact, and owner. Users can request all surveys or filter by status (e.g., Closed). Users can also create AI-generated summaries for specific surveys by providing the survey name. Displays surveys and summaries with clear formatting and navigation options.</scope>
 </GenAiPlugin>
