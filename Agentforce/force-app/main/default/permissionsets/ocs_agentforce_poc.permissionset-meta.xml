@@ -65,6 +65,10 @@
         <apexClass>AccountSummaryRelatedListController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>AF_AccountSummaryCreator</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
 
     <!-- Custom Permissions -->
     <customPermissions>

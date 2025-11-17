@@ -80,6 +80,10 @@ public class AF_AccountSummaryQueueable implements Queueable, Database.AllowsCal
      * @return String AI-generated summary
      */
     private String generateAISummary(String promptData, String templateName) {
+        System.debug('=== PROMPT DATA FOR TEMPLATE ' + templateName + ' ===');
+        System.debug('Prompt data length: ' + (promptData != null ? promptData.length() : 0));
+        System.debug('=== END PROMPT DATA ===');
+
         try {
             // Create input wrapper
             ConnectApi.WrappedValue inputValue = new ConnectApi.WrappedValue();
@@ -106,15 +110,39 @@ public class AF_AccountSummaryQueueable implements Queueable, Database.AllowsCal
                     promptInput
                 );
 
-            // Extract response
-            if (output != null && output.generations != null && !output.generations.isEmpty()) {
-                return output.generations[0].text;
+            // Handle the response
+            if (output != null &&
+                output.generations != null &&
+                output.generations.size() > 0) {
+
+                ConnectApi.EinsteinLLMGenerationItemOutput generationResult = output.generations[0];
+                String aiGeneratedText = generationResult.text;
+
+                System.debug('=== AI GENERATED SUMMARY ===');
+                System.debug('Summary length: ' + (aiGeneratedText != null ? aiGeneratedText.length() : 0));
+                System.debug('=== END AI SUMMARY ===');
+
+                return aiGeneratedText;
+
+            } else if (output != null &&
+                       output.generationErrors != null &&
+                       output.generationErrors.size() > 0) {
+
+                // Handle errors from AI generation
+                String errorMessages = '';
+                for (ConnectApi.EinsteinPromptTemplateGenerationsError error : output.generationErrors) {
+                    errorMessages += error.errorMessage + ' (Code: ' + error.messageCode + ') ';
+                }
+
+                System.debug(LoggingLevel.ERROR, 'Agentforce generation errors: ' + errorMessages);
+                throw new CalloutException('AI generation failed: ' + errorMessages);
             } else {
-                throw new CalloutException('No response generated from AI');
+                throw new CalloutException('No AI response received - output was null or empty');
             }
 
         } catch (Exception e) {
-            System.debug(LoggingLevel.ERROR, 'AI Generation Error: ' + e.getMessage());
+            System.debug(LoggingLevel.ERROR, 'Agentforce call failed: ' + e.getMessage());
+            System.debug(LoggingLevel.ERROR, 'Stack trace: ' + e.getStackTraceString());
             throw e;
         }
     }
@@ -203,9 +231,14 @@ public class AF_AccountSummaryQueueable implements Queueable, Database.AllowsCal
         summary.Created_By_Agentforce__c = true;
         summary.Account_Owner__c = data.account.OwnerId;
 
-        // Store error in AI Summary field
-        summary.AI_Summary__c = 'Summary generation failed: ' + errorMessage;
-        summary.Executive_Summary__c = 'An error occurred during AI summary generation. Please try again or contact your administrator.';
+        // Store detailed error in AI Summary field (truncate if too long)
+        String fullErrorMessage = 'Summary generation failed: ' + errorMessage;
+        if (fullErrorMessage.length() > 131072) {
+            fullErrorMessage = fullErrorMessage.substring(0, 131000) + '... (truncated)';
+        }
+        summary.AI_Summary__c = fullErrorMessage;
+        summary.Executive_Summary__c = 'An error occurred during AI summary generation. Error: ' + 
+            (errorMessage.length() > 5000 ? errorMessage.substring(0, 5000) : errorMessage);
 
         return summary;
     }

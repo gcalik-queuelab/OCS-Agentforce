@@ -56,6 +56,9 @@
                             <value>Account.Add_Competitor_Services</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Account.Generate_Account_Summary</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.Account.Conga_Composer_Account_Plan</value>
                             <visibilityRule>
                                 <criteria>
