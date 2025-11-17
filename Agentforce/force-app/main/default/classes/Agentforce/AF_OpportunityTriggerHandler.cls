@@ -1,0 +1,251 @@
+/**
+ * @description Trigger handler for Opportunity object to generate Account Summaries
+ * @author Agentforce POC
+ * @date 2025
+ */
+public with sharing class AF_OpportunityTriggerHandler {
+
+    /**
+     * @description Handles after insert trigger logic
+     * @param newList List of new Opportunity records
+     */
+    public static void handleAfterInsert(List<Opportunity> newList) {
+        Set<Id> accountsToSummarize = new Set<Id>();
+
+        // New opportunities trigger summary
+        for (Opportunity opp : newList) {
+            if (opp.AccountId != null) {
+                accountsToSummarize.add(opp.AccountId);
+            }
+        }
+
+        processSummaryGeneration(accountsToSummarize, 'Opportunity');
+    }
+
+    /**
+     * @description Handles after update trigger logic
+     * @param newList List of new Opportunity records
+     * @param oldMap Map of old Opportunity records
+     */
+    public static void handleAfterUpdate(List<Opportunity> newList, Map<Id, Opportunity> oldMap) {
+        Set<Id> accountsToSummarize = new Set<Id>();
+
+        // Detect significant changes
+        for (Opportunity opp : newList) {
+            if (opp.AccountId == null) {
+                continue;
+            }
+
+            Opportunity oldOpp = oldMap.get(opp.Id);
+
+            // Stage change
+            if (opp.StageName != oldOpp.StageName) {
+                accountsToSummarize.add(opp.AccountId);
+                continue;
+            }
+
+            // Closed Won or Lost
+            if (opp.IsClosed && !oldOpp.IsClosed) {
+                accountsToSummarize.add(opp.AccountId);
+                continue;
+            }
+
+            // Significant amount change (more than 10%)
+            if (hasSignificantAmountChange(opp.Amount, oldOpp.Amount)) {
+                accountsToSummarize.add(opp.AccountId);
+            }
+        }
+
+        processSummaryGeneration(accountsToSummarize, 'Opportunity');
+    }
+
+    /**
+     * @description Checks if amount change is significant (>10%)
+     * @param newAmount New opportunity amount
+     * @param oldAmount Old opportunity amount
+     * @return Boolean true if change is significant
+     */
+    private static Boolean hasSignificantAmountChange(Decimal newAmount, Decimal oldAmount) {
+        if (newAmount == null && oldAmount == null) {
+            return false;
+        }
+        if (newAmount == null || oldAmount == null) {
+            return true; // Changing from null to value or vice versa is significant
+        }
+        if (oldAmount == 0) {
+            return newAmount != 0;
+        }
+
+        Decimal percentageChange = ((newAmount - oldAmount) / oldAmount).abs() * 100;
+        return percentageChange > 10;
+    }
+
+    /**
+     * @description Processes summary generation with duplicate checking
+     * @param accountIds Set of Account IDs
+     * @param triggerSource Source of the trigger
+     */
+    private static void processSummaryGeneration(Set<Id> accountIds, String triggerSource) {
+        if (accountIds.isEmpty()) {
+            return;
+        }
+
+        // Filter out accounts that had a summary generated in last 24 hours
+        Set<Id> eligibleAccounts = AF_AccountSummaryDuplicateChecker.filterEligibleAccounts(accountIds);
+
+        if (!eligibleAccounts.isEmpty()) {
+            generateAccountSummariesAsync(eligibleAccounts, triggerSource);
+        } else {
+            System.debug(LoggingLevel.INFO,
+                'All accounts filtered out due to 24-hour cooldown: ' + accountIds);
+        }
+    }
+
+    /**
+     * @description Generates account summaries asynchronously
+     * @param accountIds Set of Account IDs to generate summaries for
+     * @param triggerSource Source of the trigger
+     */
+    private static void generateAccountSummariesAsync(Set<Id> accountIds, String triggerSource) {
+        try {
+            // Query accounts with necessary fields
+            List<Account> accounts = [
+                SELECT Id, Name, AccountNumber, Type, Industry, AnnualRevenue,
+                       NumberOfEmployees, Description, OwnerId, Owner.Name
+                FROM Account
+                WHERE Id IN :accountIds
+            ];
+
+            if (accounts.isEmpty()) {
+                System.debug(LoggingLevel.WARN, 'No accounts found for IDs: ' + accountIds);
+                return;
+            }
+
+            // Gather related data for each account
+            Map<Id, AF_AccountSummaryPromptBuilder.AccountSummaryData> dataMap =
+                gatherAccountData(accounts, triggerSource);
+
+            if (!dataMap.isEmpty()) {
+                // Enqueue async job
+                System.enqueueJob(new AF_AccountSummaryQueueable(dataMap));
+                System.debug(LoggingLevel.INFO,
+                    'Enqueued Account Summary generation for ' + dataMap.size() + ' accounts from ' + triggerSource);
+            }
+
+        } catch (Exception e) {
+            System.debug(LoggingLevel.ERROR, 'Error in generateAccountSummariesAsync: ' + e.getMessage());
+            System.debug(LoggingLevel.ERROR, 'Stack Trace: ' + e.getStackTraceString());
+        }
+    }
+
+    /**
+     * @description Gathers all related data for account summary generation
+     * @param accounts List of Account records
+     * @param triggerSource Source of the trigger
+     * @return Map of Account ID to AccountSummaryData
+     */
+    private static Map<Id, AF_AccountSummaryPromptBuilder.AccountSummaryData> gatherAccountData(
+        List<Account> accounts,
+        String triggerSource
+    ) {
+        Map<Id, AF_AccountSummaryPromptBuilder.AccountSummaryData> dataMap =
+            new Map<Id, AF_AccountSummaryPromptBuilder.AccountSummaryData>();
+
+        Set<Id> accountIds = new Map<Id, Account>(accounts).keySet();
+
+        // Query related opportunities
+        Date twelveMonthsAgo = Date.today().addMonths(-12);
+        Map<Id, List<Opportunity>> opportunitiesByAccount = new Map<Id, List<Opportunity>>();
+
+        for (Opportunity opp : [
+            SELECT Id, Name, AccountId, StageName, Amount, CloseDate, Probability,
+                   Description, CreatedDate
+            FROM Opportunity
+            WHERE AccountId IN :accountIds
+            AND (IsClosed = false OR CloseDate >= :twelveMonthsAgo)
+            ORDER BY CreatedDate DESC
+            LIMIT 200
+        ]) {
+            if (!opportunitiesByAccount.containsKey(opp.AccountId)) {
+                opportunitiesByAccount.put(opp.AccountId, new List<Opportunity>());
+            }
+            opportunitiesByAccount.get(opp.AccountId).add(opp);
+        }
+
+        // Query related leads
+        Date sixMonthsAgo = Date.today().addMonths(-6);
+        Map<Id, List<Lead>> leadsByAccount = new Map<Id, List<Lead>>();
+
+        for (Lead ld : [
+            SELECT Id, Name, Company, Status, LeadSource, IsConverted, ConvertedDate,
+                   ConvertedAccountId, Description, CreatedDate
+            FROM Lead
+            WHERE ConvertedAccountId IN :accountIds
+            AND CreatedDate >= :sixMonthsAgo
+            ORDER BY CreatedDate DESC
+            LIMIT 100
+        ]) {
+            if (!leadsByAccount.containsKey(ld.ConvertedAccountId)) {
+                leadsByAccount.put(ld.ConvertedAccountId, new List<Lead>());
+            }
+            leadsByAccount.get(ld.ConvertedAccountId).add(ld);
+        }
+
+        // Query related contracts
+        Map<Id, List<Contract__c>> contractsByAccount = new Map<Id, List<Contract__c>>();
+
+        for (Contract__c contract : [
+            SELECT Id, Name, Account__c, Status__c, Contract_Start_Date__c,
+                   Contract_End_Date__c, Description__c
+            FROM Contract__c
+            WHERE Account__c IN :accountIds
+            ORDER BY CreatedDate DESC
+            LIMIT 100
+        ]) {
+            if (!contractsByAccount.containsKey(contract.Account__c)) {
+                contractsByAccount.put(contract.Account__c, new List<Contract__c>());
+            }
+            contractsByAccount.get(contract.Account__c).add(contract);
+        }
+
+        // Query recent NPS summaries
+        Map<Id, List<NPS_Survey_Summary__c>> npsByAccount = new Map<Id, List<NPS_Survey_Summary__c>>();
+
+        for (NPS_Survey_Summary__c nps : [
+            SELECT Id, Account__c, NPS_Score__c, Sentiment_Analysis__c,
+                   AI_Summary__c, CreatedDate
+            FROM NPS_Survey_Summary__c
+            WHERE Account__c IN :accountIds
+            ORDER BY CreatedDate DESC
+            LIMIT 50
+        ]) {
+            if (!npsByAccount.containsKey(nps.Account__c)) {
+                npsByAccount.put(nps.Account__c, new List<NPS_Survey_Summary__c>());
+            }
+            npsByAccount.get(nps.Account__c).add(nps);
+        }
+
+        // Build data wrappers for each account
+        for (Account acc : accounts) {
+            AF_AccountSummaryPromptBuilder.AccountSummaryData data =
+                new AF_AccountSummaryPromptBuilder.AccountSummaryData();
+
+            data.account = acc;
+            data.triggerType = triggerSource;
+
+            // Add related records
+            data.opportunities = opportunitiesByAccount.containsKey(acc.Id) ?
+                opportunitiesByAccount.get(acc.Id) : new List<Opportunity>();
+            data.leads = leadsByAccount.containsKey(acc.Id) ?
+                leadsByAccount.get(acc.Id) : new List<Lead>();
+            data.contracts = contractsByAccount.containsKey(acc.Id) ?
+                contractsByAccount.get(acc.Id) : new List<Contract__c>();
+            data.npsSummaries = npsByAccount.containsKey(acc.Id) ?
+                npsByAccount.get(acc.Id) : new List<NPS_Survey_Summary__c>();
+
+            dataMap.put(acc.Id, data);
+        }
+
+        return dataMap;
+    }
+}

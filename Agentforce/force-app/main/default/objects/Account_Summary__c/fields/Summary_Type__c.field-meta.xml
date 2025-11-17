@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Summary Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Type Change</fullName>
+                <default>false</default>
+                <label>Account Type Change</label>
+            </value>
+            <value>
+                <fullName>Opportunity Analysis</fullName>
+                <default>false</default>
+                <label>Opportunity Analysis</label>
+            </value>
+            <value>
+                <fullName>Lead Conversion</fullName>
+                <default>false</default>
+                <label>Lead Conversion</label>
+            </value>
+            <value>
+                <fullName>NPS Insights</fullName>
+                <default>false</default>
+                <label>NPS Insights</label>
+            </value>
+            <value>
+                <fullName>Contract Review</fullName>
+                <default>false</default>
+                <label>Contract Review</label>
+            </value>
+            <value>
+                <fullName>Comprehensive</fullName>
+                <default>false</default>
+                <label>Comprehensive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

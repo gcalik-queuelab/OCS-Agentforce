@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>ComprehensiveAccountSummaryV1_1</activeVersionIdentifier>
+    <description>AI prompt template for generating comprehensive account summaries across all data sources</description>
+    <developerName>Comprehensive_Account_Summary</developerName>
+    <masterLabel>Comprehensive Account Summary</masterLabel>
+    <templateVersions>
+        <content>You are an expert strategic account manager with deep expertise in customer relationship management, sales, and business analysis. You will analyze comprehensive account data and generate a holistic summary in English.
+
+{!$Input:Account_Data}
+
+Based on the comprehensive account information provided above, generate a detailed 360-degree analysis following this structure:
+
+1. EXECUTIVE SUMMARY
+Provide a 3-4 sentence high-level overview synthesizing the account's overall health, strategic importance, current status across all business areas, and primary focus areas.
+
+2. KEY INSIGHTS
+- Holistic account health assessment across all touchpoints
+- Account growth trajectory and maturity level
+- Relationship strength indicators (NPS, engagement, satisfaction)
+- Revenue performance and pipeline health
+- Contract portfolio status and renewal readiness
+- Lead generation and conversion effectiveness
+- Strategic value and partnership potential
+
+3. OPPORTUNITIES IDENTIFIED
+- Comprehensive growth and expansion opportunities
+- Revenue maximization strategies (upsell, cross-sell, renewals)
+- Relationship deepening and strategic partnership potential
+- Product/service adoption opportunities
+- Market expansion or penetration possibilities
+- Executive relationship building opportunities
+
+4. RISK FACTORS
+- Multi-dimensional risk assessment (churn, revenue, relationship)
+- Early warning indicators across all data points
+- Competitive threats or market pressures
+- Internal gaps (resources, expertise, engagement)
+- Contract or compliance risks
+- Customer satisfaction or NPS concerns
+
+5. ACTION RECOMMENDATIONS
+- Comprehensive, prioritized action plan for account team
+- Cross-functional coordination recommendations
+- Executive engagement strategy
+- Short-term tactical actions (0-30 days)
+- Medium-term strategic initiatives (30-90 days)
+- Long-term account development plan (90+ days)
+
+IMPORTANT GUIDELINES:
+- Generate this summary in English, regardless of source data language
+- Provide a 360-degree view synthesizing ALL data sources
+- Connect insights across opportunities, leads, contracts, and NPS
+- Be specific, actionable, and strategic in recommendations
+- Identify interdependencies and cross-functional opportunities
+- Assess both tactical needs and strategic positioning
+- Use markdown formatting for better readability
+- Target length: 500-700 words total
+- Maintain a professional, analytical tone
+- Base insights on the data provided, avoid speculation
+- Prioritize high-impact insights and recommendations
+
+Format your response with clear section headers and bullet points where appropriate.</content>
+        <inputs>
+            <apiName>Account_Data</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Account_Data</masterLabel>
+            <referenceName>Input:Account_Data</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT5</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>ComprehensiveAccountSummaryV1_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

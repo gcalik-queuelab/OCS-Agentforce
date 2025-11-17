@@ -1,0 +1,139 @@
+<template>
+    <article class="slds-card slds-card_boundary" aria-label="Account Summaries">
+        <div class="slds-page-header slds-page-header_joined slds-page-header_bleed slds-shrink-none">
+            <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media slds-no-space slds-grow">
+                        <span class="record-avatar-container slds-avatar slds-avatar_small icon slds-m-right_small" style="background-color: #0176d3">
+                            <lightning-icon icon-name="standard:document" size="x-small" alternative-text="Account Summaries"></lightning-icon>
+                        </span>
+                        <div class="slds-media__body slds-align-middle">
+                            <h2 class="slds-card__header-title">
+                                <span class="slds-truncate slds-m-right--xx-small" title={title}>{title}</span>
+                                <span class="slds-shrink-none slds-m-right--xx-small">({summaryCount})</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template if:true={isLoading}>
+            <div class="slds-is-relative slds-m-around_medium">
+                <lightning-spinner alternative-text="Loading summaries..." size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-notify slds-notify_alert slds-theme_error" role="alert">
+                <span class="slds-assistive-text">Error</span>
+                <h2>Error loading summaries: {error.body.message}</h2>
+            </div>
+        </template>
+
+        <template if:false={isLoading}>
+            <template if:true={hasSummaries}>
+                <div class="slds-table_header-fixed_container">
+                    <div class="slds-scrollable_y">
+                        <table class="slds-table slds-table_header-fixed slds-table_bordered" role="grid">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Name">Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Summary Type">Summary Type</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Status">Status</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Sentiment">Sentiment</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Priority">Priority</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Generated Date">Generated Date</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Source">Source</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={summaries} for:item="summary">
+                                <tr key={summary.id} class="slds-hint-parent">
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={summary.name}>
+                                            <a href="#" onclick={handleSummaryClick} data-id={summary.id}>{summary.name}</a>
+                                        </div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={summary.summaryType}>
+                                            {summary.summaryType}
+                                        </div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class={summary.statusClass} title={summary.generationStatus}>
+                                            <strong>{summary.generationStatus}</strong>
+                                        </div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class={summary.sentimentClass} title={summary.sentimentAnalysis}>
+                                            <template if:true={summary.sentimentAnalysis}>
+                                                {summary.sentimentAnalysis}
+                                            </template>
+                                            <template if:false={summary.sentimentAnalysis}>
+                                                —
+                                            </template>
+                                        </div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class={summary.priorityClass} title={summary.priorityLevel}>
+                                            <template if:true={summary.priorityLevel}>
+                                                {summary.priorityLevel}
+                                            </template>
+                                            <template if:false={summary.priorityLevel}>
+                                                —
+                                            </template>
+                                        </div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={summary.summaryGenerationDate}>
+                                            <template if:true={summary.summaryGenerationDate}>
+                                                <lightning-formatted-date-time value={summary.summaryGenerationDate} day="2-digit" month="short" year="numeric"></lightning-formatted-date-time>
+                                            </template>
+                                            <template if:false={summary.summaryGenerationDate}>
+                                                —
+                                            </template>
+                                        </div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={summary.createdByAgentforceText}>
+                                            {summary.createdByAgentforceText}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </template>
+
+            <template if:false={hasSummaries}>
+                <div class="slds-text-align_center slds-p-around_medium">
+                    <lightning-icon
+                        icon-name="standard:document"
+                        size="medium"
+                        variant="inverse">
+                    </lightning-icon>
+                    <p class="slds-text-body_regular slds-m-top_small">
+                        No Account Summaries found.
+                    </p>
+                </div>
+            </template>
+        </template>
+    </article>
+</template>
