@@ -30,6 +30,9 @@ public class AF_NPSAISummaryQueueable implements Queueable, Database.AllowsCallo
             // Query full NPS records with related data
             Map<Id, NPS__c> npsMap = queryNPSRecords();
 
+            // Query previous summaries for trend analysis
+            Map<Id, List<NPS_Survey_Summary__c>> npsToPreviousSummariesMap = queryPreviousSummaries();
+
             // List to hold new NPS Summary records
             List<NPS_Survey_Summary__c> summariesToInsert = new List<NPS_Survey_Summary__c>();
 
@@ -46,11 +49,16 @@ public class AF_NPSAISummaryQueueable implements Queueable, Database.AllowsCallo
                         continue;
                     }
 
-                    // Build prompt data
-                    String promptData = AF_NPSPromptBuilder.buildPromptData(nps, responses);
+                    // Get previous summaries for this specific NPS Survey
+                    List<NPS_Survey_Summary__c> previousSummaries = new List<NPS_Survey_Summary__c>();
+                    if (npsToPreviousSummariesMap.containsKey(npsId)) {
+                        previousSummaries = npsToPreviousSummariesMap.get(npsId);
+                    }
 
-                    // TODO: Call Agentforce to generate summary
-                    // For now, log the prompt and create placeholder summary
+                    // Build prompt data with historical trend data
+                    String promptData = AF_NPSPromptBuilder.buildPromptData(nps, responses, previousSummaries);
+
+                    // Call Agentforce to generate summary
                     String aiSummary = generateAISummary(promptData, nps, responses);
 
                     // Parse AI response and create summary record
@@ -75,6 +83,41 @@ public class AF_NPSAISummaryQueueable implements Queueable, Database.AllowsCallo
                 'Fatal error in AF_NPSAISummaryQueueable: ' + e.getMessage() +
                 '\nStack Trace: ' + e.getStackTraceString());
         }
+    }
+
+    /**
+     * Queries previous NPS Survey Summaries for trend analysis
+     * @return Map of NPS Survey Id to list of previous summaries (ordered by Created Date DESC)
+     */
+    private Map<Id, List<NPS_Survey_Summary__c>> queryPreviousSummaries() {
+        if (npsIds == null || npsIds.isEmpty()) {
+            return new Map<Id, List<NPS_Survey_Summary__c>>();
+        }
+
+        // Query all previous summaries for these NPS Surveys
+        List<NPS_Survey_Summary__c> allPreviousSummaries = [
+            SELECT Id, Name, Survey_Date__c,
+                   NPS_Score__c, Total_Score__c,
+                   Number_of_Scored_Responses__c,
+                   Sentiment_Analysis__c,
+                   Summary_Generation_Date__c,
+                   NPS_Survey__c,
+                   CreatedDate
+            FROM NPS_Survey_Summary__c
+            WHERE NPS_Survey__c IN :npsIds
+            ORDER BY NPS_Survey__c, CreatedDate DESC
+        ];
+
+        // Group by NPS Survey Id
+        Map<Id, List<NPS_Survey_Summary__c>> npsToSummariesMap = new Map<Id, List<NPS_Survey_Summary__c>>();
+        for (NPS_Survey_Summary__c summary : allPreviousSummaries) {
+            if (!npsToSummariesMap.containsKey(summary.NPS_Survey__c)) {
+                npsToSummariesMap.put(summary.NPS_Survey__c, new List<NPS_Survey_Summary__c>());
+            }
+            npsToSummariesMap.get(summary.NPS_Survey__c).add(summary);
+        }
+
+        return npsToSummariesMap;
     }
 
     /**

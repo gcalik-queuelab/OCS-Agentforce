@@ -230,9 +230,32 @@ public with sharing class AFCreateNPSSummaryAction {
      */
     private static NPS_Survey_Summary__c createSummarySynchronously(NPS__c nps, List<NPS_Response__c> responses) {
         try {
-            // Build prompt data
-            String promptData = AF_NPSPromptBuilder.buildPromptData(nps, responses);
-            
+            // Query previous summaries for trend analysis
+            // Get all previous summaries created for THIS NPS Survey
+            System.debug('=== TREND ANALYSIS QUERY DEBUG ===');
+            System.debug('Current NPS Survey Id: ' + nps.Id);
+
+            List<NPS_Survey_Summary__c> previousSummaries = [
+                SELECT Id, Name, Survey_Date__c,
+                       NPS_Score__c, Total_Score__c,
+                       Number_of_Scored_Responses__c,
+                       Sentiment_Analysis__c,
+                       Summary_Generation_Date__c,
+                       CreatedDate
+                FROM NPS_Survey_Summary__c
+                WHERE NPS_Survey__c = :nps.Id
+                ORDER BY CreatedDate DESC
+            ];
+
+            System.debug('Found ' + previousSummaries.size() + ' previous summaries for trend analysis');
+            for (NPS_Survey_Summary__c prevSum : previousSummaries) {
+                System.debug('  - Summary: ' + prevSum.Name + ', Created: ' + prevSum.CreatedDate + ', NPS Score: ' + prevSum.NPS_Score__c);
+            }
+            System.debug('=== END TREND ANALYSIS QUERY DEBUG ===');
+
+            // Build prompt data with historical trend data
+            String promptData = AF_NPSPromptBuilder.buildPromptData(nps, responses, previousSummaries);
+
             // Generate AI summary (reuse logic from queueable)
             String aiSummary = generateAISummary(promptData, nps, responses);
             

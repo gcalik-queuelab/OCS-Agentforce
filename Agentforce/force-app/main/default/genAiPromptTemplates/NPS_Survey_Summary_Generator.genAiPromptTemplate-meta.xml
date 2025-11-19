@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionIdentifier>8vYgLwI4cbJLUNgy2yCtAJvrITFCR7y4YaulsViILoU=_1</activeVersionIdentifier>
+    <activeVersionIdentifier>8vYgLwI4cbJLUNgy2yCtAJvrITFCR7y4YaulsViILoU=_2</activeVersionIdentifier>
     <description>Generates comprehensive AI-powered summaries for NPS survey responses, including executive summary, key insights, sentiment analysis, and actionable recommendations.</description>
     <developerName>NPS_Survey_Summary_Generator</developerName>
     <masterLabel>NPS Survey Summary Generator</masterLabel>
@@ -51,6 +51,15 @@ Generate a well-structured summary with the following sections:
 - Justify the sentiment based on the NPS score, feedback tone, and specific comments
 - Note any discrepancies between score and written feedback
 
+### 6. TREND ANALYSIS (if historical data is provided)
+- Compare current NPS score to previous surveys for this account
+- Identify trends: improving, declining, or stable scores over time
+- Highlight significant changes in customer sentiment or satisfaction patterns
+- Note any recurring themes or persistent issues across multiple surveys
+- Identify improvements or deteriorations in specific areas
+- Provide insights on the overall trend direction and its business implications
+- If no historical data is available, omit this section
+
 ## QUALITY GUIDELINES
 
 1. **Be Specific**: Reference actual scores, questions, and quotes from the survey
@@ -84,6 +93,13 @@ Generate a well-structured summary with the following sections:
 Overall Sentiment: [Positive/Neutral/Negative]
 [Brief justification based on data]
 
+## Trend Analysis
+*(Include this section only if historical data is provided)*
+- **Score Trend**: [Improving/Declining/Stable] - Current: [X], Previous: [Y]
+- **Key Changes**: [Notable differences from historical patterns]
+- **Recurring Themes**: [Issues or strengths appearing across multiple surveys]
+- **Business Impact**: [What these trends mean for the account relationship]
+
 ---
 
 Now, analyze the provided NPS survey data and generate the summary following this exact structure and guidelines.</content>
@@ -96,7 +112,7 @@ Now, analyze the provided NPS survey data and generate the summary following thi
         </inputs>
         <primaryModel>sfdc_ai__DefaultGPT5</primaryModel>
         <status>Published</status>
-        <versionIdentifier>8vYgLwI4cbJLUNgy2yCtAJvrITFCR7y4YaulsViILoU=_1</versionIdentifier>
+        <versionIdentifier>8vYgLwI4cbJLUNgy2yCtAJvrITFCR7y4YaulsViILoU=_2</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>
