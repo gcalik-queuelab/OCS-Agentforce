@@ -30,8 +30,8 @@ public with sharing class AF_NPSSummaryCreator {
     }
 
     /**
-     * Creates or re-creates an AI summary for the given NPS survey (AuraEnabled for LWC)
-     * If a summary exists, it will be deleted first
+     * Creates an AI summary for the given NPS survey (AuraEnabled for LWC)
+     * Multiple summaries can exist for the same NPS survey
      * @param npsId NPS Survey ID
      * @return SummaryResponse indicating success/failure
      */
@@ -63,17 +63,16 @@ public with sharing class AF_NPSSummaryCreator {
                 return response;
             }
 
-            // Delete existing summaries if any
+            // Check for existing summaries (for informational purposes only)
             List<NPS_Survey_Summary__c> existingSummaries = [
                 SELECT Id
                 FROM NPS_Survey_Summary__c
                 WHERE NPS_Survey__c = :npsId
             ];
 
-            if (!existingSummaries.isEmpty()) {
-                delete existingSummaries;
-                System.debug('AF_NPSSummaryCreator: Deleted ' + existingSummaries.size() + ' existing summary(ies)');
-            }
+            Boolean hadExistingSummary = !existingSummaries.isEmpty();
+
+            System.debug('AF_NPSSummaryCreator: Found ' + existingSummaries.size() + ' existing summary(ies). Creating new summary without deleting previous ones.');
 
             // Query NPS responses
             List<NPS_Response__c> responsesList = queryNPSResponses(new Set<Id>{ npsId });
@@ -93,7 +92,7 @@ public with sharing class AF_NPSSummaryCreator {
 
             response.success = true;
             response.message = 'Summary creation job has been queued. The summary will be generated shortly.';
-            response.hasExistingSummary = false;
+            response.hasExistingSummary = hadExistingSummary;
 
         } catch (Exception e) {
             response.success = false;
@@ -107,12 +106,12 @@ public with sharing class AF_NPSSummaryCreator {
     }
 
     /**
-     * Creates or re-creates an AI summary for the given NPS survey (Invocable for Flow)
-     * If a summary exists, it will be deleted first
+     * Creates an AI summary for the given NPS survey (Invocable for Flow)
+     * Multiple summaries can exist for the same NPS survey
      * @param requests List of SummaryRequest containing NPS IDs
      * @return List of SummaryResponse indicating success/failure
      */
-    @InvocableMethod(label='Create NPS Summary' description='Creates or re-creates an AI-generated summary for an NPS survey. Deletes existing summary if present.')
+    @InvocableMethod(label='Create NPS Summary' description='Creates an AI-generated summary for an NPS survey. Multiple summaries can exist.')
     public static List<SummaryResponse> createSummaryInvocable(List<SummaryRequest> requests) {
         List<SummaryResponse> responses = new List<SummaryResponse>();
 

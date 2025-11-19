@@ -136,18 +136,16 @@ public with sharing class AFCreateNPSSummaryAction {
                 results.add(errorResponse);
                 return results;
             }
-            
-            // Delete existing summaries if any
+
+            // Check for existing summaries (for informational purposes only)
             List<NPS_Survey_Summary__c> existingSummaries = [
                 SELECT Id
                 FROM NPS_Survey_Summary__c
                 WHERE NPS_Survey__c = :nps.Id
             ];
-            
-            if (!existingSummaries.isEmpty()) {
-                delete existingSummaries;
-            }
-            
+
+            System.debug('AFCreateNPSSummaryAction: Found ' + existingSummaries.size() + ' existing summary(ies). Creating new summary without deleting previous ones.');
+
             // Query NPS responses
             List<NPS_Response__c> responsesList = [
                 SELECT Id, NPS__c, Name,
