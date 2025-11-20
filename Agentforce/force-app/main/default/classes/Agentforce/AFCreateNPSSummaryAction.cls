@@ -452,7 +452,7 @@ public with sharing class AFCreateNPSSummaryAction {
      * @param aiSummary The full AI summary text
      * @return Cleaned JSON string, or null if not found
      */
-    private static String extractJsonFromSummary(String aiSummary) {
+    public static String extractJsonFromSummary(String aiSummary) {
         String jsonStart = 'STRUCTURED_RECOMMENDATIONS_START';
         String jsonEnd = 'STRUCTURED_RECOMMENDATIONS_END';
 
@@ -544,6 +544,38 @@ public with sharing class AFCreateNPSSummaryAction {
             String recText = (String) rec.get('recommendation');
             if (String.isNotBlank(recText)) {
                 displayText += counter + '. ' + recText + '\n';
+                
+                // Add Type if present
+                String type = (String) rec.get('type');
+                if (String.isNotBlank(type)) {
+                    displayText += '   Type: ' + type + '\n';
+                }
+                
+                // Add Approach if present
+                String approach = (String) rec.get('approach');
+                if (String.isNotBlank(approach)) {
+                    displayText += '   Approach: ' + approach + '\n';
+                }
+                
+                // Add Focus if present
+                String focus = (String) rec.get('focus');
+                if (String.isNotBlank(focus)) {
+                    displayText += '   Focus: ' + focus + '\n';
+                }
+                
+                // Add Sustainability Goal if present and not "Not Applicable"
+                String sustainabilityGoal = (String) rec.get('sustainabilityGoal');
+                if (String.isNotBlank(sustainabilityGoal) && !sustainabilityGoal.equalsIgnoreCase('Not Applicable')) {
+                    displayText += '   Sustainability Goal: ' + sustainabilityGoal + '\n';
+                }
+                
+                // Add Social Value if present and not "Not Applicable"
+                String socialValue = (String) rec.get('socialValue');
+                if (String.isNotBlank(socialValue) && !socialValue.equalsIgnoreCase('Not Applicable')) {
+                    displayText += '   Social Value: ' + socialValue + '\n';
+                }
+                
+                displayText += '\n';
                 counter++;
             }
         }
