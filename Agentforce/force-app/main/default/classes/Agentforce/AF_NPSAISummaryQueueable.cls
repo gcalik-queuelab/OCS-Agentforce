@@ -287,8 +287,8 @@ public class AF_NPSAISummaryQueueable implements Queueable, Database.AllowsCallo
         summary.Number_of_Responses__c = nps.Number_of_NPS_Responses__c;
         summary.Number_of_Scored_Responses__c = nps.Number_of_Scored_NPS_Responses__c;
 
-        // AI-generated content
-        summary.AI_Summary__c = aiSummary;
+        // AI-generated content (remove structured recommendations JSON)
+        summary.AI_Summary__c = removeStructuredRecommendationsFromSummary(aiSummary);
         summary.Summary_Language__c = 'English';
         summary.Created_By_Agentforce__c = true;
         summary.Summary_Generation_Date__c = System.now();
@@ -475,5 +475,76 @@ public class AF_NPSAISummaryQueueable implements Queueable, Database.AllowsCallo
                 System.debug('Successfully created summary: ' + results[i].getId());
             }
         }
+    }
+
+    /**
+     * Removes the structured recommendations JSON section from the AI summary
+     * This keeps the AI_Summary__c field clean without the JSON recommendations
+     * @param aiSummary The full AI summary text
+     * @return AI summary without the structured recommendations section
+     */
+    private String removeStructuredRecommendationsFromSummary(String aiSummary) {
+        if (String.isBlank(aiSummary)) {
+            return aiSummary;
+        }
+
+        String jsonStart = 'STRUCTURED_RECOMMENDATIONS_START';
+        String jsonEnd = 'STRUCTURED_RECOMMENDATIONS_END';
+
+        Integer startIndex = aiSummary.indexOf(jsonStart);
+        Integer endIndex = aiSummary.indexOf(jsonEnd);
+
+        if (startIndex != -1 && endIndex != -1 && endIndex > startIndex) {
+            // Look for markdown code block markers before STRUCTURED_RECOMMENDATIONS_START
+            String beforeSection = aiSummary.substring(0, startIndex);
+            Integer codeBlockStart = beforeSection.lastIndexOf('```');
+            if (codeBlockStart != -1) {
+                // Check if it's ```json or just ```
+                String codeBlockMarker = beforeSection.substring(codeBlockStart);
+                if (codeBlockMarker.startsWith('```json') || codeBlockMarker.startsWith('```')) {
+                    // Find the start of the line containing the code block marker
+                    Integer lineStart = beforeSection.lastIndexOf('\n', codeBlockStart);
+                    if (lineStart == -1) {
+                        lineStart = 0;
+                    } else {
+                        lineStart++; // Include the newline
+                    }
+                    startIndex = lineStart;
+                }
+            }
+            
+            // Look for markdown code block markers after STRUCTURED_RECOMMENDATIONS_END
+            String afterSection = aiSummary.substring(endIndex + jsonEnd.length());
+            Integer codeBlockEnd = afterSection.indexOf('```');
+            if (codeBlockEnd != -1) {
+                // Find the end of the line containing the closing code block marker
+                Integer lineEnd = afterSection.indexOf('\n', codeBlockEnd);
+                if (lineEnd != -1) {
+                    endIndex = endIndex + jsonEnd.length() + lineEnd + 1; // Include the newline
+                } else {
+                    endIndex = endIndex + jsonEnd.length() + codeBlockEnd + 3; // Include ``` (3 chars)
+                }
+            } else {
+                endIndex = endIndex + jsonEnd.length();
+            }
+            
+            // Remove everything from the start (including code block markers) to the end
+            String before = aiSummary.substring(0, startIndex);
+            String after = aiSummary.substring(endIndex);
+            
+            // Clean up any extra whitespace/newlines
+            String cleaned = (before + after).trim();
+            
+            // Remove any double newlines that might have been created
+            cleaned = cleaned.replaceAll('\n{3,}', '\n\n');
+            
+            // Remove any remaining standalone ```json or ``` markers
+            cleaned = cleaned.replaceAll('(?i)\\s*```json\\s*', '');
+            cleaned = cleaned.replaceAll('\\s*```\\s*', '');
+            
+            return cleaned.trim();
+        }
+
+        return aiSummary;
     }
 }
