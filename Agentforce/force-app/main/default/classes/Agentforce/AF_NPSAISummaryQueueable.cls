@@ -427,35 +427,25 @@ public class AF_NPSAISummaryQueueable implements Queueable, Database.AllowsCallo
             if (String.isNotBlank(recText)) {
                 displayText += counter + '. ' + recText + '\n';
                 
-                // Add Type if present
+                // Always add Type (default to "Not Applicable" if not present)
                 String type = (String) rec.get('type');
-                if (String.isNotBlank(type)) {
-                    displayText += '   Type: ' + type + '\n';
-                }
+                displayText += '   Type: ' + (String.isNotBlank(type) ? type : 'Not Applicable') + '\n';
                 
-                // Add Approach if present
+                // Always add Approach (default to "Not Applicable" if not present)
                 String approach = (String) rec.get('approach');
-                if (String.isNotBlank(approach)) {
-                    displayText += '   Approach: ' + approach + '\n';
-                }
+                displayText += '   Approach: ' + (String.isNotBlank(approach) ? approach : 'Not Applicable') + '\n';
                 
-                // Add Focus if present
+                // Always add Focus (default to "Not Applicable" if not present)
                 String focus = (String) rec.get('focus');
-                if (String.isNotBlank(focus)) {
-                    displayText += '   Focus: ' + focus + '\n';
-                }
+                displayText += '   Focus: ' + (String.isNotBlank(focus) ? focus : 'Not Applicable') + '\n';
                 
-                // Add Sustainability Goal if present and not "Not Applicable"
+                // Always add Sustainability Goal (default to "Not Applicable" if not present)
                 String sustainabilityGoal = (String) rec.get('sustainabilityGoal');
-                if (String.isNotBlank(sustainabilityGoal) && !sustainabilityGoal.equalsIgnoreCase('Not Applicable')) {
-                    displayText += '   Sustainability Goal: ' + sustainabilityGoal + '\n';
-                }
+                displayText += '   Sustainability Goal: ' + (String.isNotBlank(sustainabilityGoal) ? sustainabilityGoal : 'Not Applicable') + '\n';
                 
-                // Add Social Value if present and not "Not Applicable"
+                // Always add Social Value (default to "Not Applicable" if not present)
                 String socialValue = (String) rec.get('socialValue');
-                if (String.isNotBlank(socialValue) && !socialValue.equalsIgnoreCase('Not Applicable')) {
-                    displayText += '   Social Value: ' + socialValue + '\n';
-                }
+                displayText += '   Social Value: ' + (String.isNotBlank(socialValue) ? socialValue : 'Not Applicable') + '\n';
                 
                 displayText += '\n';
                 counter++;

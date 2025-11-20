@@ -56,34 +56,44 @@
                                             </div>
                                             
                                             <!-- Type -->
-                                            <template if:true={rec.type}>
-                                                <div class="slds-m-bottom_x-small">
-                                                    <span class="slds-text-body_regular"><strong>Type:</strong></span>
-                                                    <span class="slds-m-left_x-small">
-                                                        <lightning-badge label={rec.type}></lightning-badge>
-                                                    </span>
-                                                </div>
-                                            </template>
+                                            <div class="slds-m-bottom_x-small">
+                                                <span class="slds-text-body_regular"><strong>Type:</strong></span>
+                                                <span class="slds-m-left_x-small">
+                                                    <lightning-badge label={rec.type}></lightning-badge>
+                                                </span>
+                                            </div>
                                             
                                             <!-- Approach -->
-                                            <template if:true={rec.approach}>
-                                                <div class="slds-m-bottom_x-small">
-                                                    <span class="slds-text-body_regular"><strong>Approach:</strong></span>
-                                                    <span class="slds-m-left_x-small">
-                                                        <lightning-badge label={rec.approach}></lightning-badge>
-                                                    </span>
-                                                </div>
-                                            </template>
+                                            <div class="slds-m-bottom_x-small">
+                                                <span class="slds-text-body_regular"><strong>Approach:</strong></span>
+                                                <span class="slds-m-left_x-small">
+                                                    <lightning-badge label={rec.approach}></lightning-badge>
+                                                </span>
+                                            </div>
                                             
                                             <!-- Focus -->
-                                            <template if:true={rec.focus}>
-                                                <div class="slds-m-bottom_x-small">
-                                                    <span class="slds-text-body_regular"><strong>Focus:</strong></span>
-                                                    <span class="slds-m-left_x-small">
-                                                        <lightning-badge label={rec.focus}></lightning-badge>
-                                                    </span>
-                                                </div>
-                                            </template>
+                                            <div class="slds-m-bottom_x-small">
+                                                <span class="slds-text-body_regular"><strong>Focus:</strong></span>
+                                                <span class="slds-m-left_x-small">
+                                                    <lightning-badge label={rec.focus}></lightning-badge>
+                                                </span>
+                                            </div>
+                                            
+                                            <!-- Sustainability Goal -->
+                                            <div class="slds-m-bottom_x-small">
+                                                <span class="slds-text-body_regular"><strong>Sustainability Goal:</strong></span>
+                                                <span class="slds-m-left_x-small">
+                                                    <lightning-badge label={rec.sustainabilityGoal}></lightning-badge>
+                                                </span>
+                                            </div>
+                                            
+                                            <!-- Social Value -->
+                                            <div class="slds-m-bottom_x-small">
+                                                <span class="slds-text-body_regular"><strong>Social Value:</strong></span>
+                                                <span class="slds-m-left_x-small">
+                                                    <lightning-badge label={rec.socialValue}></lightning-badge>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

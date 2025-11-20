@@ -21,8 +21,14 @@ export default class NpsCreateActionsFromSummary extends LightningElement {
         this.wiredRecommendationsResult = result;
         if (result.data) {
             // Add index and checked properties to each recommendation
+            // Ensure all fields are present, defaulting to "Not Applicable" if missing
             this.recommendations = result.data.map((rec, index) => ({
                 ...rec,
+                type: rec.type || 'Not Applicable',
+                approach: rec.approach || 'Not Applicable',
+                focus: rec.focus || 'Not Applicable',
+                sustainabilityGoal: rec.sustainabilityGoal || 'Not Applicable',
+                socialValue: rec.socialValue || 'Not Applicable',
                 index: index,
                 checked: false,
                 id: `rec-${index}` // Unique ID for checkbox

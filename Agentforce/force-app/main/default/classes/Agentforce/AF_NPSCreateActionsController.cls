@@ -115,11 +115,12 @@ public with sharing class AF_NPSCreateActionsController {
                 Map<String, Object> recMap = (Map<String, Object>) recObj;
                 RecommendationWrapper wrapper = new RecommendationWrapper();
                 wrapper.recommendation = (String) recMap.get('recommendation');
-                wrapper.type = (String) recMap.get('type');
-                wrapper.approach = (String) recMap.get('approach');
-                wrapper.focus = (String) recMap.get('focus');
-                wrapper.sustainabilityGoal = (String) recMap.get('sustainabilityGoal');
-                wrapper.socialValue = (String) recMap.get('socialValue');
+                // Always include all fields, defaulting to "Not Applicable" if missing
+                wrapper.type = String.isNotBlank((String) recMap.get('type')) ? (String) recMap.get('type') : 'Not Applicable';
+                wrapper.approach = String.isNotBlank((String) recMap.get('approach')) ? (String) recMap.get('approach') : 'Not Applicable';
+                wrapper.focus = String.isNotBlank((String) recMap.get('focus')) ? (String) recMap.get('focus') : 'Not Applicable';
+                wrapper.sustainabilityGoal = String.isNotBlank((String) recMap.get('sustainabilityGoal')) ? (String) recMap.get('sustainabilityGoal') : 'Not Applicable';
+                wrapper.socialValue = String.isNotBlank((String) recMap.get('socialValue')) ? (String) recMap.get('socialValue') : 'Not Applicable';
                 recommendations.add(wrapper);
             }
 
@@ -274,6 +275,9 @@ public with sharing class AF_NPSCreateActionsController {
                     // Relationships
                     action.Account__c = summary.Account__c;
                     action.NPS__c = summary.NPS_Survey__c;
+                    
+                    // Related To
+                    action.Related_To__c = 'NPS';
 
                     actionsToCreate.add(action);
                 }
