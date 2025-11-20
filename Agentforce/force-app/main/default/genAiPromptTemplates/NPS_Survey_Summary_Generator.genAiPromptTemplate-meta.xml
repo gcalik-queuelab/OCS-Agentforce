@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionIdentifier>8vYgLwI4cbJLUNgy2yCtAJvrITFCR7y4YaulsViILoU=_2</activeVersionIdentifier>
-    <description>Generates comprehensive AI-powered summaries for NPS survey responses, including executive summary, key insights, sentiment analysis, and actionable recommendations.</description>
+    <activeVersionIdentifier>8vYgLwI4cbJLUNgy2yCtAJvrITFCR7y4YaulsViILoU=_3</activeVersionIdentifier>
+    <description>Generates comprehensive AI-powered summaries for NPS survey responses, including executive summary, key insights, sentiment analysis, and actionable recommendations with structured JSON output.</description>
     <developerName>NPS_Survey_Summary_Generator</developerName>
     <masterLabel>NPS Survey Summary Generator</masterLabel>
     <templateVersions>
@@ -39,12 +39,34 @@ Generate a well-structured summary with the following sections:
 - Prioritize based on impact and urgency
 
 ### 4. RECOMMENDED ACTIONS
-- Provide 3-5 specific, actionable recommendations for the account team
+- Provide exactly 4 specific, actionable recommendations for the account team
 - Prioritize actions based on the NPS category:
   * Promoters: Focus on advocacy, upsell opportunities, testimonials
   * Passives: Address concerns to prevent churn, identify improvement opportunities
   * Detractors: Immediate follow-up required, escalation, service recovery
 - Include timeline suggestions (immediate, short-term, long-term)
+- **IMPORTANT**: After the text recommendations, you MUST include a JSON structure with the following format:
+
+```json
+STRUCTURED_RECOMMENDATIONS_START
+[
+  {
+    "recommendation": "Detailed recommendation text here",
+    "type": "Valid Type from list",
+    "approach": "Operational or Strategic or Tactical",
+    "focus": "Customer Satisfaction or Exceeding Customer Expectations or Promote Customer or Promote OCS or Other",
+    "sustainabilityGoal": "Not Applicable or valid UN SDG",
+    "socialValue": "Not Applicable or Social or Environment or Regional Growth or Social Innovation or Job &amp; Skills"
+  }
+]
+STRUCTURED_RECOMMENDATIONS_END
+```
+
+**Valid Type values**: Apprenticeships, Auditing, Awards, Benchmark, Bid Commitment, CAFM, Communication, Complaint Trend, Continuous Improvement, Contract Delivery, Cost Analysis, Cost Savings, Customer Feedback, Customer Strategic Update, Efficiency, Engagement, Finance, Growth, H&amp;S, HR, Innovation, Invoicing, IT, KPI, Management, Mystery Shopping, OCS Promotion, One Team, Operations, Partnership Working, Payroll, Procurement, Quality Improvement, Reporting, Retention, Risk Management, Security, Showcase, Social Value, Strategic Update, Surveying, Sustainability, Technology, Training, Waste
+
+**Valid Sustainability Goal values**: 1. No Poverty, 2. Zero Hunger, 3. Good Health &amp; Wellbeing, 4. Quality Education, 5. Gender Equality, 6. Clean Water &amp; Sanitisation, 7. Affordable &amp; Clean Energy, 8. Decent Work &amp; Economic Growth, 9. Industry Innovation &amp; Infrastructure, 10. Reduced Inequality, 11. Sustainable Cities &amp; Communities, 12. Responsible Consumption &amp; Production, 13. Climate Action, 14. Life Below Water, 15. Life on Land, 16. Peace, Justice &amp; Strong Institutions, 17. Partnership For the Goals, Not Applicable
+
+Select values that best match the recommendation content. Use "Not Applicable" when a category doesn&apos;t apply to the specific recommendation.
 
 ### 5. SENTIMENT ASSESSMENT
 - Provide an overall sentiment rating: Positive, Neutral, or Negative
@@ -87,7 +109,47 @@ Generate a well-structured summary with the following sections:
 ## Recommended Actions
 1. **Immediate** (Next 7 days): [Specific action with clear objective]
 2. **Short-term** (Next 30 days): [Specific action with clear objective]
-3. **Long-term** (Next quarter): [Specific action with clear objective]
+3. **Short-term** (Next 30 days): [Specific action with clear objective]
+4. **Long-term** (Next quarter): [Specific action with clear objective]
+
+```json
+STRUCTURED_RECOMMENDATIONS_START
+[
+  {
+    "recommendation": "Schedule immediate follow-up meeting with account manager to address service concerns",
+    "type": "Customer Feedback",
+    "approach": "Tactical",
+    "focus": "Customer Satisfaction",
+    "sustainabilityGoal": "Not Applicable",
+    "socialValue": "Not Applicable"
+  },
+  {
+    "recommendation": "Implement quarterly training sessions for on-site team members",
+    "type": "Training",
+    "approach": "Strategic",
+    "focus": "Exceeding Customer Expectations",
+    "sustainabilityGoal": "4. Quality Education",
+    "socialValue": "Job &amp; Skills"
+  },
+  {
+    "recommendation": "Develop customer communication improvement plan",
+    "type": "Communication",
+    "approach": "Operational",
+    "focus": "Customer Satisfaction",
+    "sustainabilityGoal": "Not Applicable",
+    "socialValue": "Not Applicable"
+  },
+  {
+    "recommendation": "Create recognition program for high-performing team members",
+    "type": "Engagement",
+    "approach": "Strategic",
+    "focus": "Promote OCS",
+    "sustainabilityGoal": "8. Decent Work &amp; Economic Growth",
+    "socialValue": "Social"
+  }
+]
+STRUCTURED_RECOMMENDATIONS_END
+```
 
 ## Sentiment Assessment
 Overall Sentiment: [Positive/Neutral/Negative]
@@ -112,7 +174,7 @@ Now, analyze the provided NPS survey data and generate the summary following thi
         </inputs>
         <primaryModel>sfdc_ai__DefaultGPT5</primaryModel>
         <status>Published</status>
-        <versionIdentifier>8vYgLwI4cbJLUNgy2yCtAJvrITFCR7y4YaulsViILoU=_2</versionIdentifier>
+        <versionIdentifier>8vYgLwI4cbJLUNgy2yCtAJvrITFCR7y4YaulsViILoU=_3</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>

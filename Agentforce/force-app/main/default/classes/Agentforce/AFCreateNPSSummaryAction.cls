@@ -439,10 +439,116 @@ public with sharing class AFCreateNPSSummaryAction {
             summary.Sentiment_Analysis__c = 'Mixed';
             summary.Follow_Up_Required__c = false;
         }
-        
-        // Placeholder for structured fields
+
+        // Parse structured recommendations from AI summary
+        parseRecommendations(summary, aiSummary);
+
+        // Placeholder for other structured fields
         summary.Key_Insights__c = 'AI insights will be populated here once Agentforce is integrated.';
-        summary.Action_Recommendations__c = 'AI recommendations will be populated here once Agentforce is integrated.';
+    }
+
+    /**
+     * Extracts and cleans JSON text from AI summary response
+     * @param aiSummary The full AI summary text
+     * @return Cleaned JSON string, or null if not found
+     */
+    private static String extractJsonFromSummary(String aiSummary) {
+        String jsonStart = 'STRUCTURED_RECOMMENDATIONS_START';
+        String jsonEnd = 'STRUCTURED_RECOMMENDATIONS_END';
+
+        Integer startIndex = aiSummary.indexOf(jsonStart);
+        Integer endIndex = aiSummary.indexOf(jsonEnd);
+
+        if (startIndex == -1 || endIndex == -1 || endIndex <= startIndex) {
+            return null;
+        }
+
+        // Extract the JSON array - start after the marker
+        String jsonText = aiSummary.substring(startIndex + jsonStart.length(), endIndex).trim();
+        
+        // Remove markdown code block markers if present (```json, ```, etc.)
+        jsonText = jsonText.replaceAll('(?i)^```json\\s*', '');
+        jsonText = jsonText.replaceAll('(?i)^```\\s*', '');
+        jsonText = jsonText.replaceAll('(?i)\\s*```$', '');
+        jsonText = jsonText.trim();
+        
+        // Find the actual JSON array start (should start with '[')
+        Integer jsonArrayStart = jsonText.indexOf('[');
+        if (jsonArrayStart != -1) {
+            jsonText = jsonText.substring(jsonArrayStart);
+        }
+        
+        // Find the actual JSON array end (should end with ']')
+        Integer jsonArrayEnd = jsonText.lastIndexOf(']');
+        if (jsonArrayEnd != -1) {
+            jsonText = jsonText.substring(0, jsonArrayEnd + 1);
+        }
+        
+        jsonText = jsonText.trim();
+        
+        // Validate that we have valid JSON
+        if (String.isNotBlank(jsonText) && jsonText.startsWith('[') && jsonText.endsWith(']')) {
+            return jsonText;
+        }
+        
+        return null;
+    }
+
+    /**
+     * Parses recommendations from AI summary and populates both JSON and display fields
+     * @param summary The summary record to populate
+     * @param aiSummary The full AI summary text
+     */
+    private static void parseRecommendations(NPS_Survey_Summary__c summary, String aiSummary) {
+        try {
+            String jsonText = extractJsonFromSummary(aiSummary);
+
+            if (String.isNotBlank(jsonText)) {
+                // Test parse to ensure it's valid JSON
+                List<Object> testParse = (List<Object>) JSON.deserializeUntyped(jsonText);
+                
+                // Store JSON in Action_Recommendations__c
+                summary.Action_Recommendations__c = jsonText;
+
+                // Parse JSON to create display text
+                String displayText = buildRecommendationsDisplayText(testParse);
+                summary.Action_Recommendations_Display__c = displayText;
+
+                System.debug('Successfully parsed ' + testParse.size() + ' recommendations');
+            } else {
+                // Fallback if structured data not found
+                System.debug(LoggingLevel.WARN, 'Structured recommendations not found in AI response');
+                summary.Action_Recommendations__c = '[]';
+                summary.Action_Recommendations_Display__c = 'No structured recommendations generated. Please regenerate the summary.';
+            }
+
+        } catch (Exception e) {
+            System.debug(LoggingLevel.ERROR, 'Error parsing recommendations: ' + e.getMessage());
+            System.debug(LoggingLevel.ERROR, 'Stack trace: ' + e.getStackTraceString());
+            summary.Action_Recommendations__c = '[]';
+            summary.Action_Recommendations_Display__c = 'Error parsing recommendations. Please regenerate the summary.';
+        }
+    }
+
+    /**
+     * Builds display text from parsed recommendations
+     * @param recommendations List of parsed recommendation objects
+     * @return Formatted display text
+     */
+    private static String buildRecommendationsDisplayText(List<Object> recommendations) {
+        String displayText = '';
+        Integer counter = 1;
+
+        for (Object recObj : recommendations) {
+            Map<String, Object> rec = (Map<String, Object>) recObj;
+            String recText = (String) rec.get('recommendation');
+            if (String.isNotBlank(recText)) {
+                displayText += counter + '. ' + recText + '\n';
+                counter++;
+            }
+        }
+
+        return displayText.trim();
     }
 }
 
